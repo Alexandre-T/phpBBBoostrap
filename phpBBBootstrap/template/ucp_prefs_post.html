@@ -1,0 +1,69 @@
+<!-- INCLUDE ucp_header.html -->
+
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE} class="form form-horizontal">
+
+<h3><i class="icon-cogs"></i> {L_TITLE}</h3>
+
+	<!-- IF ERROR --><p class="alert alert-error alert-block">{ERROR}</p><!-- ENDIF -->
+	<div class="control-group">
+		<span class="control-label">{L_DEFAULT_BBCODE}</span>
+		<div class="controls">
+			<label for="bbcode1" class="radio inline">
+				<input type="radio" name="bbcode" id="bbcode1" value="1" <!-- IF S_BBCODE --> checked="checked"<!-- ENDIF --> />
+				{L_YES}
+			</label>
+			<label for="bbcode0" class="radio inline">
+				<input type="radio" name="bbcode" id="bbcode0" value="0"<!-- IF not S_BBCODE --> checked="checked"<!-- ENDIF --> />
+				{L_NO}
+			</label>
+		</div>
+	</div>
+	<div class="control-group">
+		<span class="control-label">{L_DEFAULT_SMILIES}</span>
+		<div class="controls">
+			<label for="smilies1" class="radio inline">
+				<input type="radio" name="smilies" id="smilies1" value="1" <!-- IF S_SMILIES --> checked="checked"<!-- ENDIF --> />
+				{L_YES}
+			</label>
+			<label for="smilies0" class="radio inline">
+				<input type="radio" name="smilies" id="smilies0" value="0"<!-- IF not S_SMILIES --> checked="checked"<!-- ENDIF --> />
+				{L_NO}
+			</label>
+		</div>
+	</div>
+	<div class="control-group">
+		<span class="control-label">{L_DEFAULT_ADD_SIG}</span>
+		<div class="controls">
+			<label for="sig1" class="radio inline">
+				<input type="radio" name="sig" id="sig1" value="1" <!-- IF S_SIG --> checked="checked"<!-- ENDIF --> />
+				{L_YES}
+			</label>
+			<label for="sig0" class="radio inline">
+				<input type="radio" name="sig" id="sig0" value="0"<!-- IF not S_SIG --> checked="checked"<!-- ENDIF --> />
+				{L_NO}
+			</label>
+		</div>
+	</div>	
+	<div class="control-group">
+		<span class="control-label">{L_DEFAULT_NOTIFY}</span>
+		<div class="controls">
+			<label for="notify1" class="radio inline">
+				<input type="radio" name="notify" id="notify1" value="1" <!-- IF S_NOTIFY --> checked="checked"<!-- ENDIF --> />
+				{L_YES}
+			</label>
+			<label for="notify0" class="radio inline">
+				<input type="radio" name="notify" id="notify0" value="0"<!-- IF not S_NOTIFY --> checked="checked"<!-- ENDIF --> />
+				{L_NO}
+			</label>
+		</div>
+	</div>	
+
+<fieldset class="form-actions">
+	{S_HIDDEN_FIELDS}
+	<input type="reset" value="{L_RESET}" name="reset" class="btn" /> 
+	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
+	{S_FORM_TOKEN}
+</fieldset>
+</form>
+
+<!-- INCLUDE ucp_footer.html -->

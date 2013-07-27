@@ -1,0 +1,119 @@
+<!-- INCLUDE ucp_header.html -->
+
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE} class="form form-horizontal">
+
+<h3><i class="icon-user"></i> {L_TITLE}</h3>
+
+	<p class="text-justify">{L_PROFILE_INFO_NOTICE}</p>
+
+	<fieldset>
+	<!-- IF ERROR --><p class="alert alert-block alert-danger">{ERROR}</p><!-- ENDIF -->
+	<div class="control-group">
+		<label class="control-label" for="icq">{L_UCP_ICQ}</label>
+		<div class="controls">
+	  		<div class="input-prepend">
+  				<span class="add-on">@</span>
+  				<input type="text" name="icq" id="icq" maxlength="15" value="{ICQ}" class="" />
+			</div>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="aim">{L_UCP_AIM}</label>
+		<div class="controls">
+			<div class="input-prepend">
+  				<span class="add-on">@</span>
+	  			<input type="text" name="aim" id="aim" maxlength="255" value="{AIM}" class="" />
+	  		</div>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="msn">{L_UCP_MSNM}</label>
+		<div class="controls">
+			<div class="input-prepend">
+  				<span class="add-on"><i class="icon-skype"></i></span>
+	  			<input type="text" name="msn" id="msn" maxlength="255" value="{MSN}" class="" />
+	  		</div>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="yim">{L_UCP_YIM}</label>
+		<div class="controls">
+			<div class="input-prepend">
+  				<span class="add-on"><i class="icon-yahoo"></i></span>
+		  		<input type="text" name="yim" id="yim" maxlength="255" value="{YIM}" class="" />
+		  	</div>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="jabber">{L_UCP_JABBER}</label>
+		<div class="controls">
+			<div class="input-prepend">
+  				<span class="add-on">@</span>
+		  		<input type="text" name="jabber" id="jabber" maxlength="255" value="{JABBER}" class="" />
+		  	</div>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="website">{L_WEBSITE}</label>
+		<div class="controls">
+			<div class="input-prepend">
+  				<span class="add-on"><i class="icon-link"></i></span>
+				<input type="text" name="website" id="website" maxlength="255" value="{WEBSITE}" class="" />
+			</div>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="location">{L_LOCATION}</label>
+		<div class="controls">
+			<div class="input-prepend">
+  				<span class="add-on"><i class="icon-globe"></i></span>
+		  		<input type="text" name="location" id="location" maxlength="255" value="{LOCATION}" class="" />
+		  	</div>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="occupation">{L_OCCUPATION}</label>
+		<div class="controls">
+	  		<textarea name="occupation" id="occupation" class="input-block-level" rows="3" cols="30">{OCCUPATION}</textarea>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="interests">{L_INTERESTS}</label>
+		<div class="controls">
+	  		<textarea name="interests" id="interests" class="input-block-level" rows="3" cols="30">{INTERESTS}</textarea>
+		</div>
+	</div>
+	<!-- IF S_BIRTHDAYS_ENABLED -->
+		<div class="control-group">
+			<label class="control-label" for="bday_day">{L_BIRTHDAY}</label>
+		<div class="controls form-inline">
+			<label for="bday_day">{L_DAY}: <select name="bday_day" id="bday_day" style="width: 4em;">{S_BIRTHDAY_DAY_OPTIONS}</select></label> 
+			<label for="bday_month">{L_MONTH}: <select name="bday_month" id="bday_month" style="width: 4em;">{S_BIRTHDAY_MONTH_OPTIONS}</select></label> 
+			<label for="bday_year">{L_YEAR}: <select name="bday_year" id="bday_year" style="width: 6em;">{S_BIRTHDAY_YEAR_OPTIONS}</select></label>
+			<span class="help-block"><em>{L_BIRTHDAY_EXPLAIN}</em></span>
+		</div>
+	</div>
+	<!-- ENDIF -->
+	<!-- BEGIN profile_fields -->
+		<div class="control-group <!-- IF profile_fields.ERROR -->error<!-- ENDIF -->">
+			<label class="control-label" for="<!-- IF profile_fields.FIELD_ID -->{profile_fields.FIELD_ID}<!-- ENDIF -->">{profile_fields.LANG_NAME}<!-- IF profile_fields.S_REQUIRED --> *<!-- ENDIF --></label>						
+			<div class="controls">			
+	  			{profile_fields.FIELD}
+	  			<!-- IF profile_fields.ERROR --><span class="help-inline">{profile_fields.ERROR}</span><!-- ENDIF -->
+	  			<!-- IF profile_fields.LANG_EXPLAIN --><span class="help-block"><em>{profile_fields.LANG_EXPLAIN}</em></span><!-- ENDIF -->
+			</div>
+		</div>
+	<!-- END profile_fields -->
+	</fieldset>
+
+	<fieldset class="form-actions">
+		{S_HIDDEN_FIELDS}
+		<div class="btn-group">
+			<button type="submit" name="submit" value="{L_SAVE}" class="btn btn-primary"><i class="icon-save"></i> {L_SAVE}</button>
+			<button type="reset" value="{L_RESET}" name="reset" class="btn"><i class="icon-repeat"></i> {L_RESET}</button>
+		</div>
+		{S_FORM_TOKEN}
+	</fieldset>
+</form>
+
+<!-- INCLUDE ucp_footer.html -->

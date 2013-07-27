@@ -1,0 +1,76 @@
+<!-- INCLUDE mcp_header.html -->
+
+<h3>{L_TITLE}</h3>
+
+<form method="post" id="mcp" action="{U_POST_ACTION}">
+
+	<div class="panel">
+		<div class="btn-group pull-right">
+			<!-- IF TOTAL --><span class="btn btn-mini disabled">{TOTAL}</span><!-- ENDIF -->
+			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --><a href="#" class="btn btn-mini" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>{PAGINATION}<!-- ELSE --><span class="btn btn-mini">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->		
+		</div>
+		<fieldset class="form-inline">
+			<label for="keywords">{L_SEARCH_KEYWORDS} </label>
+			<input type="text" class="span2" name="keywords" value="{S_KEYWORDS}" />
+			<input type="submit" class="btn btn-primary" name="filter" value="{L_SEARCH}" />
+		</fieldset>
+		<hr/>
+		<!-- IF S_LOGS -->
+			<table class="table table-striped table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>{L_USERNAME}</th>
+						<th>{L_IP}</th>
+						<th>{L_TIME}</th>
+						<th>{L_ACTION}</th>
+						<!-- IF S_CLEAR_ALLOWED --><th>{L_MARK}</th><!-- ENDIF -->
+					</tr>
+				</thead>
+				<tbody>
+					<!-- BEGIN log -->
+					<!-- IF log.S_ROW_COUNT is even --><tr class="bg1"><!-- ELSE --><tr class="bg2"><!-- ENDIF -->
+						<td>{log.USERNAME}</td>
+						<td style="text-align: center">{log.IP}</td>
+						<td style="text-align: center">{log.DATE}</td>
+						<td>{log.ACTION}<br />
+						{log.DATA}
+					</td>
+						<!-- IF S_CLEAR_ALLOWED --><td style="width: 5%" align="center"><input type="checkbox" name="mark[]" value="{log.ID}" /></td><!-- ENDIF -->
+					</tr>
+					<!-- END log -->
+			</tbody>
+			</table>
+	
+			<fieldset class="form-inline">
+				<label>{L_DISPLAY_POSTS}: {S_SELECT_SORT_DAYS}</label>
+				<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
+				<label>{S_SELECT_SORT_DIR}</label>
+				<input type="submit" name="sort" value="{L_GO}" class="btn btn-primary" />
+			</fieldset>
+	
+			<hr />
+	
+			<div class="btn-group pull-right">
+				<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="btn btn-mini" title="{L_PREVIOUS}"><i class="icon-double-angle-left"></i></a><!-- ENDIF -->
+				<!-- IF TOTAL --><span class="btn btn-mini disabled">{TOTAL}</span><!-- ENDIF -->
+				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --><a href="#" class="btn btn-mini" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>{PAGINATION}<!-- ELSE --><span class="btn btn-mini">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->		
+				<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-mini" title="{L_NEXT}"><i class="icon-double-angle-right"></i></a><!-- ENDIF -->
+			</div>
+	
+			<!-- IF S_CLEAR_ALLOWED -->
+				<fieldset class="btn-group">
+					<input class="btn btn-warning" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />
+					<input class="btn btn-info" type="submit" value="{L_DELETE_MARKED}" name="action[del_marked]" />
+				</fieldset>
+				<fieldset class="btn-group">
+					<a href="#" onclick="marklist('mcp', 'mark', true); return false;" class="btn btn-mini"><i class="icon-check"></i> {L_MARK_ALL}</a>
+					<a href="#" onclick="marklist('mcp', 'mark', false); return false;" class="btn btn-mini"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+				</fieldset>				
+			<!-- ENDIF -->
+		<!-- ELSE -->
+			<div class="alert alert-info">{L_NO_ENTRIES}</div>
+		<!-- ENDIF -->
+	</div>
+	{S_FORM_TOKEN}	
+</form>
+<!-- INCLUDE mcp_footer.html -->

@@ -1,0 +1,14 @@
+/*  phpBB3 Style Sheet
+    --------------------------------------------------------------
+	Style name:			bootstrap (the default phpBB 3.0.x style)
+	Based on style:		none
+	Original author:	Alexandre Tranchant
+	Modified by:		
+    --------------------------------------------------------------
+*/
+
+@import url("bootstrap.min.css");
+@import url("bootstrap-fileupload.min.css");
+@import url("font-awesome.min.css");
+@import url("forums.css");
+

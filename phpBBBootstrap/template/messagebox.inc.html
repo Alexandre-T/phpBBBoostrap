@@ -1,0 +1,42 @@
+<!-- IF S_UCP_ACTION and not S_PRIVMSGS and not S_EDIT_DRAFT -->
+	<!-- DEFINE $NAME = 'signature' -->
+<!-- ELSE -->
+	<!-- DEFINE $NAME = 'message' -->
+<!-- ENDIF -->
+<div class="row-fluid">
+	<div class="span9">
+		<div class="controls-group">
+			<label class="control-label" for="{$NAME}"><!-- IF S_UCP_ACTION and not S_PRIVMSGS and not S_EDIT_DRAFT -->{L_SIGNATURE}<!-- ELSE -->{L_MESSAGE}<!-- ENDIF --> </label>
+			<div class="controls">
+				<textarea name="{$NAME}" id="{$NAME}" rows="15" cols="76" tabindex="3" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);" onfocus="initInsertions();" class="input-block-level">{MESSAGE}{DRAFT_MESSAGE}{SIGNATURE}</textarea>
+			</div>
+		</div>
+	</div>
+	<div class="span3">
+		<!-- IF S_SMILIES_ALLOWED and .smiley -->
+			<strong>{L_SMILIES}</strong><br />
+			<!-- BEGIN smiley -->
+				<a href="#" onclick="insert_text('{smiley.A_SMILEY_CODE}', true); return false;"><img src="{smiley.SMILEY_IMG}" width="{smiley.SMILEY_WIDTH}" height="{smiley.SMILEY_HEIGHT}" alt="{smiley.SMILEY_CODE}" title="{smiley.SMILEY_DESC}" /></a>
+			<!-- END smiley -->
+		<!-- ENDIF -->
+		<!-- IF S_SHOW_SMILEY_LINK and S_SMILIES_ALLOWED-->
+			<br /><a href="{U_MORE_SMILIES}" onclick="popup(this.href, 500, 350, '_phpbbsmilies'); return false;">{L_MORE_SMILIES}</a>
+		<!-- ENDIF -->
+
+		<!-- IF BBCODE_STATUS -->
+		<!-- IF .smiley --><hr /><!-- ENDIF -->
+		{BBCODE_STATUS}<br />
+		<!-- IF S_BBCODE_ALLOWED -->
+			{IMG_STATUS}<br />
+			{FLASH_STATUS}<br />
+			{URL_STATUS}<br />
+			{SMILIES_STATUS}
+		<!-- ENDIF -->
+		<!-- ENDIF -->
+		<!-- IF S_EDIT_DRAFT || S_DISPLAY_REVIEW -->
+			<!-- IF S_DISPLAY_REVIEW --><hr /><!-- ENDIF -->
+			<!-- IF S_EDIT_DRAFT --><strong><a href="{S_UCP_ACTION}">{L_BACK_TO_DRAFTS}</a></strong><!-- ENDIF -->
+			<!-- IF S_DISPLAY_REVIEW --><strong><a href="#review">{L_TOPIC_REVIEW}</a></strong><!-- ENDIF -->
+		<!-- ENDIF -->
+	</div>
+</div>

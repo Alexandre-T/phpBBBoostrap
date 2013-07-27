@@ -1,0 +1,98 @@
+</section>
+
+<nav class="container">
+	<div class="row-fluid">	
+		<ul class="breadcrumb">
+			<li><i class="icon-home"></i>&nbsp;-&nbsp;<a href="{U_INDEX}" accesskey="h">{L_INDEX}</a></li>
+			<li class="pull-right btn-group">
+			<!-- IF U_EMAIL_TOPIC --><a class="btn btn-mini" href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}"><i class="icon-envelope"></i><span class="hidden">{L_EMAIL_TOPIC}</span></a><!-- ENDIF -->
+			<!-- IF U_EMAIL_PM --><a class="btn btn-mini" href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class=""><i class="icon-envelope"></i><span class="hidden">{L_EMAIL_PM}</span></a><!-- ENDIF -->
+			<!-- IF U_PRINT_TOPIC --><a class="btn btn-mini" href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p"><i class="icon-print"></i><span class="hidden">{L_PRINT_TOPIC}</span></a><!-- ENDIF -->
+			<!-- IF U_PRINT_PM --><a class="btn btn-mini" href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p"><i class="icon-print"></i><span class="hidden">{L_PRINT_PM}</span></a><!-- ENDIF -->
+			<!-- IF not S_IS_BOT -->
+				<!-- IF S_WATCH_FORUM_LINK --><a class="btn btn-mini" href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}"><i class="<!-- IF S_WATCHING_FORUM -->icon-eye-close<!-- ELSE -->icon-eye-open<!-- ENDIF -->"></i> {S_WATCH_FORUM_TITLE}</a><!-- ENDIF -->
+				<!-- IF U_WATCH_TOPIC --><a class="btn btn-mini" href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}"><i class="<!-- IF S_WATCHING_TOPIC -->icon-eye-close<!-- ELSE -->icon-eye-open<!-- ENDIF -->"></i> {L_WATCH_TOPIC}</a><!-- ENDIF -->
+				<!-- IF U_BOOKMARK_TOPIC --><a class="btn btn-mini" href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><i class="icon-bookmark"></i> {L_BOOKMARK_TOPIC}</a><!-- ENDIF -->
+				<!-- IF U_BUMP_TOPIC --><a class="btn btn-mini" href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}"><i class="icon-bump"></i> {L_BUMP_TOPIC}</a><!-- ENDIF -->
+			<!-- ENDIF -->
+			</li>
+			<!-- IF S_DISPLAY_POST_INFO -->
+			<li class="offset3 hidden-phone">
+				<div class=" dropup">
+				<!-- IF L_FORUM_PERMISSIONS -->
+				<a class="btn btn-mini tooltip-link" id="drop-permission" data-toggle="dropdown" href="#" title="{L_FORUM_PERMISSIONS}"><i class="icon-cogs"></i> <span class="visible-desktop">{L_FORUM_PERMISSIONS}</span> <span class="icon-caret-up"></span></a>
+				<!-- ELSE -->
+				<a class="btn btn-mini tooltip-link" id="drop-permission" data-toggle="dropdown" href="#"><i class="icon-cogs"></i> <span class="visible-desktop"></span> <span class="icon-caret-up"></span></a>
+				<!-- ENDIF -->
+			 	<ul class="dropdown-menu">
+					<!-- BEGIN rules --><li class="text-left"><a href="#"><i class="icon-cog"></i> {rules.RULE}</a></li><!-- END rules -->
+				</ul>
+				</div>
+			</li>
+			<!-- ENDIF -->
+		</ul>
+	</div>
+</nav>
+
+<footer id="bottom" >
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span4">	
+				<ul class="unstyled muted">
+					<!-- IF U_TEAM --><li class="rightside"><a href="{U_TEAM}"><small><i class="icon-group"></i> {L_THE_TEAM}</small></a></li><!-- ENDIF -->
+					<!-- IF not S_IS_BOT --><li class="rightside"><a href="{U_DELETE_COOKIES}"><small><i class="icon-trash"></i> {L_DELETE_COOKIES}</small></a></li><!-- ENDIF -->
+					<li><small><i class="icon-time"></i> {S_TIMEZONE}</small></li>
+				</ul>
+			</div>
+
+			<div class="span4">	
+				<!-- IF S_USER_LOGGED_IN or U_ACP or U_MCP  -->
+				<p class="btn-group text-center">
+					<!-- IF S_USER_LOGGED_IN --><a href="{U_PROFILE}" class="btn btn-mini ">{L_PROFILE}</a><!-- ENDIF -->
+					<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-mini btn-warning">{L_MCP}</a><!-- ENDIF -->
+					<!-- IF U_ACP --><a href="{U_ACP}" class="btn btn-mini btn-danger">{L_ACP}</a><!-- ENDIF -->
+				</p>
+				<p class="text-center">
+					<span class="tooltip-top btn btn-mini" title="HTML5"><i class="icon-html5"></i></span> 
+					<span class="tooltip-top btn btn-mini" title="CSS3"><i class="icon-css3"></i></span> 
+				</p>
+				<!-- ENDIF -->
+			</div>
+		
+			<div class="span4">
+				<ul class="unstyled muted text-right">
+					<li><small>{CREDIT_LINE}</small></li>
+					<!-- IF TRANSLATION_INFO --><li><small>{TRANSLATION_INFO}</small></li><!-- ENDIF -->
+					<li><small>Style par <a href="http://www.at-it.fr" title="Style réalisé par At-IT utilisant Font Awesome et Bootstrap"><i class="icon-link"></i> www.at-it.fr</a></small></li>
+					<!-- IF DEBUG_OUTPUT --><li><small>{DEBUG_OUTPUT}</small></li><!-- ENDIF -->
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+<section>
+	<div id="popupMP" class="modal hide fade" tabindex="-1">
+  		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>{L_PRIVATE_MESSAGING}</h3>
+		</div>
+		<div class="modal-body">
+			<p></p>
+			<p class="text-center"><i class="icon-envelope"></i> {PRIVATE_MESSAGE_INFO}</p>
+			<p></p>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn" data-dismiss="modal" aria-hidden="true">{L_CANCEL}</a>
+			<a href="{U_PRIVATEMSGS}" class="btn btn-primary">{L_GO}</a>
+		</div>
+	</div>
+	<!-- IF S_USER_PM_POPUP and S_NEW_PM -->
+	<script type="text/javascript">
+		$('#popupMP').modal('show');
+	</script>
+	<!-- ENDIF -->
+	
+</section>
+<!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
+</body>
+</html>

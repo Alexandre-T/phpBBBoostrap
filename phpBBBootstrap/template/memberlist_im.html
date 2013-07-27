@@ -1,0 +1,156 @@
+<!-- INCLUDE simple_header.html -->
+
+<!-- MSNM info from http://www.cdolive.net/ - doesn't seem to work with MSN Messenger -->
+<h2 class="solo"><i class="icon-skype"></i> {L_SEND_IM}</h2>
+
+<form method="post" action="{S_IM_ACTION}" class="form form-horizontal">
+
+	<p class="text-justify">{L_SEND_IM_EXPLAIN}</p>
+
+	<fieldset>
+		<dl class="dl-horizontal">
+			<dt>{L_IM_RECIPIENT}</dt>
+			<dd>
+				{USERNAME}
+				<!-- IF S_SEND_ICQ or S_SEND_AIM or S_SEND_MSNM or S_NO_SEND_JABBER --> <span class="label">{IM_CONTACT}</span><!-- ENDIF --><!-- IF PRESENCE_IMG --> {PRESENCE_IMG}<!-- ENDIF -->
+			</dd>
+		</dl>
+
+	<!-- IF S_SEND_ICQ -->
+		<div class="control-group">
+			<label class="control-label" for="from">{L_IM_NAME}</label>
+			<div class="controls">
+				<input type="text" name="from" id="from" size="20" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="body">{L_IM_MESSAGE}</label>
+			<div class="controls">
+				<textarea class="input-block-level" name="body" id="body" rows="5" cols="45"></textarea>
+			</div>
+		</div>
+		<div class="form-actions">
+			<input class="btn" name="submit" type="submit" value="{L_IM_SEND}" />
+		</div>
+		<input type="hidden" name="fromemail" value="{EMAIL}" />
+		<input type="hidden" name="subject" value="{SITENAME}" />
+		<input type="hidden" name="to" value="{IM_CONTACT}" />
+	<!-- ENDIF -->
+
+	<!-- IF S_SEND_AIM -->
+		<div class="btn-group">
+			<a class="btn" href="{U_AIM_CONTACT}"><i class="icon-plus"></i> {L_IM_ADD_CONTACT}</a>
+			<a class="btn" href="{U_AIM_MESSAGE}"><i class="icon-reply"></i> {L_IM_SEND_MESSAGE}</a>
+			<a class="btn" href="http://www.aim.com"><i class="icon-download"></i> {L_IM_DOWNLOAD_APP}</a>
+			<a class="btn" href="http://www.aim.com/products/express"><i class="icon-link"></i> {L_IM_AIM_EXPRESS}</a>
+		</div>
+	<!-- ENDIF -->
+
+	<!-- IF S_SEND_MSNM -->
+		<dl class="dl-horizontal">
+			<dt>&nbsp;</dt>
+			<dd><object classid="clsid:B69003B3-C55E-4B48-836C-BC5946FC3B28" codetype="application/x-oleobject" id="objMessengerApp" width="0" height="0"></object></dd>
+			<dd class="btn-group text-center">
+				<a href="#" class="btn" onclick="add_contact('{A_IM_CONTACT}'); return false;"><i class="icon-plus"></i> {L_IM_ADD_CONTACT}</a>
+				<a href="#" class="btn" onclick="im_contact('{A_IM_CONTACT}'); return false;"><i class="icon-envelope"></i> {L_IM_SEND_MESSAGE}</a>
+			</dd>
+		</dl>
+	<!-- ENDIF -->
+
+	<!-- IF S_SEND_JABBER -->
+		<div class="control-group">
+			<label class="control-label"  for="message">{L_IM_MESSAGE}</label>
+			<div class="controls">
+				<textarea class="input-block-level" name="message" id="message" rows="5" cols="45"></textarea>
+			</div>
+		</div>
+		<div class="form-actions">
+			<input class="btn" name="submit" type="submit" value="{L_IM_SEND}" />
+		</div>
+	<!-- ENDIF -->
+
+	<!-- IF S_NO_SEND_JABBER -->
+		<p class="text-justify">{L_IM_NO_JABBER}</p>
+	<!-- ENDIF -->
+
+	<!-- IF S_SENT_JABBER -->
+		<p class="text-justify">{L_IM_SENT_JABBER}</p>
+	<!-- ENDIF -->
+	{S_FORM_TOKEN}
+	</fieldset>
+
+</form>
+
+<p class="text-center"><a class="btn" href="#" onclick="window.close(); return false;"><i class="icon-remove"></i> {L_CLOSE_WINDOW}</a>
+
+<script type="text/javascript">
+// <![CDATA[
+
+	/** The following will not work with Windows Vista **/
+
+	var app = document.getElementById('objMessengerApp');
+
+	/**
+	* Check whether the browser supports this and whether MSNM is connected
+	*/
+	function msn_supported()
+	{
+		// Does the browser support the MSNM object?
+		if (app.MyStatus)
+		{
+			// Is MSNM connected?
+			if (app.MyStatus == 1)
+			{
+				alert('{LA_IM_MSNM_CONNECT}');
+				return false;
+			}
+		}
+		else
+		{
+			alert('{LA_IM_MSNM_BROWSER}');
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	* Add to your contact list
+	*/
+	function add_contact(address) 
+	{
+		if (msn_supported()) 
+		{
+			// Could return an error while MSNM is connecting, don't want that
+			try
+			{
+				app.AddContact(0, address);
+			}
+			catch (e)
+			{
+				return;
+			}
+	}
+}
+
+/**
+* Write IM to contact
+*/
+function im_contact(address)
+{
+	if (msn_supported())
+	{
+		// Could return an error while MSNM is connecting, don't want that
+		try
+		{
+			app.InstantMessage(address);
+		}
+		catch (e)
+		{
+			return;
+		}
+	}
+}
+// ]]>
+</script>
+
+<!-- INCLUDE simple_footer.html -->

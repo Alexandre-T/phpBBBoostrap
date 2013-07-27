@@ -1,0 +1,77 @@
+<!-- INCLUDE ucp_header.html -->
+
+<form id="postform" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
+
+<h3><i class="icon-file-alt"></i> {L_TITLE}</h3>
+
+<p class="text-justify">{L_DRAFTS_EXPLAIN}</p>
+
+<!-- IF S_EDIT_DRAFT -->
+
+	<!-- INCLUDE posting_editor.html -->
+	{S_HIDDEN_FIELDS}
+	<fieldset class="form-actions">
+		<div class="btn-group">
+			<button type="reset" value="{L_RESET}" name="reset" class="btn" ><i class="icon-save"></i> {L_RESET}</button>
+			<button type="submit" name="submit" value="{L_SAVE}" class="btn btn-primary"><i class="icon-save"></i> {L_SAVE}</button>
+		</div>
+		{S_FORM_TOKEN}
+	</fieldset>
+
+<!-- ELSE -->
+
+	<!-- IF .draftrow -->
+		<table id="ucp" class="table table-striped table-bordered table-hover ">
+		<thead>
+			<tr>
+				<th>
+					{L_DRAFT_TITLE}
+				</th>
+				<th class=" hidden-phone hidden-tablet">
+					{L_SAVE_DATE}
+				</th>
+				<th>
+					{L_MARK}
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+		<!-- BEGIN draftrow -->
+			<tr>
+				<td>
+					<a class="topictitle" href="{draftrow.U_VIEW_EDIT}"><strong>{draftrow.DRAFT_SUBJECT}</strong></a><br />
+					<!-- IF draftrow.S_LINK_TOPIC -->{L_TOPIC}: <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a>
+					<!-- ELSEIF draftrow.S_LINK_FORUM -->{L_FORUM}: <a href="{draftrow.U_VIEW}">{draftrow.TITLE}</a>
+					<!-- ELSEIF S_PRIVMSGS -->
+					<!-- ELSE -->{L_NO_TOPIC_FORUM}<!-- ENDIF -->
+				</td>
+				<td>
+					<span>{draftrow.DATE}<br /><!-- IF draftrow.U_INSERT --><a href="{draftrow.U_INSERT}">{L_LOAD_DRAFT}</a> &bull; <!-- ENDIF --><a href="{draftrow.U_VIEW_EDIT}">{L_VIEW_EDIT}</a></span></dd>
+				</td>
+				<td>
+					<label class="checkbox"><input type="checkbox" name="d[{draftrow.DRAFT_ID}]" id="d{draftrow.DRAFT_ID}" />{L_DELETE}</label>
+				</td>
+			</tr>
+		<!-- END draftrow -->
+		</tbody>
+		</table>
+	<!-- ELSE -->
+		<p><strong>{L_NO_SAVED_DRAFTS}</strong></p>
+	<!-- ENDIF -->
+
+	<!-- IF .draftrow -->
+		<div class="form-actions">
+			<input class="btn btn-primary" type="submit" name="delete" value="{L_DELETE_MARKED}" />
+			<div class="btn-group">
+				<a class="btn visible-desktop" href="#" onclick="$(':checkbox','#ucp').prop('checked',true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
+				<a class="btn visible-desktop" href="#" onclick="$(':checkbox','#ucp').removeAttr('checked'); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+			</div>
+			{S_FORM_TOKEN}
+		</div>
+	<!-- ENDIF -->
+
+<!-- ENDIF -->
+
+</form>
+
+<!-- INCLUDE ucp_footer.html -->

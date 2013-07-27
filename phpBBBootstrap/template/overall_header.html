@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
+<head>
+<meta charset="{S_CONTENT_ENCODING}" />
+
+<!-- Confirmé dans des docs -->
+<meta name="application-name" content="phpbb" />
+<meta name="author" content="" />
+<meta name="description" content="" />
+<meta name="generator" content="" />
+<meta name="keywords" content="" />
+
+<!-- Pas confirmé encore -->
+<!-- Nécessaire à Bootstrap -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="shortcut icon" type="image/png" href="{T_IMAGESET_PATH}/favicon.png" />
+<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+{META}
+<title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
+<!-- IF S_ENABLE_FEEDS -->
+	<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_FORUMS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_FORUMS}" href="{U_FEED}?mode=forums" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_NEW}" href="{U_FEED}?mode=topics" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}" href="{U_FEED}?mode=topics_active" /><!-- ENDIF -->	<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{U_FEED}?f={S_FORUM_ID}" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" /><!-- ENDIF -->
+<!-- ENDIF -->
+<!--
+	phpBB style name: Bootstrap
+	Based on style:   
+	Original author:  Alexandre Tranchant
+	Modified by:
+-->
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/forum_fn.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="{T_THEME_PATH}/bootstrap.min.js?v=2.3.2"></script>
+<script type="text/javascript" src="{T_THEME_PATH}/bootstrap-fileupload.min.js?v=2.3.2"></script>
+<script type="text/javascript" src="{T_THEME_PATH}/initialisation.js"></script>
+</head>
+
+<body class="body-{SCRIPT_NAME}" id="top">
+<nav class="navbar navbar-fixed-top navbar-inverse">
+	<div class="navbar-inner">
+		<div class="container">
+			<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			 
+			<!-- Be sure to leave the brand out there if you want it shown -->
+			<a class="brand <!-- IF SCRIPT_NAME eq 'index' -->active<!-- ENDIF -->" href="{U_INDEX}">{SITENAME} <i class="icon-home"></i></a>
+	 
+			<!-- Everything you want hidden at 940px or less, place within here -->
+			<div class="nav-collapse collapse">
+				<!-- .nav, .navbar-search, .navbar-form, etc -->
+				
+				<ul class="nav">
+      				<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+      					<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="icon-user"></i> {L_PROFILE}</a></li>
+      					<!-- IF S_DISPLAY_PM --><li><a href="{U_PRIVATEMSGS}"><i class="icon-envelope"></i> {PRIVATE_MESSAGE_INFO}</a></li><!-- ENDIF -->
+						<!-- IF U_RESTORE_PERMISSIONS --><li><a href="{U_RESTORE_PERMISSIONS}"><i class="icon-key"></i> {L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
+					<!-- ENDIF -->
+					<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="icon-question-sign"></i> {L_FAQ}</a></li>
+					<!-- IF not S_IS_BOT -->
+						<!-- IF S_DISPLAY_MEMBERLIST --><li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="icon-group"></i> {L_MEMBERLIST}</a></li><!-- ENDIF -->
+						<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li><a href="{U_REGISTER}"><i class="icon-pencil"></i> {L_REGISTER}</a></li><!-- ENDIF -->
+						<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><!-- IF S_USER_LOGGED_IN --><i class="icon-signout"></i> {L_LOGOUT} <!-- ELSE --><i class="icon-signin"></i> {L_LOGIN} <!-- ENDIF --></a></li>
+					<!-- ENDIF -->
+    			</ul>
+				
+			</div>
+		</div>
+	</div>
+</nav>
+<header class="header-{SCRIPT_NAME}">
+	<div class="<!-- IF SCRIPT_NAME eq index -->hero-unit<!-- ELSE -->page-header<!-- ENDIF --> ">
+		<div class="container">
+			<div class="row-fluid">
+				<div class="span7">
+					<!-- @todo <a href="{U_INDEX}" title="{L_INDEX}" id="logo">{SITE_LOGO_IMG}</a>  -->
+					<!-- IF SCRIPT_NAME eq index -->
+						<h1>{SITENAME}</h1>			
+						<p>{SITE_DESCRIPTION}</p>
+					<!-- ELSE -->
+						<h1>{SITENAME}<br/><small>{SITE_DESCRIPTION}</small></h1>
+					<!-- ENDIF -->
+					<p class="hidden"><a href="#start_here">{L_SKIP}</a></p>
+				</div>
+				<div class="span5 text-right">
+					<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+					<form class="form-search form-inline hidden-phone" action="{U_SEARCH}" method="get" >
+						{S_SEARCH_HIDDEN_FIELDS}
+						<div class="input-append">
+				    		<input type="text" name="keywords" title="{L_SEARCH_KEYWORDS}" class="input-small search-query" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}">
+				    		<button type="submit" class="btn"><i class="icon-search"></i> {L_SEARCH}</button>
+						</div>
+						<div class="help-block"><a class="" href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><small>{L_SEARCH_ADV}&hellip;</small></a></div>
+					</form>
+					<!-- ENDIF -->
+					<ul class="">
+						<li class="pull-right btn-toolbar">
+							<span class="btn-group">				
+								<!-- IF U_EMAIL_TOPIC --><a class="btn btn-mini" href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}"><i class="icon-envelope"></i><span class="hidden"> {L_EMAIL_TOPIC}</span></a><!-- ENDIF -->
+								<!-- IF U_EMAIL_PM --><a class="btn btn-mini" href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class=""><i class="icon-envelope"></i><span class="hidden"> {L_EMAIL_PM}</span></a><!-- ENDIF -->
+								<!-- IF U_PRINT_TOPIC --><a class="btn btn-mini tooltip-link" href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p"><i class="icon-print"></i><span class="hidden"> {L_PRINT_TOPIC}</span></a><!-- ENDIF -->
+								<!-- IF U_PRINT_PM --><a class="btn btn-mini" href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p"><i class="icon-print"></i><span class="hidden"> {L_PRINT_PM}</span></a><!-- ENDIF -->
+							</span>
+							<span class="btn-group">
+								<!-- IF S_USER_LOGGED_IN --><span class="btn btn-mini disabled tooltip-link" data-toggle="tooltip"  title="{LAST_VISIT_DATE}"><i class="icon-calendar"></i><span class="hidden"> {LAST_VISIT_DATE}</span></span><!-- ENDIF -->
+								<span class="btn btn-mini disabled tooltip-link" data-toggle="tooltip" data-original-title="{CURRENT_TIME}"><i class="icon-time"></i><span class="hidden"> {CURRENT_TIME}</span></span>
+								<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-mini btn-warning tooltip-link" title="{L_MCP}"><i class="icon-legal"></i><span class="hidden"> {L_MCP}</span></a><!-- ENDIF -->
+								<!-- IF U_ACP --><a href="{U_ACP}" class="btn btn-mini btn-danger tooltip-link" title="{L_ACP}"><i class="icon-wrench"></i><span class="hidden"> {L_ACP}</span></a><!-- ENDIF -->
+							</span>
+						<!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->				
+							<!-- IF S_DISPLAY_SEARCH -->
+								<span class="btn-group">						
+									<a href="{U_SEARCH_UNANSWERED}" class="btn btn-mini tooltip-link" title="{L_SEARCH_UNANSWERED}"><i class="icon-search"></i><span class="hidden"> {L_SEARCH_UNANSWERED}</span></a>
+									<!-- IF S_LOAD_UNREADS --><a href="{U_SEARCH_UNREAD}" class="btn btn-mini tooltip-link" title="{L_SEARCH_UNREAD}"><i class="icon-eye-open"></i><span class="hidden"> {L_SEARCH_UNREAD}</span></a><!-- ENDIF -->
+									<!-- IF S_USER_LOGGED_IN --><a href="{U_SEARCH_NEW}" class="btn btn-mini tooltip-link" title="{L_SEARCH_NEW}"><i class="icon-plus"></i><span class="hidden"> {L_SEARCH_NEW}</span></a><!-- ENDIF -->
+									<a href="{U_SEARCH_ACTIVE_TOPICS}" class="btn btn-mini tooltip-link" title="{L_SEARCH_ACTIVE_TOPICS}"><i class="icon-pushpin"></i><span class="hidden"> {L_SEARCH_ACTIVE_TOPICS}</span></a>
+									<!-- IF S_USER_LOGGED_IN --><a href="{U_SEARCH_SELF}" class="btn btn-mini tooltip-link" title="{L_SEARCH_SELF}"><i class="icon-star-empty"></i><span class="hidden"> {L_SEARCH_SELF}</span></a><!-- ENDIF -->
+								</span>
+							<!-- ENDIF -->
+							<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
+								<a href="{U_MARK_FORUMS}" class="btn btn-mini tooltip-link" title="{L_MARK_FORUMS_READ}" accesskey="m"><i class="icon-check"></i><span class="hidden"> {L_MARK_FORUMS_READ}</span></a>
+							<!-- ENDIF -->
+						<!-- ENDIF -->
+						</li>
+					</ul>
+  				</div>
+			</div>
+			<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+				<div class="alert ">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong>{L_INFORMATION} :</strong> <small>{L_BOARD_DISABLED}</small>
+				</div>
+			<!-- ENDIF -->
+			
+		</div>
+	</div>
+</header>
+
+<nav class="container">
+	<ul class="breadcrumb">
+		<li><i class="icon-home"></i>&nbsp;-&nbsp;<a href="{U_INDEX}" accesskey="h">{L_INDEX}</a></li>
+		<!-- BEGIN navlinks -->
+		<li><span class="divider">&rsaquo;</span><a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a></li>
+		<!-- END navlinks -->		
+	</ul>
+</nav>
+
+<section class="section-{SCRIPT_NAME} container" id="start_here">

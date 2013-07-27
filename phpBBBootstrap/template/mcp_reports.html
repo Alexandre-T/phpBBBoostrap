@@ -1,0 +1,91 @@
+<!-- INCLUDE mcp_header.html -->
+
+<form id="mcp" method="post" action="{S_MCP_ACTION}">
+<!-- IF not S_PM -->
+	<fieldset class="forum-selection form-inline">
+		<label for="fo">{L_FORUM}: <select name="f" id="fo">{S_FORUM_OPTIONS}</select></label>
+		<input type="submit" name="sort" value="{L_GO}" class="btn btn-primary" />
+		{S_FORM_TOKEN}
+	</fieldset>
+<!-- ENDIF -->
+<h4>{L_TITLE}</h4>
+
+<!-- IF .postrow -->
+<div class="panel">
+	<div class="btn-group pull-right">
+		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="btn btn-mini"><i class="icon-double-angle-left"></i></a><!-- ENDIF -->
+		<!-- IF TOTAL --><span class="btn btn-mini disabled">{TOTAL}</span><!-- ENDIF -->
+		<!-- IF PAGE_NUMBER -->
+			<!-- IF PAGINATION -->
+				<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-mini">{PAGE_NUMBER}</a>
+				{PAGINATION}
+			<!-- ELSE -->
+				<span class="btn btn-mini disabled">{PAGE_NUMBER}</span>
+			<!-- ENDIF -->
+		<!-- ENDIF -->
+		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-mini"><i class="icon-double-angle-right"></i></a><!-- ENDIF -->
+	</div>
+	<p>{L_EXPLAIN}</p>
+	<table class="table table-striped table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>{L_VIEW_DETAILS}</th>
+				<th>{L_REPORTER}<!-- IF not S_PM --> &amp; {L_FORUM}<!-- ENDIF --></th>
+				<th>{L_MARK}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- BEGIN postrow -->
+			<tr>
+				<!-- IF S_PM -->
+				<td>
+					<a href="{postrow.U_VIEW_DETAILS}" class="topictitle">{postrow.PM_SUBJECT}</a> {postrow.ATTACH_ICON_IMG}<br />
+					<span>{L_MESSAGE_BY_AUTHOR} {postrow.PM_AUTHOR_FULL} &raquo; {postrow.PM_TIME}</span><br />
+					<span>{L_MESSAGE_TO} {postrow.RECIPIENTS}</span>
+				</td>
+				<td>
+					<span>{postrow.REPORTER_FULL} &laquo; {postrow.REPORT_TIME}</span>
+				</td>
+				<!-- ELSE -->
+				<td>
+					<a href="{postrow.U_VIEW_DETAILS}" class="topictitle">{postrow.POST_SUBJECT}</a> {postrow.ATTACH_ICON_IMG}<br />
+					<span>{L_POSTED} {L_POST_BY_AUTHOR} {postrow.POST_AUTHOR_FULL} &raquo; {postrow.POST_TIME}</span>
+				</td>
+				<td>
+					<span>{postrow.REPORTER_FULL} &laquo; {postrow.REPORT_TIME}<br />
+					<!-- IF postrow.U_VIEWFORUM -->{L_FORUM}: <a href="{postrow.U_VIEWFORUM}">{postrow.FORUM_NAME}</a><!-- ELSE -->{postrow.FORUM_NAME}<!-- ENDIF --></span>
+				</td>
+				<!-- ENDIF -->
+				<td><input type="checkbox" name="report_id_list[]" value="{postrow.REPORT_ID}" /></td>
+			</tr>
+			<!-- END postrow -->
+		</tbody>
+	</table>
+	<fieldset class="btn-group pull-right">
+		<a href="#" class="btn btn-mini" onclick="marklist('mcp', 'report_id_list', true); return false;">{L_MARK_ALL}</a>
+		<a href="#" class="btn btn-mini" onclick="marklist('mcp', 'report_id_list', false); return false;">{L_UNMARK_ALL}</a>
+	</fieldset>
+	<fieldset class="btn-group">
+		<input class="btn btn-primary" type="submit" value="{L_DELETE_REPORTS}" name="action[delete]" />
+		<!-- IF not S_CLOSED --><input class="btn" type="submit" name="action[close]" value="{L_CLOSE_REPORTS}" /><!-- ENDIF -->
+	</fieldset>
+</div>
+<!-- ELSE -->
+<div class="alert alert-success">
+	<p>{L_NO_REPORTS}</p>
+</div>
+<!-- ENDIF -->
+
+
+
+<!-- IF .postrow -->
+	<fieldset class="form-inline">
+		<label>{L_DISPLAY_POSTS}: {S_SELECT_SORT_DAYS}</label>
+		<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label><label>{S_SELECT_SORT_DIR}</label>
+		<!-- IF TOPIC_ID --><label><input type="checkbox" class="checkbox" name="t" value="{TOPIC_ID}" checked="checked" />&nbsp; <strong>{L_ONLY_TOPIC}</strong></label><!-- ENDIF -->
+		<input type="submit" name="sort" value="{L_GO}" class="btn-primary btn" />
+	</fieldset>
+<!-- ENDIF -->
+</form>
+
+<!-- INCLUDE mcp_footer.html -->

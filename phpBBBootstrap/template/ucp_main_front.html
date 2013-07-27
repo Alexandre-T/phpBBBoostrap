@@ -1,0 +1,79 @@
+<!-- INCLUDE ucp_header.html -->
+
+<h3>{L_TITLE}</h3>
+
+<p>{L_UCP_WELCOME}</p>
+
+<!-- IF .topicrow -->
+	<h4><i class="icon-rss"></i> {L_IMPORTANT_NEWS}</h4>
+
+	<table class="table table-striped table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>
+					<!-- IF S_DISPLAY_ACTIVE -->{L_ACTIVE_TOPICS}<!-- ELSEIF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF -->
+				</th>
+				<th class="span2 text-center hidden-tablet">
+					<span class="visible-desktop">{L_LAST_POST}</span>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- BEGIN topicrow -->
+				<tr>
+					<td>
+						<div class="pull-left forum-topic-icon">
+							<span><a href="{topicrow.U_VIEW_TOPIC}" class="tooltip-link btn <!-- IF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ENDIF --> btn-large" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+								<!-- IF topicrow.S_TOPIC_LOCKED -->
+										<i class="icon-lock icon-large"></i>
+								<!-- ELSE -->
+									<i class="icon-info-sign icon-large"></i>
+								<!-- ENDIF --> 
+							</a></span>
+						</div>
+						<div class="pull-right">
+							<div class="btn-group">
+								<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
+								<a href="{topicrow.U_MCP_QUEUE}" class="btn btn-warning btn-mini"><i class="icon-warning-sign"></i></a>
+								<!-- ENDIF -->
+								<!-- IF topicrow.S_TOPIC_REPORTED -->
+								<a href="{topicrow.U_MCP_REPORT}" class="btn btn-warning btn-mini"><i class="icon-warning-sign"></i></a>
+								<!-- ENDIF -->
+								<!-- IF topicrow.ATTACH_ICON_IMG -->
+								<a href="#" class="btn btn-mini disabled"><i class="icon-paper-clip"></i></a>
+								<!-- ENDIF -->
+								<!-- IF topicrow.PAGINATION -->{topicrow.PAGINATION}<!-- ENDIF -->
+								<!-- IF topicrow.S_UNREAD_TOPIC -->
+									<a class="btn btn-mini btn-info" href="{topicrow.U_NEWEST_POST}"><i class="icon-angle-right"></i></a>
+								<!-- ENDIF -->
+								<!-- IF not S_IS_BOT -->
+									<a class="tooltip-link btn btn-mini" href="{topicrow.U_LAST_POST}"  title="{L_LAST_POST}"><i class="icon-double-angle-right"></i></a>
+								<!-- ENDIF -->						
+							</div>
+						</div>
+						<a class="bleu" href="{topicrow.U_VIEW_TOPIC}" class="topictitle"><strong>{topicrow.TOPIC_TITLE}</strong></a><br/>					
+					 	<small>{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</small>
+					 </td>
+					 <td class="span3 hidden-phone">
+						<small>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}						
+						<br />{topicrow.LAST_POST_TIME}</small>
+					</td>
+				</tr>
+			<!-- END topicrow -->
+		</tbody>
+	</table>
+<!-- ENDIF -->
+
+
+<h4>{L_YOUR_DETAILS}</h4>
+
+	<dl class="dl-horizontal">
+		<dt>{L_JOINED}:</dt> <dd>{JOINED}</dd>
+		<dt>{L_VISITED}:</dt> <dd>{LAST_VISIT_YOU}</dd>
+		<dt>{L_TOTAL_POSTS}:</dt> <dd><!-- IF POSTS_PCT -->{POSTS}<!-- IF S_DISPLAY_SEARCH --> | <strong><a href="{U_SEARCH_USER}">{L_SEARCH_YOUR_POSTS}</a></strong><!-- ENDIF --><br />({POSTS_DAY} / {POSTS_PCT})<!-- ELSE -->{POSTS}<!-- ENDIF --></dd>
+		<!-- IF ACTIVE_FORUM != '' --><dt>{L_ACTIVE_IN_FORUM}:</dt> <dd><strong><a href="{U_ACTIVE_FORUM}">{ACTIVE_FORUM}</a></strong><br />({ACTIVE_FORUM_POSTS} / {ACTIVE_FORUM_PCT})</dd><!-- ENDIF -->
+		<!-- IF ACTIVE_TOPIC != '' --><dt>{L_ACTIVE_IN_TOPIC}:</dt> <dd><strong><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a></strong><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT})</dd><!-- ENDIF -->
+		<!-- IF WARNINGS --><dt>{L_YOUR_WARNINGS}:</dt> <dd class="error">{WARNING_IMG} [{WARNINGS}]</dd><!-- ENDIF -->
+	</dl>
+
+<!-- INCLUDE ucp_footer.html -->

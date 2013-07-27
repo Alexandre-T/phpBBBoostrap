@@ -1,0 +1,39 @@
+<!-- IF S_TYPE == 1 -->
+	<h3>{L_CONFIRMATION}</h3>
+	<p>{L_CONFIRM_EXPLAIN}</p>
+<!-- ENDIF -->
+
+<!-- IF S_RECAPTCHA_AVAILABLE -->
+	<div class="control-group">
+		<label class="control-label" for="answer">{L_CONFIRM_CODE}</label>
+		<div class="controls">
+			<script type="text/javascript">
+			// <![CDATA[
+			var RecaptchaOptions = {
+				lang : '{LA_RECAPTCHA_LANG}',
+				theme : 'clean',
+				tabindex : <!-- IF $CAPTCHA_TAB_INDEX -->{$CAPTCHA_TAB_INDEX}<!-- ELSE -->10<!-- ENDIF -->
+			};
+			// ]]>
+			</script>
+			<script type="text/javascript" src="{RECAPTCHA_SERVER}/challenge?k={RECAPTCHA_PUBKEY}{RECAPTCHA_ERRORGET}"></script>
+			<script type="text/javascript">
+			// <![CDATA[
+			<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+				document.getElementById('recaptcha_table').style.direction = 'ltr';
+			<!-- ENDIF -->
+			// ]]>
+			</script>
+			<noscript>
+				<div class="controls">
+					<object data="{RECAPTCHA_SERVER}/noscript?k={RECAPTCHA_PUBKEY}{RECAPTCHA_ERRORGET}" type="text/html" height="300" width="500"></object><br />
+					<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+					<input type="hidden" name="recaptcha_response_field" value="manual_challenge" />
+				</div>
+			</noscript>
+			<span class="help-block">{L_RECAPTCHA_EXPLAIN}</span>
+		</div>
+	</div>
+<!-- ELSE -->
+	{L_RECAPTCHA_NOT_AVAILABLE}
+<!-- ENDIF -->

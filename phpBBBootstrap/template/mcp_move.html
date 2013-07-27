@@ -1,0 +1,29 @@
+<!-- INCLUDE overall_header.html -->
+<section>
+<form id="confirm" action="{S_CONFIRM_ACTION}" method="post" class="form-inline">
+
+<h3>{MESSAGE_TITLE}</h3>
+<div class="panel">
+
+		<!-- IF ADDITIONAL_MSG --><p>{ADDITIONAL_MSG}</p><!-- ENDIF -->
+		<p>{MESSAGE_TEXT}</p>
+		<br/>
+		{S_HIDDEN_FIELDS}
+		<fieldset>
+			<label for="to_forum_id" class="control-label">{L_SELECT_DESTINATION_FORUM}</label>
+			<select name="to_forum_id" class="span3">{S_FORUM_SELECT}</select>
+			<!-- IF S_CAN_LEAVE_SHADOW -->
+				<label class="checkbox" for="move_leave_shadow"><input type="checkbox" name="move_leave_shadow" id="move_leave_shadow" />{L_LEAVE_SHADOW}</label>
+			<!-- ENDIF -->		
+		</fieldset>
+		<hr class="dashed"/>
+		<fieldset class="btn-group">
+			<input type="submit" name="confirm" value="{YES_VALUE}" class="btn btn-success" /> 
+			<input type="submit" name="cancel" value="{L_NO}" class="btn"/>		
+		</fieldset>
+		{S_FORM_TOKEN}
+
+</div>
+</form>
+</section>
+<!-- INCLUDE overall_footer.html -->

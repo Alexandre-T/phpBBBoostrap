@@ -1,0 +1,40 @@
+<!-- INCLUDE ucp_header.html -->
+
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE} class="form form-horizontal">
+
+<h2><i class="icon-user"></i> {L_TITLE}</h2>
+
+	<p class="text-justify">{L_FRIENDS_EXPLAIN}</p>
+
+	<fieldset>
+	<!-- IF ERROR --><p class="alert alert-error alert-block">{ERROR}</p><!-- ENDIF -->
+	
+	<div class="control-group">
+		<label class="control-label" for="<!-- IF S_USERNAME_OPTIONS -->usernames<!-- ENDIF -->">{L_YOUR_FRIENDS}</label>
+		<div class="controls">
+			<!-- IF S_USERNAME_OPTIONS -->
+				<select name="usernames[]" id="usernames" multiple="multiple" size="5">{S_USERNAME_OPTIONS}</select>
+			<!-- ELSE -->
+				<strong>{L_NO_FRIENDS}</strong>
+			<!-- ENDIF -->
+			<span class="help-block">{L_YOUR_FRIENDS_EXPLAIN}</span>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="add">{L_ADD_FRIENDS}</label>
+		<div class="controls">
+			<textarea name="add" id="add" rows="3" cols="30" class="inputbox">{USERNAMES}</textarea>
+			<span class="help-inline"><strong><a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;"><i class="icon-search"></i> {L_FIND_USERNAME}</a></strong></span>
+			<span class="help-block">{L_ADD_FRIENDS_EXPLAIN}</span>
+		</div>
+	</div>
+	</fieldset>
+
+<fieldset class="form-actions">
+	{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn" /> 
+	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn" />
+	{S_FORM_TOKEN}
+</fieldset>
+</form>
+
+<!-- INCLUDE ucp_footer.html -->

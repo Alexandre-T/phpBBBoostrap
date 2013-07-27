@@ -1,0 +1,60 @@
+<!-- INCLUDE overall_header.html -->
+<section>
+<form id="confirm" action="{S_CONFIRM_ACTION}" method="post" class="form-horizontal">
+<div class="panel">
+	{S_FORM_TOKEN}
+		<h3>{MESSAGE_TITLE}</h3>
+		<!-- IF ADDITIONAL_MSG -->
+			<div class="alert alert-danger">
+				{ADDITIONAL_MSG}
+			</div>
+		<!-- ENDIF -->
+
+		<fieldset>
+		<!-- IF S_NOTIFY_POSTER -->
+			<div class="control-group">
+				<div class="controls">
+					<label for="notify_poster" class="checkbox">
+						<input type="checkbox" name="notify_poster" checked="checked" /> 
+						<!-- IF S_APPROVE -->
+							{L_NOTIFY_POSTER_APPROVAL}
+						<!-- ELSE -->
+							{L_NOTIFY_POSTER_DISAPPROVAL}
+						<!-- ENDIF -->
+					</label>
+				</div>
+			</div>
+		<!-- ENDIF -->
+
+		<!-- IF not S_APPROVE -->
+			<div class="control-group">
+				<label for="notify_poster" class="control-label">{L_DISAPPROVE_REASON} </label>
+				<div class="controls">
+					<select name="reason_id">
+					<!-- BEGIN reason --><option value="{reason.ID}"<!-- IF reason.S_SELECTED --> selected="selected"<!-- ENDIF -->>{reason.DESCRIPTION}</option><!-- END reason -->
+					</select>
+				</div>
+			</div>
+			<div class="control-group">
+				<label for="reason" class="control-label">{L_MORE_INFO} </label>
+				<div class="controls">
+					<textarea class="input-block-level" name="reason" id="reason" rows="4" cols="40">{REASON}</textarea>
+					<span class="form-explications">{L_CAN_LEAVE_BLANK}</span>
+				</div>
+			</div>
+		<!-- ENDIF -->
+		</fieldset>
+		<hr class="dashed"/>
+		<p>
+			<strong>{MESSAGE_TEXT}</strong>
+		</p>
+		{S_HIDDEN_FIELDS}
+		<div class="btn-group text-center">
+			<input type="submit" name="confirm" value="{YES_VALUE}" class="btn btn-primary" />&nbsp; 
+			<input type="submit" name="cancel" value="{L_CANCEL}" class="btn" />
+		</div>
+		<br/><br/>
+</div>
+</form>
+</section>
+<!-- INCLUDE overall_footer.html -->

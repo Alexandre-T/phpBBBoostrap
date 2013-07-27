@@ -1,0 +1,114 @@
+<!-- INCLUDE ucp_header.html -->
+
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
+
+<h3>{L_TITLE}</h3>
+
+<p class="text-justify">{L_BOOKMARKS_EXPLAIN}</p>
+
+<!-- IF S_NO_DISPLAY_BOOKMARKS -->
+	<div class="alert alert-danger alert-block">{L_BOOKMARKS_DISABLED}</div>
+<!-- ELSE -->
+
+<!-- IF .topicrow -->
+	<table class="table table-striped table-bordered table-hover ">
+		<thead>
+			<tr>
+				<th>
+					{L_BOOKMARKS}
+				</th>
+				<th class=" hidden-phone hidden-tablet">
+					{L_LAST_POST}
+				</th>
+				<th>
+					{L_MARK}
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+	<!-- BEGIN topicrow -->
+		<tr>
+			<td>
+			<!-- IF topicrow.S_DELETED_TOPIC -->
+				<strong>{L_DELETED_TOPIC}</strong>
+			<!-- ELSE -->
+				<div class="pull-left forum-topic-icon">
+					<span><a href="{topicrow.U_VIEW_TOPIC}" class="tooltip-link btn <!-- IF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ENDIF --> <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL --> btn-large <!-- ENDIF -->" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+						<!-- IF topicrow.S_TOPIC_LOCKED -->
+							<!-- IF topicrow.S_POST_GLOBAL or topicrow.S_POST_ANNOUNCE -->
+								<i class="icon-lock icon-large"></i>
+							<!-- ELSE -->
+								<i class="icon-lock"></i>
+							<!-- ENDIF -->
+						<!-- ELSEIF topicrow.S_POST_GLOBAL -->
+							<i class="icon-info-sign icon-large"></i>
+						<!-- ELSEIF topicrow.S_POST_ANNOUNCE -->
+							<i class="icon-info-sign icon-large"></i>
+						<!-- ELSEIF topicrow.S_POST_STICKY -->
+							<i class="icon-pushpin"></i>
+						<!-- ELSEIF topicrow.S_TOPIC_MOVED -->
+							<i class="icon-share"></i>
+						<!-- ELSEIF topicrow.S_HAS_POLL -->
+							<i class="icon-comment-alt"></i>
+						<!-- ELSE -->
+							<i class="icon-file-alt"></i>
+						<!-- ENDIF --> 
+					</a></span>
+				</div>
+				<div class="pull-right">
+					<div class="btn-group">
+						<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
+						<a href="{topicrow.U_MCP_QUEUE}" class="btn btn-warning btn-mini"><i class="icon-warning-sign"></i></a>
+						<!-- ENDIF -->
+						<!-- IF topicrow.S_TOPIC_REPORTED -->
+						<a href="{topicrow.U_MCP_REPORT}" class="btn btn-warning btn-mini"><i class="icon-warning-sign"></i></a>
+						<!-- ENDIF -->
+						<!-- IF topicrow.ATTACH_ICON_IMG -->
+						<a href="#" class="btn btn-mini disabled"><i class="icon-paper-clip"></i></a>
+						<!-- ENDIF -->
+						<!-- IF topicrow.PAGINATION -->{topicrow.PAGINATION}<!-- ENDIF -->
+						<!-- IF topicrow.S_UNREAD_TOPIC -->
+							<a class="btn btn-mini btn-info" href="{topicrow.U_NEWEST_POST}"><i class="icon-angle-right"></i></a>
+						<!-- ENDIF -->
+						<!-- IF not S_IS_BOT -->
+							<a class="tooltip-link btn btn-mini btn-info" href="{topicrow.U_LAST_POST}"  title="{L_LAST_POST}"><i class="icon-double-angle-right"></i></a>
+						<!-- ENDIF -->						
+					</div>
+				</div>
+				<a class="bleu" href="{topicrow.U_VIEW_TOPIC}" class="topictitle"><strong>{topicrow.TOPIC_TITLE}</strong></a><br/>					
+			 	<small>{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</small>
+			<!-- ENDIF -->
+			</td>
+			<td class=" hidden-phone hidden-tablet">
+				<small>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}						
+				<br />{topicrow.LAST_POST_TIME}</small>
+			</td>
+			<td>
+				<label class="checkbox"><input type="checkbox" name="t[{topicrow.TOPIC_ID}]" id="t{topicrow.TOPIC_ID}" />{L_UNWATCH_MARKED}</label>
+			</td>
+		</tr>
+	<!-- END topicrow -->
+		</tbody>
+	</table>
+	<div class="text-right">	
+		<!-- INCLUDE pagination.html -->
+	</div>
+<!-- ELSE -->
+	<div class="alert alert-block">{L_NO_BOOKMARKS}</div>
+<!-- ENDIF -->
+
+<!-- ENDIF -->
+
+<!-- IF .topicrow and not S_NO_DISPLAY_BOOKMARKS -->
+	<fieldset class="form-actions">		
+		<input type="submit" name="unbookmark" value="{L_REMOVE_BOOKMARK_MARKED}" class="btn btn-primary" />
+		<div class="btn-group">
+			<a class="btn visible-desktop" href="#" onclick="$(':checkbox','#ucp').prop('checked',true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
+			<a class="btn visible-desktop" href="#" onclick="$(':checkbox','#ucp').removeAttr('checked'); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+		</div>
+		{S_FORM_TOKEN}
+	</fieldset>
+<!-- ENDIF -->
+</form>
+
+<!-- INCLUDE ucp_footer.html -->

@@ -1,0 +1,67 @@
+<div class="tab-pane fade" id="poll">
+
+	<!-- IF S_SHOW_POLL_BOX -->
+	<p>{L_ADD_POLL_EXPLAIN}</p>
+	<!-- ENDIF -->
+
+	<fieldset>
+	<!-- IF S_SHOW_POLL_BOX -->
+		<!-- IF S_POLL_DELETE -->
+			<div class="control-group">
+				<label class="control-label" for="poll_delete">{L_POLL_DELETE} </label>
+				<div class="controls">
+					<input type="checkbox" name="poll_delete" id="poll_delete"<!-- IF S_POLL_DELETE_CHECKED --> checked="checked"<!-- ENDIF --> />
+				</div>
+			</div>
+		<!-- ENDIF -->
+		<div class="control-group">
+			<label class="control-label" for="poll_title">{L_POLL_QUESTION} </label>
+			<div class="controls">
+				<input type="text" name="poll_title" id="poll_title" maxlength="255" value="{POLL_TITLE}" class="input-block-level" />
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="poll_option_text">{L_POLL_OPTIONS} </label>
+			<div class="controls">
+				<textarea name="poll_option_text" id="poll_option_text" rows="5" cols="35" class="input-block-level">{POLL_OPTIONS}</textarea>
+			</div>
+		</div>
+
+		<hr class="dashed" />
+
+		<div class="control-group">
+			<label class="control-label" for="poll_max_options">{L_POLL_MAX_OPTIONS} </label>
+			<div class="controls">
+				<input type="text" name="poll_max_options" id="poll_max_options" size="3" maxlength="3" value="{POLL_MAX_OPTIONS}" class="inputbox autowidth" />
+				<span class="form-explications">{L_POLL_MAX_OPTIONS_EXPLAIN}</span>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="poll_length">{L_POLL_FOR} </label>
+			<div class="controls">
+				<input type="text" name="poll_length" id="poll_length" size="3" maxlength="3" value="{POLL_LENGTH}" class="inputbox autowidth" /> {L_DAYS}
+				<span class="form-explications">{L_POLL_FOR_EXPLAIN}</span>
+			</div>
+		</div>
+		<!-- IF S_POLL_VOTE_CHANGE -->
+			<hr class="dashed" />
+			
+			<div class="control-group">
+				<label class="control-label" for="poll_vote_change">{L_POLL_VOTE_CHANGE} </label>
+				<div class="controls">
+					<label for="poll_vote_change"><input type="checkbox" id="poll_vote_change" name="poll_vote_change"{VOTE_CHANGE_CHECKED} /> {L_POLL_VOTE_CHANGE_EXPLAIN}</label>
+				</div>
+			</div>
+		<!-- ENDIF -->
+
+	<!-- ELSEIF S_POLL_DELETE -->
+		<div class="control-group">
+			<label class="control-label" for="poll_delete">{L_POLL_DELETE} </label>
+			<div class="controls">
+				<label class="checkbox" for="poll_delete"><input type="checkbox" name="poll_delete" id="poll_delete"<!-- IF S_POLL_DELETE_CHECKED --> checked="checked"<!-- ENDIF --> /></label>
+			</div>
+		</div>
+	<!-- ENDIF -->
+	</fieldset>
+
+</div>

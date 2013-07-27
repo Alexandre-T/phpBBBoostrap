@@ -1,0 +1,31 @@
+<!-- INCLUDE overall_header.html -->
+
+
+<form action="{S_PROFILE_ACTION}" method="post" id="resend"  class="form form-horizontal">
+
+	<h2>{L_UCP_RESEND}</h2>
+
+	<fieldset>
+		<div class="control-group">
+			<label class="control-label" or="username">{L_USERNAME}</label>
+			<div class="controls">
+				<input class="inputbox narrow" type="text" name="username" id="username"/>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="email">{L_EMAIL_ADDRESS}</label>
+			<div class="controls">
+				<input class="inputbox narrow" type="text" name="email" id="email" maxlength="100" />
+				<span class="help-block">{L_EMAIL_REMIND}</span>
+			</div>
+		</div >
+	</fieldset>
+	<fieldset class="form-actions">
+		{S_HIDDEN_FIELDS}{S_FORM_TOKEN}
+		<input type="submit" name="submit" id="submit" class="btn btn-primary" value="{L_SUBMIT}" tabindex="2" />
+		<input type="reset" value="{L_RESET}" name="reset" class="btn" />
+	</fieldset>
+
+</form>
+
+<!-- INCLUDE overall_footer.html -->

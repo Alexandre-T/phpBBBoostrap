@@ -1,0 +1,163 @@
+<!-- INCLUDE ucp_header.html -->
+
+<form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE} class="form form-horizontal form-large">
+
+<h3><i class="icon-cogs"></i> {L_TITLE}</h3>
+
+<fieldset>
+	<!-- IF ERROR --><p class="alert alert-error alert-block">{ERROR}</p><!-- ENDIF -->
+	<div class="control-group">
+		<span class="control-label">{L_SHOW_EMAIL}</span>
+		<div class="controls">
+			<label for="viewemail1" class="radio inline">
+				<input type="radio" name="viewemail" id="viewemail1" value="1" <!-- IF S_VIEW_EMAIL --> checked="checked"<!-- ENDIF --> />
+				{L_YES}
+			</label>
+			<label for="viewemail0" class="radio inline">
+				<input type="radio" name="viewemail" id="viewemail0" value="0"<!-- IF not S_VIEW_EMAIL --> checked="checked"<!-- ENDIF --> />
+				{L_NO}
+			</label>
+		</div>
+	</div>
+	
+	<div class="control-group">
+		<span class="control-label">{L_ADMIN_EMAIL}</span>
+		<div class="controls">
+			<label for="massemail1" class="radio inline">
+				<input type="radio" name="massemail" id="massemail1" value="1"<!-- IF S_MASS_EMAIL --> checked="checked"<!-- ENDIF --> /> 
+				{L_YES}
+			</label> 
+			<label for="massemail0" class="radio inline">
+				<input type="radio" name="massemail" id="massemail0" value="0"<!-- IF not S_MASS_EMAIL --> checked="checked"<!-- ENDIF --> /> 
+				{L_NO}
+			</label>
+		</div>
+	</div>
+	<div class="control-group">
+		<span class="control-label">{L_ALLOW_PM}</span>
+		<div class="controls">
+			<label for="allowpm1" class="radio inline"><input type="radio" name="allowpm" id="allowpm1" value="1"<!-- IF S_ALLOW_PM --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+			<label for="allowpm0" class="radio inline"><input type="radio" name="allowpm" id="allowpm0" value="0"<!-- IF not S_ALLOW_PM --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			<span class="help-block"><em>{L_ALLOW_PM_EXPLAIN}</em></span>
+		</div>
+	</div>
+	<!-- IF S_CAN_HIDE_ONLINE -->
+		<div class="control-group">
+			<span class="control-label">{L_HIDE_ONLINE}</span>
+			<div class="controls">
+				<label for="hideonline1" class="radio inline"><input type="radio" name="hideonline" id="hideonline1" value="1"<!-- IF S_HIDE_ONLINE --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+				<label for="hideonline0" class="radio inline"><input type="radio" name="hideonline" id="hideonline0" value="0"<!-- IF not S_HIDE_ONLINE --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+				<span class="help-inline"><em>{L_HIDE_ONLINE_EXPLAIN}</em></span>
+			</div>
+		</div>
+	<!-- ENDIF -->		
+	<!-- IF S_SELECT_NOTIFY -->
+		<div class="control-group">
+			<span class="control-label">{L_NOTIFY_METHOD}</span>
+			<div class="controls">
+				<label for="notifymethod0" class="radio inline"><input type="radio" name="notifymethod" id="notifymethod0" value="0"<!-- IF S_NOTIFY_EMAIL --> checked="checked"<!-- ENDIF --> /> {L_NOTIFY_METHOD_EMAIL}</label> 
+				<label for="notifymethod1" class="radio inline"><input type="radio" name="notifymethod" id="notifymethod1" value="1"<!-- IF S_NOTIFY_IM --> checked="checked"<!-- ENDIF --> /> {L_NOTIFY_METHOD_IM}</label> 
+				<label for="notifymethod2" class="radio inline"><input type="radio" name="notifymethod" id="notifymethod2" value="2"<!-- IF S_NOTIFY_BOTH --> checked="checked"<!-- ENDIF --> /> {L_NOTIFY_METHOD_BOTH}</label>
+			</div>
+		</div>
+	<!-- ENDIF -->
+	<div class="control-group">
+		<span class="control-label">{L_NOTIFY_ON_PM}</span>
+		<div class="controls">
+			<label for="notifypm1" class="radio inline"><input type="radio" name="notifypm" id="notifypm1" value="1"<!-- IF S_NOTIFY_PM --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+			<label for="notifypm0" class="radio inline"><input type="radio" name="notifypm" id="notifypm0" value="0"<!-- IF not S_NOTIFY_PM --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+		</div>
+	</div>
+	<div class="control-group">
+		<span class="control-label">{L_POPUP_ON_PM}</span>
+		<div class="controls">
+			<label for="popuppm1" class="radio inline"><input type="radio" name="popuppm" id="popuppm1" value="1"<!-- IF S_POPUP_PM --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+			<label for="popuppm0" class="radio inline"><input type="radio" name="popuppm" id="popuppm0" value="0"<!-- IF not S_POPUP_PM --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="lang">{L_BOARD_LANGUAGE}</label>
+		<div class="controls">
+			<select name="lang" id="lang">{S_LANG_OPTIONS}</select>
+		</div>
+	</div>
+	<!-- IF S_STYLE_OPTIONS -->
+	<div class="control-group">
+		<label class="control-label" for="style">{L_BOARD_STYLE}</label>
+		<div class="controls">
+			<select name="style" id="style">{S_STYLE_OPTIONS}</select>
+		</div>
+	</div>
+	<!-- ENDIF -->
+	<div class="control-group">
+		<label class="control-label"  for="timezone">{L_BOARD_TIMEZONE}</label>
+		<div class="controls">
+			<select name="tz" id="timezone" class="autowidth">{S_TZ_OPTIONS}</select>
+		</div>
+	</div>
+	<div class="control-group">
+		<span class="control-label"  for="dst1">{L_BOARD_DST}</span>
+		<div class="controls">
+			<label class="radio inline" for="dst1"><input type="radio" name="dst" id="dst1" value="1"<!-- IF S_DST --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+			<label class="radio inline" for="dst0"><input type="radio" name="dst" id="dst0" value="0"<!-- IF not S_DST --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="dateformat">{L_BOARD_DATE_FORMAT}</label>
+		<div class="controls">
+			<select name="dateoptions" id="dateoptions" onchange="if(this.value=='custom'){dE('custom_date',1);}else{dE('custom_date',-1);} if (this.value == 'custom') { document.getElementById('dateformat').value = default_dateformat; } else { document.getElementById('dateformat').value = this.value; }">
+				{S_DATEFORMAT_OPTIONS}
+			</select>
+			<span id="custom_date" style="display:none;"><input type="text" name="dateformat" id="dateformat" value="{DATE_FORMAT}" maxlength="30" class="inputbox narrow" style="margin-top: 3px;" /></span>
+			<span class="help-block">
+				<em>{L_BOARD_DATE_FORMAT_EXPLAIN}</em><br/>				
+			</span>
+		</div>		
+	</div>
+	</fieldset>
+
+	<fieldset class="form-actions">
+		{S_HIDDEN_FIELDS}
+		<input type="reset" value="{L_RESET}" name="reset" class="btn" />&nbsp; 
+		<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
+		{S_FORM_TOKEN}
+	</fieldset>
+</form>
+
+<script type="text/javascript">
+// <![CDATA[
+	var date_format = '{A_DATE_FORMAT}';
+	var default_dateformat = '{A_DEFAULT_DATEFORMAT}';
+
+	function customDates()
+	{
+		var e = document.getElementById('dateoptions');
+	
+		e.selectedIndex = e.length - 1;
+	
+		// Loop and match date_format in menu
+		for (var i = 0; i < e.length; i++)
+		{
+			if (e.options[i].value == date_format)
+			{
+				e.selectedIndex = i;
+				break;
+			}
+		}
+	
+		// Show/hide custom field
+		if (e.selectedIndex == e.length - 1)
+		{
+			dE('custom_date',1);
+		}
+		else
+		{
+			dE('custom_date',-1);
+		}
+	}
+
+	customDates();
+// ]]>
+</script>
+
+<!-- INCLUDE ucp_footer.html -->

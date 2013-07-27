@@ -1,0 +1,44 @@
+<!-- INCLUDE overall_header.html -->
+<section>
+<h2 class="majeur">{L_FAQ_TITLE}</h2>
+
+<div id="faqlinks">
+	<div class="row-fluid">
+		<div class="span6">
+		<!-- BEGIN faq_block -->
+			<!-- IF faq_block.SWITCH_COLUMN or (SWITCH_COLUMN_MANUALLY and faq_block.S_ROW_COUNT == 4) -->
+				</div>
+				<div class="span6">
+			<!-- ENDIF -->
+	
+			<dl class="faq">
+				<dt><strong>{faq_block.BLOCK_TITLE}</strong></dt>
+				<!-- BEGIN faq_row -->
+					<dd><a href="#f{faq_block.S_ROW_COUNT}r{faq_block.faq_row.S_ROW_COUNT}">{faq_block.faq_row.FAQ_QUESTION}</a></dd>
+				<!-- END faq_row -->
+			</dl>
+		<!-- END faq_block -->
+		</div>
+	</div>
+</div>
+
+<!-- BEGIN faq_block -->
+	<div class="row-fluid <!-- IF faq_block.S_ROW_COUNT is odd --> bg1 <!-- ELSE --> bg2 <!-- ENDIF -->">
+		<div>
+			<h3>{faq_block.BLOCK_TITLE}</h3>
+			<!-- BEGIN faq_row -->
+				<div class="pull-right"><a class="btn btn-mini" href="#faqlinks" class="top2"><i class="icon-double-angle-up"></i></a></div>
+				<h4 id="f{faq_block.S_ROW_COUNT}r{faq_block.faq_row.S_ROW_COUNT}">{faq_block.faq_row.FAQ_QUESTION}</h4>
+				<p class="text-justify">
+					{faq_block.faq_row.FAQ_ANSWER}
+				</p>
+				<!-- IF not faq_block.faq_row.S_LAST_ROW --><hr class="dashed" /><!-- ENDIF -->
+			<!-- END faq_row -->
+		</div>
+	</div>
+<!-- END faq_block -->
+<div class="text-right">
+	<!-- INCLUDE jumpbox.html -->
+</div>
+</section>
+<!-- INCLUDE overall_footer.html -->

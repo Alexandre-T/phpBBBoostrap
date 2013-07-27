@@ -1,0 +1,57 @@
+<!-- INCLUDE overall_header.html -->
+<!-- INCLUDE forumlist_body.html -->
+<!-- IF ! S_USER_LOGGED_IN and not S_IS_BOT -->
+	<hr/>
+	<form method="post" action="{S_LOGIN_ACTION}" class="form-inline">
+	<h4><a href="{U_LOGIN_LOGOUT}"><i class="icon-signin"></i> {L_LOGIN_LOGOUT}</a><!-- IF S_REGISTER_ENABLED -->&nbsp; &bull; &nbsp;<a href="{U_REGISTER}"><i class="icon-pencil"></i> {L_REGISTER}</a><!-- ENDIF --></h4>
+	<div class="controls-row">
+		<span class="input-prepend">
+	  		<span class="add-on"><i class="icon-user"></i></span>
+	  		<input type="text" name="username" id="username" size="10" class="input-small" title="{L_USERNAME}" placeholder="{L_USERNAME}" />
+	  	</span>
+		<span class="input-prepend">
+	  		<span class="add-on"><i class="icon-key"></i></span>
+			<input type="password" name="password" id="password" size="10" class="input-small" title="{L_PASSWORD}" placeholder="{L_PASSWORD}"/>
+	  	</span>
+		<!-- IF S_AUTOLOGIN_ENABLED -->		
+		<!-- ENDIF -->
+				<button type="submit" name="login" value="{L_LOGIN}" class="btn btn-primary"><i class="icon-signin"></i>&nbsp;{L_LOGIN}</button>
+	</div>
+	<div class="controls-row">
+		<label class="checkbox" for="autologin"><input type="checkbox" name="autologin" id="autologin" />&nbsp;<small><em>{L_LOG_ME_IN}</em></small></label>
+		{S_LOGIN_REDIRECT}
+	</div>
+	</form>
+<!-- ENDIF -->
+<hr/>
+<div class="row-fluid">
+	<!-- IF S_DISPLAY_ONLINE_LIST and S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST and NEWEST_USER -->
+	<!-- DEFINE $SPAN = 'span4' -->
+	<!-- ELSEIF S_DISPLAY_ONLINE_LIST and NEWEST_USER or S_DISPLAY_ONLINE_LIST and S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST or S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST and NEWEST_USER -->
+	<!-- DEFINE $SPAN = 'span6' -->
+	<!-- ELSE -->
+	<!-- DEFINE $SPAN = '' -->
+	<!-- ENDIF -->	
+	<!-- IF S_DISPLAY_ONLINE_LIST -->
+		<div class="{$SPAN}">
+			<h4><!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}"><i class="icon-map-marker"></i> {L_WHO_IS_ONLINE}</a><!-- ELSE --><i class="icon-map-marker"></i> {L_WHO_IS_ONLINE}<!-- ENDIF --></h4>
+			<p>{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br />{RECORD_USERS}<br /> <br />{LOGGED_IN_USER_LIST}
+			<!-- IF LEGEND --><br /><em>{L_LEGEND}: {LEGEND}</em><!-- ENDIF --></p>
+		</div>
+	<!-- ENDIF -->
+	
+	<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->
+		<div class="{$SPAN}">
+			<h4><i class="icon-bell"></i> {L_BIRTHDAYS}</h4>
+			<p><!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <strong>{BIRTHDAY_LIST}</strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF --></p>
+		</div>
+	<!-- ENDIF -->
+	
+	<!-- IF NEWEST_USER -->
+		<div class="{$SPAN}">
+			<h4><i class="icon-cogs"></i> {L_STATISTICS}</h4>
+			<p>{TOTAL_POSTS} &bull; {TOTAL_TOPICS} &bull; {TOTAL_USERS} <br/><em>{NEWEST_USER}</em></p>
+		</div>
+	<!-- ENDIF -->
+</div>
+<!-- INCLUDE overall_footer.html -->

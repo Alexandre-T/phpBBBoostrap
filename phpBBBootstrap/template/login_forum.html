@@ -1,0 +1,38 @@
+<!-- INCLUDE overall_header.html -->
+<section>
+<h3 >{L_LOGIN} {FORUM_NAME}</h3>
+
+<form id="login_forum" method="post" action="{S_LOGIN_ACTION}" class="form-horizontal">
+{S_FORM_TOKEN}
+<div class="panel">
+	<p>{L_LOGIN_FORUM}</p>
+	<fieldset>
+	<!-- IF LOGIN_ERROR -->
+		<div class="alert alert-danger">
+			{LOGIN_ERROR}
+		</div>
+	<!-- ENDIF -->
+	<div class="control-group">
+		<label class="control-label" for="password">{L_PASSWORD}</label>
+		<div class="controls">
+			<div class="input-prepend">
+				<span class="add-on"><i class="icon-key"></i></span>
+				<input type="password" name="password" id="password" size="25" tabindex="1" />
+			</div>
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			{S_HIDDEN_FIELDS}
+			<input type="submit" name="login" id="login" class="btn btn-primary" value="{L_LOGIN}" tabindex="2" />
+		</div>
+	</div>
+	{S_LOGIN_REDIRECT}
+	</fieldset>
+</div>
+</form>
+<div class="text-right">
+	<!-- INCLUDE jumpbox.html -->
+</div>
+</section>
+<!-- INCLUDE overall_footer.html -->

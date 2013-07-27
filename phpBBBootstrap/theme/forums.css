@@ -1,0 +1,190 @@
+@CHARSET "UTF-8";
+/* becauseof navbar-top */
+body{
+	padding-top:40px;
+}
+
+/* Change the docs' brand */
+body > .navbar .brand {
+  padding-right: 0;
+  padding-left: 0;
+  margin-left: 20px;
+  float: right;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 10px rgba(255,255,255,.75);
+  -webkit-transition: all .2s linear;
+     -moz-transition: all .2s linear;
+          transition: all .2s linear;
+}
+body > .navbar .brand:hover {
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
+}
+
+
+/* Base class
+------------------------- */
+header .hero-unit{
+	border-radius:0;
+}
+header .hero-unit, header .page-header{
+	margin-bottom:0;
+	padding-bottom:20px;
+}
+footer{
+	padding-top:20px;
+	border-top: 1px solid #eee;
+	margin-top:-20px;
+}
+
+td.topics,td.posts,th.topics,th.posts{
+	text-align:center;
+}
+td.lastpost,th.lastpost{
+}
+div.hr,h1.hr,h2.hr,h3.hr{
+	border-bottom:thin solid #e5e5e5;
+}
+.intoh2{
+	margin-top:15px;
+}
+
+.forum-topic-icon{
+	margin-left:12px;margin-top:6px;margin-right:15px;
+}
+
+ul.dropdown-menu li span{
+	margin-left:20px;
+	margin-right:20px;
+}
+
+table.table-forum-topic{
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+p.text-justify{
+	text-align: justify;
+}
+
+.text-bottom{
+	vertical-align: sub;
+}
+.text-top{
+	vertical-align: super;
+}
+table td.text-middle{
+	vertical-align: middle;
+}
+table td.text-center{
+	text-align: center;
+}
+div.forum-content{
+	/* min-height:280px; */
+}
+hr.small{
+	margin-top:2px;
+	margin-bottom:2px;
+}
+.forum-topic-subject{
+	margin-bottom:0;
+}
+.forum-author{
+	margin-top:0;
+}
+.page-sep{
+	display: none;
+}
+.form-horizontal.form-large .control-label{
+	width:280px;
+}
+.form-horizontal.form-large div.controls{
+	margin-left:300px;
+}
+span.help-block{
+	font-style: italic;
+}
+dd.pm_marked_colour,dd.pm_replied_colour,dd.pm_friend_colour,dd.pm_foe_colour{
+	padding-left:10px;
+}
+dd.pm_marked_colour,tr.pm_marked_colour td:first-child{
+	border-left :solid medium #b94a48;
+}
+dd.pm_replied_colour,tr.pm_replied_colour td:first-child{
+	border-left :solid medium #808080;
+}
+dd.pm_friend_colour, tr.pm_friend_colour td:first-child{
+	border-left :solid medium #468847;
+}
+dd.pm_foe_colour, tr.pm_foe_colour td:first-child{
+    border-left :solid medium #a47e3c;	
+}
+
+
+/* Responsive
+-------------------------------------------------- */
+
+/* Desktop large
+	 Au dessus de 1200
+------------------------- */
+@media (min-width: 1200px) {
+}
+
+/* Desktop entre 980 et 1200
+------------------------- */
+@media (min-width: 980px) and (max-width: 1199px) {
+}
+
+/* Tablet to desktop
+------------------------- */
+@media (min-width: 768px) and (max-width: 979px) {
+	/* Remove any padding from the body */
+	body {
+		padding-top: 0;
+	}
+	/* Widen masthead and social buttons to fill body padding */
+	header .hero-unit {
+		margin-top: -20px; /* Offset bottom margin on .navbar */
+	}
+	/* Downsize the jumbotrons */
+	header .hero-unit h1 {
+		font-size: 50px;
+	}
+}
+
+/* Tablet Only
+------------------------- */
+@media (min-width: 481px) and (max-width: 767px) {
+	/* Remove any padding from the body */
+	body {
+		padding-top: 0;
+	}
+
+	/* Widen masthead and social buttons to fill body padding */
+	header .hero-unit {
+		padding: 40px 20px 30px 40px;
+		margin:	 -20px -20px 0 -20px; /* Offset bottom margin on .navbar */
+	}
+	/* Downsize the jumbotrons */
+	header .hero-unit h1 {
+		font-size: 50px;
+	}
+}
+
+/* Landscape phones and smaller
+------------------------- */
+@media (max-width: 480px) {
+	/* Remove padding above jumbotron */
+	body {
+		padding-top: 0;
+	}
+	header .hero-unit {
+		padding: 40px 20px 30px 40px;
+		margin:	 -20px -20px 0 -20px; /* Offset bottom margin on .navbar */
+	}
+	/* Downsize the jumbotrons */
+	header .hero-unit h1 {
+		font-size: 36px;
+	}
+}
