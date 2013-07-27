@@ -1,4 +1,4 @@
 phpBBBoostrap
 =============
 
-phpBB style based on Bootstrap Template
+phpBB style based on Bootstrap Template.
