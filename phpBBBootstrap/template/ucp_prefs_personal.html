@@ -75,13 +75,15 @@
 			<label for="popuppm0" class="radio inline"><input type="radio" name="popuppm" id="popuppm0" value="0"<!-- IF not S_POPUP_PM --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
 		</div>
 	</div>
+	<!-- IF S_MORE_LANGUAGES -->
 	<div class="control-group">
 		<label class="control-label" for="lang">{L_BOARD_LANGUAGE}</label>
 		<div class="controls">
 			<select name="lang" id="lang">{S_LANG_OPTIONS}</select>
 		</div>
 	</div>
-	<!-- IF S_STYLE_OPTIONS -->
+	<!-- ENDIF -->
+	<!-- IF S_STYLE_OPTIONS and S_MORE_STYLES -->
 	<div class="control-group">
 		<label class="control-label" for="style">{L_BOARD_STYLE}</label>
 		<div class="controls">

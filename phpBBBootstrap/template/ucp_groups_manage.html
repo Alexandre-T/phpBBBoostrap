@@ -6,15 +6,15 @@
 
 	<p class="text-justify">{L_GROUPS_EXPLAIN}</p>
 
-	<!-- IF S_EDIT -->
-		<h3><i class="icon-info"></i> {L_GROUP_DETAILS}</h3>
-	
-		<!-- IF S_ERROR -->
+	<!-- IF S_ERROR -->
 		<div class="alert alert-error">
 			<h3>{L_WARNING}</h3>
 			<p>{ERROR_MSG}</p>
 		</div>
-		<!-- ENDIF -->
+	<!-- ENDIF -->
+		
+	<!-- IF S_EDIT -->
+		<h3><i class="icon-info"></i> {L_GROUP_DETAILS}</h3>
 	
 		<fieldset>
 		
@@ -62,7 +62,7 @@
 		<div class="controls">
 			<div class="input-append input-prepend">
 				<span class="add-on" style="background-color: #{GROUP_COLOUR};" id="example">&nbsp;&nbsp;&nbsp;</span>
-				<input name="group_colour" type="text" id="group_colour" value="{GROUP_COLOUR}" size="7" maxlength="7"/>
+				<input name="group_colour" type="text" id="group_colour" value="{GROUP_COLOUR}" size="6" maxlength="6"/>
 				<a class="btn tooltip-link " href="{U_SWATCH}" onclick="popup(this.href, 636, 150, '_swatch'); return false;" title="{L_COLOUR_SWATCH}"><i class="icon-beaker"></i></a>
 			</div>
 			<span class="help-block">{L_GROUP_COLOR_EXPLAIN}</span>
