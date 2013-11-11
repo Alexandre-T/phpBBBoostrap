@@ -60,8 +60,15 @@
 					<td class="hidden-phone topics"><span class="badge">{forumrow.TOPICS}</span> <dfn class="hidden">{L_TOPICS}</dfn></td>
 					<td class="hidden-phone posts"><span class="badge">{forumrow.POSTS}</span> <dfn class="hidden">{L_POSTS}</dfn></td>
 					<td class="hidden-phone lastpost">
-						<!-- IF forumrow.LAST_POST_TIME --><i class="icon-reply"></i><dfn class="hidden">{L_LAST_POST}</dfn> {L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}
-						<!-- IF not S_IS_BOT --><a href="{forumrow.U_LAST_POST}">{LAST_POST_IMG}</a> <!-- ENDIF --><br />{forumrow.LAST_POST_TIME}<!-- ELSE --><span class="label">{L_NO_POSTS}</span><br />&nbsp;<!-- ENDIF -->
+						<!-- IF forumrow.LAST_POST_TIME and not S_IS_BOT -->
+							<a class="tooltip-link" href="{forumrow.U_LAST_POST}" title="{L_LAST_POST}"><i class="icon-mail-forward"></i><dfn class="hidden">{L_LAST_POST}</dfn></a>
+						<!-- ENDIF -->
+						<!-- IF forumrow.LAST_POST_TIME -->
+							{L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}
+							<br />{forumrow.LAST_POST_TIME}
+						<!-- ELSE -->
+							<span class="label">{L_NO_POSTS}</span><br />&nbsp;
+						<!-- ENDIF -->
 					</td>
 				<!-- ENDIF -->
 			</tr>
