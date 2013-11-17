@@ -99,7 +99,7 @@
 	<!-- IF S_MARK_OPTIONS --><label for="mark_option"><select name="mark_option" id="mark_option">{S_MARK_OPTIONS}</select></label>&nbsp;<input class="btn btn-default" type="submit" name="submit_mark" value="{L_GO}" /><!-- ENDIF -->
 	<!-- IF not S_UNREAD and not S_SPECIAL_FOLDER -->
 		<label for="dest_folder"><!-- IF S_VIEW_MESSAGE -->{L_MOVE_TO_FOLDER} <!-- ELSE -->{L_MOVE_MARKED_TO_FOLDER}<!-- ENDIF --></label>
-			<div class="input-append">
+			<div class="input-group">
 				<select name="dest_folder" id="dest_folder">{S_TO_FOLDER_OPTIONS}</select> 
 				<input class="btn btn-default" type="submit" name="move_pm" value="{L_GO}" />
 			</div>

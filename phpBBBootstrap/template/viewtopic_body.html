@@ -8,7 +8,7 @@
 			<!-- IF S_DISPLAY_SEARCHBOX -->
 			<form method="get" class="form-horizontal" id="topic-search" action="{S_SEARCHBOX_ACTION}">
 				{S_SEARCH_LOCAL_HIDDEN_FIELDS}				
-				<div class="input-append">
+				<div class="input-group">
   					<input class="input-medium" type="text" name="keywords" placeholder="{L_SEARCH_TOPIC}"/>
 					<button class="btn btn-default" type="submit" value="{L_SEARCH}"><i class="icon-search"></i> {L_SEARCH}</button>
 				</div>
@@ -284,7 +284,7 @@
 	<!-- INCLUDE jumpbox.html -->
 <!-- IF S_TOPIC_MOD -->
 	<form method="post" action="{S_MOD_ACTION}" class="form form-inline ">
-		<div class="input-append">	
+		<div class="input-group">	
 			<label for="quick-mod-select"><small>{L_QUICK_MOD}</small> {S_TOPIC_MOD}</label><input type="submit" value="{L_GO}" class="btn btn-default" />
 		</div>
 		{S_FORM_TOKEN}

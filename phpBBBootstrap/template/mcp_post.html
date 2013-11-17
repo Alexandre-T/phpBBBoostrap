@@ -117,12 +117,12 @@
 			<fieldset class="form-inline">
 				<label>{L_CHANGE_POSTER} </label>
 				<!-- IF S_USER_SELECT -->
-				<span class="input-append">
+				<span class="input-group">
 					<select name="u" class="col-md-2">{S_USER_SELECT}</select> 
 					<input type="submit" class="btn btn-primary" name="action[chgposter_ip]" value="{L_CONFIRM}" />
 				</span>
 				<!-- ENDIF -->
-				<span class="input-append">
+				<span class="input-group">
 					<input class="col-md-2" type="text" name="username" />
 					<a class="btn btn-default" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;" title="{L_FIND_USERNAME}"><i class="icon-search"></i></a>
 					<input type="submit" class="btn btn-primary" name="action[chgposter]" value="{L_CONFIRM}" />
@@ -136,7 +136,7 @@
 			<form method="post" id="mcp" action="{U_MCP_ACTION}" class="form-inline">
 				<fieldset>
 					<label>{L_MOD_OPTIONS}</label>
-					<span class="input-append">
+					<span class="input-group">
 						<select name="action" class="col-md-4">
 						<!-- IF S_CAN_LOCK_POST --><!-- IF S_POST_LOCKED --><option value="unlock_post">{L_UNLOCK_POST} [{L_UNLOCK_POST_EXPLAIN}]</option><!-- ELSE --><option value="lock_post">{L_LOCK_POST} [{L_LOCK_POST_EXPLAIN}]</option><!-- ENDIF --><!-- ENDIF -->
 						<!-- IF S_CAN_DELETE_POST --><option value="delete_post">{L_DELETE_POST}</option><!-- ENDIF -->

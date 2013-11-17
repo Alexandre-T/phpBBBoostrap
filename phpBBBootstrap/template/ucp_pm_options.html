@@ -30,7 +30,7 @@
 	<!-- IF S_CHECK_DEFINED -->
 		<label for="<!-- IF S_CHECK_SELECT -->check_option<!-- ENDIF -->">{L_IF}</label>
 		<!-- IF S_CHECK_SELECT -->
-			<span class="input-append">
+			<span class="input-group">
 				<select name="check_option" id="check_option">{S_CHECK_OPTIONS}</select><input type="submit" name="next" value="{L_NEXT_STEP}" class="btn btn-default" />
 			</span>
 		<!-- ELSE -->
@@ -41,7 +41,7 @@
 
 	<!-- IF S_RULE_DEFINED -->
 		<!-- IF S_RULE_SELECT -->
-		<span class="input-prepend input-append">
+		<span class="input-group">
 			<input type="submit" name="back[rule]" value="{L_PREVIOUS_STEP}" class="btn btn-default" />
 			<select name="rule_option" id="rule_option">{S_RULE_OPTIONS}</select>
 			<input type="submit" name="next" value="{L_NEXT_STEP}" class="btn btn-default" />
@@ -55,7 +55,7 @@
 	<!-- IF S_COND_DEFINED -->
 		<!-- IF S_COND_SELECT or COND_CURRENT -->
 			<!-- IF S_COND_SELECT -->
-				<span class="input-prepend input-append">
+				<span class="input-group">
 					<input type="submit" name="back[cond]" value="{L_PREVIOUS_STEP}" class="btn btn-default" />
 			<!-- ENDIF -->
 				<!-- IF S_COND_SELECT -->
@@ -87,7 +87,7 @@
 
 	<!-- IF S_ACTION_DEFINED -->
 		<!-- IF S_ACTION_SELECT -->
-			<span class="input-prepend input-append">
+			<span class="input-group">
 				<input type="submit" name="back[action]" value="{L_PREVIOUS_STEP}" class="btn btn-default" />
 				<select name="action_option" class="input-xlarge">{S_ACTION_OPTIONS}</select>
 				<input type="submit" name="add_rule" value="{L_ADD_RULE}" class="btn btn-default" />
@@ -110,7 +110,7 @@
 			<div class="form-group">
 				<label class="control-label" for="foldername">{L_ADD_FOLDER}</label>
 				<div class="controls">
-					<span class="input-append">
+					<span class="input-group">
 						<input type="text" class="inputbox medium" name="foldername" id="foldername" size="30" maxlength="30" />
 						<input class="btn btn-default" type="submit" name="addfolder" value="{L_ADD}" />
 					</span>
@@ -132,7 +132,7 @@
 			<div class="form-group">
 				<label class="control-label"for="new_folder_name">{L_NEW_FOLDER_NAME}</label>
 				<div class="controls">
-					<div class="input-append">
+					<div class="input-group">
 						<input type="text" class="inputbox tiny" name="new_folder_name" id="new_folder_name" maxlength="30" />
 						<input class="btn btn-default" type="submit" name="rename_folder" value="{L_RENAME}" />
 					</div>
@@ -145,7 +145,7 @@
 			<div class="form-group">
 				<label class="control-label" for="remove_folder_id">{L_REMOVE_FOLDER}</label>
 				<div class="controls">
-					<div class="input-append">
+					<div class="input-group">
 						<select name="remove_folder_id" id="remove_folder_id">{S_FOLDER_OPTIONS}</select>
 						<input class="btn btn-default" type="submit" name="remove_folder" value="{L_REMOVE}" />
 					</div>
