@@ -25,7 +25,7 @@
 		<fieldset class="form-actions">
 			<input type="hidden" name="export_option" value="CSV" />
 			<input class="btn btn-primary" type="submit" name="submit_export" value="{L_EXPORT_FOLDER}" />&nbsp;
-			<input class="btn" type="reset" value="Reset" name="reset" />&nbsp;
+			<input class="btn btn-default" type="reset" value="Reset" name="reset" />&nbsp;
 			{S_FORM_TOKEN}
 		</fieldset>
 	</form>
@@ -59,7 +59,7 @@
 					<td>
 						<!-- IF S_PM_ICONS -->
 						<span class="pull-left forum-topic-icon">
-							<span><a href="<!-- IF messagerow.S_PM_DELETED -->{messagerow.U_REMOVE_PM}<!-- ELSE -->{messagerow.U_VIEW_PM}<!-- ENDIF -->" class="tooltip-link btn <!-- IF messagerow.S_PM_DELETED --> btn-danger <!-- ELSEIF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ENDIF --> <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL --> btn-large <!-- ENDIF -->" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+							<span><a href="<!-- IF messagerow.S_PM_DELETED -->{messagerow.U_REMOVE_PM}<!-- ELSE -->{messagerow.U_VIEW_PM}<!-- ENDIF -->" class="btn <!-- IF messagerow.S_PM_DELETED --> btn-danger <!-- ELSEIF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL --> btn-large <!-- ENDIF --> tooltip-link" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
 								<!-- IF messagerow.S_PM_DELETED -->
 									<i class="icon-trash"></i>
 								<!-- ELSEIF topicrow.S_POST_STICKY -->
@@ -83,8 +83,8 @@
 							
 							<!-- IF messagerow.S_PM_REPORTED or messagerow.ATTACH_ICON_IMG -->
 								<span class="pull-right btn-group">
-								<!-- IF messagerow.S_PM_REPORTED --><a class="btn" href="{messagerow.U_MCP_REPORT}"><i class="icon-warning-sign"></i></a><!-- ENDIF --> 
-								<!-- IF messagerow.ATTACH_ICON_IMG --><span class="btn disabled"><i class="icon-paperclip"></i></span><!-- ENDIF -->
+								<!-- IF messagerow.S_PM_REPORTED --><a class="btn btn-default" href="{messagerow.U_MCP_REPORT}"><i class="icon-warning-sign"></i></a><!-- ENDIF --> 
+								<!-- IF messagerow.ATTACH_ICON_IMG --><span class="btn btn-default disabled"><i class="icon-paperclip"></i></span><!-- ENDIF -->
 								</span>
 							<!-- ENDIF -->
 							<!-- IF S_SHOW_RECIPIENTS -->
@@ -127,7 +127,7 @@
 		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
 		<label>{L_DISPLAY} {S_SELECT_SORT_DAYS}</label>
 		<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
-		<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn" /></label>
+		<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-default" /></label>
 		<input type="hidden" name="cur_folder_id" value="{CUR_FOLDER_ID}" />
 	</fieldset>
 
@@ -136,11 +136,11 @@
 	<fieldset class="form-actions">
 		<div class="input-append">
 			<select name="mark_option">{S_MARK_OPTIONS}{S_MOVE_MARKED_OPTIONS}</select>
-			<input class="btn" type="submit" name="submit_mark" value="{L_GO}" />
+			<input class="btn btn-default" type="submit" name="submit_mark" value="{L_GO}" />
 		</div>
 			<div class="btn-group">
-			<a class="btn visible-desktop" href="#" onclick="$(':checkbox','#viewfolder').prop('checked',true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
-			<a class="btn visible-desktop" href="#" onclick="$(':checkbox','#viewfolder').removeAttr('checked'); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+			<a class="btn btn-default visible-desktop" href="#" onclick="$(':checkbox','#viewfolder').prop('checked',true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
+			<a class="btn btn-default visible-desktop" href="#" onclick="$(':checkbox','#viewfolder').removeAttr('checked'); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
 		</div>
 		
 	</fieldset>
@@ -150,7 +150,7 @@
 		<div class="text-right">
 			<label for="export_option">{L_EXPORT_FOLDER}</label>
 			<div class="input-append">
-				<select name="export_option" id="export_option"><option value="CSV">{L_EXPORT_AS_CSV}</option><option value="CSV_EXCEL">{L_EXPORT_AS_CSV_EXCEL}</option><option value="XML">{L_EXPORT_AS_XML}</option></select> <input class="btn" type="submit" name="submit_export" value="{L_GO}" />
+				<select name="export_option" id="export_option"><option value="CSV">{L_EXPORT_AS_CSV}</option><option value="CSV_EXCEL">{L_EXPORT_AS_CSV_EXCEL}</option><option value="XML">{L_EXPORT_AS_XML}</option></select> <input class="btn btn-default" type="submit" name="submit_export" value="{L_GO}" />
 			</div>
 		</div>
 	</fieldset>

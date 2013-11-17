@@ -10,7 +10,7 @@
 				{S_SEARCH_LOCAL_HIDDEN_FIELDS}				
 				<div class="input-append">
   					<input class="input-medium" type="text" name="keywords" placeholder="{L_SEARCH_TOPIC}"/>
-					<button class="btn" type="submit" value="{L_SEARCH}"><i class="icon-search"></i> {L_SEARCH}</button>
+					<button class="btn btn-default" type="submit" value="{L_SEARCH}"><i class="icon-search"></i> {L_SEARCH}</button>
 				</div>
 			</form>
 			<!-- ENDIF -->
@@ -60,7 +60,7 @@
 					<!-- IF poll_option.POLL_OPTION_VOTED -->
 					<span class="btn btn-mini btn-success disabled" title="Votre vote"><i class="icon-ok-sign"></i></span>
 					<!-- ELSE -->
-					<span class="btn btn-mini disabled" title="Vous n'avez pas voté pour"><i class="icon-remove-sign"></i></span>
+					<span class="btn btn-mini btn-default disabled" title="Vous n'avez pas voté pour"><i class="icon-remove-sign"></i></span>
 					<!-- ENDIF -->
 				</div>
 				<div class="col-md-3 text-left  hidden-phone">
@@ -101,7 +101,7 @@
 				<button type="submit" class="btn btn-primary" name="update" value="{L_SUBMIT_VOTE}"><i class="icon-ok-sign"></i> {L_SUBMIT_VOTE}</button>
 				<!-- ENDIF -->
 				<!-- IF  not S_DISPLAY_RESULTS -->
-				<a href="{U_VIEW_RESULTS}" class="btn"><i class="icon-eye-open"></i> {L_VIEW_RESULTS}</a>
+				<a href="{U_VIEW_RESULTS}" class="btn btn-default"><i class="icon-eye-open"></i> {L_VIEW_RESULTS}</a>
 				<!-- ENDIF -->
 			</div>
 			</div>
@@ -140,14 +140,14 @@
 					<li class="divider"></li>
 					<li class="btn-group" >
 						 
-						<a class="btn <!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST -->btn-success<!-- ENDIF -->" data-toggle="dropdown" href="#">
+						<a class="btn <!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST -->btn-success<!-- ELSE -->btn-default<!-- ENDIF -->" data-toggle="dropdown" href="#">
 							<!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST -->
 								<i class="icon-signin"></i> {L_ONLINE}
 							<!-- ELSE -->
 								<i class="icon-signout"></i> {L_OFFLINE}
 							<!-- ENDIF -->
 						</a>
-						<a class="btn <!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST -->btn-success<!-- ENDIF --> dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span></a>
+						<a class="btn <!-- IF postrow.S_ONLINE and not postrow.S_IGNORE_POST -->btn-success<!-- ELSE -->btn-default<!-- ENDIF --> dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span></a>
 						<ul class="dropdown-menu text-left">
 							<!-- IF postrow.POSTER_POSTS != '' --><li><span><strong><i class="icon-comments-alt"></i> {L_POSTS} :</strong> {postrow.POSTER_POSTS}</span></li><!-- ENDIF -->
 							<!-- IF postrow.POSTER_JOINED --><li><span><strong><i class="icon-calendar"></i> {L_JOINED} :</strong> {postrow.POSTER_JOINED}</span></li><!-- ENDIF -->
@@ -199,12 +199,12 @@
 				<!-- IF not S_IS_BOT -->				
 				<!-- IF postrow.U_EDIT or postrow.U_DELETE or postrow.U_REPORT or postrow.U_WARN or postrow.U_INFO or postrow.U_QUOTE -->
 				<div class="btn-group pull-right" style="margin-top:10px;margin-right:10px;">
-					<!-- IF postrow.U_EDIT --><a href="{postrow.U_EDIT}" title="{L_EDIT_POST}" class="btn btn-mini tooltip-link"><i class="icon-pencil"></i> <span class="hidden">{L_EDIT}</span></a><!-- ENDIF -->
-					<!-- IF postrow.U_DELETE --><a href="{postrow.U_DELETE}" title="{L_DELETE_POST}" class="btn btn-mini tooltip-link "><i class="icon-remove"></i> <span class="hidden">{L_DELETE}</span></a><!-- ENDIF -->
+					<!-- IF postrow.U_EDIT --><a href="{postrow.U_EDIT}" title="{L_EDIT_POST}" class="btn btn-default btn-mini tooltip-link"><i class="icon-pencil"></i> <span class="hidden">{L_EDIT}</span></a><!-- ENDIF -->
+					<!-- IF postrow.U_DELETE --><a href="{postrow.U_DELETE}" title="{L_DELETE_POST}" class="btn btn-default btn-mini tooltip-link "><i class="icon-remove"></i> <span class="hidden">{L_DELETE}</span></a><!-- ENDIF -->
 					<!-- IF postrow.U_REPORT --><a href="{postrow.U_REPORT}" title="{L_REPORT_POST}" class="btn btn-mini btn-warning  tooltip-link"><i class="icon-share-alt"></i> <span class="hidden">{L_REPORT}</span></a><!-- ENDIF -->
 					<!-- IF postrow.U_WARN --><a href="{postrow.U_WARN}" title="{L_WARN_USER}" class="btn btn-mini btn-warning tooltip-link"><i class="icon-legal"></i> <span class="hidden">{L_WARN_USER}</span></a><!-- ENDIF -->
 					<!-- IF postrow.U_INFO --><a href="{postrow.U_INFO}" title="{L_INFORMATION}" class="btn btn-mini btn-warning tooltip-link"><i class="icon-info-sign"></i> <span class="hidden">{L_INFORMATION}</span></a><!-- ENDIF -->
-					<!-- IF postrow.U_QUOTE --><a href="{postrow.U_QUOTE}" title="{L_REPLY_WITH_QUOTE}" class="btn btn-mini tooltip-link"><i class="icon-quote-right"></i> <span class="hidden">{L_REPLY}</span></a><!-- ENDIF -->
+					<!-- IF postrow.U_QUOTE --><a href="{postrow.U_QUOTE}" title="{L_REPLY_WITH_QUOTE}" class="btn btn-default btn-mini tooltip-link"><i class="icon-quote-right"></i> <span class="hidden">{L_REPLY}</span></a><!-- ENDIF -->
 				</div>
 				<!-- ENDIF -->
 				<h4 class="forum-topic-subject" ><!-- IF postrow.POST_ICON_IMG --><img src="{T_ICONS_PATH}{postrow.POST_ICON_IMG}" width="{postrow.POST_ICON_IMG_WIDTH}" height="{postrow.POST_ICON_IMG_HEIGHT}" alt="Icone" /> <!-- ENDIF --><a class="bleu" href="{U_VIEW_TOPIC}#p{postrow.POST_ID}">{postrow.POST_SUBJECT}</a></h4>
@@ -255,13 +255,13 @@
 				<hr class="small"/>
 				<div id="sig{postrow.POST_ID}" class="forum-signature">
 				<div class="btn-group pull-right">
-					<a href="#top" class="btn btn-mini tooltip-link" title="{L_BACK_TO_TOP}"><i class="icon-double-angle-up"></i> </a>
+					<a href="#top" class="btn btn-default btn-mini tooltip-link" title="{L_BACK_TO_TOP}"><i class="icon-double-angle-up"></i> </a>
 				</div>
 				{postrow.SIGNATURE}
 				</div>
 				<!-- ELSE -->
 				<div class="btn-group pull-right">
-					<a href="#top" class="btn btn-mini tooltip-link" title="{L_BACK_TO_TOP}"><i class="icon-double-angle-up"></i> </a>
+					<a href="#top" class="btn btn-default btn-mini tooltip-link" title="{L_BACK_TO_TOP}"><i class="icon-double-angle-up"></i> </a>
 				</div>
 				
 				<!-- ENDIF -->
@@ -285,7 +285,7 @@
 <!-- IF S_TOPIC_MOD -->
 	<form method="post" action="{S_MOD_ACTION}" class="form form-inline ">
 		<div class="input-append">	
-			<label for="quick-mod-select"><small>{L_QUICK_MOD}</small> {S_TOPIC_MOD}</label><input type="submit" value="{L_GO}" class="btn" />
+			<label for="quick-mod-select"><small>{L_QUICK_MOD}</small> {S_TOPIC_MOD}</label><input type="submit" value="{L_GO}" class="btn btn-default" />
 		</div>
 		{S_FORM_TOKEN}
 	</form>

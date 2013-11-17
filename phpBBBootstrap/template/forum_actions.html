@@ -5,7 +5,7 @@
 				<!-- IF S_IS_LOCKED -->
 				<a class="btn btn-danger" href="{U_POST_NEW_TOPIC}"><i class="icon-lock"></i> {L_FORUM_LOCKED}</a>
 				<!-- ELSE -->
-				<a class="btn" href="{U_POST_NEW_TOPIC}"><i class="icon-file"></i> {L_POST_TOPIC}</a>
+				<a class="btn btn-default" href="{U_POST_NEW_TOPIC}"><i class="icon-file"></i> {L_POST_TOPIC}</a>
 				<!-- ENDIF -->
 			<!-- ENDIF -->
 		</div>
@@ -13,16 +13,16 @@
 			<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
 				<div class="btn-group {$ALTITUDE}">
 					<!-- IF S_VIEWTOPIC -->
-						<a href="{U_VIEW_FORUM}" class="btn btn-mini {S_CONTENT_FLOW_BEGIN}  tooltip-link" accesskey="r" title="{L_RETURN_TO} {FORUM_NAME}"><i class="icon-reply"></i></a>
+						<a href="{U_VIEW_FORUM}" class="btn btn-default btn-mini {S_CONTENT_FLOW_BEGIN}  tooltip-link" accesskey="r" title="{L_RETURN_TO} {FORUM_NAME}"><i class="icon-reply"></i></a>
 					<!-- ELSEIF S_VIEWFORUM -->
-						<a href="{U_INDEX}" class="btn btn-mini {S_CONTENT_FLOW_BEGIN} tooltip-link" title=" {L_RETURN_TO} {L_INDEX}" accesskey="r"><i class="icon-reply"></i></a>
+						<a href="{U_INDEX}" class="btn btn-default btn-mini {S_CONTENT_FLOW_BEGIN} tooltip-link" title=" {L_RETURN_TO} {L_INDEX}" accesskey="r"><i class="icon-reply"></i></a>
 					<!-- ELSEIF SEARCH_TOPIC -->
-						<a class="btn btn-mini  {S_CONTENT_FLOW_BEGIN} tooltip-link" href="{U_SEARCH_TOPIC}" accesskey="r">{L_RETURN_TO}: {SEARCH_TOPIC}</a>
+						<a class="btn btn-default btn-mini  {S_CONTENT_FLOW_BEGIN} tooltip-link" href="{U_SEARCH_TOPIC}" accesskey="r">{L_RETURN_TO}: {SEARCH_TOPIC}</a>
 					<!-- ELSEIF S_SEARCH_ACTION -->
-						<a class="btn btn-mini  {S_CONTENT_FLOW_BEGIN} tooltip-link" href="{U_SEARCH}" title="{L_SEARCH_ADV}" accesskey="r">{L_RETURN_TO_SEARCH_ADV}</a>
+						<a class="btn btn-default btn-mini  {S_CONTENT_FLOW_BEGIN} tooltip-link" href="{U_SEARCH}" title="{L_SEARCH_ADV}" accesskey="r">{L_RETURN_TO_SEARCH_ADV}</a>
 					<!-- ENDIF -->						
 					<!-- IF not S_IS_BOT and U_MARK_TOPICS -->
-						<a class="btn btn-mini tooltip-link" title="{L_MARK_TOPICS_READ}" href="{U_MARK_TOPICS}" accesskey="m"><i class="icon-check"></i> <span class="hidden">{L_MARK_TOPICS_READ}</span></a>
+						<a class="btn btn-default btn-mini tooltip-link" title="{L_MARK_TOPICS_READ}" href="{U_MARK_TOPICS}" accesskey="m"><i class="icon-check"></i> <span class="hidden">{L_MARK_TOPICS_READ}</span></a>
 					<!-- ENDIF -->
 				</div>
 				<!-- INCLUDE pagination.html -->

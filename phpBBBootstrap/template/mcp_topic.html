@@ -23,8 +23,8 @@
 				</select>&nbsp;
 				<a class="btn btn-primary" onclick="getElementById('action').value=getElementById('action_visible').value;getElementById('mcp').submit();">{L_SUBMIT}</a>
 				<div class="btn-group pull-right">
-					<a class="btn btn-mini" href="#" onclick="marklist('mcp', 'post', true); return false;">{L_MARK_ALL}</a>
-					<a class="btn btn-mini" href="#" onclick="marklist('mcp', 'post', false); return false;">{L_UNMARK_ALL}</a>
+					<a class="btn btn-default btn-mini" href="#" onclick="marklist('mcp', 'post', true); return false;">{L_MARK_ALL}</a>
+					<a class="btn btn-default btn-mini" href="#" onclick="marklist('mcp', 'post', false); return false;">{L_UNMARK_ALL}</a>
 				</div>
 			</fieldset>
 		</div>
@@ -37,7 +37,7 @@
 					<div class="controls">
 						<div class="input-append">
 						<input class="input-large" type="text" name="to_topic_id" id="to_topic_id" value="{TO_TOPIC_ID}" />
-						<a class="btn" href="{U_SELECT_TOPIC}" ><i class="icon-search"></i> {L_SELECT_TOPIC}</a>
+						<a class="btn btn-default" href="{U_SELECT_TOPIC}" ><i class="icon-search"></i> {L_SELECT_TOPIC}</a>
 						<a class="btn btn-primary" href="#" title="{L_MERGE_POSTS}" onclick="getElementById('action').value='merge_posts';alert(getElementById('action').value);return false;"><i class="icon-copy"></i> {L_MERGE_POSTS}</a>					
 						</div>
 						<!-- IF TO_TOPIC_INFO --><span class="form-explications">{TO_TOPIC_INFO}</span><!-- ENDIF -->
@@ -111,7 +111,7 @@
 		</h4>
 	</div>
 	<div class="col-md-3 text-right">
-		<a class="btn btn-mini" href="#review" onclick="viewableArea(getElementById('topicreview'), true); var rev_text = this.innerHTML ; if (rev_text.data == '{LA_EXPAND_VIEW}'){rev_text.data = '{LA_COLLAPSE_VIEW}'; } else if (rev_text.data == '{LA_COLLAPSE_VIEW}'){rev_text.data = '{LA_EXPAND_VIEW}'};">{L_EXPAND_VIEW}</a>	
+		<a class="btn btn-default btn-mini" href="#review" onclick="viewableArea(getElementById('topicreview'), true); var rev_text = this.innerHTML ; if (rev_text.data == '{LA_EXPAND_VIEW}'){rev_text.data = '{LA_COLLAPSE_VIEW}'; } else if (rev_text.data == '{LA_COLLAPSE_VIEW}'){rev_text.data = '{LA_EXPAND_VIEW}'};">{L_EXPAND_VIEW}</a>	
 	</div>
 </div>
 	<div id="topicreview">
@@ -152,15 +152,15 @@
 
 	<!-- IF PAGINATION or TOTAL_POSTS -->
 	<div class="btn-group pull-right">
-		<!-- IF TOTAL_POSTS --><span class="btn disabled btn-mini">{TOTAL_POSTS}</span><!-- ENDIF -->
+		<!-- IF TOTAL_POSTS --><span class="btn btn-default disabled btn-mini">{TOTAL_POSTS}</span><!-- ENDIF -->
 		
 		<!-- IF PAGE_NUMBER -->
 			<!-- IF PAGINATION -->
-				<a class="btn btn-mini" href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><i class="icon-screenshot"></i></a>				
-				<span class="btn btn-mini disabled">{PAGE_NUMBER}</span>
+				<a class="btn btn-default btn-mini" href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}"><i class="icon-screenshot"></i></a>				
+				<span class="btn btn-default btn-mini disabled">{PAGE_NUMBER}</span>
 				{PAGINATION}
 			<!-- ELSE -->
-				<span class="btn btn-mini disabled">{PAGE_NUMBER}</span>
+				<span class="btn btn-default btn-mini disabled">{PAGE_NUMBER}</span>
 			<!-- ENDIF -->
 		<!-- ENDIF -->
 	</div>	

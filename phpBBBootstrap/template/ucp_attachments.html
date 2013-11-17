@@ -44,7 +44,7 @@
 			<fieldset class="display-options form-inline pull-left">
 				<label for="sk">{L_SORT_BY}: <select name="sk" id="sk">{S_SORT_OPTIONS}</select></label> 
 				<label><select name="sd" id="sd">{S_ORDER_SELECT}</select></label>
-				<button class="btn" type="submit" name="sort" value="{L_SORT}"><i class="icon-sort-by-attributes"></i></button>
+				<button class="btn btn-default" type="submit" name="sort" value="{L_SORT}"><i class="icon-sort-by-attributes"></i></button>
 				{S_FORM_TOKEN}
 			</fieldset>
 			<!-- INCLUDE pagination.html -->
@@ -60,8 +60,8 @@
 	<fieldset class="form-actions">	
 		<button class="btn btn-primary" type="submit" name="delete" value="{L_DELETE_MARKED}"><i class="icon-trash"></i> {L_DELETE_MARKED}</button>
 		<div class="btn-group">
-			<a class="btn visible-desktop" href="#" onclick="$(':checkbox','#ucp').prop('checked',true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
-			<a class="btn visible-desktop" href="#" onclick="$(':checkbox','#ucp').removeAttr('checked'); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+			<a class="btn btn-default visible-desktop" href="#" onclick="$(':checkbox','#ucp').prop('checked',true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
+			<a class="btn btn-default visible-desktop" href="#" onclick="$(':checkbox','#ucp').removeAttr('checked'); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
 		</div>
 		{S_FORM_TOKEN}
 	</fieldset>

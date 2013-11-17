@@ -21,7 +21,7 @@
 					<label for="add_keywords">{L_SEARCH_IN_RESULTS}</label>
 					<div class="input-append">
 						<input type="text" name="add_keywords" id="add_keywords" value="" class="inputbox narrow" />
-						<input class="btn" type="submit" name="submit" value="{L_SEARCH}" />
+						<input class="btn btn-default" type="submit" name="submit" value="{L_SEARCH}" />
 					</div>
 				<!-- ENDIF -->
 			</div>
@@ -49,7 +49,7 @@
 			<tr>
 				<td>
 					<div class="pull-left forum-topic-icon">
-						<span><a href="{searchresults.U_VIEW_TOPIC}" class="tooltip-link btn <!-- IF searchresults.S_UNREAD_TOPIC -->btn-info<!-- ENDIF --> <!-- IF searchresults.S_POST_ANNOUNCE or searchresults.S_POST_GLOBAL --> btn-large <!-- ENDIF -->" title="{searchresults.TOPIC_FOLDER_IMG_ALT}">
+						<span><a href="{searchresults.U_VIEW_TOPIC}" class="btn <!-- IF searchresults.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> <!-- IF searchresults.S_POST_ANNOUNCE or searchresults.S_POST_GLOBAL --> btn-large <!-- ENDIF --> tooltip-link " title="{searchresults.TOPIC_FOLDER_IMG_ALT}">
 							<!-- IF searchresults.S_TOPIC_LOCKED -->
 								<!-- IF searchresults.S_POST_GLOBAL or searchresults.S_POST_ANNOUNCE -->
 									<i class="icon-lock icon-large"></i>
@@ -80,14 +80,14 @@
 							<a href="{searchresults.U_MCP_REPORT}" class="btn btn-warning btn-mini"><i class="icon-warning-sign"></i></a>
 							<!-- ENDIF -->
 							<!-- IF searchresults.ATTACH_ICON_IMG -->
-							<a href="#" class="btn btn-mini disabled"><i class="icon-paper-clip"></i></a>
+							<a href="#" class="btn btn-default btn-mini disabled"><i class="icon-paper-clip"></i></a>
 							<!-- ENDIF -->
 							<!-- IF searchresults.PAGINATION -->{searchresults.PAGINATION}<!-- ENDIF -->
 							<!-- IF searchresults.S_UNREAD_TOPIC -->
 								<a class="btn btn-mini btn-info" href="{searchresults.U_NEWEST_POST}"><i class="icon-angle-right"></i></a>
 							<!-- ENDIF -->
 							<!-- IF not S_IS_BOT -->
-								<a class="tooltip-link btn btn-mini" href="{searchresults.U_LAST_POST}"  title="{L_LAST_POST}"><i class="icon-double-angle-right"></i></a>
+								<a class="btn btn-default btn-mini tooltip-link" href="{searchresults.U_LAST_POST}"  title="{L_LAST_POST}"><i class="icon-double-angle-right"></i></a>
 							<!-- ENDIF -->						
 						</div>
 					</div>
@@ -118,7 +118,7 @@
 			<h3><a href="{searchresults.U_VIEW_POST}">{searchresults.POST_SUBJECT}</a></h3>
 			<p class="text-justify">
 				{searchresults.MESSAGE}
-				<a href="{searchresults.U_VIEW_POST}" class=" pull-right btn btn-mini tooltip-link intoh2" title="{L_JUMP_TO_POST}"><i class="icon-eye-open"></i> {L_JUMP_TO_POST}</a>
+				<a href="{searchresults.U_VIEW_POST}" class="btn btn-default btn-mini tooltip-link intoh2 pull-right" title="{L_JUMP_TO_POST}"><i class="icon-eye-open"></i> {L_JUMP_TO_POST}</a>
 			</p>
 		</div>
 		<div class="col-md-offset-1 col-md-3">
@@ -164,7 +164,7 @@
 		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
 		<!-- IF S_SELECT_SORT_DAYS or S_SELECT_SORT_KEY -->
 			<label><!-- IF S_SHOW_TOPICS -->{L_DISPLAY_POSTS}<!-- ELSE -->{L_SORT_BY}</label><label><!-- ENDIF --> {S_SELECT_SORT_DAYS}<!-- IF S_SELECT_SORT_KEY --></label> <label>{S_SELECT_SORT_KEY}</label>
-			<label>{S_SELECT_SORT_DIR}<!-- ENDIF --> <input type="submit" name="sort" value="{L_GO}" class="btn" /></label>
+			<label>{S_SELECT_SORT_DIR}<!-- ENDIF --> <input type="submit" name="sort" value="{L_GO}" class="btn btn-default" /></label>
 		<!-- ENDIF -->
 	</fieldset>
 

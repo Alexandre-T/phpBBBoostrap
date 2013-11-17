@@ -14,7 +14,7 @@
 	<!-- BEGIN rule -->
 		<li>
 			<strong>{L_IF}</strong> {rule.CHECK} <em>{rule.RULE}</em> <!-- IF rule.STRING --><strong>{rule.STRING}</strong> | <!-- ENDIF -->{rule.ACTION}<!-- IF rule.FOLDER -->: {rule.FOLDER}<!-- ENDIF -->
-			<button type="submit" name="delete_rule[{rule.RULE_ID}]" title="{L_DELETE_RULE}" value="{L_DELETE_RULE}" class="btn tooltip-link"><i class="icon-trash"></i></button>
+			<button type="submit" name="delete_rule[{rule.RULE_ID}]" title="{L_DELETE_RULE}" value="{L_DELETE_RULE}" class="btn btn-default tooltip-link"><i class="icon-trash"></i></button>
 		</li>
 	<!-- END rule -->
 	</ol>
@@ -31,7 +31,7 @@
 		<label for="<!-- IF S_CHECK_SELECT -->check_option<!-- ENDIF -->">{L_IF}</label>
 		<!-- IF S_CHECK_SELECT -->
 			<span class="input-append">
-				<select name="check_option" id="check_option">{S_CHECK_OPTIONS}</select><input type="submit" name="next" value="{L_NEXT_STEP}" class="btn" />
+				<select name="check_option" id="check_option">{S_CHECK_OPTIONS}</select><input type="submit" name="next" value="{L_NEXT_STEP}" class="btn btn-default" />
 			</span>
 		<!-- ELSE -->
 			<span class="">{CHECK_CURRENT}</span>
@@ -42,9 +42,9 @@
 	<!-- IF S_RULE_DEFINED -->
 		<!-- IF S_RULE_SELECT -->
 		<span class="input-prepend input-append">
-			<input type="submit" name="back[rule]" value="{L_PREVIOUS_STEP}" class="btn" />
+			<input type="submit" name="back[rule]" value="{L_PREVIOUS_STEP}" class="btn btn-default" />
 			<select name="rule_option" id="rule_option">{S_RULE_OPTIONS}</select>
-			<input type="submit" name="next" value="{L_NEXT_STEP}" class="btn" />
+			<input type="submit" name="next" value="{L_NEXT_STEP}" class="btn btn-default" />
 		</span>
 		<!-- ELSE -->
 		<span class="">{RULE_CURRENT}</span>
@@ -56,7 +56,7 @@
 		<!-- IF S_COND_SELECT or COND_CURRENT -->
 			<!-- IF S_COND_SELECT -->
 				<span class="input-prepend input-append">
-					<input type="submit" name="back[cond]" value="{L_PREVIOUS_STEP}" class="btn" />
+					<input type="submit" name="back[cond]" value="{L_PREVIOUS_STEP}" class="btn btn-default" />
 			<!-- ENDIF -->
 				<!-- IF S_COND_SELECT -->
 					<!-- IF S_TEXT_CONDITION -->
@@ -71,7 +71,7 @@
 							{L_NO_GROUPS}
 						<!-- ENDIF -->
 					<!-- ENDIF -->
-					<input type="submit" name="next" value="{L_NEXT_STEP}" class="btn" />
+					<input type="submit" name="next" value="{L_NEXT_STEP}" class="btn btn-default" />
 				<!-- ELSE -->
 					<strong>{COND_CURRENT}</strong><input type="hidden" name="rule_string" value="{CURRENT_STRING}" /><input type="hidden" name="rule_user_id" value="{CURRENT_USER_ID}" /><input type="hidden" name="rule_group_id" value="{CURRENT_GROUP_ID}" />
 				<!-- ENDIF -->
@@ -88,9 +88,9 @@
 	<!-- IF S_ACTION_DEFINED -->
 		<!-- IF S_ACTION_SELECT -->
 			<span class="input-prepend input-append">
-				<input type="submit" name="back[action]" value="{L_PREVIOUS_STEP}" class="btn" />
+				<input type="submit" name="back[action]" value="{L_PREVIOUS_STEP}" class="btn btn-default" />
 				<select name="action_option" class="input-xlarge">{S_ACTION_OPTIONS}</select>
-				<input type="submit" name="add_rule" value="{L_ADD_RULE}" class="btn" />
+				<input type="submit" name="add_rule" value="{L_ADD_RULE}" class="btn btn-default" />
 			</span>
 		<!-- ELSE -->
 			{ACTION_CURRENT}
@@ -112,7 +112,7 @@
 				<div class="controls">
 					<span class="input-append">
 						<input type="text" class="inputbox medium" name="foldername" id="foldername" size="30" maxlength="30" />
-						<input class="btn" type="submit" name="addfolder" value="{L_ADD}" />
+						<input class="btn btn-default" type="submit" name="addfolder" value="{L_ADD}" />
 					</span>
 				</div>
 			</div>
@@ -134,7 +134,7 @@
 				<div class="controls">
 					<div class="input-append">
 						<input type="text" class="inputbox tiny" name="new_folder_name" id="new_folder_name" maxlength="30" />
-						<input class="btn" type="submit" name="rename_folder" value="{L_RENAME}" />
+						<input class="btn btn-default" type="submit" name="rename_folder" value="{L_RENAME}" />
 					</div>
 				</div>
 			</div>
@@ -147,7 +147,7 @@
 				<div class="controls">
 					<div class="input-append">
 						<select name="remove_folder_id" id="remove_folder_id">{S_FOLDER_OPTIONS}</select>
-						<input class="btn" type="submit" name="remove_folder" value="{L_REMOVE}" />
+						<input class="btn btn-default" type="submit" name="remove_folder" value="{L_REMOVE}" />
 					</div>
 					<label class="radio" for="remove_action2"><input type="radio" name="remove_action" id="remove_action2" value="2" /> {L_DELETE_MESSAGES_IN_FOLDER}</label>
 					<label class="radio" for="remove_action1"><input type="radio" name="remove_action" id="remove_action1" value="1" checked="checked" /> {L_MOVE_DELETED_MESSAGES_TO}</label> <select name="move_to">{S_TO_FOLDER_OPTIONS}</select>
@@ -176,7 +176,7 @@
 		</div>
 	</fieldset>
 	<fieldset class="form-actions form-horizontal">
-		<input class="btn" type="submit" name="fullfolder" value="{L_CHANGE}" />
+		<input class="btn btn-default" type="submit" name="fullfolder" value="{L_CHANGE}" />
 	</fieldset>
 	{S_FORM_TOKEN}
 </form>

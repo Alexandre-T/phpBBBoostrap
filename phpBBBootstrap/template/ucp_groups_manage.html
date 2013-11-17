@@ -63,7 +63,7 @@
 			<div class="input-append input-prepend">
 				<span class="add-on" style="background-color: #{GROUP_COLOUR};" id="example">&nbsp;&nbsp;&nbsp;</span>
 				<input name="group_colour" type="text" id="group_colour" value="{GROUP_COLOUR}" size="6" maxlength="6"/>
-				<a class="btn tooltip-link " href="{U_SWATCH}" onclick="popup(this.href, 636, 150, '_swatch'); return false;" title="{L_COLOUR_SWATCH}"><i class="icon-beaker"></i></a>
+				<a class="btn btn-default tooltip-link " href="{U_SWATCH}" onclick="popup(this.href, 636, 150, '_swatch'); return false;" title="{L_COLOUR_SWATCH}"><i class="icon-beaker"></i></a>
 			</div>
 			<span class="help-block">{L_GROUP_COLOR_EXPLAIN}</span>
 		</div>
@@ -79,10 +79,10 @@
 
 <fieldset class="form-actions">
 	{S_HIDDEN_FIELDS}
-	<!-- IF S_DISPLAY_GALLERY --><input type="submit" name="display_gallery" value="{L_DISPLAY_GALLERY}" class="btn" /><!-- ENDIF -->
-	<!-- IF S_IN_AVATAR_GALLERY --><input type="submit" name="cancel" value="{L_CANCEL}" class="btn" /><!-- ELSE -->
-	<input type="reset" value="{L_RESET}" name="reset" class="btn" /><!-- ENDIF -->
-	<input type="submit" name="update" value="{L_SUBMIT}" class="btn" />
+	<!-- IF S_DISPLAY_GALLERY --><input type="submit" name="display_gallery" value="{L_DISPLAY_GALLERY}" class="btn btn-default" /><!-- ENDIF -->
+	<!-- IF S_IN_AVATAR_GALLERY --><input type="submit" name="cancel" value="{L_CANCEL}" class="btn btn-default" /><!-- ELSE -->
+	<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" /><!-- ENDIF -->
+	<input type="submit" name="update" value="{L_SUBMIT}" class="btn btn-default" />
 	{S_FORM_TOKEN}
 </fieldset>
 
@@ -168,11 +168,11 @@
 	<!-- IF S_ON_PAGE -->
 		<div class="btn-group pull-right">
 			<!-- IF PAGINATION -->
-			<a class="btn btn-mini tooltip-link" href="#jumpPage" data-toggle="modal" title="{L_JUMP_TO_PAGE}">
+			<a class="btn btn-default btn-mini tooltip-link" href="#jumpPage" data-toggle="modal" title="{L_JUMP_TO_PAGE}">
 				<i class="icon-screenshot"></i> <span class="visible-desktop">{S_ON_PAGE}</span>
 			</a>				
 			<!-- ELSE -->
-			<span class="btn btn-mini disabled">{S_ON_PAGE}</span>
+			<span class="btn btn-default btn-mini disabled">{S_ON_PAGE}</span>
 			<!-- ENDIF -->			
 		</div>
 	<!-- ENDIF -->
@@ -180,12 +180,12 @@
 	<fieldset class="form-actions">
 		<div class="input-append">	
 			<select name="action"><option value="">{L_SELECT_OPTION}</option>{S_ACTION_OPTIONS}</select>
-			<input class="btn" type="submit" name="update" value="{L_SUBMIT}" />
+			<input class="btn btn-default" type="submit" name="update" value="{L_SUBMIT}" />
 		</div>
 		&nbsp;
 		<div class="btn-group">
-			<a class="btn visible-desktop" href="#" onclick="$(':checkbox','#ucp').prop('checked',true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
-			<a class="btn visible-desktop" href="#" onclick="$(':checkbox','#ucp').removeAttr('checked'); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+			<a class="btn btn-default visible-desktop" href="#" onclick="$(':checkbox','#ucp').prop('checked',true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
+			<a class="btn btn-default visible-desktop" href="#" onclick="$(':checkbox','#ucp').removeAttr('checked'); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
 		</div>
 	</fieldset>
 
@@ -215,7 +215,7 @@
 	</fieldset>
 
 	<fieldset class="form-actions">
-		<input class="btn" type="submit" name="addusers" value="{L_SUBMIT}" />
+		<input class="btn btn-default" type="submit" name="addusers" value="{L_SUBMIT}" />
 		{S_FORM_TOKEN}
 	</fieldset>
 
@@ -237,8 +237,8 @@
 					<!-- IF leader.GROUP_DESC --><br />{leader.GROUP_DESC}<!-- ENDIF -->
 					</td>
 					<td>
-						<a class="btn tooltip-link"  href="{leader.U_EDIT}" title="{L_EDIT}"><i class="icon-pencil"></i></a>
-						<a class="btn tooltip-link" href="{leader.U_LIST}" title="{L_GROUP_LIST}"><i class="icon-group"></i></a>
+						<a class="btn btn-default tooltip-link"  href="{leader.U_EDIT}" title="{L_EDIT}"><i class="icon-pencil"></i></a>
+						<a class="btn btn-default tooltip-link" href="{leader.U_LIST}" title="{L_GROUP_LIST}"><i class="icon-group"></i></a>
 					</td>
 				</tr>
 		<!-- END leader -->

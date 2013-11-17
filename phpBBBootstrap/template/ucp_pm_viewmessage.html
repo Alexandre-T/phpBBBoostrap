@@ -42,7 +42,7 @@
 				<!-- IF EDIT_REASON --><strong>{L_REASON}:</strong> <em>{EDIT_REASON}</em><!-- ENDIF -->
 			</div>
 			<!-- ENDIF -->
-			<div class="pull-right"><a class="btn tooltip-link" href="#top" title="{L_BACK_TO_TOP}"><i class="icon-double-angle-up"></i></a></div>
+			<div class="pull-right"><a class="btn btn-default tooltip-link" href="#top" title="{L_BACK_TO_TOP}"><i class="icon-double-angle-up"></i></a></div>
 			<!-- IF SIGNATURE -->
 				<div id="sig{MESSAGE_ID}" class="signature"><hr/>{SIGNATURE}</div>
 			<!-- ENDIF -->
@@ -57,14 +57,14 @@
 				<li class="divider"></li>
 				<li class="btn-group" >
 					 
-					<a class="btn <!-- IF S_ONLINE and not S_IGNORE_POST -->btn-success<!-- ENDIF -->" data-toggle="dropdown" href="#">
+					<a class="btn <!-- IF S_ONLINE and not S_IGNORE_POST -->btn-success<!-- ELSE -->btn-default<!-- ENDIF -->" data-toggle="dropdown" href="#">
 						<!-- IF S_ONLINE and not S_IGNORE_POST -->
 							<i class="icon-signin"></i> {L_ONLINE}
 						<!-- ELSE -->
 							<i class="icon-signout"></i> {L_OFFLINE}
 						<!-- ENDIF -->
 					</a>
-					<a class="btn <!-- IF S_ONLINE and not S_IGNORE_POST -->btn-success<!-- ENDIF --> dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span></a>
+					<a class="btn <!-- IF S_ONLINE and not S_IGNORE_POST -->btn-success<!-- ELSE -->btn-default<!-- ENDIF --> dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span></a>
 					<ul class="dropdown-menu text-left">
 						<!-- IF AUTHOR_POSTS != '' --><li><span><strong><i class="icon-comments-alt"></i> {L_POSTS} :</strong> {AUTHOR_POSTS}</span></li><!-- ENDIF -->
 						<!-- IF AUTHOR_JOINED --><li><span><strong><i class="icon-calendar"></i> {L_JOINED} :</strong> {AUTHOR_JOINED}</span></li><!-- ENDIF -->
@@ -96,12 +96,12 @@
 <!-- IF S_VIEW_MESSAGE -->
 <fieldset class="form form-inline">
 	<hr/>
-	<!-- IF S_MARK_OPTIONS --><label for="mark_option"><select name="mark_option" id="mark_option">{S_MARK_OPTIONS}</select></label>&nbsp;<input class="btn" type="submit" name="submit_mark" value="{L_GO}" /><!-- ENDIF -->
+	<!-- IF S_MARK_OPTIONS --><label for="mark_option"><select name="mark_option" id="mark_option">{S_MARK_OPTIONS}</select></label>&nbsp;<input class="btn btn-default" type="submit" name="submit_mark" value="{L_GO}" /><!-- ENDIF -->
 	<!-- IF not S_UNREAD and not S_SPECIAL_FOLDER -->
 		<label for="dest_folder"><!-- IF S_VIEW_MESSAGE -->{L_MOVE_TO_FOLDER} <!-- ELSE -->{L_MOVE_MARKED_TO_FOLDER}<!-- ENDIF --></label>
 			<div class="input-append">
 				<select name="dest_folder" id="dest_folder">{S_TO_FOLDER_OPTIONS}</select> 
-				<input class="btn" type="submit" name="move_pm" value="{L_GO}" />
+				<input class="btn btn-default" type="submit" name="move_pm" value="{L_GO}" />
 			</div>
 	<!-- ENDIF -->
 	<input type="hidden" name="marked_msg_id[]" value="{MSG_ID}" />

@@ -43,9 +43,9 @@
 
 	<div class="btn-group pull-right">
 		<!-- IF U_EDIT -->
-			<a href="{U_EDIT}" class="btn btn-mini" title="{L_EDIT_POST}"><i class="icon-pencil"></i> <span>{L_EDIT_POST}</span></a>
+			<a href="{U_EDIT}" class="btn btn-default btn-mini" title="{L_EDIT_POST}"><i class="icon-pencil"></i> <span>{L_EDIT_POST}</span></a>
 		<!-- ENDIF -->
-		<a class="btn btn-mini" href="#post_details" onclick="viewableArea(getElementById('post_details'), true); if (this.innerHTML == '{LA_EXPAND_VIEW}'){this.innerHTML = '{LA_COLLAPSE_VIEW}'; } else if (this.innerHTML == '{LA_COLLAPSE_VIEW}'){this.innerHTML = '{LA_EXPAND_VIEW}'}; return false;">{L_EXPAND_VIEW}</a>
+		<a class="btn btn-default btn-mini" href="#post_details" onclick="viewableArea(getElementById('post_details'), true); if (this.innerHTML == '{LA_EXPAND_VIEW}'){this.innerHTML = '{LA_COLLAPSE_VIEW}'; } else if (this.innerHTML == '{LA_COLLAPSE_VIEW}'){this.innerHTML = '{LA_EXPAND_VIEW}'}; return false;">{L_EXPAND_VIEW}</a>
 	</div>
 
 	<h4 class="fieldset"><a href="{U_VIEW_POST}">{POST_SUBJECT}</a></h4>
@@ -99,9 +99,9 @@
 		<div>
 			<!-- IF S_PM -->{L_THIS_PM_IP}<!-- ELSE -->{L_THIS_POST_IP}<!-- ENDIF -->: 
 			<!-- IF U_WHOIS -->
-				<a class="btn btn-mini" href="{U_WHOIS}"><!-- IF POST_IPADDR -->{POST_IPADDR}<!-- ELSE -->{POST_IP}<!-- ENDIF --></a> (<!-- IF POST_IPADDR -->{POST_IP}<!-- ELSE --><a class="btn btn-mini" href="{U_LOOKUP_IP}">{L_LOOKUP_IP}</a><!-- ENDIF -->)
+				<a class="btn btn-default btn-mini" href="{U_WHOIS}"><!-- IF POST_IPADDR -->{POST_IPADDR}<!-- ELSE -->{POST_IP}<!-- ENDIF --></a> (<!-- IF POST_IPADDR -->{POST_IP}<!-- ELSE --><a class="btn btn-mini" href="{U_LOOKUP_IP}">{L_LOOKUP_IP}</a><!-- ENDIF -->)
 			<!-- ELSE -->
-				<!-- IF POST_IPADDR -->{POST_IPADDR} ({POST_IP})<!-- ELSE -->{POST_IP}<!-- IF U_LOOKUP_IP --> <a class="btn btn-mini" href="{U_LOOKUP_IP}" title="{L_LOOKUP_IP}"><i class="icon-search"></i></a><!-- ENDIF --><!-- ENDIF -->
+				<!-- IF POST_IPADDR -->{POST_IPADDR} ({POST_IP})<!-- ELSE -->{POST_IP}<!-- IF U_LOOKUP_IP --> <a class="btn btn-default btn-mini" href="{U_LOOKUP_IP}" title="{L_LOOKUP_IP}"><i class="icon-search"></i></a><!-- ENDIF --><!-- ENDIF -->
 			<!-- ENDIF -->
 		</div>
 	<!-- ENDIF -->
@@ -124,7 +124,7 @@
 				<!-- ENDIF -->
 				<span class="input-append">
 					<input class="col-md-2" type="text" name="username" />
-					<a class="btn" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;" title="{L_FIND_USERNAME}"><i class="icon-search"></i></a>
+					<a class="btn btn-default" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;" title="{L_FIND_USERNAME}"><i class="icon-search"></i></a>
 					<input type="submit" class="btn btn-primary" name="action[chgposter]" value="{L_CONFIRM}" />
 				</span>
 			</fieldset>
@@ -154,7 +154,7 @@
 
 <!-- IF S_MCP_QUEUE or S_MCP_REPORT or RETURN_TOPIC -->
 	<div class="btn-group">
-		<!-- IF S_MCP_QUEUE -->{RETURN_QUEUE}{RETURN_TOPIC_SIMPLE}{RETURN_POST}<!-- ELSEIF S_MCP_REPORT -->{RETURN_REPORTS}<!-- IF not S_PM --><a class="btn" href="{U_VIEW_POST}">{L_VIEW_POST}</a><a class="btn" href="{U_VIEW_TOPIC}">{L_VIEW_TOPIC}</a><a class="btn" href="{U_VIEW_FORUM}">{L_VIEW_FORUM}</a><!-- ENDIF --><!-- ELSE -->{RETURN_TOPIC}<!-- ENDIF -->
+		<!-- IF S_MCP_QUEUE -->{RETURN_QUEUE}{RETURN_TOPIC_SIMPLE}{RETURN_POST}<!-- ELSEIF S_MCP_REPORT -->{RETURN_REPORTS}<!-- IF not S_PM --><a class="btn btn-default" href="{U_VIEW_POST}">{L_VIEW_POST}</a><a class="btn btn-default" href="{U_VIEW_TOPIC}">{L_VIEW_TOPIC}</a><a class="btn btn-default" href="{U_VIEW_FORUM}">{L_VIEW_FORUM}</a><!-- ENDIF --><!-- ELSE -->{RETURN_TOPIC}<!-- ENDIF -->
 	</div>
 <!-- ENDIF -->
 
@@ -193,7 +193,7 @@
 
 			<fieldset class="btn-group">
 				<input class="btn btn-primary" type="submit" name="action[add_feedback]" value="{L_SUBMIT}" />
-				<input class="btn" type="reset" value="{L_RESET}" />
+				<input class="btn btn-default" type="reset" value="{L_RESET}" />
 			</fieldset>
 			{S_FORM_TOKEN}
 			</form>

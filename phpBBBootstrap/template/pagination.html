@@ -1,31 +1,31 @@
 
 <!-- IF TOTAL_TOPICS or TOTAL_POSTS or TOTAL_ATTACHMENTS or TOTAL_USERS or SEARCH_MATCHES or TOTAL_MESSAGES --> 
 <div class="btn-group {$ALTITUDE}">
-	<!-- IF TOTAL_ATTACHMENTS --><span class="btn btn-mini disabled">{TOTAL_ATTACHMENTS} {L_TITLE}</span><!-- ENDIF -->
-	<!-- IF TOTAL_TOPICS --><span class="btn btn-mini disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
-	<!-- IF TOTAL_POSTS --><span class="btn disabled btn-mini">{TOTAL_POSTS}</span><!-- ENDIF -->
-	<!-- IF TOTAL_USERS --><span class="btn disabled btn-mini">{TOTAL_USERS}</span><!-- ENDIF -->
-	<!-- IF SEARCH_MATCHES --><span class="btn disabled btn-mini">{SEARCH_MATCHES}</span><!-- ENDIF -->
-	<!-- IF TOTAL_MESSAGES --><span class="btn disabled btn-mini">{TOTAL_MESSAGES}</span><!-- ENDIF -->
+	<!-- IF TOTAL_ATTACHMENTS --><span class="btn btn-default btn-mini disabled">{TOTAL_ATTACHMENTS} {L_TITLE}</span><!-- ENDIF -->
+	<!-- IF TOTAL_TOPICS --><span class="btn btn-default btn-mini disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
+	<!-- IF TOTAL_POSTS --><span class="btn btn-default disabled btn-mini">{TOTAL_POSTS}</span><!-- ENDIF -->
+	<!-- IF TOTAL_USERS --><span class="btn btn-default disabled btn-mini">{TOTAL_USERS}</span><!-- ENDIF -->
+	<!-- IF SEARCH_MATCHES --><span class="btn btn-default disabled btn-mini">{SEARCH_MATCHES}</span><!-- ENDIF -->
+	<!-- IF TOTAL_MESSAGES --><span class="btn btn-default disabled btn-mini">{TOTAL_MESSAGES}</span><!-- ENDIF -->
 </div>
 <!-- ENDIF -->
 
 <!-- IF PAGE_NUMBER -->
 <div class="btn-group {$ALTITUDE}">
 	<!-- IF PAGINATION -->
-	<a class="btn btn-mini tooltip-link" href="#jumpPage" data-toggle="modal" title="{L_JUMP_TO_PAGE}">
+	<a class="btn btn-default btn-mini tooltip-link" href="#jumpPage" data-toggle="modal" title="{L_JUMP_TO_PAGE}">
 		<i class="icon-screenshot"></i> <span class="visible-desktop">{PAGE_NUMBER}</span>
 	</a>				
 	<!-- ELSE -->
-	<span class="btn btn-mini disabled">{PAGE_NUMBER}</span>
+	<span class="btn btn-default btn-mini disabled">{PAGE_NUMBER}</span>
 	<!-- ENDIF -->			
 </div>
 
 <div class="btn-group {$ALTITUDE} pagination-line">
-		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" title="{L_PREVIOUS}" class="btn btn-mini tooltip-link"><i class="icon-double-angle-left"></i></a><!-- ENDIF -->
-		<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="btn btn-mini" title="{L_VIEW_UNREAD_POST}"><i class="icon-eye-close"></i></a><!-- ENDIF -->
+		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" title="{L_PREVIOUS}" class="btn btn-default btn-mini tooltip-link"><i class="icon-double-angle-left"></i></a><!-- ENDIF -->
+		<!-- IF U_VIEW_UNREAD_POST and not S_IS_BOT --><a href="{U_VIEW_UNREAD_POST}" class="btn btn-default btn-mini" title="{L_VIEW_UNREAD_POST}"><i class="icon-eye-close"></i></a><!-- ENDIF -->
 		{PAGINATION}
-		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" title="{L_NEXT}" class="btn btn-mini tooltip-link"><i class="icon-double-angle-right"></i></a><!-- ENDIF -->
+		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" title="{L_NEXT}" class="btn btn-default btn-mini tooltip-link"><i class="icon-double-angle-right"></i></a><!-- ENDIF -->
 </div>
 <!-- ENDIF -->
 

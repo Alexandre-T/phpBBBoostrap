@@ -23,7 +23,7 @@
 				<tr>
 					<td>
 						<div class="pull-left forum-topic-icon">
-							<span><a href="{topicrow.U_VIEW_TOPIC}" class="tooltip-link btn <!-- IF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ENDIF --> btn-large" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+							<span><a href="{topicrow.U_VIEW_TOPIC}" class="btn <!-- IF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> btn-large tooltip-link" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
 								<!-- IF topicrow.S_TOPIC_LOCKED -->
 										<i class="icon-lock icon-large"></i>
 								<!-- ELSE -->
@@ -40,14 +40,14 @@
 								<a href="{topicrow.U_MCP_REPORT}" class="btn btn-warning btn-mini"><i class="icon-warning-sign"></i></a>
 								<!-- ENDIF -->
 								<!-- IF topicrow.ATTACH_ICON_IMG -->
-								<a href="#" class="btn btn-mini disabled"><i class="icon-paper-clip"></i></a>
+								<a href="#" class="btn btn-default btn-mini disabled"><i class="icon-paper-clip"></i></a>
 								<!-- ENDIF -->
 								<!-- IF topicrow.PAGINATION -->{topicrow.PAGINATION}<!-- ENDIF -->
 								<!-- IF topicrow.S_UNREAD_TOPIC -->
 									<a class="btn btn-mini btn-info" href="{topicrow.U_NEWEST_POST}"><i class="icon-angle-right"></i></a>
 								<!-- ENDIF -->
 								<!-- IF not S_IS_BOT -->
-									<a class="tooltip-link btn btn-mini" href="{topicrow.U_LAST_POST}"  title="{L_LAST_POST}"><i class="icon-double-angle-right"></i></a>
+									<a class="btn btn-default btn-mini tooltip-link" href="{topicrow.U_LAST_POST}"  title="{L_LAST_POST}"><i class="icon-double-angle-right"></i></a>
 								<!-- ENDIF -->						
 							</div>
 						</div>

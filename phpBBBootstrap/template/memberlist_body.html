@@ -35,12 +35,12 @@
 			<div class="col-md-9">
 				<div class="btn-group">
 					<!-- IF U_FIND_MEMBER and not S_SEARCH_USER -->
-					<a class="btn btn-mini" href="{U_FIND_MEMBER}"><i class="icon-search"></i> {L_FIND_USERNAME}</a>
+					<a class="btn btn-default btn-mini" href="{U_FIND_MEMBER}"><i class="icon-search"></i> {L_FIND_USERNAME}</a>
 					<!-- ELSEIF S_SEARCH_USER and U_HIDE_FIND_MEMBER and not S_IN_SEARCH_POPUP -->
-					<a class="btn btn-mini" href="{U_HIDE_FIND_MEMBER}"><i class="icon-search"></i> {L_HIDE_MEMBER_SEARCH}</a>
+					<a class="btn btn-default btn-mini" href="{U_HIDE_FIND_MEMBER}"><i class="icon-search"></i> {L_HIDE_MEMBER_SEARCH}</a>
 					<!-- ENDIF -->
 					<!-- BEGIN first_char -->
-						<a class="btn btn-mini" href="{first_char.U_SORT}">{first_char.DESC}</a> 
+						<a class="btn btn-default btn-mini" href="{first_char.U_SORT}">{first_char.DESC}</a> 
 	          		<!-- END first_char -->
 				</div>
 			</div>
@@ -120,10 +120,10 @@
 
 <!-- IF S_IN_SEARCH_POPUP and not S_SELECT_SINGLE -->
 <fieldset class="form-actions">
-	<input type="submit" name="submit" value="{L_SELECT_MARKED}" class="btn" />
+	<input type="submit" name="submit" value="{L_SELECT_MARKED}" class="btn btn-default" />
 	<div class="btn-group">
-		<a class="btn visible-desktop" href="#" onclick="$(':checkbox').prop('checked',true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
-		<a class="btn visible-desktop" href="#" onclick="$(':checkbox').removeAttr('checked'); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+		<a class="btn btn-default visible-desktop" href="#" onclick="$(':checkbox').prop('checked',true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
+		<a class="btn btn-default visible-desktop" href="#" onclick="$(':checkbox').removeAttr('checked'); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
 	</div>
 </fieldset>
 <!-- ENDIF -->
@@ -138,7 +138,7 @@
 	<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
 	<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
 	<label for="sk">{L_SELECT_SORT_METHOD}: <select name="sk" id="sk">{S_MODE_SELECT}</select></label> 
-	<label for="sd">{L_ORDER} <select name="sd" id="sd">{S_ORDER_SELECT}</select> <input type="submit" name="sort" value="{L_SUBMIT}" class="btn" /></label>
+	<label for="sd">{L_ORDER} <select name="sd" id="sd">{S_ORDER_SELECT}</select> <input type="submit" name="sort" value="{L_SUBMIT}" class="btn btn-default" /></label>
 </fieldset>
 <!-- ENDIF -->
 

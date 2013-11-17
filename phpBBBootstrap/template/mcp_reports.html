@@ -13,17 +13,17 @@
 <!-- IF .postrow -->
 <div class="panel">
 	<div class="btn-group pull-right">
-		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="btn btn-mini"><i class="icon-double-angle-left"></i></a><!-- ENDIF -->
-		<!-- IF TOTAL --><span class="btn btn-mini disabled">{TOTAL}</span><!-- ENDIF -->
+		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="btn btn-default btn-mini"><i class="icon-double-angle-left"></i></a><!-- ENDIF -->
+		<!-- IF TOTAL --><span class="btn btn-default btn-mini disabled">{TOTAL}</span><!-- ENDIF -->
 		<!-- IF PAGE_NUMBER -->
 			<!-- IF PAGINATION -->
-				<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-mini">{PAGE_NUMBER}</a>
+				<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-mini">{PAGE_NUMBER}</a>
 				{PAGINATION}
 			<!-- ELSE -->
-				<span class="btn btn-mini disabled">{PAGE_NUMBER}</span>
+				<span class="btn btn-default btn-mini disabled">{PAGE_NUMBER}</span>
 			<!-- ENDIF -->
 		<!-- ENDIF -->
-		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-mini"><i class="icon-double-angle-right"></i></a><!-- ENDIF -->
+		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-default btn-mini"><i class="icon-double-angle-right"></i></a><!-- ENDIF -->
 	</div>
 	<p>{L_EXPLAIN}</p>
 	<table class="table table-striped table-bordered table-hover">
@@ -62,12 +62,12 @@
 		</tbody>
 	</table>
 	<fieldset class="btn-group pull-right">
-		<a href="#" class="btn btn-mini" onclick="marklist('mcp', 'report_id_list', true); return false;">{L_MARK_ALL}</a>
-		<a href="#" class="btn btn-mini" onclick="marklist('mcp', 'report_id_list', false); return false;">{L_UNMARK_ALL}</a>
+		<a href="#" class="btn btn-default btn-mini" onclick="marklist('mcp', 'report_id_list', true); return false;">{L_MARK_ALL}</a>
+		<a href="#" class="btn btn-default btn-mini" onclick="marklist('mcp', 'report_id_list', false); return false;">{L_UNMARK_ALL}</a>
 	</fieldset>
 	<fieldset class="btn-group">
 		<input class="btn btn-primary" type="submit" value="{L_DELETE_REPORTS}" name="action[delete]" />
-		<!-- IF not S_CLOSED --><input class="btn" type="submit" name="action[close]" value="{L_CLOSE_REPORTS}" /><!-- ENDIF -->
+		<!-- IF not S_CLOSED --><input class="btn btn-default" type="submit" name="action[close]" value="{L_CLOSE_REPORTS}" /><!-- ENDIF -->
 	</fieldset>
 </div>
 <!-- ELSE -->
@@ -83,7 +83,7 @@
 		<label>{L_DISPLAY_POSTS}: {S_SELECT_SORT_DAYS}</label>
 		<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label><label>{S_SELECT_SORT_DIR}</label>
 		<!-- IF TOPIC_ID --><label><input type="checkbox" class="checkbox" name="t" value="{TOPIC_ID}" checked="checked" />&nbsp; <strong>{L_ONLY_TOPIC}</strong></label><!-- ENDIF -->
-		<input type="submit" name="sort" value="{L_GO}" class="btn-primary btn" />
+		<input type="submit" name="sort" value="{L_GO}" class="btn btn-primary" />
 	</fieldset>
 <!-- ENDIF -->
 </form>
