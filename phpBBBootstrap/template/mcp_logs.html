@@ -6,8 +6,8 @@
 
 	<div class="panel">
 		<div class="btn-group pull-right">
-			<!-- IF TOTAL --><span class="btn btn-default btn-mini disabled">{TOTAL}</span><!-- ENDIF -->
-			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --><a href="#" class="btn btn-default btn-mini" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>{PAGINATION}<!-- ELSE --><span class="btn btn-mini">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->		
+			<!-- IF TOTAL --><span class="btn btn-default btn-xs disabled">{TOTAL}</span><!-- ENDIF -->
+			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --><a href="#" class="btn btn-default btn-xs" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>{PAGINATION}<!-- ELSE --><span class="btn btn-xs">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->		
 		</div>
 		<fieldset class="form-inline">
 			<label for="keywords">{L_SEARCH_KEYWORDS} </label>
@@ -51,10 +51,10 @@
 			<hr />
 	
 			<div class="btn-group pull-right">
-				<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="btn btn-default btn-mini" title="{L_PREVIOUS}"><i class="icon-double-angle-left"></i></a><!-- ENDIF -->
-				<!-- IF TOTAL --><span class="btn btn-default btn-mini disabled">{TOTAL}</span><!-- ENDIF -->
-				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --><a href="#" class="btn btn-default btn-mini" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>{PAGINATION}<!-- ELSE --><span class="btn btn-mini">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->		
-				<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-default btn-mini" title="{L_NEXT}"><i class="icon-double-angle-right"></i></a><!-- ENDIF -->
+				<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="btn btn-default btn-xs" title="{L_PREVIOUS}"><i class="icon-double-angle-left"></i></a><!-- ENDIF -->
+				<!-- IF TOTAL --><span class="btn btn-default btn-xs disabled">{TOTAL}</span><!-- ENDIF -->
+				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --><a href="#" class="btn btn-default btn-xs" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>{PAGINATION}<!-- ELSE --><span class="btn btn-xs">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->		
+				<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-default btn-xs" title="{L_NEXT}"><i class="icon-double-angle-right"></i></a><!-- ENDIF -->
 			</div>
 	
 			<!-- IF S_CLEAR_ALLOWED -->
@@ -63,8 +63,8 @@
 					<input class="btn btn-info" type="submit" value="{L_DELETE_MARKED}" name="action[del_marked]" />
 				</fieldset>
 				<fieldset class="btn-group">
-					<a href="#" onclick="marklist('mcp', 'mark', true); return false;" class="btn btn-default btn-mini"><i class="icon-check"></i> {L_MARK_ALL}</a>
-					<a href="#" onclick="marklist('mcp', 'mark', false); return false;" class="btn btn-default btn-mini"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+					<a href="#" onclick="marklist('mcp', 'mark', true); return false;" class="btn btn-default btn-xs"><i class="icon-check"></i> {L_MARK_ALL}</a>
+					<a href="#" onclick="marklist('mcp', 'mark', false); return false;" class="btn btn-default btn-xs"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
 				</fieldset>				
 			<!-- ENDIF -->
 		<!-- ELSE -->

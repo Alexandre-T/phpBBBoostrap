@@ -18,12 +18,12 @@
 			<h4 class="fieldset"><a href="#pr{topic_review_row.POST_ID}">{topic_review_row.POST_SUBJECT}</a></h4>
 			<div class="btn-group pull-right">
 				<!-- IF topic_review_row.POSTER_QUOTE and topic_review_row.DECODED_MESSAGE -->
-				<a class="btn btn-default btn-mini" href="#postingbox" onclick="addquote({topic_review_row.POST_ID}, '{topic_review_row.POSTER_QUOTE}', '{LA_WROTE}');" title="{L_QUOTE} {topic_review_row.POST_AUTHOR}">
+				<a class="btn btn-default btn-xs" href="#postingbox" onclick="addquote({topic_review_row.POST_ID}, '{topic_review_row.POSTER_QUOTE}', '{LA_WROTE}');" title="{L_QUOTE} {topic_review_row.POST_AUTHOR}">
 					<i class="icon-quote-right"></i> {L_REPLY} {topic_review_row.POST_AUTHOR}
 				</a>
 				<!-- ENDIF -->
 				<!-- IF topic_review_row.U_MCP_DETAILS -->
-					<a class="btn btn-mini btn-warning" href="{topic_review_row.U_MCP_DETAILS}"><i class="icon-exclamation-sign"></i> {L_POST_DETAILS}</a>
+					<a class="btn btn-xs btn-warning" href="{topic_review_row.U_MCP_DETAILS}"><i class="icon-exclamation-sign"></i> {L_POST_DETAILS}</a>
 				<!-- ENDIF -->
 			</div>
 				
@@ -48,7 +48,7 @@
 
 <hr />
 <div class="btn-group pull-right">
-	<a href="<!-- IF S_MCP_REPORT -->#report<!-- ELSE -->#postingbox<!-- ENDIF -->" class="btn btn-default btn-mini" title="{L_BACK_TO_TOP}">
+	<a href="<!-- IF S_MCP_REPORT -->#report<!-- ELSE -->#postingbox<!-- ENDIF -->" class="btn btn-default btn-xs" title="{L_BACK_TO_TOP}">
 		<i class="icon-double-angle-up"></i>
 	</a>
 </div>

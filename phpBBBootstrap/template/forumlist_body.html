@@ -22,12 +22,12 @@
 				<td class="col-md-8">
 					<!-- Boutons de droite -->
 					<span class="btn-group pull-right">
-						<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a class="btn btn-mini btn-warning" href="{forumrow.U_UNAPPROVED_TOPICS}"><i class="icon-bell"></i></a><!-- ENDIF -->
-						<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED --><a class="btn btn-default btn-mini pull-right tooltip-link" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}"><i class="icon-rss"></i> <span class="hidden">{L_FEED} - {forumrow.FORUM_NAME}</span></a><!-- ENDIF -->
+						<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a class="btn btn-xs btn-warning" href="{forumrow.U_UNAPPROVED_TOPICS}"><i class="icon-bell"></i></a><!-- ENDIF -->
+						<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED --><a class="btn btn-default btn-xs pull-right tooltip-link" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}"><i class="icon-rss"></i> <span class="hidden">{L_FEED} - {forumrow.FORUM_NAME}</span></a><!-- ENDIF -->
 					</span>					
 					
 					<span class="pull-left" style="margin-left:15px;margin-right:15px">
-						<a href="{forumrow.U_VIEWFORUM}" class="btn btn-large <!-- IF forumrow.S_UNREAD_FORUM -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> tooltip-link" title="{forumrow.FORUM_FOLDER_IMG_ALT}">
+						<a href="{forumrow.U_VIEWFORUM}" class="btn btn-lg <!-- IF forumrow.S_UNREAD_FORUM -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> tooltip-link" title="{forumrow.FORUM_FOLDER_IMG_ALT}">
 							<!-- IF forumrow.S_IS_LINK -->
 								<i class="icon-globe icon-large"></i>
 							<!-- ELSEIF forumrow.S_LOCKED_FORUM -->

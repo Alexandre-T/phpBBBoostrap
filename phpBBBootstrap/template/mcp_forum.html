@@ -7,13 +7,13 @@
 <div class="panel">
 	<!-- IF PAGINATION or TOTAL_TOPICS -->
 	<div class="btn-group pull-right">
-		<!-- IF TOTAL --><span class="btn btn-default btn-mini disabled">{TOTAL}</span><!-- ENDIF -->
+		<!-- IF TOTAL --><span class="btn btn-default btn-xs disabled">{TOTAL}</span><!-- ENDIF -->
 		<!-- IF PAGE_NUMBER -->
 			<!-- IF PAGINATION -->
-				<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-mini">{PAGE_NUMBER}</a>
+				<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-xs">{PAGE_NUMBER}</a>
 				{PAGINATION}
 			<!-- ELSE -->
-				<span class="btn btn-default btn-mini disabled">{PAGE_NUMBER}</span>
+				<span class="btn btn-default btn-xs disabled">{PAGE_NUMBER}</span>
 			<!-- ENDIF -->
 		<!-- ENDIF -->
 	</div>
@@ -38,7 +38,7 @@
 				<!-- BEGIN topicrow -->
 				<tr>
 					<td>
-						<a href="{topicrow.U_VIEW_TOPIC}" class="btn <!-- IF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL --> btn-large <!-- ENDIF -->" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+						<a href="{topicrow.U_VIEW_TOPIC}" class="btn <!-- IF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL --> btn-lg <!-- ENDIF -->" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
 							<!-- IF topicrow.S_TOPIC_LOCKED -->
 								<!-- IF topicrow.S_POST_GLOBAL or topicrow.S_POST_ANNOUNCE -->
 									<i class="icon-lock icon-large"></i>
@@ -64,11 +64,11 @@
 						<!-- IF topicrow.S_SELECT_TOPIC --><a href="{topicrow.U_SELECT_TOPIC}" class="topictitle">[ {L_SELECT_MERGE} ]</a>&nbsp;&nbsp; <!-- ENDIF -->
 						<a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a>
 						<div class="btn-group pull-right">
-							<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a class="btn btn-warning btn-mini" href="{topicrow.U_MCP_QUEUE}" title="{L_MCP_QUEUE}"><i class="icon-question-sign"></i></a> <!-- ENDIF -->
-							<!-- IF topicrow.S_TOPIC_REPORTED --><a class="btn btn-warning btn-mini" href="{topicrow.U_MCP_REPORT}" title="{L_MCP_REPORT}"><i class="icon-warning-sign"></i></a><!-- ENDIF -->
+							<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a class="btn btn-warning btn-xs" href="{topicrow.U_MCP_QUEUE}" title="{L_MCP_QUEUE}"><i class="icon-question-sign"></i></a> <!-- ENDIF -->
+							<!-- IF topicrow.S_TOPIC_REPORTED --><a class="btn btn-warning btn-xs" href="{topicrow.U_MCP_REPORT}" title="{L_MCP_REPORT}"><i class="icon-warning-sign"></i></a><!-- ENDIF -->
 							<!-- IF topicrow.S_MOVED_TOPIC and S_CAN_DELETE -->&nbsp;<a href="{topicrow.U_DELETE_TOPIC}" class="topictitle">[ {L_DELETE_SHADOW_TOPIC} ]</a><!-- ENDIF -->
 							<!-- IF topicrow.PAGINATION -->{topicrow.PAGINATION}<!-- ENDIF -->							
-							<!-- IF topicrow.ATTACH_ICON_IMG --><a href="#" class="btn btn-default btn-mini"><i class="icon-paper-clip"></i></a><!-- ENDIF -->
+							<!-- IF topicrow.ATTACH_ICON_IMG --><a href="#" class="btn btn-default btn-xs"><i class="icon-paper-clip"></i></a><!-- ENDIF -->
 						</div>
 						<br />
 						{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
@@ -99,11 +99,11 @@
 
 	<!-- IF PAGINATION or TOTAL_TOPICS -->
 		<div class="btn-group pull-right">
-			<!-- IF TOTAL_TOPICS --><span class="btn btn-default btn-mini disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
-			<!-- IF PREVIOUS_PAGE --><a class="btn btn-default btn-mini" href="{PREVIOUS_PAGE}" title="{L_PREVIOUS}"><i class="icon-double-angle-left"></i></a><!-- ENDIF -->
-			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --><a href="#" class="btn btn-default btn-mini" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>{PAGINATION}<!-- ELSE --><span class="btn btn-default btn-mini disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
-			<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-default btn-mini" title="{L_NEXT}"><i class="icon-double-angle-right"></i></a><!-- ENDIF -->
-			<!-- IF not S_MERGE_SELECT --><a class="btn btn-default btn-mini" href="#" onclick="marklist('mcp', 'topic_id_list', true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a><a class="btn btn-default btn-mini" href="#" onclick="marklist('mcp', 'topic_id_list', false); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a><!-- ENDIF -->
+			<!-- IF TOTAL_TOPICS --><span class="btn btn-default btn-xs disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
+			<!-- IF PREVIOUS_PAGE --><a class="btn btn-default btn-xs" href="{PREVIOUS_PAGE}" title="{L_PREVIOUS}"><i class="icon-double-angle-left"></i></a><!-- ENDIF -->
+			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --><a href="#" class="btn btn-default btn-xs" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>{PAGINATION}<!-- ELSE --><span class="btn btn-default btn-xs disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
+			<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-default btn-xs" title="{L_NEXT}"><i class="icon-double-angle-right"></i></a><!-- ENDIF -->
+			<!-- IF not S_MERGE_SELECT --><a class="btn btn-default btn-xs" href="#" onclick="marklist('mcp', 'topic_id_list', true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a><a class="btn btn-default btn-xs" href="#" onclick="marklist('mcp', 'topic_id_list', false); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a><!-- ENDIF -->
 		</div>
 	<!-- ENDIF -->
 	<fieldset class="display-actions form-inline">

@@ -33,7 +33,7 @@
 				<strong>{L_DELETED_TOPIC}</strong>
 			<!-- ELSE -->
 				<div class="pull-left forum-topic-icon">
-					<span><a href="{topicrow.U_VIEW_TOPIC}" class="btn <!-- IF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL --> btn-large <!-- ENDIF --> tooltip-link" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+					<span><a href="{topicrow.U_VIEW_TOPIC}" class="btn <!-- IF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL --> btn-lg <!-- ENDIF --> tooltip-link" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
 						<!-- IF topicrow.S_TOPIC_LOCKED -->
 							<!-- IF topicrow.S_POST_GLOBAL or topicrow.S_POST_ANNOUNCE -->
 								<i class="icon-lock icon-large"></i>
@@ -58,20 +58,20 @@
 				<div class="pull-right">
 					<div class="btn-group">
 						<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
-						<a href="{topicrow.U_MCP_QUEUE}" class="btn btn-warning btn-mini"><i class="icon-warning-sign"></i></a>
+						<a href="{topicrow.U_MCP_QUEUE}" class="btn btn-warning btn-xs"><i class="icon-warning-sign"></i></a>
 						<!-- ENDIF -->
 						<!-- IF topicrow.S_TOPIC_REPORTED -->
-						<a href="{topicrow.U_MCP_REPORT}" class="btn btn-warning btn-mini"><i class="icon-warning-sign"></i></a>
+						<a href="{topicrow.U_MCP_REPORT}" class="btn btn-warning btn-xs"><i class="icon-warning-sign"></i></a>
 						<!-- ENDIF -->
 						<!-- IF topicrow.ATTACH_ICON_IMG -->
-						<a href="#" class="btn btn-default btn-mini disabled"><i class="icon-paper-clip"></i></a>
+						<a href="#" class="btn btn-default btn-xs disabled"><i class="icon-paper-clip"></i></a>
 						<!-- ENDIF -->
 						<!-- IF topicrow.PAGINATION -->{topicrow.PAGINATION}<!-- ENDIF -->
 						<!-- IF topicrow.S_UNREAD_TOPIC -->
-							<a class="btn btn-mini btn-info" href="{topicrow.U_NEWEST_POST}"><i class="icon-angle-right"></i></a>
+							<a class="btn btn-xs btn-info" href="{topicrow.U_NEWEST_POST}"><i class="icon-angle-right"></i></a>
 						<!-- ENDIF -->
 						<!-- IF not S_IS_BOT -->
-							<a class="btn btn-mini btn-info tooltip-link" href="{topicrow.U_LAST_POST}"  title="{L_LAST_POST}"><i class="icon-double-angle-right"></i></a>
+							<a class="btn btn-xs btn-info tooltip-link" href="{topicrow.U_LAST_POST}"  title="{L_LAST_POST}"><i class="icon-double-angle-right"></i></a>
 						<!-- ENDIF -->						
 					</div>
 				</div>

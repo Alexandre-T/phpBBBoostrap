@@ -37,13 +37,13 @@
 <div class="panel">
 
 	<fieldset class="btn-group pull-right">
-		<!-- IF TOTAL --><span class="btn btn-default btn-mini disabled">{TOTAL}</span><!-- ENDIF -->
+		<!-- IF TOTAL --><span class="btn btn-default btn-xs disabled">{TOTAL}</span><!-- ENDIF -->
 		<!-- IF PAGE_NUMBER -->
 			<!-- IF PAGINATION -->
-				<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-mini">{PAGE_NUMBER}</a>
+				<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-xs">{PAGE_NUMBER}</a>
 				{PAGINATION}
 			<!-- ELSE -->
-				<span class="btn btn-default btn-mini disabled">{PAGE_NUMBER}</span>
+				<span class="btn btn-default btn-xs disabled">{PAGE_NUMBER}</span>
 			<!-- ENDIF -->
 		<!-- ENDIF -->
 	</fieldset>
@@ -85,15 +85,15 @@
 		</fieldset>
 		<hr/>
 		<div class="btn-group pull-right">
-			<!-- IF TOTAL_REPORTS --><span class="btn btn-default btn-mini disabled">{TOTAL_REPORTS}</span><!-- ENDIF -->
-			<!-- IF PREVIOUS_PAGE --><a class="btn btn-default btn-mini" href="{PREVIOUS_PAGE}" title="{L_PREVIOUS}"><i class="icon-double-angle-left"></i></a><!-- ENDIF -->
-			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --><a href="#" class="btn btn-default btn-mini" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>{PAGINATION}<!-- ELSE --><span class="btn btn-mini disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
-			<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-default btn-mini" title="{L_NEXT}"><i class="icon-double-angle-right"></i></a><!-- ENDIF -->
+			<!-- IF TOTAL_REPORTS --><span class="btn btn-default btn-xs disabled">{TOTAL_REPORTS}</span><!-- ENDIF -->
+			<!-- IF PREVIOUS_PAGE --><a class="btn btn-default btn-xs" href="{PREVIOUS_PAGE}" title="{L_PREVIOUS}"><i class="icon-double-angle-left"></i></a><!-- ENDIF -->
+			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --><a href="#" class="btn btn-default btn-xs" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>{PAGINATION}<!-- ELSE --><span class="btn btn-xs disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
+			<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-default btn-xs" title="{L_NEXT}"><i class="icon-double-angle-right"></i></a><!-- ENDIF -->
 		</div>
 		<!-- IF S_CLEAR_ALLOWED -->
 			<fieldset class="btn-group pull-right">
-				<a href="#" onclick="marklist('mcp', 'mark', true); return false;" class="btn btn-default btn-mini"><i class="icon-check"></i> {L_MARK_ALL}</a>
-				<a href="#" onclick="marklist('mcp', 'mark', false); return false;" class="btn btn-default btn-mini"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+				<a href="#" onclick="marklist('mcp', 'mark', true); return false;" class="btn btn-default btn-xs"><i class="icon-check"></i> {L_MARK_ALL}</a>
+				<a href="#" onclick="marklist('mcp', 'mark', false); return false;" class="btn btn-default btn-xs"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
 			</fieldset>				
 			<fieldset class="btn-group">
 				<input class="btn btn-warning" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />

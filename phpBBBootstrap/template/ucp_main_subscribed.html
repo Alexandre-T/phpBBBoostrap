@@ -27,7 +27,7 @@
 				<td>
 					<!-- background-image: url({forumrow.FORUM_FOLDER_IMG_SRC}); background-repeat: no-repeat; -->
 					<span class="pull-left" style="margin-left:15px;margin-right:15px">
-						<a href="{forumrow.U_VIEWFORUM}" class="btn btn-large <!-- IF forumrow.S_UNREAD_FORUM -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> tooltip-link" title="{forumrow.FORUM_FOLDER_IMG_ALT}">
+						<a href="{forumrow.U_VIEWFORUM}" class="btn btn-lg <!-- IF forumrow.S_UNREAD_FORUM -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> tooltip-link" title="{forumrow.FORUM_FOLDER_IMG_ALT}">
 							<!-- IF forumrow.S_IS_LINK -->
 								<i class="icon-globe icon-large"></i>
 							<!-- ELSEIF forumrow.S_LOCKED_FORUM -->
@@ -86,7 +86,7 @@
 		<tr>
 			<td class="">
 				<div class="pull-left forum-topic-icon">
-					<span><a href="{topicrow.U_VIEW_TOPIC}" class="btn <!-- IF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL --> btn-large <!-- ENDIF --> tooltip-link" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+					<span><a href="{topicrow.U_VIEW_TOPIC}" class="btn <!-- IF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL --> btn-lg <!-- ENDIF --> tooltip-link" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
 						<!-- IF topicrow.S_TOPIC_LOCKED -->
 							<!-- IF topicrow.S_POST_GLOBAL or topicrow.S_POST_ANNOUNCE -->
 								<i class="icon-lock icon-large"></i>
@@ -111,20 +111,20 @@
 				<div class="pull-right">
 					<div class="btn-group">
 						<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
-						<a href="{topicrow.U_MCP_QUEUE}" class="btn btn-warning btn-mini"><i class="icon-warning-sign"></i></a>
+						<a href="{topicrow.U_MCP_QUEUE}" class="btn btn-warning btn-xs"><i class="icon-warning-sign"></i></a>
 						<!-- ENDIF -->
 						<!-- IF topicrow.S_TOPIC_REPORTED -->
-						<a href="{topicrow.U_MCP_REPORT}" class="btn btn-warning btn-mini"><i class="icon-warning-sign"></i></a>
+						<a href="{topicrow.U_MCP_REPORT}" class="btn btn-warning btn-xs"><i class="icon-warning-sign"></i></a>
 						<!-- ENDIF -->
 						<!-- IF topicrow.ATTACH_ICON_IMG -->
-						<a href="#" class="btn btn-default btn-mini disabled"><i class="icon-paper-clip"></i></a>
+						<a href="#" class="btn btn-default btn-xs disabled"><i class="icon-paper-clip"></i></a>
 						<!-- ENDIF -->
 						<!-- IF topicrow.PAGINATION -->{topicrow.PAGINATION}<!-- ENDIF -->
 						<!-- IF topicrow.S_UNREAD_TOPIC -->
-							<a class="btn btn-mini btn-info" href="{topicrow.U_NEWEST_POST}"><i class="icon-angle-right"></i></a>
+							<a class="btn btn-xs btn-info" href="{topicrow.U_NEWEST_POST}"><i class="icon-angle-right"></i></a>
 						<!-- ENDIF -->
 						<!-- IF not S_IS_BOT -->
-							<a class="tooltip-link btn btn-mini btn-info" href="{topicrow.U_LAST_POST}"  title="{L_LAST_POST}"><i class="icon-double-angle-right"></i></a>
+							<a class="tooltip-link btn btn-xs btn-info" href="{topicrow.U_LAST_POST}"  title="{L_LAST_POST}"><i class="icon-double-angle-right"></i></a>
 						<!-- ENDIF -->
 					</div>
 				</div>

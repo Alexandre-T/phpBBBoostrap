@@ -37,7 +37,7 @@
 	<!-- ENDIF -->
 
 	<!-- IF NUM_NOT_MOVED -->
-		<div class="alert alert-error alert-block">
+		<div class="alert alert-danger alert-block">
 			
 			<h4>{NOT_MOVED_MESSAGES}</h4>
 			<p>{RELEASE_MESSAGE_INFO}</p>
@@ -59,7 +59,7 @@
 					<td>
 						<!-- IF S_PM_ICONS -->
 						<span class="pull-left forum-topic-icon">
-							<span><a href="<!-- IF messagerow.S_PM_DELETED -->{messagerow.U_REMOVE_PM}<!-- ELSE -->{messagerow.U_VIEW_PM}<!-- ENDIF -->" class="btn <!-- IF messagerow.S_PM_DELETED --> btn-danger <!-- ELSEIF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL --> btn-large <!-- ENDIF --> tooltip-link" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+							<span><a href="<!-- IF messagerow.S_PM_DELETED -->{messagerow.U_REMOVE_PM}<!-- ELSE -->{messagerow.U_VIEW_PM}<!-- ENDIF -->" class="btn <!-- IF messagerow.S_PM_DELETED --> btn-danger <!-- ELSEIF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL --> btn-lg <!-- ENDIF --> tooltip-link" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
 								<!-- IF messagerow.S_PM_DELETED -->
 									<i class="icon-trash"></i>
 								<!-- ELSEIF topicrow.S_POST_STICKY -->
