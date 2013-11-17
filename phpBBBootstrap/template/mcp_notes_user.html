@@ -7,7 +7,7 @@
 <div class="panel">
 	<h4 class="fieldset">{USERNAME_FULL}</h4>
 	<div class="row">
-		<div class="span4 avatar">
+		<div class="col-md-4 avatar">
 			<!-- IF AVATAR_IMG -->{AVATAR_IMG}<!-- ENDIF -->
 			<dl class="details">
 				<!-- IF RANK_TITLE --><dt>{L_RANK} :</dt><dd>{RANK_TITLE}</dd><!-- ENDIF -->
@@ -17,7 +17,7 @@
 				<dt>{L_WARNINGS} : </dt><dd>{WARNINGS}</dd>
 			</dl>
 		</div>
-		<div class="span8 corps">
+		<div class="col-md-8 corps">
 			<h3>{L_ADD_FEEDBACK}</h3>
 			<p>{L_ADD_FEEDBACK_EXPLAIN}</p>
 			<fieldset>
@@ -50,7 +50,7 @@
 
 	<fieldset class="form-inline">
 		<label for="keywords">{L_SEARCH_KEYWORDS} </label>
-		<input type="text" class="span3" name="keywords" value="{S_KEYWORDS}" />
+		<input type="text" class="col-md-3" name="keywords" value="{S_KEYWORDS}" />
 		<input type="submit" class="btn btn-primary" name="filter" value="{L_SEARCH}" />
 	</fieldset>
 	<hr/>

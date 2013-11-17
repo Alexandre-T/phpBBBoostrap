@@ -8,18 +8,18 @@
 		<fieldset class="polls">
 		<!-- BEGIN poll_option -->
 		<div class="row">
-			<div class="offset1 span2 text-right">
+			<div class="offset1 col-md-2 text-right">
 				{L_NO_VOTES}
 			</div>
-			<div class="span1 text-center hidden-phone">
+			<div class="col-md-1 text-center hidden-phone">
 				<span class="btn btn-mini disabled" title="Vous n'avez pas voté pour"><i class="icon-remove-sign"></i></span>
 			</div>
-			<div class="span4 text-left  hidden-phone">
+			<div class="col-md-4 text-left  hidden-phone">
 				<div class="progress">
  						<div class="bar" style="width: 0%;"></div>
 				</div>				
 			</div>
-			<div class="span4">
+			<div class="col-md-4">
 				<label class="<!-- IF S_IS_MULTI_CHOICE -->checkbox<!-- ELSE -->radio<!-- ENDIF -->">
 				{poll_option.POLL_OPTION_CAPTION}						
  					<!-- IF S_IS_MULTI_CHOICE -->  						
@@ -35,10 +35,10 @@
 		<hr class="dashed"/>
 	<!-- ENDIF -->
 	<div class="row">
-		<div class="span2 text-center">
+		<div class="col-md-2 text-center">
 			<i class="icon-eye-open icon-4x"></i>
 		</div>
-		<div class="span10">
+		<div class="col-md-10">
 			<h4 class="fieldset">{L_PREVIEW}: {PREVIEW_SUBJECT}</h4>
 			
 			<p class="content">{PREVIEW_MESSAGE}</p>

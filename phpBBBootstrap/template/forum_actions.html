@@ -1,6 +1,6 @@
 <!-- IF S_DISPLAY_POST_INFO or PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
 	<div class="row">
-		<div class="span4">
+		<div class="col-md-4">
 			<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
 				<!-- IF S_IS_LOCKED -->
 				<a class="btn btn-danger" href="{U_POST_NEW_TOPIC}"><i class="icon-lock"></i> {L_FORUM_LOCKED}</a>
@@ -9,7 +9,7 @@
 				<!-- ENDIF -->
 			<!-- ENDIF -->
 		</div>
-		<div class="span8 text-right">
+		<div class="col-md-8 text-right">
 			<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
 				<div class="btn-group {$ALTITUDE}">
 					<!-- IF S_VIEWTOPIC -->

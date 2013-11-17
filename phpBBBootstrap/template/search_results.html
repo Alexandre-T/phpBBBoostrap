@@ -16,7 +16,7 @@
 	<form method="post" action="{S_SEARCH_ACTION}" class="form form-inline form-search">
 		<div class="row">
 		<!-- IF SEARCH_MATCHES -->
-			<div class="span6">
+			<div class="col-md-6">
 				<!-- IF SEARCH_IN_RESULTS -->
 					<label for="add_keywords">{L_SEARCH_IN_RESULTS}</label>
 					<div class="input-append">
@@ -26,7 +26,7 @@
 				<!-- ENDIF -->
 			</div>
 		<!-- ENDIF -->
-			<div class="text-right span6">			
+			<div class="text-right col-md-6">			
 				<!-- INCLUDE pagination.html --> 
 			</div>
 		</div>
@@ -114,14 +114,14 @@
 		{searchresults.L_IGNORE_POST}		
 	<!-- ELSE -->
 	<div class="row ">
-		<div class="span8">
+		<div class="col-md-8">
 			<h3><a href="{searchresults.U_VIEW_POST}">{searchresults.POST_SUBJECT}</a></h3>
 			<p class="text-justify">
 				{searchresults.MESSAGE}
 				<a href="{searchresults.U_VIEW_POST}" class=" pull-right btn btn-mini tooltip-link intoh2" title="{L_JUMP_TO_POST}"><i class="icon-eye-open"></i> {L_JUMP_TO_POST}</a>
 			</p>
 		</div>
-		<div class="offset1 span3">
+		<div class="offset1 col-md-3">
 				
 			<ul class="unstyled">
 				<li>&nbsp;</li>

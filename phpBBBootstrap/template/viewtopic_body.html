@@ -1,10 +1,10 @@
 <!-- INCLUDE overall_header.html -->
 <section>
 	<div class="row">
-		<div class="span9">
+		<div class="col-md-9">
 			<h2><a href="{U_VIEW_TOPIC}">{TOPIC_TITLE}</a></h2>
 		</div>
-		<div class="span3 text-right intoh2">
+		<div class="col-md-3 text-right intoh2">
 			<!-- IF S_DISPLAY_SEARCHBOX -->
 			<form method="get" class="form-horizontal" id="topic-search" action="{S_SEARCHBOX_ACTION}">
 				{S_SEARCH_LOCAL_HIDDEN_FIELDS}				
@@ -52,23 +52,23 @@
 			<!-- BEGIN poll_option -->
 			<div class="row">
 				<!-- IF S_DISPLAY_RESULTS -->
-				<div class="offset2 span2 text-right">
+				<div class="offset2 col-md-2 text-right">
 					<!-- IF poll_option.POLL_OPTION_RESULT == 0 -->{L_NO_VOTES}<!-- ELSE -->{poll_option.POLL_OPTION_PERCENT}<!-- ENDIF -->
 				</div>
 				<!-- ENDIF -->
-				<div class="span1 <!-- IF not S_DISPLAY_RESULTS -->offset3<!-- ENDIF --> hidden-phone">
+				<div class="col-md-1 <!-- IF not S_DISPLAY_RESULTS -->offset3<!-- ENDIF --> hidden-phone">
 					<!-- IF poll_option.POLL_OPTION_VOTED -->
 					<span class="btn btn-mini btn-success disabled" title="Votre vote"><i class="icon-ok-sign"></i></span>
 					<!-- ELSE -->
 					<span class="btn btn-mini disabled" title="Vous n'avez pas voté pour"><i class="icon-remove-sign"></i></span>
 					<!-- ENDIF -->
 				</div>
-				<div class="span3 text-left  hidden-phone">
+				<div class="col-md-3 text-left  hidden-phone">
 					<div class="progress">
   						<div class="bar" style="width: {poll_option.POLL_OPTION_PCT}%;"></div>
 					</div>				
 				</div>
-				<div class="span4">
+				<div class="col-md-4">
 					<!-- IF S_CAN_VOTE -->
 					<label class="<!-- IF S_IS_MULTI_CHOICE -->checkbox<!-- ELSE -->radio<!-- ENDIF -->">
 					<!-- ENDIF -->
@@ -128,7 +128,7 @@
 	<!-- ELSE -->
 	<div class="row <!-- IF postrow.S_FIRST_ROW --> firsttopic <!-- ENDIF !--> <!-- IF postrow.S_LAST_ROW --> lasttopic <!-- ENDIF -->  <!-- IF postrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
 		<div id="profile{postrow.POST_ID}" class="<!-- IF postrow.S_UNREAD_POST --> unreadpost<!-- ENDIF -->">
-			<div class="span3 avatar text-center hidden-phone">
+			<div class="col-md-3 avatar text-center hidden-phone">
 				<ul class="unstyled">
 					<!-- IF postrow.POSTER_AVATAR -->
 						<li><!-- IF postrow.U_POST_AUTHOR --><a href="{postrow.U_POST_AUTHOR}">{postrow.POSTER_AVATAR}</a><!-- ELSE -->{postrow.POSTER_AVATAR}<!-- ENDIF --></li>
@@ -195,7 +195,7 @@
 					<!-- ENDIF -->
 				</ul>
 			</div>
-			<div class="span9 corps" id="p{postrow.POST_ID}">
+			<div class="col-md-9 corps" id="p{postrow.POST_ID}">
 				<!-- IF not S_IS_BOT -->				
 				<!-- IF postrow.U_EDIT or postrow.U_DELETE or postrow.U_REPORT or postrow.U_WARN or postrow.U_INFO or postrow.U_QUOTE -->
 				<div class="btn-group pull-right" style="margin-top:10px;margin-right:10px;">

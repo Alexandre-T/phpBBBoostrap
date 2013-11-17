@@ -13,7 +13,7 @@
 				<th>
 					<!-- IF S_DISPLAY_ACTIVE -->{L_ACTIVE_TOPICS}<!-- ELSEIF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF -->
 				</th>
-				<th class="span2 text-center hidden-tablet">
+				<th class="col-md-2 text-center hidden-tablet">
 					<span class="visible-desktop">{L_LAST_POST}</span>
 				</th>
 			</tr>
@@ -54,7 +54,7 @@
 						<a class="bleu" href="{topicrow.U_VIEW_TOPIC}" class="topictitle"><strong>{topicrow.TOPIC_TITLE}</strong></a><br/>					
 					 	<small>{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</small>
 					 </td>
-					 <td class="span3 hidden-phone">
+					 <td class="col-md-3 hidden-phone">
 						<small>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}						
 						<br />{topicrow.LAST_POST_TIME}</small>
 					</td>

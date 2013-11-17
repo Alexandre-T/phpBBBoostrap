@@ -78,7 +78,7 @@
 	<div class="<!-- IF SCRIPT_NAME eq index -->hero-unit<!-- ELSE -->page-header<!-- ENDIF --> ">
 		<div class="container">
 			<div class="row">
-				<div class="span7">
+				<div class="col-md-7">
 					<!-- @todo <a href="{U_INDEX}" title="{L_INDEX}" id="logo">{SITE_LOGO_IMG}</a>  -->
 					<!-- IF SCRIPT_NAME eq index -->
 						<h1>{SITENAME}</h1>			
@@ -88,7 +88,7 @@
 					<!-- ENDIF -->
 					<p class="hidden"><a href="#start_here">{L_SKIP}</a></p>
 				</div>
-				<div class="span5 text-right">
+				<div class="col-md-5 text-right">
 					<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
 					<form class="form-search form-inline hidden-phone" action="{U_SEARCH}" method="get" >
 						{S_SEARCH_HIDDEN_FIELDS}

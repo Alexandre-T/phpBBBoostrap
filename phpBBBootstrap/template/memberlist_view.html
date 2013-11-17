@@ -4,7 +4,7 @@
 
 <form method="post" action="{S_PROFILE_ACTION}" id="viewprofile" class="form form-horizontal">
 	<div class="row">
-		<div class="span8">
+		<div class="col-md-8">
 			<h3><i class="icon-user"></i> Profil</h3>
 			
 			<dl class="dl-horizontal">
@@ -46,7 +46,7 @@
 				<!-- IF S_GROUP_OPTIONS --><dt>{L_USERGROUPS}</dt> <dd><span class="input-append"><select name="g">{S_GROUP_OPTIONS}</select> <input type="submit" name="submit" value="{L_GO}" class="btn" /></span></dd><!-- ENDIF -->
 			</dl>
 		</div>
-		<div class="span4">
+		<div class="col-md-4">
 			<!-- IF AVATAR_IMG -->
 			<dl class="pull-right">
 				<dt style="text-align: center;" class="forum-avatar-cadre">{AVATAR_IMG}</dt>
@@ -58,7 +58,7 @@
 	</div>
 <hr class="small"/>
 <div class="row">
-	<div class="span6">
+	<div class="col-md-6">
 
 		<h3><i class="icon-envelope-alt"></i> {L_CONTACT_USER} {USERNAME}</h3>
 
@@ -78,7 +78,7 @@
 		</dl>
 	</div>
 
-	<div class="span6">
+	<div class="col-md-6">
 		<h3><i class="icon-cogs"></i> {L_USER_FORUM}</h3>
 		<dl class="dl-horizontal">
 			<dt>{L_JOINED}</dt> <dd>{JOINED}</dd>

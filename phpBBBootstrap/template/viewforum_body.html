@@ -1,10 +1,10 @@
 <!-- INCLUDE overall_header.html -->
 <section>
 	<div class="row">
-		<div class="span7">
+		<div class="col-md-7">
 			<h2><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a></h2>
 		</div>
-		<div class="span5 text-bottom text-right intoh2 hidden-phone">
+		<div class="col-md-5 text-bottom text-right intoh2 hidden-phone">
 			<!-- IF S_DISPLAY_SEARCHBOX -->
 				<form action="{S_SEARCHBOX_ACTION}" method="get" id="forum-search" >
 					<fieldset>
@@ -108,13 +108,13 @@
 				<th>
 					<!-- IF S_DISPLAY_ACTIVE -->{L_ACTIVE_TOPICS}<!-- ELSEIF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF -->
 				</th>
-				<th class="span2 text-center hidden-tablet">
+				<th class="col-md-2 text-center hidden-tablet">
 					<span class="visible-desktop">{L_LAST_POST}</span>
 				</th>
-				<th class="span2 text-center hidden-phone hidden-tablet">
+				<th class="col-md-2 text-center hidden-phone hidden-tablet">
 					<span>{L_REPLIES}</span>
 				</th>
-				<th class="span2 text-center hidden-phone hidden-tablet">
+				<th class="col-md-2 text-center hidden-phone hidden-tablet">
 					<span>{L_VIEWS}</span>
 				</th>
 			</tr>
@@ -169,14 +169,14 @@
 					<a class="bleu" href="{topicrow.U_VIEW_TOPIC}" class="topictitle"><strong>{topicrow.TOPIC_TITLE}</strong></a><br/>					
 				 	<small>{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</small>
 				</td>
-				<td class="span3 hidden-phone">
+				<td class="col-md-3 hidden-phone">
 					<small>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}						
 					<br />{topicrow.LAST_POST_TIME}</small>
 				</td>
-				<td class="span2 text-center hidden-phone hidden-tablet text-middle">
+				<td class="col-md-2 text-center hidden-phone hidden-tablet text-middle">
 					<span class="label">{topicrow.REPLIES}</span>
 				</td>
-				<td class="span2 text-center hidden-phone hidden-tablet text-middle">
+				<td class="col-md-2 text-center hidden-phone hidden-tablet text-middle">
 					<span class="label" >{topicrow.VIEWS}</span>
 				</td>
 			</tr> 
@@ -200,13 +200,13 @@
 	<!-- INCLUDE sort.html -->
 	
 	<div class="row hidden-phone">
-		<div class="span7">
+		<div class="col-md-7">
 			<!-- IF S_DISPLAY_ONLINE_LIST -->
 			   <h3><!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}"><i class="icon-map-marker"></i> {L_WHO_IS_ONLINE}</a><!-- ELSE -->{L_WHO_IS_ONLINE}<!-- ENDIF --></h3>
 			   <p>{LOGGED_IN_USER_LIST}</p>
 			<!-- ENDIF -->
 		</div>
-		<div class="span5 text-right intoh2">
+		<div class="col-md-5 text-right intoh2">
 			<!-- INCLUDE jumpbox.html -->			
 		</div>
 	</div>

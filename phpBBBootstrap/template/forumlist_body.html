@@ -9,9 +9,9 @@
 			<thead>
 				<tr>
 					<th class=""><!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF --></th>
-					<th class="span1 hidden-phone topics">{L_TOPICS}</th>
-					<th class="span1 hidden-phone posts">{L_POSTS}</th>
-					<th class="span3 hidden-phone lastpost">{L_LAST_POST}</th>
+					<th class="col-md-1 hidden-phone topics">{L_TOPICS}</th>
+					<th class="col-md-1 hidden-phone posts">{L_POSTS}</th>
+					<th class="col-md-3 hidden-phone lastpost">{L_LAST_POST}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -19,7 +19,7 @@
 			
 	<!-- IF not forumrow.S_IS_CAT -->
 			<tr>
-				<td class="span8">
+				<td class="col-md-8">
 					<!-- Boutons de droite -->
 					<span class="btn-group pull-right">
 						<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a class="btn btn-mini btn-warning" href="{forumrow.U_UNAPPROVED_TOPICS}"><i class="icon-bell"></i></a><!-- ENDIF -->
@@ -82,10 +82,10 @@
 <!-- BEGINELSE -->
 	<div class="alert alert-info">
 		<div class=" row">
-		<div class="span1">
+		<div class="col-md-1">
 			<i class="icon-exclamation-sign icon-3x"></i> 
 		</div>
-			<div class="span11">
+			<div class="col-md-11">
 				<a class="close" data-dismiss="alert" href="#">&times;</a>
 				<h4 class="alert-heading">{L_INFORMATION}</h4>
 				<p>{L_NO_FORUMS}</p>
