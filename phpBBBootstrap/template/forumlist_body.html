@@ -9,9 +9,9 @@
 			<thead>
 				<tr>
 					<th class=""><!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF --></th>
-					<th class="col-md-1 hidden-phone topics">{L_TOPICS}</th>
-					<th class="col-md-1 hidden-phone posts">{L_POSTS}</th>
-					<th class="col-md-3 hidden-phone lastpost">{L_LAST_POST}</th>
+					<th class="col-md-1 hidden-xs topics">{L_TOPICS}</th>
+					<th class="col-md-1 hidden-xs posts">{L_POSTS}</th>
+					<th class="col-md-3 hidden-xs lastpost">{L_LAST_POST}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -52,14 +52,14 @@
 				
 				<!-- IF forumrow.S_IS_LINK -->
 					<!-- IF forumrow.CLICKS -->
-						<td colspan="3" class="hidden-phone"><strong>{L_REDIRECTS}&nbsp;:</strong>&nbsp;{forumrow.CLICKS}</td>
+						<td colspan="3" class="hidden-xs"><strong>{L_REDIRECTS}&nbsp;:</strong>&nbsp;{forumrow.CLICKS}</td>
 					<!-- ELSE -->
-						<td colspan="3" class="hidden-phone">
+						<td colspan="3" class="hidden-xs">
 					<!-- ENDIF -->
 				<!-- ELSE -->
-					<td class="hidden-phone topics"><span class="badge">{forumrow.TOPICS}</span> <dfn class="hidden">{L_TOPICS}</dfn></td>
-					<td class="hidden-phone posts"><span class="badge">{forumrow.POSTS}</span> <dfn class="hidden">{L_POSTS}</dfn></td>
-					<td class="hidden-phone lastpost">
+					<td class="hidden-xs topics"><span class="badge">{forumrow.TOPICS}</span> <dfn class="hidden">{L_TOPICS}</dfn></td>
+					<td class="hidden-xs posts"><span class="badge">{forumrow.POSTS}</span> <dfn class="hidden">{L_POSTS}</dfn></td>
+					<td class="hidden-xs lastpost">
 						<!-- IF forumrow.LAST_POST_TIME and not S_IS_BOT -->
 							<a class="tooltip-link" href="{forumrow.U_LAST_POST}" title="{L_LAST_POST}"><i class="icon-mail-forward"></i><dfn class="hidden">{L_LAST_POST}</dfn></a>
 						<!-- ENDIF -->

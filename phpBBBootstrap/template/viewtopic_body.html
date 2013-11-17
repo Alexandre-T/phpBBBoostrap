@@ -56,14 +56,14 @@
 					<!-- IF poll_option.POLL_OPTION_RESULT == 0 -->{L_NO_VOTES}<!-- ELSE -->{poll_option.POLL_OPTION_PERCENT}<!-- ENDIF -->
 				</div>
 				<!-- ENDIF -->
-				<div class="col-md-1 <!-- IF not S_DISPLAY_RESULTS -->col-md-offset-3<!-- ENDIF --> hidden-phone">
+				<div class="col-md-1 <!-- IF not S_DISPLAY_RESULTS -->col-md-offset-3<!-- ENDIF --> hidden-xs">
 					<!-- IF poll_option.POLL_OPTION_VOTED -->
 					<span class="btn btn-xs btn-success disabled" title="Votre vote"><i class="icon-ok-sign"></i></span>
 					<!-- ELSE -->
 					<span class="btn btn-xs btn-default disabled" title="Vous n'avez pas voté pour"><i class="icon-remove-sign"></i></span>
 					<!-- ENDIF -->
 				</div>
-				<div class="col-md-3 text-left  hidden-phone">
+				<div class="col-md-3 text-left  hidden-xs">
 					<div class="progress">
   						<div class="bar" style="width: {poll_option.POLL_OPTION_PCT}%;"></div>
 					</div>				
@@ -85,7 +85,7 @@
 					</label>
 					<!-- ENDIF -->
 				</div>
-				<hr class="visible-phone"/>
+				<hr class="visible-xs"/>
 			</div>
 			<!-- END poll_option -->
 
@@ -128,7 +128,7 @@
 	<!-- ELSE -->
 	<div class="row <!-- IF postrow.S_FIRST_ROW --> firsttopic <!-- ENDIF !--> <!-- IF postrow.S_LAST_ROW --> lasttopic <!-- ENDIF -->  <!-- IF postrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
 		<div id="profile{postrow.POST_ID}" class="<!-- IF postrow.S_UNREAD_POST --> unreadpost<!-- ENDIF -->">
-			<div class="col-md-3 avatar text-center hidden-phone">
+			<div class="col-md-3 avatar text-center hidden-xs">
 				<ul class="unstyled">
 					<!-- IF postrow.POSTER_AVATAR -->
 						<li><!-- IF postrow.U_POST_AUTHOR --><a href="{postrow.U_POST_AUTHOR}">{postrow.POSTER_AVATAR}</a><!-- ELSE -->{postrow.POSTER_AVATAR}<!-- ENDIF --></li>
@@ -292,13 +292,13 @@
 <!-- ENDIF -->
 </div>
 <!-- IF S_DISPLAY_ONLINE_LIST -->
-<div class="visible-desktop">	
+<div class="visible-md">	
 	<h3><!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}"><i class="icon-map-marker"></i> {L_WHO_IS_ONLINE} ?</a><!-- ELSE --><i class="icon-map-marker"></i> {L_WHO_IS_ONLINE} ?<!-- ENDIF --></h3>
 	<p>{LOGGED_IN_USER_LIST}</p>
 </div>
 <!-- ENDIF -->
 <!-- IF MODERATORS -->
-<div class="visible-desktop">
+<div class="visible-md">
 	<p class="text-right">
    		<strong><!-- IF S_SINGLE_MODERATOR -->{L_MODERATOR}<!-- ELSE -->{L_MODERATORS}<!-- ENDIF -->:</strong> {MODERATORS}
 	</p>

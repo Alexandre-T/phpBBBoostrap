@@ -17,7 +17,7 @@
 				<th>
 					{L_BOOKMARKS}
 				</th>
-				<th class=" hidden-phone hidden-tablet">
+				<th class=" hidden-xs hidden-sm">
 					{L_LAST_POST}
 				</th>
 				<th>
@@ -79,7 +79,7 @@
 			 	<small>{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</small>
 			<!-- ENDIF -->
 			</td>
-			<td class=" hidden-phone hidden-tablet">
+			<td class=" hidden-xs hidden-sm">
 				<small>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}						
 				<br />{topicrow.LAST_POST_TIME}</small>
 			</td>
@@ -103,8 +103,8 @@
 	<fieldset class="form-actions">		
 		<input type="submit" name="unbookmark" value="{L_REMOVE_BOOKMARK_MARKED}" class="btn btn-primary" />
 		<div class="btn-group">
-			<a class="btn btn-default visible-desktop" href="#" onclick="$(':checkbox','#ucp').prop('checked',true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
-			<a class="btn btn-default visible-desktop" href="#" onclick="$(':checkbox','#ucp').removeAttr('checked'); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+			<a class="btn btn-default visible-md" href="#" onclick="$(':checkbox','#ucp').prop('checked',true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
+			<a class="btn btn-default visible-md" href="#" onclick="$(':checkbox','#ucp').removeAttr('checked'); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
 		</div>
 		{S_FORM_TOKEN}
 	</fieldset>
