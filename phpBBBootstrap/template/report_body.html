@@ -15,14 +15,14 @@
 			</div>
 		<!-- ENDIF -->
 		
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label" for="reason_id">{L_REASON}</label>
 			<div class="controls">
 				<select name="reason_id" id="reason_id" class="input-block-level"><!-- BEGIN reason --><option value="{reason.ID}"<!-- IF reason.S_SELECTED --> selected="selected"<!-- ENDIF -->>{reason.DESCRIPTION}</option><!-- END reason --></select>
 			</div>
 		</div>
 		<!-- IF S_CAN_NOTIFY -->
-			<div class="control-group">
+			<div class="form-group">
 				<label class="control-label" for="notify1">{L_REPORT_NOTIFY}</label>
 				<div class="controls">
 					<label class="radio inline" for="notify1"><input type="radio" name="notify" id="notify1" value="1" <!-- IF not S_NOTIFY -->checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
@@ -31,7 +31,7 @@
 				</div>
 			</div>
 		<!-- ENDIF -->
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label" for="report_text">{L_MORE_INFO}</label>
 			<div class="controls">
 				<textarea name="report_text" id="report_text" rows="3" class="input-block-level">{REPORT_TEXT}</textarea></dd>

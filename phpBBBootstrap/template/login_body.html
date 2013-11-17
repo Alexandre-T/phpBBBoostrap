@@ -16,7 +16,7 @@
 				{LOGIN_ERROR}
 			</div>
 			<!-- ENDIF -->
-			<div class="control-group">
+			<div class="form-group">
 	   			<label class="control-label" for="{USERNAME_CREDENTIAL}">{L_USERNAME}&nbsp;</label>
 	   			<div class="controls">
 	   				<div class="input-prepend">
@@ -25,7 +25,7 @@
 					</div>
 	   			</div>
 	 			</div>
-			<div class="control-group">
+			<div class="form-group">
 	   			<label class="control-label" for="{PASSWORD_CREDENTIAL}">{L_PASSWORD}&nbsp;</label>
 	   			<div class="controls">
 	   				<div class="input-prepend">
@@ -38,7 +38,7 @@
 				<!-- DEFINE $CAPTCHA_TAB_INDEX = 3 -->
 				<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
 			<!-- ENDIF -->
-			<div class="control-group">
+			<div class="form-group">
 				<!-- IF S_DISPLAY_FULL_LOGIN and (U_SEND_PASSWORD or U_RESEND_ACTIVATION) -->
 					<!-- IF U_SEND_PASSWORD --><div class="controls"><a href="{U_SEND_PASSWORD}">{L_FORGOT_PASS}</a></div><!-- ENDIF -->
 					<!-- IF U_RESEND_ACTIVATION --><div class="controls"><a href="{U_RESEND_ACTIVATION}">{L_RESEND_ACTIVATION}</a></div><!-- ENDIF -->
@@ -60,7 +60,7 @@
 					</div>
 				<!-- ENDIF -->
 			</div>
-			<div class="control-group">
+			<div class="form-group">
 				<div class="controls">
 					<button type="submit" name="login" tabindex="6" class="btn btn-primary"><i class="icon-signin"></i> {L_LOGIN}</button>
 				</div>

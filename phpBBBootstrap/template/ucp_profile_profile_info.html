@@ -8,7 +8,7 @@
 
 	<fieldset>
 	<!-- IF ERROR --><p class="alert alert-block alert-danger">{ERROR}</p><!-- ENDIF -->
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="icq">{L_UCP_ICQ}</label>
 		<div class="controls">
 	  		<div class="input-prepend">
@@ -17,7 +17,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="aim">{L_UCP_AIM}</label>
 		<div class="controls">
 			<div class="input-prepend">
@@ -26,7 +26,7 @@
 	  		</div>
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="msn">{L_UCP_MSNM}</label>
 		<div class="controls">
 			<div class="input-prepend">
@@ -35,7 +35,7 @@
 	  		</div>
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="yim">{L_UCP_YIM}</label>
 		<div class="controls">
 			<div class="input-prepend">
@@ -44,7 +44,7 @@
 		  	</div>
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="jabber">{L_UCP_JABBER}</label>
 		<div class="controls">
 			<div class="input-prepend">
@@ -53,7 +53,7 @@
 		  	</div>
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="website">{L_WEBSITE}</label>
 		<div class="controls">
 			<div class="input-prepend">
@@ -62,7 +62,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="location">{L_LOCATION}</label>
 		<div class="controls">
 			<div class="input-prepend">
@@ -71,20 +71,20 @@
 		  	</div>
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="occupation">{L_OCCUPATION}</label>
 		<div class="controls">
 	  		<textarea name="occupation" id="occupation" class="input-block-level" rows="3" cols="30">{OCCUPATION}</textarea>
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="interests">{L_INTERESTS}</label>
 		<div class="controls">
 	  		<textarea name="interests" id="interests" class="input-block-level" rows="3" cols="30">{INTERESTS}</textarea>
 		</div>
 	</div>
 	<!-- IF S_BIRTHDAYS_ENABLED -->
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label" for="bday_day">{L_BIRTHDAY}</label>
 		<div class="controls form-inline">
 			<label for="bday_day">{L_DAY}: <select name="bday_day" id="bday_day" style="width: 4em;">{S_BIRTHDAY_DAY_OPTIONS}</select></label> 
@@ -95,7 +95,7 @@
 	</div>
 	<!-- ENDIF -->
 	<!-- BEGIN profile_fields -->
-		<div class="control-group <!-- IF profile_fields.ERROR -->error<!-- ENDIF -->">
+		<div class="form-group <!-- IF profile_fields.ERROR -->error<!-- ENDIF -->">
 			<label class="control-label" for="<!-- IF profile_fields.FIELD_ID -->{profile_fields.FIELD_ID}<!-- ENDIF -->">{profile_fields.LANG_NAME}<!-- IF profile_fields.S_REQUIRED --> *<!-- ENDIF --></label>						
 			<div class="controls">			
 	  			{profile_fields.FIELD}

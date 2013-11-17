@@ -32,11 +32,11 @@
 		<div class="tab-pane fade panel <!-- IF S_MERGE_VIEW -->in active<!-- ENDIF -->" id="merge">
 			<p>{L_MERGE_TOPIC_EXPLAIN}</p>
 			<fieldset class="form-horizontal">
-				<div class="control-group">
+				<div class="form-group">
 					<label class="control-label" for="to_topic_id">{L_MERGE_TOPIC_ID} </label>
 					<div class="controls">
 						<div class="input-append">
-						<input class="input-large" type="text" name="to_topic_id" id="to_topic_id" value="{TO_TOPIC_ID}" />
+						<input class="input-lg" type="text" name="to_topic_id" id="to_topic_id" value="{TO_TOPIC_ID}" />
 						<a class="btn btn-default" href="{U_SELECT_TOPIC}" ><i class="icon-search"></i> {L_SELECT_TOPIC}</a>
 						<a class="btn btn-primary" href="#" title="{L_MERGE_POSTS}" onclick="getElementById('action').value='merge_posts';alert(getElementById('action').value);return false;"><i class="icon-copy"></i> {L_MERGE_POSTS}</a>					
 						</div>
@@ -51,7 +51,7 @@
 			<p>{L_SPLIT_TOPIC_EXPLAIN}</p>
 			<fieldset class="form-horizontal">
 				<!-- IF ! S_SHOW_TOPIC_ICONS -->
-					<div class="control-group">
+					<div class="form-group">
 						<label for="icon" class="control-label">{L_TOPIC_ICON}</label>
 						<div class="controls">						
 							<label for="icon" class="radio inline"><input type="radio" name="icon" id="icon" value="0" checked="checked"/> {L_NO_TOPIC_ICON}</label>
@@ -59,25 +59,25 @@
 						</div>
 					</div>
 				<!-- ENDIF -->
-				<div class="control-group">
+				<div class="form-group">
 					<label class="control-label" for="subject">{L_SPLIT_SUBJECT} </label>
 					<div class="controls">
 						<input type="text" name="subject" id="subject" maxlength="64" tabindex="2" value="{SPLIT_SUBJECT}" title="{L_SPLIT_SUBJECT}" class="input-block-level" />
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="form-group">
 					<label class="control-label" for="to_forum_id">{L_SPLIT_FORUM}</label>
 					<div class="controls">
 						<select name="to_forum_id">{S_FORUM_SELECT}</select>
 					</div>
 				</div>				
-				<div class="control-group">					
+				<div class="form-group">					
 					<div class="controls">
 						<label class="radio inline"><input type="radio" name="split_type" id="split_type_0" checked="checked" value="split_all"/>{L_SPLIT_POSTS}</label>
 						<label class="radio inline"><input type="radio" name="split_type" value="split_beyond"/>{L_SPLIT_AFTER}</label>
 					</div>
 				</div>
-				<div class="control-group">
+				<div class="form-group">
 					<div class="controls">
 						<a onclick="if(getElementById('split_type_0').checked){ getElementById('action').value='split_all'}else{getElementById('action').value='split_beyond'};getElementById('mcp').submit();return false;" class="btn btn-primary" href="#"><i class="icon-cut"></i> {L_SPLIT_TOPIC}</a>
 					</div>
@@ -87,7 +87,7 @@
 		<!-- ENDIF -->
 		<div class="tab-pane fade panel" id="display">
 			<fieldset class="form-horizontal">
-				<div class="control-group">
+				<div class="form-group">
 					<label class="control-label" for="posts_per_page">{L_POSTS_PER_PAGE} </label>
 					<div class="controls">
 						<input class="" type="text" name="posts_per_page" id="posts_per_page" size="6" value="{POSTS_PER_PAGE}" />

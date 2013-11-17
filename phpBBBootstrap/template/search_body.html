@@ -12,7 +12,7 @@
 <h3>{L_SEARCH_QUERY}</h3>
 
 <fieldset>
-	<div class="control-group">
+	<div class="form-group">
 		<label for="keywords" class="control-label">{L_SEARCH_KEYWORDS}</label>
 		<div class="controls">
 			<input type="text" class="input-block-level" name="keywords" id="keywords" size="40" title="{L_SEARCH_KEYWORDS}" />
@@ -23,7 +23,7 @@
 			<span class=help-block><em>{L_SEARCH_KEYWORDS_EXPLAIN}</em></span>
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="author">{L_SEARCH_AUTHOR}</label>
 		<div class="controls">
 			<input type="text" class="inputbox" name="author" id="author" size="40" title="{L_SEARCH_AUTHOR}" />
@@ -34,21 +34,21 @@
 
 <h3><i class="icon-cogs"></i> {L_SEARCH_OPTIONS}</h3>
 <fieldset>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="search_forum">{L_SEARCH_FORUMS}</label>
 		<div class="controls">
 			<select name="fid[]" id="search_forum" multiple="multiple" size="8" title="{L_SEARCH_FORUMS}">{S_FORUM_OPTIONS}</select>
 			<span class="help-block">{L_SEARCH_FORUMS_EXPLAIN}</span>
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="search_child1">{L_SEARCH_SUBFORUMS}</label>
 		<div class="controls">
 			<label class="radio inline" for="search_child1"><input type="radio" name="sc" id="search_child1" value="1" checked="checked" /> {L_YES}</label>
 			<label class="radio inline" for="search_child2"><input type="radio" name="sc" id="search_child2" value="0" /> {L_NO}</label>
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="sf1">{L_SEARCH_WITHIN}</label>
 		<div class="controls">
 			<label class="radio inline" for="sf1"><input type="radio" name="sf" id="sf1" value="all" checked="checked" /> {L_SEARCH_TITLE_MSG}</label>
@@ -60,14 +60,14 @@
 
 	<hr class="dashed" />
 
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="show_results1">{L_DISPLAY_RESULTS}</label>
 		<div class="controls">
 			<label class="radio inline" for="show_results1"><input type="radio" name="sr" id="show_results1" value="posts" checked="checked" /> {L_POSTS}</label>
 			<label class="radio inline" for="show_results2"><input type="radio" name="sr" id="show_results2" value="topics" /> {L_TOPICS}</label>
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="sd">{L_RESULT_SORT}</label>
 		<div class="controls">
 			{S_SELECT_SORT_KEY}&nbsp;
@@ -75,13 +75,13 @@
 			<label class="radio inline" for="sd"><input type="radio" name="sd" id="sd" value="d" checked="checked" /> {L_SORT_DESCENDING}</label>
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label">{L_RESULT_DAYS}</label>
 		<div class="controls">
 			{S_SELECT_SORT_DAYS}
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label">{L_RETURN_FIRST}</label>
 		<div class="controls">
 		<select name="ch" title="{L_RETURN_FIRST}">{S_CHARACTER_OPTIONS}</select> {L_POST_CHARACTERS}

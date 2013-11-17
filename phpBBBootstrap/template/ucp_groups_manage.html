@@ -18,7 +18,7 @@
 	
 		<fieldset>
 		
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label" for="group_name">{L_GROUP_NAME}</label>
 			<div class="controls">
 				<!-- IF S_SPECIAL_GROUP -->
@@ -29,7 +29,7 @@
 				<!-- ENDIF -->
 			</div>
 		</div>
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label" for="group_desc">{L_GROUP_DESC}</label>
 			<div class="controls">
 				<textarea id="group_desc" name="group_desc" rows="5" cols="45" class="input-block-level">{GROUP_DESC}</textarea>
@@ -39,7 +39,7 @@
 			</div>
 		</div>
 		<!-- IF not S_SPECIAL_GROUP -->
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label"  for="group_type1">{L_GROUP_TYPE}</label>
 			<div class="controls">
 				<label class="radio inline" for="group_type1"><input type="radio" class="radio" name="group_type" id="group_type1" value="{GROUP_TYPE_FREE}"{GROUP_FREE} /> {L_GROUP_OPEN}</label> 
@@ -57,7 +57,7 @@
 
 	<h3><i class="icon-cogs"></i> {L_GROUP_SETTINGS_SAVE}</h3>
 
-	<div class="control-groups">
+	<div class="form-groups">
 		<label class="control-label" for="group_colour">{L_GROUP_COLOR}</label>
 		<div class="controls">
 			<div class="input-append input-prepend">
@@ -68,7 +68,7 @@
 			<span class="help-block">{L_GROUP_COLOR_EXPLAIN}</span>
 		</div>
 	</div>
-	<div class="control-groups">
+	<div class="form-groups">
 		<label class="control-label" for="group_rank">{L_GROUP_RANK}</label>
 		<div class="controls">
 			<select name="group_rank" id="group_rank">{S_RANK_OPTIONS}</select>
@@ -195,7 +195,7 @@
 	<p class="text-justify">{L_ADD_USERS_UCP_EXPLAIN}</p>
 
 	<fieldset>
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label" for="default0">{L_USER_GROUP_DEFAULT}</label>
 			<div class="controls">
 				<label class="radio inline" for="default1"><input type="radio" name="default" id="default1" value="1" /> {L_YES}</label> 
@@ -204,7 +204,7 @@
 			</div>
 		</div>
 		
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label" for="usernames">{L_USERNAME}</label>
 			<div class="controls">
 				<textarea name="usernames" id="usernames" rows="3" cols="30" class="inputbox"></textarea>

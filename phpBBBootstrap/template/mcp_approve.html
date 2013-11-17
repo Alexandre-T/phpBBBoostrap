@@ -12,7 +12,7 @@
 
 		<fieldset>
 		<!-- IF S_NOTIFY_POSTER -->
-			<div class="control-group">
+			<div class="form-group">
 				<div class="controls">
 					<label for="notify_poster" class="checkbox">
 						<input type="checkbox" name="notify_poster" checked="checked" /> 
@@ -27,7 +27,7 @@
 		<!-- ENDIF -->
 
 		<!-- IF not S_APPROVE -->
-			<div class="control-group">
+			<div class="form-group">
 				<label for="notify_poster" class="control-label">{L_DISAPPROVE_REASON} </label>
 				<div class="controls">
 					<select name="reason_id">
@@ -35,7 +35,7 @@
 					</select>
 				</div>
 			</div>
-			<div class="control-group">
+			<div class="form-group">
 				<label for="reason" class="control-label">{L_MORE_INFO} </label>
 				<div class="controls">
 					<textarea class="input-block-level" name="reason" id="reason" rows="4" cols="40">{REASON}</textarea>

@@ -3,7 +3,7 @@
 <form id="mcp" method="post" action="{S_MCP_ACTION}" class="form-horizontal">
 <!-- IF ! TOPIC_ID -->
 <fieldset class="forum-selection">
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="fo">{L_FORUM} </label>
 		<div class="controls">
 			{S_FORM_TOKEN}
@@ -71,22 +71,22 @@
 		<fieldset class="display-options">
 			<div class="btn-group pull-right">
 			</div>
-			<div class="control-group">
+			<div class="form-group">
 				<label class="control-label">{L_DISPLAY_POSTS} : </label>
 				<div class="controls">{S_SELECT_SORT_DAYS}</div>
 			</div>
-			<div class="control-group">
+			<div class="form-group">
 				<label class="control-label">{L_SORT_BY} : </label>
 				<div class="controls">{S_SELECT_SORT_KEY}</div>
 			</div>
-			<div class="control-group">
+			<div class="form-group">
 				<label class="control-label">{L_ORDER} : </label>
 				<div class="controls">{S_SELECT_SORT_DIR}</div>
 			</div>
-			<div class="control-group">
+			<div class="form-group">
 				<div class="controls"><label for="t" class="checkbox"><input type="checkbox" name="t" value="{TOPIC_ID}" checked="checked" /> {L_ONLY_TOPIC}</label></div>
 			</div>
-			<div class="control-group">
+			<div class="form-group">
 				<div class="controls"><input type="submit" name="sort" value="{L_GO}" class="btn btn-primary" /></div>
 			</div>
 		</fieldset>

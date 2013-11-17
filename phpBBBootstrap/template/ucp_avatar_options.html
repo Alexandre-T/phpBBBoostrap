@@ -14,7 +14,7 @@
 	</dl>
 
 	<!-- IF S_UPLOAD_AVATAR_FILE -->
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label" for="uploadfile">{L_UPLOAD_AVATAR_FILE}</label>
 			<div class="controls">
 				<input type="hidden" name="MAX_FILE_SIZE" value="{AVATAR_SIZE}" />
@@ -24,7 +24,7 @@
 	<!-- ENDIF -->
 
 	<!-- IF S_UPLOAD_AVATAR_URL -->
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label" for="uploadurl">{L_UPLOAD_AVATAR_URL}</label>
 			<div class="controls">
 				<input type="text" name="uploadurl" id="uploadurl" value="{AVATAR_URL}" class="inputbox" />
@@ -34,19 +34,19 @@
 	<!-- ENDIF -->
 
 	<!-- IF S_LINK_AVATAR -->
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label" for="remotelink">{L_LINK_REMOTE_AVATAR}</label>
 			<div class="controls">
 				<input type="text" name="remotelink" id="remotelink" value="{AVATAR_REMOTE}" class="inputbox" />
 				<span class="help-block"><em>{L_LINK_REMOTE_AVATAR_EXPLAIN}</em></span>
 			</div>
 		</div>
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label" for="width">{L_LINK_REMOTE_SIZE}</label>
 			<div class="controls">
-				<input type="text" name="width" id="width" size="3" value="{AVATAR_WIDTH}" class="input-small" /> 
+				<input type="text" name="width" id="width" size="3" value="{AVATAR_WIDTH}" class="input-sm" /> 
 				&nbsp;&times;&nbsp; 
-				<input type="text" name="height" id="height" size="3" value="{AVATAR_HEIGHT}" class="input-small" /> {L_PIXEL}
+				<input type="text" name="height" id="height" size="3" value="{AVATAR_HEIGHT}" class="input-sm" /> {L_PIXEL}
 				<span class="help-block"><em>{L_LINK_REMOTE_SIZE_EXPLAIN}</em></span>
 			</div>
 		</div>
@@ -57,7 +57,7 @@
 
 
 		<h4>{L_AVATAR_GALLERY}</h4>
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label" for="category">{L_AVATAR_CATEGORY}</label>
 			<div class="controls">
 				<div class="input-append">

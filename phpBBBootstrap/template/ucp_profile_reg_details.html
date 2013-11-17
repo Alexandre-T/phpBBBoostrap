@@ -10,7 +10,7 @@
 
 <fieldset>
 	<!-- IF ERROR --><p class="alert alert-danger alert-block">{ERROR}</p><!-- ENDIF -->
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="username">{L_USERNAME}</label>
 		<div class="controls">
 			<!-- IF S_CHANGE_USERNAME -->
@@ -21,7 +21,7 @@
 			<span class="help-block"><em>{L_USERNAME_EXPLAIN}</em></span>
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="email">{L_EMAIL_ADDRESS}</label>
 		<div class="controls">
 			<!-- IF S_CHANGE_EMAIL -->
@@ -32,7 +32,7 @@
 		</div>
 	</div>
 	<!-- IF S_CHANGE_EMAIL -->
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="email_confirm">{L_CONFIRM_EMAIL}</label>
 		<div class="controls">
 			<input type="text" name="email_confirm" id="email_confirm" maxlength="100" value="{CONFIRM_EMAIL}" class="input-xlarge" title="{L_CONFIRM_EMAIL}" />
@@ -41,14 +41,14 @@
 	</div>
 	<!-- ENDIF -->
 	<!-- IF S_CHANGE_PASSWORD -->
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="new_password">{L_NEW_PASSWORD}</label>
 		<div class="controls">
 			<input type="password" name="new_password" id="new_password" maxlength="255" value="{NEW_PASSWORD}" class="input-xlarge" title="{L_CHANGE_PASSWORD}" />
 			<span class="help-block">{L_CHANGE_PASSWORD_EXPLAIN}</span>
 		</div>
 	</div>
-	<div class="control-group">
+	<div class="form-group">
 		<label class="control-label" for="new_password">{L_CONFIRM_PASSWORD}</label>
 		<div class="controls">
 			<input type="password" name="password_confirm" id="password_confirm" maxlength="255" value="{PASSWORD_CONFIRM}" class="input-xlarge" title="{L_CONFIRM_PASSWORD}" />
@@ -58,7 +58,7 @@
 	<!-- ENDIF -->
 	</fieldset>
 	<fieldset>
-		<div class="control-group">
+		<div class="form-group">
 			<label class="control-label" for="cur_password">{L_CURRENT_PASSWORD}</label>
 			<div class="controls">
 				<input type="password" name="cur_password" id="cur_password" maxlength="255" value="{CUR_PASSWORD}" class="input-xlarge" title="{L_CURRENT_PASSWORD}" />
