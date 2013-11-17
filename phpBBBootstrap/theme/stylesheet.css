@@ -7,8 +7,7 @@
     --------------------------------------------------------------
 */
 
-@import url("bootstrap.min.css");
-@import url("bootstrap-fileupload.min.css");
+@import url("css/bootstrap.min.css");
 @import url("font-awesome.min.css");
 @import url("forums.css");
 
