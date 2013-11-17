@@ -31,7 +31,7 @@ function find_username(url)
     $('strong','.pagination-line').addClass('btn btn-default btn-xs disabled');
     //$('strong','.btn').removeClass('btn btn-xs disabled');
     $('span.page-sep','.pagination-line').remove();
-    $('img','.forum-avatar-cadre').addClass('img-polaroid');
+    $('img','.forum-avatar-cadre').addClass('img-thumbnail');
     //$('.tooltip-link').tooltip()
     //$('.popover-test').popover()
 
