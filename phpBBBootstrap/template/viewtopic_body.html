@@ -52,11 +52,11 @@
 			<!-- BEGIN poll_option -->
 			<div class="row">
 				<!-- IF S_DISPLAY_RESULTS -->
-				<div class="offset2 col-md-2 text-right">
+				<div class="col-md-offset-2 col-md-2 text-right">
 					<!-- IF poll_option.POLL_OPTION_RESULT == 0 -->{L_NO_VOTES}<!-- ELSE -->{poll_option.POLL_OPTION_PERCENT}<!-- ENDIF -->
 				</div>
 				<!-- ENDIF -->
-				<div class="col-md-1 <!-- IF not S_DISPLAY_RESULTS -->offset3<!-- ENDIF --> hidden-phone">
+				<div class="col-md-1 <!-- IF not S_DISPLAY_RESULTS -->col-md-offset-3<!-- ENDIF --> hidden-phone">
 					<!-- IF poll_option.POLL_OPTION_VOTED -->
 					<span class="btn btn-mini btn-success disabled" title="Votre vote"><i class="icon-ok-sign"></i></span>
 					<!-- ELSE -->
