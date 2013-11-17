@@ -33,19 +33,19 @@
 			<label class="control-label" for="group_desc">{L_GROUP_DESC}</label>
 			<div class="controls">
 				<textarea id="group_desc" name="group_desc" rows="5" cols="45" class="input-block-level">{GROUP_DESC}</textarea>
-				<label class="checkbox inline" for="desc_parse_bbcode"><input type="checkbox" class="radio" name="desc_parse_bbcode" id="desc_parse_bbcode"<!-- IF S_DESC_BBCODE_CHECKED --> checked="checked"<!-- ENDIF --> /> {L_PARSE_BBCODE}</label>
-				<label class="checkbox inline" for="desc_parse_smilies"><input type="checkbox" class="radio" name="desc_parse_smilies" id="desc_parse_smilies"<!-- IF S_DESC_SMILIES_CHECKED --> checked="checked"<!-- ENDIF --> /> {L_PARSE_SMILIES}</label>
-				<label class="checkbox inline" for="desc_parse_urls"><input type="checkbox" class="radio" name="desc_parse_urls" id="desc_parse_urls"<!-- IF S_DESC_URLS_CHECKED --> checked="checked"<!-- ENDIF --> /> {L_PARSE_URLS}</label>
+				<label class="checkbox-inline" for="desc_parse_bbcode"><input type="checkbox" class="radio" name="desc_parse_bbcode" id="desc_parse_bbcode"<!-- IF S_DESC_BBCODE_CHECKED --> checked="checked"<!-- ENDIF --> /> {L_PARSE_BBCODE}</label>
+				<label class="checkbox-inline" for="desc_parse_smilies"><input type="checkbox" class="radio" name="desc_parse_smilies" id="desc_parse_smilies"<!-- IF S_DESC_SMILIES_CHECKED --> checked="checked"<!-- ENDIF --> /> {L_PARSE_SMILIES}</label>
+				<label class="checkbox-inline" for="desc_parse_urls"><input type="checkbox" class="radio" name="desc_parse_urls" id="desc_parse_urls"<!-- IF S_DESC_URLS_CHECKED --> checked="checked"<!-- ENDIF --> /> {L_PARSE_URLS}</label>
 			</div>
 		</div>
 		<!-- IF not S_SPECIAL_GROUP -->
 		<div class="form-group">
 			<label class="control-label"  for="group_type1">{L_GROUP_TYPE}</label>
 			<div class="controls">
-				<label class="radio inline" for="group_type1"><input type="radio" class="radio" name="group_type" id="group_type1" value="{GROUP_TYPE_FREE}"{GROUP_FREE} /> {L_GROUP_OPEN}</label> 
-				<label class="radio inline" for="group_type2"><input type="radio" class="radio" name="group_type" id="group_type2" value="{GROUP_TYPE_OPEN}"{GROUP_OPEN} /> {L_GROUP_REQUEST}</label> 
-				<label class="radio inline" for="group_type3"><input type="radio" class="radio" name="group_type" id="group_type3" value="{GROUP_TYPE_CLOSED}"{GROUP_CLOSED} /> {L_GROUP_CLOSED}</label> 
-				<label class="radio inline" for="group_type4"><input type="radio" class="radio" name="group_type" id="group_type4" value="{GROUP_TYPE_HIDDEN}"{GROUP_HIDDEN} /> {L_GROUP_HIDDEN}</label>
+				<label class="radio-inline" for="group_type1"><input type="radio" class="radio" name="group_type" id="group_type1" value="{GROUP_TYPE_FREE}"{GROUP_FREE} /> {L_GROUP_OPEN}</label> 
+				<label class="radio-inline" for="group_type2"><input type="radio" class="radio" name="group_type" id="group_type2" value="{GROUP_TYPE_OPEN}"{GROUP_OPEN} /> {L_GROUP_REQUEST}</label> 
+				<label class="radio-inline" for="group_type3"><input type="radio" class="radio" name="group_type" id="group_type3" value="{GROUP_TYPE_CLOSED}"{GROUP_CLOSED} /> {L_GROUP_CLOSED}</label> 
+				<label class="radio-inline" for="group_type4"><input type="radio" class="radio" name="group_type" id="group_type4" value="{GROUP_TYPE_HIDDEN}"{GROUP_HIDDEN} /> {L_GROUP_HIDDEN}</label>
 				<span class="help-block">{L_GROUP_TYPE_EXPLAIN}</span>
 			</div>
 		</div>
@@ -198,8 +198,8 @@
 		<div class="form-group">
 			<label class="control-label" for="default0">{L_USER_GROUP_DEFAULT}</label>
 			<div class="controls">
-				<label class="radio inline" for="default1"><input type="radio" name="default" id="default1" value="1" /> {L_YES}</label> 
-				<label class="radio inline" for="default0"><input type="radio" name="default" id="default0" value="0" checked="checked" /> {L_NO}</label>
+				<label class="radio-inline" for="default1"><input type="radio" name="default" id="default1" value="1" /> {L_YES}</label> 
+				<label class="radio-inline" for="default0"><input type="radio" name="default" id="default0" value="0" checked="checked" /> {L_NO}</label>
 				<span class="help-block">{L_USER_GROUP_DEFAULT_EXPLAIN}</span></dt>
 			</div>
 		</div>

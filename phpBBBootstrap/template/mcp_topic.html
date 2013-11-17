@@ -54,8 +54,8 @@
 					<div class="form-group">
 						<label for="icon" class="control-label">{L_TOPIC_ICON}</label>
 						<div class="controls">						
-							<label for="icon" class="radio inline"><input type="radio" name="icon" id="icon" value="0" checked="checked"/> {L_NO_TOPIC_ICON}</label>
-							<!-- BEGIN topic_icon --><label class="radio inline" for="icon-{topic_icon.ICON_ID}"><input type="radio" name="icon" id="icon-{topic_icon.ICON_ID}" value="{topic_icon.ICON_ID}" {topic_icon.S_ICON_CHECKED} /><img src="{topic_icon.ICON_IMG}" width="{topic_icon.ICON_WIDTH}" height="{topic_icon.ICON_HEIGHT}" alt="Icone" title="" /></label><!-- END topic_icon -->
+							<label for="icon" class="radio-inline"><input type="radio" name="icon" id="icon" value="0" checked="checked"/> {L_NO_TOPIC_ICON}</label>
+							<!-- BEGIN topic_icon --><label class="radio-inline" for="icon-{topic_icon.ICON_ID}"><input type="radio" name="icon" id="icon-{topic_icon.ICON_ID}" value="{topic_icon.ICON_ID}" {topic_icon.S_ICON_CHECKED} /><img src="{topic_icon.ICON_IMG}" width="{topic_icon.ICON_WIDTH}" height="{topic_icon.ICON_HEIGHT}" alt="Icone" title="" /></label><!-- END topic_icon -->
 						</div>
 					</div>
 				<!-- ENDIF -->
@@ -73,8 +73,8 @@
 				</div>				
 				<div class="form-group">					
 					<div class="controls">
-						<label class="radio inline"><input type="radio" name="split_type" id="split_type_0" checked="checked" value="split_all"/>{L_SPLIT_POSTS}</label>
-						<label class="radio inline"><input type="radio" name="split_type" value="split_beyond"/>{L_SPLIT_AFTER}</label>
+						<label class="radio-inline"><input type="radio" name="split_type" id="split_type_0" checked="checked" value="split_all"/>{L_SPLIT_POSTS}</label>
+						<label class="radio-inline"><input type="radio" name="split_type" value="split_beyond"/>{L_SPLIT_AFTER}</label>
 					</div>
 				</div>
 				<div class="form-group">
@@ -120,7 +120,7 @@
 
 			<div class="postbody" id="pr{postrow.POST_ID}">
 				<div class="pull-right ">
-					<label class="checkbox inline" for="post_id_list_select_{postrow.POST_ID}">{L_SELECT}<input type="checkbox"  name="post_id_list[]" value="{postrow.POST_ID}"<!-- IF postrow.S_CHECKED --> checked="checked"<!-- ENDIF --> /></label>
+					<label class="checkbox-inline" for="post_id_list_select_{postrow.POST_ID}">{L_SELECT}<input type="checkbox"  name="post_id_list[]" value="{postrow.POST_ID}"<!-- IF postrow.S_CHECKED --> checked="checked"<!-- ENDIF --> /></label>
 					<a class="btn btn-xs btn-warning" href="{postrow.U_POST_DETAILS}" title="{L_POST_DETAILS}"><i class="icon-exclamation-sign"></i></a>
 				</div>
 

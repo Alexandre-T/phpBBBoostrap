@@ -102,9 +102,9 @@
 	<div class="form-group">
 		<label class="control-label" for="icon"> {L_ICON} </label>
 		<div class="controls">
-			<label class="radio inline" for="icon"><input type="radio" name="icon" id="icon" value="0" checked="checked" tabindex="1" /> <!-- IF S_SHOW_TOPIC_ICONS -->{L_NO_TOPIC_ICON}<!-- ELSE -->{L_NO_PM_ICON}<!-- ENDIF --></label>
+			<label class="radio-inline" for="icon"><input type="radio" name="icon" id="icon" value="0" checked="checked" tabindex="1" /> <!-- IF S_SHOW_TOPIC_ICONS -->{L_NO_TOPIC_ICON}<!-- ELSE -->{L_NO_PM_ICON}<!-- ENDIF --></label>
 			<!-- BEGIN topic_icon -->
-			<label class="radio inline" for="icon-{topic_icon.ICON_ID}"><input type="radio" name="icon" id="icon-{topic_icon.ICON_ID}" value="{topic_icon.ICON_ID}" {topic_icon.S_ICON_CHECKED} tabindex="1" /> <img src="{topic_icon.ICON_IMG}" width="{topic_icon.ICON_WIDTH}" height="{topic_icon.ICON_HEIGHT}" alt="" /> </label> 
+			<label class="radio-inline" for="icon-{topic_icon.ICON_ID}"><input type="radio" name="icon" id="icon-{topic_icon.ICON_ID}" value="{topic_icon.ICON_ID}" {topic_icon.S_ICON_CHECKED} tabindex="1" /> <img src="{topic_icon.ICON_IMG}" width="{topic_icon.ICON_WIDTH}" height="{topic_icon.ICON_HEIGHT}" alt="" /> </label> 
 			<!-- END topic_icon -->
 		</div>
 	</div>
@@ -232,7 +232,7 @@
 					<label class="control-label" for="topic_type-0"><!-- IF S_EDIT_POST -->{L_CHANGE_TOPIC_TO}<!-- ELSE -->{L_POST_TOPIC_AS}<!-- ENDIF --></label>
 					<div class="controls">
 						<!-- BEGIN topic_type -->
-						<label class="radio inline" for="topic_type-{topic_type.VALUE}">
+						<label class="radio-inline" for="topic_type-{topic_type.VALUE}">
 							<input type="radio" name="topic_type" id="topic_type-{topic_type.VALUE}" value="{topic_type.VALUE}"{topic_type.S_CHECKED} />
 							{topic_type.L_TOPIC_TYPE}
 						</label>

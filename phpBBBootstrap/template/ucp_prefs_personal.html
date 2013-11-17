@@ -9,11 +9,11 @@
 	<div class="form-group">
 		<span class="control-label">{L_SHOW_EMAIL}</span>
 		<div class="controls">
-			<label for="viewemail1" class="radio inline">
+			<label for="viewemail1" class="radio-inline">
 				<input type="radio" name="viewemail" id="viewemail1" value="1" <!-- IF S_VIEW_EMAIL --> checked="checked"<!-- ENDIF --> />
 				{L_YES}
 			</label>
-			<label for="viewemail0" class="radio inline">
+			<label for="viewemail0" class="radio-inline">
 				<input type="radio" name="viewemail" id="viewemail0" value="0"<!-- IF not S_VIEW_EMAIL --> checked="checked"<!-- ENDIF --> />
 				{L_NO}
 			</label>
@@ -23,11 +23,11 @@
 	<div class="form-group">
 		<span class="control-label">{L_ADMIN_EMAIL}</span>
 		<div class="controls">
-			<label for="massemail1" class="radio inline">
+			<label for="massemail1" class="radio-inline">
 				<input type="radio" name="massemail" id="massemail1" value="1"<!-- IF S_MASS_EMAIL --> checked="checked"<!-- ENDIF --> /> 
 				{L_YES}
 			</label> 
-			<label for="massemail0" class="radio inline">
+			<label for="massemail0" class="radio-inline">
 				<input type="radio" name="massemail" id="massemail0" value="0"<!-- IF not S_MASS_EMAIL --> checked="checked"<!-- ENDIF --> /> 
 				{L_NO}
 			</label>
@@ -36,8 +36,8 @@
 	<div class="form-group">
 		<span class="control-label">{L_ALLOW_PM}</span>
 		<div class="controls">
-			<label for="allowpm1" class="radio inline"><input type="radio" name="allowpm" id="allowpm1" value="1"<!-- IF S_ALLOW_PM --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
-			<label for="allowpm0" class="radio inline"><input type="radio" name="allowpm" id="allowpm0" value="0"<!-- IF not S_ALLOW_PM --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			<label for="allowpm1" class="radio-inline"><input type="radio" name="allowpm" id="allowpm1" value="1"<!-- IF S_ALLOW_PM --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+			<label for="allowpm0" class="radio-inline"><input type="radio" name="allowpm" id="allowpm0" value="0"<!-- IF not S_ALLOW_PM --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
 			<span class="help-block"><em>{L_ALLOW_PM_EXPLAIN}</em></span>
 		</div>
 	</div>
@@ -45,8 +45,8 @@
 		<div class="form-group">
 			<span class="control-label">{L_HIDE_ONLINE}</span>
 			<div class="controls">
-				<label for="hideonline1" class="radio inline"><input type="radio" name="hideonline" id="hideonline1" value="1"<!-- IF S_HIDE_ONLINE --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
-				<label for="hideonline0" class="radio inline"><input type="radio" name="hideonline" id="hideonline0" value="0"<!-- IF not S_HIDE_ONLINE --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+				<label for="hideonline1" class="radio-inline"><input type="radio" name="hideonline" id="hideonline1" value="1"<!-- IF S_HIDE_ONLINE --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+				<label for="hideonline0" class="radio-inline"><input type="radio" name="hideonline" id="hideonline0" value="0"<!-- IF not S_HIDE_ONLINE --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
 				<span class="help-inline"><em>{L_HIDE_ONLINE_EXPLAIN}</em></span>
 			</div>
 		</div>
@@ -55,24 +55,24 @@
 		<div class="form-group">
 			<span class="control-label">{L_NOTIFY_METHOD}</span>
 			<div class="controls">
-				<label for="notifymethod0" class="radio inline"><input type="radio" name="notifymethod" id="notifymethod0" value="0"<!-- IF S_NOTIFY_EMAIL --> checked="checked"<!-- ENDIF --> /> {L_NOTIFY_METHOD_EMAIL}</label> 
-				<label for="notifymethod1" class="radio inline"><input type="radio" name="notifymethod" id="notifymethod1" value="1"<!-- IF S_NOTIFY_IM --> checked="checked"<!-- ENDIF --> /> {L_NOTIFY_METHOD_IM}</label> 
-				<label for="notifymethod2" class="radio inline"><input type="radio" name="notifymethod" id="notifymethod2" value="2"<!-- IF S_NOTIFY_BOTH --> checked="checked"<!-- ENDIF --> /> {L_NOTIFY_METHOD_BOTH}</label>
+				<label for="notifymethod0" class="radio-inline"><input type="radio" name="notifymethod" id="notifymethod0" value="0"<!-- IF S_NOTIFY_EMAIL --> checked="checked"<!-- ENDIF --> /> {L_NOTIFY_METHOD_EMAIL}</label> 
+				<label for="notifymethod1" class="radio-inline"><input type="radio" name="notifymethod" id="notifymethod1" value="1"<!-- IF S_NOTIFY_IM --> checked="checked"<!-- ENDIF --> /> {L_NOTIFY_METHOD_IM}</label> 
+				<label for="notifymethod2" class="radio-inline"><input type="radio" name="notifymethod" id="notifymethod2" value="2"<!-- IF S_NOTIFY_BOTH --> checked="checked"<!-- ENDIF --> /> {L_NOTIFY_METHOD_BOTH}</label>
 			</div>
 		</div>
 	<!-- ENDIF -->
 	<div class="form-group">
 		<span class="control-label">{L_NOTIFY_ON_PM}</span>
 		<div class="controls">
-			<label for="notifypm1" class="radio inline"><input type="radio" name="notifypm" id="notifypm1" value="1"<!-- IF S_NOTIFY_PM --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
-			<label for="notifypm0" class="radio inline"><input type="radio" name="notifypm" id="notifypm0" value="0"<!-- IF not S_NOTIFY_PM --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			<label for="notifypm1" class="radio-inline"><input type="radio" name="notifypm" id="notifypm1" value="1"<!-- IF S_NOTIFY_PM --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+			<label for="notifypm0" class="radio-inline"><input type="radio" name="notifypm" id="notifypm0" value="0"<!-- IF not S_NOTIFY_PM --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
 		</div>
 	</div>
 	<div class="form-group">
 		<span class="control-label">{L_POPUP_ON_PM}</span>
 		<div class="controls">
-			<label for="popuppm1" class="radio inline"><input type="radio" name="popuppm" id="popuppm1" value="1"<!-- IF S_POPUP_PM --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
-			<label for="popuppm0" class="radio inline"><input type="radio" name="popuppm" id="popuppm0" value="0"<!-- IF not S_POPUP_PM --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			<label for="popuppm1" class="radio-inline"><input type="radio" name="popuppm" id="popuppm1" value="1"<!-- IF S_POPUP_PM --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+			<label for="popuppm0" class="radio-inline"><input type="radio" name="popuppm" id="popuppm0" value="0"<!-- IF not S_POPUP_PM --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
 		</div>
 	</div>
 	<!-- IF S_MORE_LANGUAGES -->
@@ -100,8 +100,8 @@
 	<div class="form-group">
 		<span class="control-label"  for="dst1">{L_BOARD_DST}</span>
 		<div class="controls">
-			<label class="radio inline" for="dst1"><input type="radio" name="dst" id="dst1" value="1"<!-- IF S_DST --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
-			<label class="radio inline" for="dst0"><input type="radio" name="dst" id="dst0" value="0"<!-- IF not S_DST --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			<label class="radio-inline" for="dst1"><input type="radio" name="dst" id="dst1" value="1"<!-- IF S_DST --> checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
+			<label class="radio-inline" for="dst0"><input type="radio" name="dst" id="dst0" value="0"<!-- IF not S_DST --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
 		</div>
 	</div>
 	<div class="form-group">
