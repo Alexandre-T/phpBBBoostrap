@@ -1,6 +1,6 @@
 <!-- INCLUDE overall_header.html -->
 <section>
-	<div class="row-fluid">
+	<div class="row">
 		<div class="span9">
 			<h2><a href="{U_VIEW_TOPIC}">{TOPIC_TITLE}</a></h2>
 		</div>
@@ -50,7 +50,7 @@
 			</div>
 			
 			<!-- BEGIN poll_option -->
-			<div class="row-fluid">
+			<div class="row">
 				<!-- IF S_DISPLAY_RESULTS -->
 				<div class="offset2 span2 text-right">
 					<!-- IF poll_option.POLL_OPTION_RESULT == 0 -->{L_NO_VOTES}<!-- ELSE -->{poll_option.POLL_OPTION_PERCENT}<!-- ENDIF -->
@@ -126,7 +126,7 @@
 		{postrow.L_IGNORE_POST}
 	</div>
 	<!-- ELSE -->
-	<div class="row-fluid <!-- IF postrow.S_FIRST_ROW --> firsttopic <!-- ENDIF !--> <!-- IF postrow.S_LAST_ROW --> lasttopic <!-- ENDIF -->  <!-- IF postrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+	<div class="row <!-- IF postrow.S_FIRST_ROW --> firsttopic <!-- ENDIF !--> <!-- IF postrow.S_LAST_ROW --> lasttopic <!-- ENDIF -->  <!-- IF postrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
 		<div id="profile{postrow.POST_ID}" class="<!-- IF postrow.S_UNREAD_POST --> unreadpost<!-- ENDIF -->">
 			<div class="span3 avatar text-center hidden-phone">
 				<ul class="unstyled">
