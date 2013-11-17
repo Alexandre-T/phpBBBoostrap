@@ -5,7 +5,7 @@ body{
 }
 
 /* Change the docs' brand */
-body > .navbar .brand {
+body > .navbar .navbar-brand {
   padding-right: 0;
   padding-left: 0;
   margin-left: 20px;
@@ -17,7 +17,7 @@ body > .navbar .brand {
      -moz-transition: all .2s linear;
           transition: all .2s linear;
 }
-body > .navbar .brand:hover {
+body > .navbar .navbar-brand:hover {
   text-decoration: none;
   text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
 }
