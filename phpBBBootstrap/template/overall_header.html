@@ -39,24 +39,26 @@
 </head>
 
 <body class="body-{SCRIPT_NAME}" id="top">
-<nav class="navbar navbar-fixed-top navbar-inverse">
+<nav class="navbar navbar-fixed-top navbar-inverse">    
 	<div class="navbar-inner">
 		<div class="container">
-			<!-- .navbar-btn is used as the toggle for collapsed navbar content -->
-			<a class="btn btn-default navbar-btn" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</a>
-			 
-			<!-- Be sure to leave the brand out there if you want it shown -->
-			<a class="navbar-brand <!-- IF SCRIPT_NAME eq 'index' -->active<!-- ENDIF -->" href="{U_INDEX}">{SITENAME} <i class="icon-home"></i></a>
+			<div class="navbar-header pull-left">
+				<!-- .navbar-btn is used as the toggle for collapsed navbar content -->
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+	        		<span class="sr-only">Toggle navigation</span>
+	        		<span class="icon-bar"></span>
+	        		<span class="icon-bar"></span>
+	        		<span class="icon-bar"></span>
+	      		</button>
+			</div>
+			<div class="navbar-header pull-right">
+				<!-- Be sure to leave the brand out there if you want it shown -->
+				<a class="navbar-brand <!-- IF SCRIPT_NAME eq 'index' -->active<!-- ENDIF -->" href="{U_INDEX}">{SITENAME} <i class="icon-home"></i></a>
+		    </div>
 	 
 			<!-- Everything you want hidden at 940px or less, place within here -->
 			<div class="navbar-collapse collapse">
-				<!-- .nav, .navbar-search, .navbar-form, etc -->
-				
-				<ul class="nav">
+				<ul class="nav navbar-nav">
       				<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
       					<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="icon-user"></i> {L_PROFILE}</a></li>
       					<!-- IF S_DISPLAY_PM --><li><a href="{U_PRIVATEMSGS}"><i class="icon-envelope"></i> {PRIVATE_MESSAGE_INFO}</a></li><!-- ENDIF -->
@@ -90,16 +92,22 @@
 				</div>
 				<div class="col-md-5 text-right">
 					<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
-					<form class="form-search form-inline hidden-xs" action="{U_SEARCH}" method="get" >
+					<div class="row">
+					<div class="col-sm-6 col-md-9 pull-right">
+					<form class="form-inline hidden-xs" action="{U_SEARCH}" method="get">
 						{S_SEARCH_HIDDEN_FIELDS}
 						<div class="input-group">
-				    		<input type="text" name="keywords" title="{L_SEARCH_KEYWORDS}" class="input-sm search-query" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}">
-				    		<button type="submit" class="btn btn-default"><i class="icon-search"></i> {L_SEARCH}</button>
+							<input type="text" name="keywords" title="{L_SEARCH_KEYWORDS}" class="form-control" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}">
+				    		<div class="input-group-btn">
+				    			<button type="submit" class="btn btn-default"><i class="icon-search"></i> {L_SEARCH}</button>
+				    		</div>
 						</div>
 						<div class="help-block"><a class="" href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><small>{L_SEARCH_ADV}&hellip;</small></a></div>
 					</form>
+					</div>
+					</div>
 					<!-- ENDIF -->
-					<ul class="">
+					<ul class="list-unstyled">
 						<li class="pull-right btn-toolbar">
 							<span class="btn-group">				
 								<!-- IF U_EMAIL_TOPIC --><a class="btn btn-default btn-xs" href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}"><i class="icon-envelope"></i><span class="hidden"> {L_EMAIL_TOPIC}</span></a><!-- ENDIF -->
