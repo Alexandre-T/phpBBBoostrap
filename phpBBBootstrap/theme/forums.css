@@ -18,10 +18,16 @@ body > .navbar .navbar-brand:hover {
 }
 /* Base class
 ------------------------- */
+header div.page-header{
+	margin-top: 60px;
+}
 footer{
 	padding-top:20px;
 	border-top: 1px solid #eee;
 	margin-top:-20px;
+}
+nav.footer{
+	padding-top:20px;
 }
 
 td.topics,td.posts,th.topics,th.posts{
