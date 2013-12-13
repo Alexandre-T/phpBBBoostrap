@@ -1,8 +1,4 @@
 @CHARSET "UTF-8";
-/* becauseof navbar-top */
-body{
-	padding-top:40px;
-}
 
 /* Change the docs' brand */
 body > .navbar .navbar-brand {
@@ -20,17 +16,8 @@ body > .navbar .navbar-brand:hover {
   text-decoration: none;
   text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
 }
-
-
 /* Base class
 ------------------------- */
-header .hero-unit{
-	border-radius:0;
-}
-header .hero-unit, header .page-header{
-	margin-bottom:0;
-	padding-bottom:20px;
-}
 footer{
 	padding-top:20px;
 	border-top: 1px solid #eee;
@@ -119,6 +106,18 @@ dd.pm_friend_colour, tr.pm_friend_colour td:first-child{
 dd.pm_foe_colour, tr.pm_foe_colour td:first-child{
     border-left :solid medium #a47e3c;	
 }
+/* Annulation de certaines modifications */
+.jumbotron form.form-search{
+	margin-top:20px;
+	
+}
+.jumbotron p.help-block small{
+	font-size:65%;
+}
+.jumbotron p.help-block {
+	/* margin-top:10pt; */
+	line-height: 1pt;
+}
 
 
 /* Responsive
@@ -138,52 +137,14 @@ dd.pm_foe_colour, tr.pm_foe_colour td:first-child{
 /* Tablet to desktop
 ------------------------- */
 @media (min-width: 768px) and (max-width: 979px) {
-	/* Remove any padding from the body */
-	body {
-		padding-top: 0;
-	}
-	/* Widen masthead and social buttons to fill body padding */
-	header .hero-unit {
-		margin-top: -20px; /* Offset bottom margin on .navbar */
-	}
-	/* Downsize the jumbotrons */
-	header .hero-unit h1 {
-		font-size: 50px;
-	}
 }
 
 /* Tablet Only
 ------------------------- */
 @media (min-width: 481px) and (max-width: 767px) {
-	/* Remove any padding from the body */
-	body {
-		padding-top: 0;
-	}
-
-	/* Widen masthead and social buttons to fill body padding */
-	header .hero-unit {
-		padding: 40px 20px 30px 40px;
-		margin:	 -20px -20px 0 -20px; /* Offset bottom margin on .navbar */
-	}
-	/* Downsize the jumbotrons */
-	header .hero-unit h1 {
-		font-size: 50px;
-	}
 }
 
 /* Landscape phones and smaller
 ------------------------- */
 @media (max-width: 480px) {
-	/* Remove padding above jumbotron */
-	body {
-		padding-top: 0;
-	}
-	header .hero-unit {
-		padding: 40px 20px 30px 40px;
-		margin:	 -20px -20px 0 -20px; /* Offset bottom margin on .navbar */
-	}
-	/* Downsize the jumbotrons */
-	header .hero-unit h1 {
-		font-size: 36px;
-	}
 }

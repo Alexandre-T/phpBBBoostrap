@@ -39,7 +39,7 @@
 </head>
 
 <body class="body-{SCRIPT_NAME}" id="top">
-<nav class="navbar navbar-fixed-top navbar-inverse">    
+<nav class="navbar navbar-fixed-top navbar-inverse navbar-static-top">    
 	<div class="navbar-inner">
 		<div class="container">
 			<div class="navbar-header pull-left">
@@ -94,15 +94,18 @@
 					<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
 					<div class="row">
 					<div class="col-sm-6 col-md-9 pull-right">
-					<form class="form-inline hidden-xs" action="{U_SEARCH}" method="get">
+					<form class="form-search hidden-xs" action="{U_SEARCH}" method="get">
 						{S_SEARCH_HIDDEN_FIELDS}
-						<div class="input-group">
-							<input type="text" name="keywords" title="{L_SEARCH_KEYWORDS}" class="form-control" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}">
-				    		<div class="input-group-btn">
-				    			<button type="submit" class="btn btn-default"><i class="icon-search"></i> {L_SEARCH}</button>
-				    		</div>
+						<div class="form-group">
+							<div class="input-group">
+								<input type="text" name="keywords" title="{L_SEARCH_KEYWORDS}" class="form-control" value="{SEARCH_WORDS}" placeholder="{L_SEARCH_MINI}">
+					    		<div class="input-group-btn">
+					    			<button type="submit" class="btn btn-default"><i class="icon-search"></i> {L_SEARCH}</button>
+					    		</div>
+							</div>
+							<p class="help-block"><a class="" href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><small>{L_SEARCH_ADV}&hellip;</small></a></p>
 						</div>
-						<div class="help-block"><a class="" href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><small>{L_SEARCH_ADV}&hellip;</small></a></div>
+						
 					</form>
 					</div>
 					</div>
@@ -132,7 +135,9 @@
 								</span>
 							<!-- ENDIF -->							
 							<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
-								<a href="{U_MARK_FORUMS}" class="btn btn-default btn-xs tooltip-link" title="{L_MARK_FORUMS_READ}" accesskey="m"><i class="icon-check"></i><span class="hidden"> {L_MARK_FORUMS_READ}</span></a>
+								<span class="btn-group">
+									<a href="{U_MARK_FORUMS}" class="btn btn-default btn-xs tooltip-link" title="{L_MARK_FORUMS_READ}" accesskey="m"><i class="icon-check"></i><span class="hidden"> {L_MARK_FORUMS_READ}</span></a>
+								</span>
 							<!-- ENDIF -->
 						<!-- ENDIF -->
 						</li>
