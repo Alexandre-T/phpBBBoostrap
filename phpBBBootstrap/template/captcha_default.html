@@ -1,23 +1,27 @@
 <!-- IF S_TYPE == 1 -->
 	<h3>{L_CONFIRMATION}</h3>
 	<p class="text-justify">{L_CONFIRM_EXPLAIN}</p>
+	<fieldset class="col-sm-8 form-horizontal">
 <!-- ENDIF -->
 	<div class="form-group">
-		<label class="control-label" for="confirm_code">{L_CONFIRM_CODE}</label>
-		<div class="controls">
-			<img src="{CONFIRM_IMAGE_LINK}" alt="{L_CONFIRM_CODE}" />
-		</div>
-		<div class="controls">
-			<div class="input-group">
-				<span class="help-block">
-				<input type="text" name="confirm_code" id="confirm_code" size="8" maxlength="8" tabindex="{$CAPTCHA_TAB_INDEX}" title="{L_CONFIRM_CODE}" />
-				<!-- IF S_CONFIRM_REFRESH --><input type="submit" name="refresh_vc" id="refresh_vc" class="btn btn-default" value="{L_VC_REFRESH}" /><!-- ENDIF -->
-				</span>
-			</div>			
-			<span class="help-block">{L_CONFIRM_CODE_EXPLAIN}</span>
-			<input type="hidden" name="confirm_id" id="confirm_id" value="{CONFIRM_ID}" />
-		</div>
+		<label class="control-label col-sm-4" for="confirm_code">{L_CONFIRM_CODE}</label>
+		<img src="{CONFIRM_IMAGE_LINK}" alt="{L_CONFIRM_CODE}"/>
 	</div>
-
+	<div class="form-group">
+		<label class="control-label col-sm-4" for="confirm_code"></label>
+		<div class="input-group">		
+			<input type="text" class="form-control" name="confirm_code" id="confirm_code" maxlength="8" tabindex="{$CAPTCHA_TAB_INDEX}" title="{L_CONFIRM_CODE}" />			
+			<!-- IF S_CONFIRM_REFRESH -->
+			<span class="input-group-btn">
+				<input type="submit" name="refresh_vc" id="refresh_vc" class="btn btn-default" value="{L_VC_REFRESH}" />
+			</span>
+			<!-- ENDIF -->
+		</div>
+		<span class="help-block col-sm-offset-4">{L_CONFIRM_CODE_EXPLAIN}</span>
+		<input type="hidden" name="confirm_id" id="confirm_id" value="{CONFIRM_ID}" />
+	</div>
+	
 <!-- IF S_TYPE == 1 -->
+	</fieldset>
+	<div class="clearfix"></div>
 <!-- ENDIF -->

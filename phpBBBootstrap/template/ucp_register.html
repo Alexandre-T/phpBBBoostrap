@@ -18,113 +18,101 @@
 // ]]>
 </script>
 
-<form method="post" action="{S_UCP_ACTION}" id="register" class="form form-horizontal">
+<form method="post" action="{S_UCP_ACTION}" id="register" class="form-horizontal">
 
 	<h3>{SITENAME} - {L_REGISTRATION}</h3>
 
-	<fieldset>
+	<fieldset class="col-md-8">
 		<!-- IF ERROR --><p class="alert alert-block alert-danger">{ERROR}</p><!-- ENDIF -->
 		
 		<!-- IF L_REG_COND -->
 			<p class="alert alert-block">{L_REG_COND}</p>
 		<!-- ENDIF -->
 		<div class="form-group">
-			<label class="control-label" for="username">{L_USERNAME} </label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-user"></i></span>
-					<input type="text" tabindex="1" name="username" id="username" value="{USERNAME}" class="input-xlarge"  title="{L_USERNAME}" />
-				</div>			
-				<span class="help-block">{L_USERNAME_EXPLAIN}</span>
-			</div>
+			<label class="control-label col-sm-4" for="username">{L_USERNAME} </label>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="icon-user"></i></span>
+				<input type="text" tabindex="1" name="username" id="username" value="{USERNAME}" class="form-control"  title="{L_USERNAME}" />
+			</div>			
+			<p class="help-block col-sm-offset-4"><em>{L_USERNAME_EXPLAIN}</em></p>
 		</div>
 		<div class="form-group">
-			<label class="control-label" for="email">{L_EMAIL_ADDRESS} </label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon">@</span>
-					<input type="text" tabindex="2" name="email" id="email" maxlength="100" value="{EMAIL}" class="input-xlarge" title="{L_EMAIL_ADDRESS}" />
-				</div>			
-			</div>
+			<label class="control-label col-sm-4" for="email">{L_EMAIL_ADDRESS} </label>
+			<div class="input-group">
+				<span class="input-group-addon">@</span>
+				<input type="text" tabindex="2" name="email" id="email" maxlength="100" value="{EMAIL}" class="form-control" title="{L_EMAIL_ADDRESS}" />
+			</div>			
 		</div>
 		<div class="form-group">
-			<label class="control-label" for="email_confirm">{L_CONFIRM_EMAIL} </label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon">@</span>
-					<input type="text" tabindex="3" name="email_confirm" id="email_confirm" maxlength="100" value="{EMAIL_CONFIRM}" class="input-xlarge" title="{L_CONFIRM_EMAIL}" />
-				</div>			
-			</div>
+			<label class="control-label col-sm-4" for="email_confirm">{L_CONFIRM_EMAIL} </label>
+			<div class="input-group">
+				<span class="input-group-addon">@</span>
+				<input type="text" tabindex="3" name="email_confirm" id="email_confirm" maxlength="100" value="{EMAIL_CONFIRM}" class="form-control" title="{L_CONFIRM_EMAIL}" />
+			</div>			
 		</div>
 		<div class="form-group">
-			<label class="control-label" for="new_password">{L_PASSWORD} </label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-key"></i></span>
-					<input type="password" tabindex="4" name="new_password" id="new_password" value="{PASSWORD}" class="input-xlarge" title="{L_NEW_PASSWORD}" />
-				</div>
-				<span class="help-block">{L_PASSWORD_EXPLAIN}</span>			
+			<label class="control-label col-sm-4" for="new_password">{L_PASSWORD} </label>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="icon-key"></i></span>
+				<input type="password" tabindex="4" name="new_password" id="new_password" value="{PASSWORD}" class="form-control" title="{L_NEW_PASSWORD}" />
 			</div>
+			<p class="help-block col-sm-offset-4"><em>{L_PASSWORD_EXPLAIN}</em></p>			
 		</div>
 		<div class="form-group">
-			<label class="control-label" for="password_confirm">{L_CONFIRM_PASSWORD} </label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-key"></i></span>
-					<input type="password" tabindex="5" name="password_confirm" id="password_confirm" size="25" value="{PASSWORD_CONFIRM}" class="input-xlarge" title="{L_CONFIRM_PASSWORD}" />
-				</div>
+			<label class="control-label col-sm-4" for="password_confirm">{L_CONFIRM_PASSWORD} </label>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="icon-key"></i></span>
+				<input type="password" tabindex="5" name="password_confirm" id="password_confirm" size="25" value="{PASSWORD_CONFIRM}" class="form-control" title="{L_CONFIRM_PASSWORD}" />
 			</div>
 		</div>
 	
 		<hr />
 	
 		<div class="form-group">
-			<label class="control-label" for="lang">{L_LANGUAGE} </label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-flag"></i></span>
-					<select name="lang" id="lang" class="input-xlarge" onchange="change_language(this.value); return false;" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select>
-				</div>
+			<label class="control-label col-sm-4" for="lang">{L_LANGUAGE} </label>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="icon-flag"></i></span>
+				<select name="lang" id="lang" class="form-control" onchange="change_language(this.value); return false;" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select>
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="control-label" for="tz">{L_TIMEZONE} </label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-time"></i></span>
-					<select name="tz" id="tz" class="input-xlarge">{S_TZ_OPTIONS}</select>
-				</div>
+			<label class="control-label col-sm-4" for="tz">{L_TIMEZONE} </label>
+			<div class="input-group">
+				<span class="input-group-addon"><i class="icon-time"></i></span>
+				<select name="tz" id="tz" class="form-control">{S_TZ_OPTIONS}</select>
 			</div>
 		</div>
 	
 		<!-- IF .profile_fields -->
 			<hr/>
-			<p>{L_ITEMS_REQUIRED}</p>
+			<p class="text-info">{L_ITEMS_REQUIRED}</p>
 	
 		<!-- BEGIN profile_fields -->
 			<div class="form-group <!-- IF profile_fields.ERROR -->error<!-- ENDIF -->">
-			<label class="control-label" for="<!-- IF profile_fields.FIELD_ID -->{profile_fields.FIELD_ID}<!-- ENDIF -->">{profile_fields.LANG_NAME}<!-- IF profile_fields.S_REQUIRED -->*<!-- ENDIF --> </label>
-			<div class="controls">
+			
+			<label class="control-label col-sm-4" for="<!-- IF profile_fields.FIELD_ID -->{profile_fields.FIELD_ID}<!-- ENDIF -->">{profile_fields.LANG_NAME}<!-- IF profile_fields.S_REQUIRED -->*<!-- ENDIF --> </label>
+			<div class="input-group">
 				{profile_fields.FIELD}
-				<!-- IF profile_fields.ERROR --><span class="help-inline">{profile_fields.ERROR}</span><!-- ENDIF -->			
-				<!-- IF profile_fields.LANG_EXPLAIN -->
-					<span class="help-block">{profile_fields.LANG_EXPLAIN}</span>
-				<!-- ENDIF -->
 			</div>
+			<!-- IF profile_fields.ERROR --><span class="help-inline col-sm-offset-4">{profile_fields.ERROR}</span><!-- ENDIF -->			
+			<!-- IF profile_fields.LANG_EXPLAIN -->
+				<p class="help-block col-sm-offset-4"><em>{profile_fields.LANG_EXPLAIN}</em></p>
+			<!-- ENDIF -->
 		</div>
 		<!-- END profile_fields -->
 		<!-- ENDIF -->
-
 	</fieldset>
+	<div class="clearfix"></div>
+	
 	<!-- IF CAPTCHA_TEMPLATE -->
 		<!-- DEFINE $CAPTCHA_TAB_INDEX = 8 -->
 		<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
 	<!-- ENDIF -->
-
-	<!-- IF S_COPPA -->
-	<h4>{L_COPPA_COMPLIANCE}</h4>
 	
-	<p class="text-justify">{L_COPPA_EXPLAIN}</p>
+	<!-- IF S_COPPA -->
+	<h3>{L_COPPA_COMPLIANCE}</h3>
+	
+	<p class="text-justify text-info">{L_COPPA_EXPLAIN}</p>
 	<!-- ENDIF -->
 
 
