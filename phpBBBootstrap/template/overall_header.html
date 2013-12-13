@@ -34,34 +34,29 @@
 -->
 <script type="text/javascript" src="{T_TEMPLATE_PATH}/forum_fn.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-<script type="text/javascript" src="{T_THEME_PATH}/js/bootstrap.min.js?v=3.0.2"></script>
+<script type="text/javascript" src="{T_THEME_PATH}/js/bootstrap.min.js?v=3.0.3"></script>
 <script type="text/javascript" src="{T_THEME_PATH}/initialisation.js"></script>
 </head>
 
 <body class="body-{SCRIPT_NAME}" id="top">
-<nav class="navbar navbar-fixed-top navbar-inverse navbar-static-top">    
-	<div class="navbar-inner">
-		<div class="container">
-			<div class="navbar-header pull-left">
-				<!-- .navbar-btn is used as the toggle for collapsed navbar content -->
-				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-	        		<span class="sr-only">Toggle navigation</span>
-	        		<span class="icon-bar"></span>
-	        		<span class="icon-bar"></span>
-	        		<span class="icon-bar"></span>
-	      		</button>
-			</div>
-			<div class="navbar-header pull-right">
-				<!-- Be sure to leave the brand out there if you want it shown -->
-				<a class="navbar-brand <!-- IF SCRIPT_NAME eq 'index' -->active<!-- ENDIF -->" href="{U_INDEX}">{SITENAME} <i class="icon-home"></i></a>
-		    </div>
-	 
+<nav class="navbar navbar-inverse navbar-fixed-top _navbar-inverse navbar-static-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-header-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand <!-- IF SCRIPT_NAME eq 'index' -->active<!-- ENDIF -->" href="#"><i class="icon-home"></i>&nbsp;{SITENAME}</a>
+		</div>    
+		<div class="navbar-inner">
 			<!-- Everything you want hidden at 940px or less, place within here -->
-			<div class="navbar-collapse collapse">
+			<div class="collapse navbar-collapse" id="bs-header-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-      				<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
-      					<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="icon-user"></i> {L_PROFILE}</a></li>
-      					<!-- IF S_DISPLAY_PM --><li><a href="{U_PRIVATEMSGS}"><i class="icon-envelope"></i> {PRIVATE_MESSAGE_INFO}</a></li><!-- ENDIF -->
+	     				<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+	     					<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="icon-user"></i> {L_PROFILE}</a></li>
+	     					<!-- IF S_DISPLAY_PM --><li><a href="{U_PRIVATEMSGS}"><i class="icon-envelope"></i> {PRIVATE_MESSAGE_INFO}</a></li><!-- ENDIF -->
 						<!-- IF U_RESTORE_PERMISSIONS --><li><a href="{U_RESTORE_PERMISSIONS}"><i class="icon-key"></i> {L_RESTORE_PERMISSIONS}</a></li><!-- ENDIF -->
 					<!-- ENDIF -->
 					<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="icon-question-sign"></i> {L_FAQ}</a></li>
@@ -70,8 +65,7 @@
 						<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li><a href="{U_REGISTER}"><i class="icon-pencil"></i> {L_REGISTER}</a></li><!-- ENDIF -->
 						<li><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><!-- IF S_USER_LOGGED_IN --><i class="icon-signout"></i> {L_LOGOUT} <!-- ELSE --><i class="icon-signin"></i> {L_LOGIN} <!-- ENDIF --></a></li>
 					<!-- ENDIF -->
-    			</ul>
-				
+	   			</ul>
 			</div>
 		</div>
 	</div>
