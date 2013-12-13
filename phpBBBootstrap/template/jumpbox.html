@@ -1,22 +1,22 @@
-
-
-
 <!-- IF S_DISPLAY_JUMPBOX -->
-	<form method="post" class="form-inline" id="jumpbox" action="{S_JUMPBOX_ACTION}" onsubmit="if(this.f.value == -1){return false;}">
+	<form method="post" id="jumpbox" action="{S_JUMPBOX_ACTION}" onsubmit="if(this.f.value == -1){return false;}">
 
 		<fieldset class="<!-- IF $CUSTOM_FIELDSET_CLASS -->{$CUSTOM_FIELDSET_CLASS}<!-- ELSE -->jumpbox<!-- ENDIF -->">
+			<div class="form-group">
 			<div class="input-group">
-			<label for="f" accesskey="j">
-				<small><!-- IF S_IN_MCP and S_MERGE_SELECT -->{L_SELECT_TOPICS_FROM}<!-- ELSEIF S_IN_MCP -->{L_MODERATE_FORUM}<!-- ELSE -->{L_JUMP_TO}<!-- ENDIF --></small>
-				<select name="f" id="f" onchange="if(this.options[this.selectedIndex].value != -1){ document.forms['jumpbox'].submit() }">
-				<!-- BEGIN jumpbox_forums -->
-					<!-- IF jumpbox_forums.S_FORUM_COUNT == 1 --><option value="-1">------------------</option><!-- ENDIF -->
-					<option value="{jumpbox_forums.FORUM_ID}"{jumpbox_forums.SELECTED}><!-- BEGIN level -->&nbsp; &nbsp;<!-- END level -->{jumpbox_forums.FORUM_NAME}</option>
-				<!-- END jumpbox_forums -->
-				</select>
-			</label>
-			
-			<input type="submit" value="{L_GO}" class="btn btn-default" />
+			<span class="input-group-addon">
+					<small><!-- IF S_IN_MCP and S_MERGE_SELECT -->{L_SELECT_TOPICS_FROM}<!-- ELSEIF S_IN_MCP -->{L_MODERATE_FORUM}<!-- ELSE -->{L_JUMP_TO}<!-- ENDIF --></small>
+			</span>
+			<select class="form-control" name="f" id="f" onchange="if(this.options[this.selectedIndex].value != -1){ document.forms['jumpbox'].submit() }">
+			<!-- BEGIN jumpbox_forums -->
+				<!-- IF jumpbox_forums.S_FORUM_COUNT == 1 --><option value="-1">------------------</option><!-- ENDIF -->
+				<option value="{jumpbox_forums.FORUM_ID}"{jumpbox_forums.SELECTED}><!-- BEGIN level -->&nbsp; &nbsp;<!-- END level -->{jumpbox_forums.FORUM_NAME}</option>
+			<!-- END jumpbox_forums -->
+			</select>
+			<span class="input-group-btn">
+				<input type="submit" value="{L_GO}" class="btn btn-default" />
+			</span>
+			</div>
 			</div>
 		</fieldset>
 	</form>
