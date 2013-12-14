@@ -2,22 +2,22 @@
 <!-- INCLUDE forumlist_body.html -->
 <!-- IF ! S_USER_LOGGED_IN and not S_IS_BOT -->
 	<hr/>
-	<form method="post" action="{S_LOGIN_ACTION}" class="form-inline">
 	<h4><a href="{U_LOGIN_LOGOUT}"><i class="icon-signin"></i> {L_LOGIN_LOGOUT}</a><!-- IF S_REGISTER_ENABLED -->&nbsp; &bull; &nbsp;<a href="{U_REGISTER}"><i class="icon-pencil"></i> {L_REGISTER}</a><!-- ENDIF --></h4>
-	<div class="controls-row">
-		<span class="input-group">
-	  		<span class="input-group-addon"><i class="icon-user"></i></span>
-	  		<input type="text" name="username" id="username" size="10" class="input-sm" title="{L_USERNAME}" placeholder="{L_USERNAME}" />
-	  	</span>
-		<span class="input-group">
-	  		<span class="input-group-addon"><i class="icon-key"></i></span>
-			<input type="password" name="password" id="password" size="10" class="input-sm" title="{L_PASSWORD}" placeholder="{L_PASSWORD}"/>
-	  	</span>
+	<form method="post" action="{S_LOGIN_ACTION}" class="form-inline">
+	<div class="form-group">
+		<label class="sr-only" for="username">{L_USERNAME}</label>
+  		<input type="text" name="username" id="username" class="form-control input-sm" title="{L_USERNAME}" placeholder="{L_USERNAME}" />
+	</div>
+	<div class="form-group">
+		<label class="sr-only" for="password">{L_PASSWORD}</label>
+		<input type="password" name="password" id="password" class="form-control input-sm" title="{L_PASSWORD}" placeholder="{L_PASSWORD}"/>
+	</div>
+	<div class="form-group">
 		<!-- IF S_AUTOLOGIN_ENABLED -->		
 		<!-- ENDIF -->
-				<button type="submit" name="login" value="{L_LOGIN}" class="btn btn-primary"><i class="icon-signin"></i>&nbsp;{L_LOGIN}</button>
+		<button type="submit" name="login" value="{L_LOGIN}" class="btn btn-primary"><i class="icon-signin"></i>&nbsp;{L_LOGIN}</button>
 	</div>
-	<div class="controls-row">
+	<div class="form-group">
 		<label class="checkbox" for="autologin"><input type="checkbox" name="autologin" id="autologin" />&nbsp;<small><em>{L_LOG_ME_IN}</em></small></label>
 		{S_LOGIN_REDIRECT}
 	</div>
