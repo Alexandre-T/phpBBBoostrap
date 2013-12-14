@@ -1,19 +1,24 @@
 <!-- INCLUDE mcp_header.html -->
 
-<h3>{PAGE_TITLE}</h3>
-
 <!-- IF S_SHOW_UNAPPROVED -->
 
 	<form id="mcp_queue" method="post" action="{S_MCP_QUEUE_ACTION}">
 
-	<div class="panel">
-		<h4 class="fieldset">{L_LATEST_UNAPPROVED}</h4>
-		<!-- IF S_HAS_UNAPPROVED_POSTS -->
-			<div class="alert alert-info">
-				<p>{L_UNAPPROVED_TOTAL}</p>
-			</div>
-		<!-- ENDIF -->
-
+	<div class="panel panel-default">
+		<div class="panel-heading"><h4>{L_LATEST_UNAPPROVED}</h4></div>
+		<div class="panel-body">
+			<!-- IF S_HAS_UNAPPROVED_POSTS -->
+				<div class="alert alert-info">
+					<p>{L_UNAPPROVED_TOTAL}</p>
+				</div>
+			<!-- ENDIF -->
+	
+			<!-- IF ! .unapproved -->
+				<div class="alert alert-success">	
+					<p>{L_UNAPPROVED_POSTS_ZERO_TOTAL}</p>
+				</div>
+			<!-- ENDIF -->
+		</div>
 		<!-- IF .unapproved -->
 			<table class="table table-bordered table-striped table-hover">
 				<thead>
@@ -41,33 +46,35 @@
 					<!-- END unapproved -->		
 				</tbody>
 			</table>
-		<!-- ELSE -->
-		<div class="alert alert-success">	
-			<p>{L_UNAPPROVED_POSTS_ZERO_TOTAL}</p>
-		</div>
 		<!-- ENDIF -->
-		{S_FORM_TOKEN}
-		<hr class="dashed"/>
-		<!-- IF .unapproved -->
-		<div class="btn-group pull-right"><a class="btn btn-default btn-xs" href="#" onclick="marklist('mcp', 'topic_id_list', true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a><a class="btn btn-xs" href="#" onclick="marklist('mcp', 'topic_id_list', false); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a></div>
-		{S_HIDDEN_FIELDS}
-		<fieldset class="btn-group">
-			<input class="btn btn-warning" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />&nbsp;
-			<input class="btn btn-success" type="submit" name="action[approve]" value="{L_APPROVE}" />
-		</fieldset>
-		<!-- ENDIF -->	
 	</div>
+	{S_FORM_TOKEN}
+	<hr class="dashed"/>
+	<!-- IF .unapproved -->
+	<div class="btn-group pull-right"><a class="btn btn-default btn-xs" href="#" onclick="marklist('mcp', 'topic_id_list', true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a><a class="btn btn-default btn-xs" href="#" onclick="marklist('mcp', 'topic_id_list', false); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a></div>
+	{S_HIDDEN_FIELDS}
+	<fieldset class="btn-group">
+		<input class="btn btn-warning" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />
+		<input class="btn btn-success" type="submit" name="action[approve]" value="{L_APPROVE}" />
+	</fieldset>
+	<!-- ENDIF -->	
 </form>
 <!-- ENDIF -->
-
+<br/>
 <!-- IF S_SHOW_REPORTS -->
-	<div class="panel">
-		<h4 class="fieldset">{L_LATEST_REPORTED}</h4>
-		<!-- IF S_HAS_REPORTS -->
-			<div class="alert alert-info">
-				<p>{L_REPORTS_TOTAL}</p>
-			</div>
-		<!-- ENDIF -->
+	<div class="panel panel-default">
+		<div class="panel-heading"><h4>{L_LATEST_REPORTED}</h4></div>
+		<div class="panel-body">
+			<!-- IF S_HAS_REPORTS -->
+				<div class="alert alert-info">
+					<p>{L_REPORTS_TOTAL}</p>
+				</div>
+			<!-- ELSE -->
+				<div class="alert alert-success">
+					<p>{L_REPORTS_ZERO_TOTAL}</p>
+				</div>
+			<!-- ENDIF -->
+		</div>
 
 		<!-- IF .report -->
 			<table class="table table-bordered table-striped table-hover">
@@ -75,7 +82,6 @@
 					<tr>
 						<th>{L_VIEW_DETAILS}</th>
 						<th><span>{L_REPORTER} &amp; {L_FORUM}</span></th>
-						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -94,21 +100,25 @@
 				</tbody>
 			</table>
 		<!-- ELSE -->
-			<div class="alert alert-success">
-				<p>{L_REPORTS_ZERO_TOTAL}</p>
-			</div>
+
 		<!-- ENDIF -->
 	</div>
 <!-- ENDIF -->
 
 <!-- IF S_SHOW_PM_REPORTS -->
-	<div class="panel">
-		<h4 class="fieldset">{L_LATEST_REPORTED_PMS}</h4>
-		<!-- IF S_HAS_PM_REPORTS -->
-			<div class="alert alert-info">
-				<p>{L_PM_REPORTS_TOTAL}</p>
-			</div>
-		<!-- ENDIF -->
+	<div class="panel panel-default">
+		<div class="panel-heading"><h4>{L_LATEST_REPORTED_PMS}</h4></div>
+		<div class="panel-body">
+			<!-- IF S_HAS_PM_REPORTS -->
+				<div class="alert alert-info">
+					<p>{L_PM_REPORTS_TOTAL}</p>
+				</div>
+			<!-- ELSE -->
+				<div class="alert alert-success">
+					<p>{L_PM_REPORTS_ZERO_TOTAL}</p>
+				</div>
+			<!-- ENDIF -->
+		</div>
 
 		<!-- IF .pm_report -->
 			<table class="table table-bordered table-striped table-hover">
@@ -116,7 +126,6 @@
 					<tr>
 						<th>{L_VIEW_DETAILS}</th>
 						<th><span>{L_REPORTER}</span></th>
-						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -134,17 +143,14 @@
 					<!-- END pm_report -->
 				</tbody>
 			</table>
-		<!-- ELSE -->
-			<div class="alert alert-success">
-				<p>{L_PM_REPORTS_ZERO_TOTAL}</p>
-			</div>
+			
 		<!-- ENDIF -->
 	</div>
 <!-- ENDIF -->
 
 <!-- IF S_SHOW_LOGS -->
-	<div class="panel">
-		<h4 class="fieldset">{L_LATEST_LOGS}</h4>
+	<div class="panel panel-default">
+		<div class="panel-heading"><h4>{L_LATEST_LOGS}</h4></div>
 
 		<!-- IF .log -->
 		<table class="table table-bordered table-striped table-hover">
@@ -160,7 +166,7 @@
 			</thead>
 			<tbody>
 				<!-- BEGIN log -->
-					<tr class="<!-- IF log.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+					<tr>
 						<td>{log.ACTION}</td>
 						<td><span>{log.USERNAME}</span></td>
 						<td><span>{log.IP}</span></td>
@@ -172,8 +178,10 @@
 			</tbody>
 		</table>
 		<!-- ELSE -->
-		<div class="alert alert-success">
-			<p>{L_NO_ENTRIES}</p>
+		<div class="panel-body">
+			<div class="alert alert-success">
+				<p>{L_NO_ENTRIES}</p>
+			</div>
 		</div>
 		<!-- ENDIF -->
 	</div>

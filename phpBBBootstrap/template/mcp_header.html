@@ -1,15 +1,21 @@
 <!-- INCLUDE overall_header.html -->
 <section>
-	<div>
+	<div class="row">
+		<div class="col-sm-10 col-lg-6">
+			<h3>{L_MCP} <!-- IF PAGE_TITLE -->&bull; {PAGE_TITLE}<!-- ENDIF --></h3>
+		</div>
 		<!-- IF U_MCP -->
-		<div class="btn-group pull-right">
-				<a href="{U_MCP}" class="btn btn-xs btn-warning" ><i class="icon-legal"></i> {L_MCP}</a>
-				<!-- IF U_MCP_FORUM --><a class="btn btn-xs btn-warning" href="{U_MCP_FORUM}"><i class="icon-copy"></i> {L_MODERATE_FORUM}</a><!-- ENDIF -->
-				<!-- IF U_MCP_TOPIC --><a class="btn btn-xs btn-warning" href="{U_MCP_TOPIC}"><i class="icon-file-alt"></i> {L_MODERATE_TOPIC}</a><!-- ENDIF -->
-				<!-- IF U_MCP_POST --><a class="btn btn-xs btn-warning" href="{U_MCP_POST}"><i class="icon-file"></i> {L_MODERATE_POST}</a><!-- ENDIF -->
+		<div class="col-sm-2 col-lg-6">
+			<div class="pull-right">
+				<h3 class="btn-group">
+					<a href="{U_MCP}" class="btn btn-xs btn-warning" ><span class="hidden-lg"><i class="icon-legal"></i></span><span class="visible-lg"><i class="icon-legal"></i>&nbsp;{L_MCP}</span></a>
+					<!-- IF U_MCP_FORUM --><a class="btn btn-xs btn-warning" href="{U_MCP_FORUM}"><span class="hidden-lg"><i class="icon-copy"></i></span><span class="visible-lg"><i class="icon-copy"></i>&nbsp;{L_MODERATE_FORUM}</span></a><!-- ENDIF -->
+					<!-- IF U_MCP_TOPIC --><a class="btn btn-xs btn-warning" href="{U_MCP_TOPIC}"><span class="hidden-lg"><i class="icon-file-alt"></i></span><span class="visible-lg"><i class="icon-file-alt"></i>&nbsp;{L_MODERATE_TOPIC}</span></a><!-- ENDIF -->
+					<!-- IF U_MCP_POST --><a class="btn btn-xs btn-warning" href="{U_MCP_POST}"><span class="hidden-lg"><i class="icon-file"></i></span><span class="visible-lg"><i class="icon-file"></i>&nbsp;{L_MODERATE_POST}</span></a><!-- ENDIF -->
+				</h3>
+			</div>
 		</div>
 		<!-- ENDIF -->
-		<h3>{L_MCP}</h3>
 	</div>
 
 	<ul class="nav nav-tabs">
@@ -17,9 +23,11 @@
 		<li<!-- IF l_block1.S_SELECTED --> class="active"<!-- ENDIF -->><a href="{l_block1.U_TITLE}"><span>{l_block1.L_TITLE}</span></a></li>
 		<!-- END l_block1 -->
 	</ul>
+	
 	<div class="tab-content">
 
 		<div class="tabbable tabs-left">
+			
 			<ul class="nav nav-tabs">
 				<!-- BEGIN l_block1 -->
 				<!-- IF l_block1.S_SELECTED -->
@@ -33,8 +41,8 @@
 				<!-- ENDIF -->
 				<!-- END l_block1 -->
 			</ul>
-	
-			<div class="tab-content">
+			<div class="clearfix hidden-md hidden-lg"></div>
+			<div class="tab-content col-sm-offset-2">
 				<!-- IF MESSAGE -->
 				<div class="alert alert-danger">
 					<h4>{L_MESSAGE}</h4>

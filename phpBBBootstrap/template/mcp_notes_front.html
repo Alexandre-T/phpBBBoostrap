@@ -1,22 +1,30 @@
 <!-- INCLUDE mcp_header.html -->
-<form method="post" id="mcp" action="{U_POST_ACTION}">
+<form method="post" class="form-horizontal" id="mcp" action="{U_POST_ACTION}">
 
 <h3>{L_TITLE}</h3>
 
 <div class="panel">
-	<fieldset class="form-inline">
-		<label for="username">{L_SELECT_USER}</label>
-		<input name="username" id="username" type="text" class="inputbox" />
-		<a class="btn btn-info" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">
-			<i class="icon-search"></i>
-			{L_FIND_USERNAME}
-		</a>
+	<fieldset >
+		<div class="form-group">
+			<label class="control-label col-sm-4" for="username">{L_SELECT_USER}</label>
+			<div class="input-group input-group-sm">
+				<input name="username" id="username" type="text" class="form-control" />
+				<span class="input-group-btn">
+					<a class="btn btn-info" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">
+						<i class="icon-search"></i>
+						{L_FIND_USERNAME}
+					</a>
+				</span>
+			</div>			
+		</div>
+		<div class="form-group">
+			<div class="btn-group col-sm-offset-4">
+				<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" />
+				<input type="submit" name="submituser" value="{L_SUBMIT}" class="btn btn-primary" />
+			</div>
+		</div>
 	</fieldset>
-	<hr class="dashed"/>
-	<fieldset class="btn-group">
-		<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" />
-		<input type="submit" name="submituser" value="{L_SUBMIT}" class="btn btn-primary" />
-	</fieldset>
+	
 	{S_FORM_TOKEN}
 </div>
 

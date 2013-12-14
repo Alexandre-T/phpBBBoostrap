@@ -133,8 +133,20 @@ dd.pm_foe_colour, tr.pm_foe_colour td:first-child{
 	 Au dessus de 1200
 ------------------------- */
 @media (min-width: 1200px) {
+	fieldset.smallbande{
+		width:30%;
+	}
 }
 
+fieldset.smallbande{
+	margin-right:20px;
+	margin-top:-5px;
+	width:30%;
+}
+
+.nowrap{
+  white-space:nowrap;
+ }
 /* Desktop entre 980 et 1200
 ------------------------- */
 @media (min-width: 980px) and (max-width: 1199px) {

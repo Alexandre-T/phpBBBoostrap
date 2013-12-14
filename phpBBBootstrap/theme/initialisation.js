@@ -22,9 +22,9 @@ function find_username(url)
     $('.tooltip-top').tooltip({      
         container : 'body'
       });
-    $('#st').addClass('input-medium');
-    $('#sk').addClass('input-medium');
-    $('#sd').addClass('input-medium');
+    $('#st').addClass('form-control');
+    $('#sk').addClass('form-control');
+    $('#sd').addClass('form-control');
     
     $('a','.pagination-line').addClass('btn btn-default btn-xs');
     $('span.page-dots','.pagination-line').addClass('btn btn-default btn-xs disabled');
@@ -32,6 +32,7 @@ function find_username(url)
     //$('strong','.btn').removeClass('btn btn-xs disabled');
     $('span.page-sep','.pagination-line').remove();
     $('img','.forum-avatar-cadre').addClass('img-thumbnail');
+    $('img','span.avatar').addClass('thumbnail');
     //$('.tooltip-link').tooltip()
     //$('.popover-test').popover()
 

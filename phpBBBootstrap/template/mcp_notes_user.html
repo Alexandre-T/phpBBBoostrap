@@ -1,59 +1,68 @@
 <!-- INCLUDE mcp_header.html -->
-
+<br/>
 <form method="post" id="mcp" action="{U_POST_ACTION}">
 
-<h3>{L_TITLE}</h3>
-
-<div class="panel">
-	<h4 class="fieldset">{USERNAME_FULL}</h4>
-	<div class="row">
-		<div class="col-md-4 avatar">
-			<!-- IF AVATAR_IMG -->{AVATAR_IMG}<!-- ENDIF -->
-			<dl class="details">
-				<!-- IF RANK_TITLE --><dt>{L_RANK} :</dt><dd>{RANK_TITLE}</dd><!-- ENDIF -->
-				<!-- IF RANK_IMG --><dt><!-- IF RANK_TITLE -->&nbsp;<!-- ELSE -->{L_RANK} :<!-- ENDIF --></dt><dd>{RANK_IMG}</dd><!-- ENDIF -->
-				<dt>{L_JOINED} :</dt><dd>{JOINED}</dd>
-				<dt>{L_TOTAL_POSTS} :</dt><dd>{POSTS}</dd>
-				<dt>{L_WARNINGS} : </dt><dd>{WARNINGS}</dd>
-			</dl>
-		</div>
-		<div class="col-md-8 corps">
-			<h3>{L_ADD_FEEDBACK}</h3>
-			<p>{L_ADD_FEEDBACK_EXPLAIN}</p>
-			<fieldset>
-				<textarea name="usernote" id="usernote" class="input-block-level" cols="40" rows="4"></textarea>
-			</fieldset>
-			{S_HIDDEN_FIELDS}
-			{S_FORM_TOKEN}
-			<hr class="dashed"/>
-			<fieldset class="btn-group">
-				<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" />
-				<input type="submit" name="action[add_feedback]" value="{L_SUBMIT}" class="btn btn-primary" />
-			</fieldset>
-		</div>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4>{L_TITLE}&nbsp;: «&nbsp;{USERNAME_FULL}&nbsp;»</h4>
 	</div>
-</div>
-
-<div class="panel">
-
-	<fieldset class="btn-group pull-right">
-		<!-- IF TOTAL --><span class="btn btn-default btn-xs disabled">{TOTAL}</span><!-- ENDIF -->
-		<!-- IF PAGE_NUMBER -->
-			<!-- IF PAGINATION -->
-				<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-xs">{PAGE_NUMBER}</a>
-				{PAGINATION}
-			<!-- ELSE -->
-				<span class="btn btn-default btn-xs disabled">{PAGE_NUMBER}</span>
-			<!-- ENDIF -->
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-4 avatar">
+				<!-- IF AVATAR_IMG --><span class="center-block avatar">{AVATAR_IMG}</span><!-- ENDIF -->
+				<ul class="list-group">
+					<!-- IF RANK_TITLE --><li class="list-group-item">{L_RANK}&nbsp;: {RANK_TITLE}</li><!-- ENDIF -->
+  					<li class="list-group-item"><span class="badge">{JOINED}</span>{L_JOINED}</li>
+  					<li class="list-group-item"><span class="badge">{POSTS}</span>{L_TOTAL_POSTS}</li>
+  					<li class="list-group-item"><span class="badge">{WARNINGS}</span>{L_WARNINGS}</li>
+				</ul>
+			</div>
+			<div class="col-md-8 corps">
+				<h4>{L_ADD_FEEDBACK}</h4>
+				<p>{L_ADD_FEEDBACK_EXPLAIN}</p>
+				<div class="form-group">
+					<textarea name="usernote" id="usernote" class="form-control" cols="40" rows="4"></textarea>
+				</div>
+				{S_HIDDEN_FIELDS}
+				{S_FORM_TOKEN}
+				<fieldset class="btn-group">
+					<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" />
+					<input type="submit" name="action[add_feedback]" value="{L_SUBMIT}" class="btn btn-primary" />
+				</fieldset>
+				<hr/>
+				<!-- IF ! .usernotes -->
+					<div class="alert alert-info">
+						{L_NO_ENTRIES}
+					</div>
+				<!-- ENDIF -->
+			</div>
+		</div>
+		<!-- IF .usernotes -->
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="input-group input-group-sm">
+					<span class="input-group-addon">{L_SEARCH_KEYWORDS}</span>
+					<input class="form-control" type="text" class="col-md-3" name="keywords" value="{S_KEYWORDS}" />
+					<span class="input-group-btn"><input type="submit" class="btn btn-primary" name="filter" value="{L_SEARCH}" /></span>
+				</div>
+			</div>
+			<div class="col-sm-offset-3 col-sm-3 text-right">
+				<div class="btn-group">
+					<!-- IF TOTAL_REPORTS --><span class="btn btn-default btn-xs disabled">{TOTAL_REPORTS}</span><!-- ENDIF -->
+					<!-- IF PREVIOUS_PAGE --><a class="btn btn-default btn-xs" href="{PREVIOUS_PAGE}" title="{L_PREVIOUS}"><i class="icon-double-angle-left"></i></a><!-- ENDIF -->
+					<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --><a href="#" class="btn btn-default btn-xs" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>{PAGINATION}<!-- ELSE --><span class="btn btn-default btn-xs disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
+					<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-default btn-xs" title="{L_NEXT}"><i class="icon-double-angle-right"></i></a><!-- ENDIF -->
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<fieldset class="form-inline text-center">
+			<label>{L_DISPLAY_LOG}: {S_SELECT_SORT_DAYS}</label>
+			<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label><label>{S_SELECT_SORT_DIR}</label>		
+			<input type="submit" name="sort" value="{L_GO}" class="btn btn-primary" />
+		</fieldset>
 		<!-- ENDIF -->
-	</fieldset>
-
-	<fieldset class="form-inline">
-		<label for="keywords">{L_SEARCH_KEYWORDS} </label>
-		<input type="text" class="col-md-3" name="keywords" value="{S_KEYWORDS}" />
-		<input type="submit" class="btn btn-primary" name="filter" value="{L_SEARCH}" />
-	</fieldset>
-	<hr/>
+	</div>
 	<!-- IF .usernotes -->	
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
@@ -75,37 +84,22 @@
 		
 				<!-- IF S_CLEAR_ALLOWED --><td style="width:5%; text-align:center;"><input type="checkbox" name="marknote[]" id="note-{usernotes.ID}" value="{usernotes.ID}" /></td><!-- ENDIF -->
 			</tr>
-		<!-- END usernames -->
-		</tbody>
-		</table>
-		<fieldset class="form-inline">
-			<label>{L_DISPLAY_LOG}: {S_SELECT_SORT_DAYS}</label>
-			<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label><label>{S_SELECT_SORT_DIR}</label>		
-			<input type="submit" name="sort" value="{L_GO}" class="btn btn-primary" />
-		</fieldset>
-		<hr/>
-		<div class="btn-group pull-right">
-			<!-- IF TOTAL_REPORTS --><span class="btn btn-default btn-xs disabled">{TOTAL_REPORTS}</span><!-- ENDIF -->
-			<!-- IF PREVIOUS_PAGE --><a class="btn btn-default btn-xs" href="{PREVIOUS_PAGE}" title="{L_PREVIOUS}"><i class="icon-double-angle-left"></i></a><!-- ENDIF -->
-			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --><a href="#" class="btn btn-default btn-xs" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>{PAGINATION}<!-- ELSE --><span class="btn btn-xs disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
-			<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-default btn-xs" title="{L_NEXT}"><i class="icon-double-angle-right"></i></a><!-- ENDIF -->
-		</div>
-		<!-- IF S_CLEAR_ALLOWED -->
-			<fieldset class="btn-group pull-right">
-				<a href="#" onclick="marklist('mcp', 'mark', true); return false;" class="btn btn-default btn-xs"><i class="icon-check"></i> {L_MARK_ALL}</a>
-				<a href="#" onclick="marklist('mcp', 'mark', false); return false;" class="btn btn-default btn-xs"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
-			</fieldset>				
-			<fieldset class="btn-group">
-				<input class="btn btn-warning" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />
-				<input class="btn btn-info" type="submit" name="action[del_marked]" value="{L_DELETE_MARKED}" />
-			</fieldset>
-		<!-- ENDIF -->
-	<!-- ELSE -->
-		<div class="alert alert-info">
-			{L_NO_ENTRIES}
-		</div>
+			<!-- END usernames -->
+			</tbody>
+		</table>		
 	<!-- ENDIF -->
-</div>	
+</div>
+
+<!-- IF S_CLEAR_ALLOWED -->
+	<fieldset class="btn-group pull-right">
+		<a href="#" onclick="marklist('mcp', 'mark', true); return false;" class="btn btn-default btn-xs"><i class="icon-check"></i> {L_MARK_ALL}</a>
+		<a href="#" onclick="marklist('mcp', 'mark', false); return false;" class="btn btn-default btn-xs"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+	</fieldset>				
+	<fieldset class="btn-group">
+		<input class="btn btn-warning" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />
+		<input class="btn btn-info" type="submit" name="action[del_marked]" value="{L_DELETE_MARKED}" />
+	</fieldset>
+<!-- ENDIF -->
 
 </form>
 
