@@ -1,5 +1,5 @@
 <!-- INCLUDE mcp_header.html -->
-
+<br/>
 <script type="text/javascript">
 // <![CDATA[
 
@@ -23,9 +23,9 @@
 
 	function display_details(option)
 	{
-		document.getElementById('unbangivereason').value = ban_give_reason[option];
-		document.getElementById('unbanreason').value = ban_reason[option];
-		document.getElementById('unbanlength').value = ban_length[option];
+		$('#unbangivereason').val(ban_give_reason[option]);
+		$('#unbanreason').val(ban_reason[option]);
+		$('#unbanlength').val(ban_length[option]);
 	}
 
 // ]]>
@@ -33,98 +33,104 @@
 
 <form id="mcp_ban" method="post" action="{U_ACTION}" class="form-horizontal">
 
-<h3>{L_TITLE}</h3>
 
-<div class="panel">
 
-	<p>{L_EXPLAIN}</p>
-
-	<fieldset>
-	<div class="form-group">
-		<label class="control-label" for="ban">{L_BAN_CELL}</label>
-		<div class="controls">
-			<textarea name="ban" id="ban" class="input-block-level" cols="40" rows="3">{BAN_QUANTIFIER}</textarea>
-			<!-- IF S_USERNAME_BAN --><strong><a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></strong><!-- ENDIF -->
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label" for="banlength">{L_BAN_LENGTH}</label>
-		<div class="controls">
-			<select name="banlength" id="banlength" onchange="if(this.value==-1){document.getElementById('banlengthother').style.display = 'block';}else{document.getElementById('banlengthother').style.display='none';}">{S_BAN_END_OPTIONS}</select>
-			<div id="banlengthother" style="display: none;">
-				<label><input type="text" name="banlengthother" class="inputbox" /><span>{L_YEAR_MONTH_DAY}</span></label>
+<div class="panel panel-default">
+	<div class="panel-heading"><h4>{L_TITLE}</h4></div>
+	<div class="panel-body">
+		<p>{L_EXPLAIN}</p>
+		<fieldset>
+			<div class="form-group">
+				<label class="control-label col-md-4" for="ban">{L_BAN_CELL}</label>
+				<div class="col-md-4">					
+					<textarea name="ban" id="ban" class="form-control">{BAN_QUANTIFIER}</textarea>
+				</div>
+				<!-- IF S_USERNAME_BAN --><strong><a href="{U_FIND_USERNAME}" class="btn btn-info" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a></strong><!-- ENDIF -->
 			</div>
-		</div>
+			<div class="form-group">
+				<label class="control-label col-md-4" for="banlength">{L_BAN_LENGTH}</label>
+				<div class="col-md-4">
+					<select class="form-control input-sm" name="banlength" id="banlength" onchange="if(this.value==-1){$('#banlengthother').show();$('#banlengthotherspan').show();}else{$('#banlengthother').hide();$('#banlengthotherspan').hide();}">{S_BAN_END_OPTIONS}</select>
+				</div>
+				<div class="col-md-4">
+					<input type="text" id="banlengthother" name="banlengthother" class="form-control input-sm" style="display:none;"/>
+				</div>
+				<div class="col-md-offset-8 col-md-4">
+					<span class="help-block" id="banlengthotherspan" style="display:none;">{L_YEAR_MONTH_DAY}</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-md-4" for="banreason">{L_BAN_REASON}</label>
+				<div class="col-md-8">
+					<input name="banreason" id="banreason" type="text" class="form-control" maxlength="255" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-md-4" for="bangivereason">{L_BAN_GIVE_REASON}</label>
+				<div class="col-md-8">
+					<input name="bangivereason" id="bangivereason" type="text" class="form-control" maxlength="255" />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-md-4" for="banexclude0">{L_BAN_EXCLUDE} </label>
+				<div class="col-md-8">
+					<label class="radio-inline" for="banexclude1"><input type="radio" name="banexclude" id="banexclude1" value="1" /> {L_YES}</label> 
+					<label class="radio-inline" for="banexclude0"><input type="radio" name="banexclude" id="banexclude0" value="0" checked="checked" /> {L_NO}</label>
+					<span class="help-block">{L_BAN_EXCLUDE_EXPLAIN}</span>
+				</div>
+			</div>
+			<div class="form-group">
+			<div class="col-md-offset-4 col-md-8 btn-group">
+				<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" /> 
+				<input type="submit" name="bansubmit" value="{L_SUBMIT}" class="btn btn-primary" />	
+			</div>
+			</div>
+		</fieldset>
+		{S_HIDDEN_FIELDS}
+		{S_FORM_TOKEN}
 	</div>
-	<div class="form-group">
-		<label class="control-label" for="banreason">{L_BAN_REASON}</label>
-		<div class="controls">
-			<input name="banreason" id="banreason" type="text" class="input-block-level" maxlength="255" />
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label" for="bangivereason">{L_BAN_GIVE_REASON}</label>
-		<div class="controls">
-			<input name="bangivereason" id="bangivereason" type="text" class="input-block-level" maxlength="255" />
-		</div>
-	</div>
-	<hr class="dashed"/>
-	<div class="form-group">
-		<label class="control-label" for="banexclude0">{L_BAN_EXCLUDE} </label>
-		<div class="controls">
-			<label class="radio-inline" for="banexclude1"><input type="radio" name="banexclude" id="banexclude1" value="1" /> {L_YES}</label> 
-			<label class="radio-inline" for="banexclude0"><input type="radio" name="banexclude" id="banexclude0" value="0" checked="checked" /> {L_NO}</label>
-			<span class="form-explications">{L_BAN_EXCLUDE_EXPLAIN}</span>
-		</div>
-	</div>
-	</fieldset>
-	<hr/>
-	{S_HIDDEN_FIELDS}
-	{S_FORM_TOKEN}
-	<div class="controls btn-group">
-		<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" /> 
-		<input type="submit" name="bansubmit" value="{L_SUBMIT}" class="btn btn-primary" />	
-	</div>
-
 </div>
 
-<h3>{L_UNBAN_TITLE}</h3>
-<div class="panel">
-	<p>{L_UNBAN_EXPLAIN}</p>
 
-	<!-- IF S_BANNED_OPTIONS -->
-		<fieldset>
-		<div class="form-group">
-			<label class="control-label" for="unban">{L_BAN_CELL} </label>
-			<div class="controls">
-				<select class="input-xxlarge" name="unban[]" id="unban" multiple="multiple" size="5" onchange="if (this.selectedIndex != -1) {display_details(this.options[this.selectedIndex].value);}">{BANNED_OPTIONS}</select>
+<div class="panel panel-default">
+	<div class="panel-heading"><h4>{L_UNBAN_TITLE}</h4></div>
+	<div class="panel-body">
+		<p>{L_UNBAN_EXPLAIN}</p>
+	
+		<!-- IF S_BANNED_OPTIONS -->
+			<fieldset>
+			<div class="form-group">
+				<label class="control-label col-md-4" for="unban">{L_BAN_CELL} </label>
+				<div class="col-md-8">
+					<select class="form-control" name="unban[]" id="unban" multiple="multiple" size="5" onchange="if (this.selectedIndex != -1) {display_details(this.options[this.selectedIndex].value);}">{BANNED_OPTIONS}</select>
+				</div>
 			</div>
-		</div>
-		<div class="form-group">
-			<span class="control-label">{L_BAN_LENGTH} :</span>
-			<div class="controls">
-				<input type="text" disabled="disabled" id="unbanlength" value="" class="input-block-level"/>
+			<div class="form-group">
+				<span class="control-label col-md-4">{L_BAN_LENGTH} :</span>
+				<div class="col-md-8">
+					<input type="text" disabled="disabled" id="unbanlength" value="" class="form-control"/>
+				</div>
 			</div>
-		</div>
-		<div class="form-group">
-			<span class="control-label">{L_BAN_REASON} :</span>
-			<div class="controls">
-				<input type="text" disabled="disabled" id="unbanreason" value="" class="input-block-level"/>
+			<div class="form-group">
+				<span class="control-label col-md-4">{L_BAN_REASON} :</span>
+				<div class="col-md-8">
+					<input type="text" disabled="disabled" id="unbanreason" value="" class="form-control"/>
+				</div>
 			</div>
-		</div>
-		<div class="form-group">
-			<span class="control-label">{L_BAN_GIVE_REASON} :</span>
-			<div class="controls">
-				<input type="text" disabled="disabled" id="unbangivereason" value="" class="input-block-level"/>
+			<div class="form-group">
+				<span class="control-label col-md-4">{L_BAN_GIVE_REASON} :</span>
+				<div class="col-md-8">
+					<input type="text" disabled="disabled" id="unbangivereason" value="" class="form-control"/>
+				</div>
 			</div>
-		</div>
-		</fieldset>
-
-		<hr/>
-		{S_HIDDEN_FIELDS}
-		<div class="controls btn-group">
-			<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" /> 
-			<input type="submit" name="unbansubmit" value="{L_SUBMIT}" class="btn btn-primary" />	
+			<div class="form-group">
+				<div class="col-md-offset-4 col-md-8 btn-group">
+					<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" /> 
+					<input type="submit" name="unbansubmit" value="{L_SUBMIT}" class="btn btn-primary" />	
+				</div>
+			</div>
+			</fieldset>
+			{S_HIDDEN_FIELDS}
 		</div>
 	</div>
 

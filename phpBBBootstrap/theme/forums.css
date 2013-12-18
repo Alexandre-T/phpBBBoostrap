@@ -143,7 +143,11 @@ fieldset.smallbande{
 	margin-top:-5px;
 	width:30%;
 }
-
+fieldset.bande{
+	margin-right:20px;
+	margin-top:-5px;
+	width:50%;
+}
 .nowrap{
   white-space:nowrap;
  }

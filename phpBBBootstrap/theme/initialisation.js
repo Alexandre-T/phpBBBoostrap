@@ -22,9 +22,9 @@ function find_username(url)
     $('.tooltip-top').tooltip({      
         container : 'body'
       });
-    $('#st').addClass('form-control');
-    $('#sk').addClass('form-control');
-    $('#sd').addClass('form-control');
+    $('#st').addClass('form-control input-sm');
+    $('#sk').addClass('form-control input-sm');
+    $('#sd').addClass('form-control input-sm');
     
     $('a','.pagination-line').addClass('btn btn-default btn-xs');
     $('span.page-dots','.pagination-line').addClass('btn btn-default btn-xs disabled');

@@ -1,56 +1,52 @@
 <!-- INCLUDE mcp_header.html -->
-
+<br/>
 <form method="post" id="mcp" action="{U_POST_ACTION}">
 
-<h3>{L_MCP_WARN_POST}</h3>
+<div class="panel panel-default">
+	<div class="panel-heading"><h4>{L_MCP_WARN_POST}</h4></div>
+	<div class="panel-body">
 
-<div class="panel">
-
-	<div class="row">
-		<div class="col-md-4 avatar">
-			<h4 class="fieldset"><!-- IF USER_COLOR --><span style="color: #{USER_COLOR}">{USERNAME}</span><!-- ELSE -->{USERNAME}<!-- ENDIF --></h4>			<!-- IF AVATAR_IMG --><div>{AVATAR_IMG}</div><!-- ENDIF -->
-			<dl class="details">
-				<!-- IF RANK_TITLE --><dt>{L_RANK}:</dt><dd>{RANK_TITLE}</dd><!-- ENDIF -->
-				<!-- IF RANK_IMG --><dt><!-- IF RANK_TITLE -->&nbsp;<!-- ELSE -->{L_RANK}:<!-- ENDIF --></dt><dd>{RANK_IMG}</dd><!-- ENDIF -->
-				<dt>{L_JOINED}:</dt><dd>{JOINED}</dd>
-				<dt>{L_TOTAL_POSTS}:</dt><dd>{POSTS}</dd>
-				<dt>{L_WARNINGS}: </dt><dd>{WARNINGS}</dd>
-			</dl>
+		<div class="col-md-4 avatar pull-right">
+			<!-- IF AVATAR_IMG --><span class="avatar">{AVATAR_IMG}</span><!-- ENDIF -->
+			<ul class="list-group">
+				<!-- IF RANK_TITLE --><li class="list-group-item">{L_RANK}&nbsp;: {RANK_TITLE}</li><!-- ENDIF -->
+ 					<li class="list-group-item"><span class="badge">{JOINED}</span>{L_JOINED}</li>
+ 					<li class="list-group-item"><span class="badge">{POSTS}</span>{L_TOTAL_POSTS}</li>
+ 					<li class="list-group-item"><span class="badge">{WARNINGS}</span>{L_WARNINGS}</li>
+			</ul>
 		</div>
-
 		<div class="col-md-8 corps">
 			<h4 class="fieldset">{L_POST_DETAILS}</h4>
-		
-			<div class="postbody">
-		
+			<div class="postbody">			
 				<div class="content">
-					{POST}
+					<blockquote>
+						{POST}
+						<small>{USERNAME}</small>
+					</blockquote>
+					
 				</div>
-		
 			</div>
 		</div>
+			
+		<fieldset>
+			<h4 class="fieldset">{L_ADD_WARNING}</h4>
+			<div class="form-group">
+				<textarea name="warning" id="warning" class="form-control" cols="40" rows="3">{L_WARNING_POST_DEFAULT}</textarea>
+				<span class="help-block">{L_ADD_WARNING_EXPLAIN}</span>
+			</div>
+			<!-- IF S_CAN_NOTIFY -->
+				<label class="checkbox" for="notify_user"><input type="checkbox" name="notify_user" checked="checked" /> {L_NOTIFY_USER_WARN}</label>
+			<!-- ENDIF -->
+		</fieldset>
+	
+		{S_FORM_TOKEN}
+		<fieldset class="btn-group">
+			<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" />
+			<input type="submit" name="action[add_warning]" value="{L_SUBMIT}" class="btn btn-primary" />
+		</fieldset>
 	</div>
-
 </div>
 
-<div class="panel">
-
-	<h4 class="fieldset">{L_ADD_WARNING}</h4>
-	<p>{L_ADD_WARNING_EXPLAIN}</p>
-
-	<fieldset>
-		<textarea name="warning" id="warning" class="input-block-level" cols="40" rows="3">{L_WARNING_POST_DEFAULT}</textarea>
-		<!-- IF S_CAN_NOTIFY -->
-			<label class="checkbox" for="notify_user"><input type="checkbox" name="notify_user" checked="checked" /> {L_NOTIFY_USER_WARN}</label>
-		<!-- ENDIF -->
-	</fieldset>
-
-	{S_FORM_TOKEN}
-	<fieldset class="btn-group">
-		<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" />
-		<input type="submit" name="action[add_warning]" value="{L_SUBMIT}" class="btn btn-primary" />
-	</fieldset>
-</div>
 
 </form>
 
