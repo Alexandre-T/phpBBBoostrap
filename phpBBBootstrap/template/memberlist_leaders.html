@@ -1,5 +1,4 @@
 <!-- INCLUDE overall_header.html -->
-<section>
 <h2 class="solo">{PAGE_TITLE}</h2>
 
 <form method="post" action="{S_MODE_ACTION}">
@@ -56,7 +55,7 @@
 			<!-- ELSE -->
 				{mod.GROUP_NAME}
 			<!-- ENDIF --></td>
-		<td class="info text-middle"><!-- IF not mod.FORUMS -->{L_ALL_FORUMS}<!-- ELSE --><select style="width: 100%;margin:0;padding:0px;">{mod.FORUMS}</select><!-- ENDIF --></td>
+		<td class="info text-middle"><!-- IF not mod.FORUMS -->{L_ALL_FORUMS}<!-- ELSE --><select class="input-sm form-control">{mod.FORUMS}</select><!-- ENDIF --></td>
 	</tr>
 <!-- BEGINELSE -->
 	<tr>
@@ -69,6 +68,8 @@
 </div>
 	
 </form>
-<!-- INCLUDE jumpbox.html -->
-</section>
+<div class="col-md-offset-7 col-sm-offset-5">
+	<!-- INCLUDE jumpbox.html -->
+</div>
+
 <!-- INCLUDE overall_footer.html -->

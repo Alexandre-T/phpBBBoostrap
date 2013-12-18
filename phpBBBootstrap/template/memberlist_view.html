@@ -4,7 +4,7 @@
 
 <form method="post" action="{S_PROFILE_ACTION}" id="viewprofile" class="form form-horizontal">
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-sm-8">
 			<h3><i class="icon-user"></i> Profil</h3>
 			
 			<dl class="dl-horizontal">
@@ -43,10 +43,19 @@
 				<!-- ENDIF -->
 			</dl>
 			<dl class="dl-horizontal">
-				<!-- IF S_GROUP_OPTIONS --><dt>{L_USERGROUPS}</dt> <dd><span class="input-group"><select name="g">{S_GROUP_OPTIONS}</select> <input type="submit" name="submit" value="{L_GO}" class="btn btn-default" /></span></dd><!-- ENDIF -->
+				<!-- IF S_GROUP_OPTIONS -->
+				<dt>{L_USERGROUPS}</dt> 
+				<dd>
+					<span class="input-group col-md-8">
+						<select class="form-control" name="g">{S_GROUP_OPTIONS}</select>
+						<span class="input-group-btn">
+							<input type="submit" name="submit" value="{L_GO}" class="btn btn-default" />
+						</span>
+					</span>
+				</dd><!-- ENDIF -->
 			</dl>
 		</div>
-		<div class="col-md-4">
+		<div class="col-sm-4">
 			<!-- IF AVATAR_IMG -->
 			<dl class="pull-right">
 				<dt style="text-align: center;" class="forum-avatar-cadre">{AVATAR_IMG}</dt>
@@ -109,7 +118,10 @@
 <!-- ENDIF -->
 
 </form>
+<hr class="small"/>
+<div class="row">
+	<div class="col-sm-offset-6 col-md-offset-7 col-lg-offset-8 text-right"><!-- INCLUDE jumpbox.html --></div>
+</div>
 
-<div class="text-right"><!-- INCLUDE jumpbox.html --></div>
 </section>
 <!-- INCLUDE overall_footer.html -->

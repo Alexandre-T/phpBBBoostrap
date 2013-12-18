@@ -7,16 +7,6 @@
   border-bottom: 0;
 }
 
-.tab-content > .tab-pane,
-.pill-content > .pill-pane {
-  display: none;
-}
-
-.tab-content > .active,
-.pill-content > .active {
-  display: block;
-}
-
 .tabs-below > .nav-tabs {
   border-top: 1px solid #ddd;
 }
