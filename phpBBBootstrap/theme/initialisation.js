@@ -69,9 +69,9 @@ function search_desc_sd(){
     $('.tooltip-top').tooltip({      
         container : 'body'
       });
-    $('#st').addClass('form-control input-sm');
-    $('#sk').addClass('form-control input-sm');
-    $('#sd').addClass('form-control input-sm');
+    $('#st').addClass('form-control ');
+    $('#sk').addClass('form-control ');
+    $('#sd').addClass('form-control ');
     
     $('a','.pagination-line').addClass('btn btn-default btn-xs');
     $('span.page-dots','.pagination-line').addClass('btn btn-default btn-xs disabled');
