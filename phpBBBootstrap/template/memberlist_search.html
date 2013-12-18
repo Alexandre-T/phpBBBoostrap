@@ -39,156 +39,189 @@ function insert_single(user)
 </script>
 <script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
 <!-- ENDIF -->
-
 <h2 class="solo">{L_FIND_USERNAME}</h2>
-
 <form method="post" action="{S_MODE_ACTION}" class="form-horizontal" id="search_memberlist">
-<div class="panel">
-
-	<div class="alert alert-info"><p><i class="icon-exclamation-sign"></i> {L_FIND_USERNAME_EXPLAIN}</p></div>
+	<div class="alert alert-info alert-block"><p><i class="icon-exclamation-sign"></i> {L_FIND_USERNAME_EXPLAIN}</p></div>
 	
 	<div class="row">
-		<fieldset class="col-md-6">
-		<div class="form-group">
-			<label class="control-label" for="username">{L_USERNAME}</label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-user"></i></span>
-					<input type="text" name="username" id="username" value="{USERNAME}" class="input-medium" />
+		<div class="col-md-6">
+			<fieldset>
+			<div class="form-group">
+				<label class="control-label col-md-4" for="username">{L_USERNAME}</label>
+				<div class="col-md-8">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="icon-user"></i></span>
+						<input type="text" name="username" id="username" value="{USERNAME}" class="form-control" />
+					</div>
 				</div>
 			</div>
-		</div>
-	<!-- IF S_EMAIL_SEARCH_ALLOWED -->
-		<div class="form-group">
-			<label class="control-label" for="email">{L_EMAIL}</label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon">@</span>
-					<input type="text" name="email" id="email" value="{EMAIL}" class="input-medium"  />
+			<!-- IF S_EMAIL_SEARCH_ALLOWED -->
+			<div class="form-group">
+				<label class="control-label col-md-4" for="email">{L_EMAIL}</label>
+				<div class="col-md-8">
+					<div class="input-group">
+						<span class="input-group-addon">@</span>
+						<input type="text" name="email" id="email" value="{EMAIL}" class="form-control"  />
+					</div>
 				</div>
 			</div>
-		</div>
-	<!-- ENDIF -->
-		<div class="form-group">
-			<label class="control-label"  for="icq">{L_ICQ}</label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-user"></i></span>
-					<input type="text" name="icq" id="icq" value="{ICQ}" class="input-medium"  />
+			<!-- ENDIF -->
+			<div class="form-group">
+				<label class="control-label col-md-4"  for="icq">{L_ICQ}</label>
+				<div class="col-md-8">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="icon-user"></i></span>
+						<input type="text" name="icq" id="icq" value="{ICQ}" class="form-control"  />
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="form-group">
-			<label class="control-label"  for="aim">{L_AIM}</label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-user"></i></span>
-					<input type="text" name="aim" id="aim" value="{AIM}" class="input-medium"  />
+			<div class="form-group">
+				<label class="control-label col-md-4"  for="aim">{L_AIM}</label>
+				<div class="col-md-8">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="icon-user"></i></span>
+						<input type="text" name="aim" id="aim" value="{AIM}" class="form-control"  />
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="form-group">
-			<label class="control-label"  for="yahoo">{L_YIM}</label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-user"></i></span>
-					<input type="text" name="yahoo" id="yahoo" value="{YAHOO}" class="input-medium"  />
+			<div class="form-group">
+				<label class="control-label col-md-4"  for="yahoo">{L_YIM}</label>
+				<div class="col-md-8">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="icon-user"></i></span>
+						<input type="text" name="yahoo" id="yahoo" value="{YAHOO}" class="form-control"  />
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="form-group">
-			<label class="control-label"  for="msn">{L_MSNM}</label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-skype"></i></span>
-					<input type="text" name="msn" id="msn" value="{MSNM}" class="input-medium"  />
+			<div class="form-group">
+				<label class="control-label col-md-4"  for="msn">{L_MSNM}</label>
+				<div class="col-md-8">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="icon-skype"></i></span>
+						<input type="text" name="msn" id="msn" value="{MSNM}" class="form-control"  />
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="form-group">
-			<label class="control-label"  for="jabber">{L_JABBER}</label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-lightbulb"></i></span>
-					<input type="text" name="jabber" id="jabber" value="{JABBER}" class="input-medium"  />
+			<div class="form-group">
+				<label class="control-label col-md-4"  for="jabber">{L_JABBER}</label>
+				<div class="col-md-8">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="icon-lightbulb"></i></span>
+						<input type="text" name="jabber" id="jabber" value="{JABBER}" class="form-control"  />
+					</div>
 				</div>
 			</div>
+			</fieldset>
 		</div>
-
-		</fieldset>
 	
-		<fieldset class="col-md-6">
-		<div class="form-group">
-			<label class="control-label"  for="joined">{L_JOINED}</label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-calendar"></i></span>
-					<select class="input-sm" name="joined_select">{S_JOINED_TIME_OPTIONS}</select>
-					<input class="input-sm" type="text" name="joined" id="joined" value="{JOINED}"  />
+		<div class="col-md-6">
+			<input type="hidden" name="joined_select" id="joined_select" value=""/>
+			<select style="display:none;" id="joined_select_cache" name="joined_select_cache" >{S_JOINED_TIME_OPTIONS}</select>
+			<div class="form-group">
+				<label class="control-label col-md-4"  for="joined">{L_JOINED}</label>
+				<div class="col-md-8">
+					<div class="input-group">
+						<div class="input-group-addon"><i class="icon-calendar"></i></div>
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle btn-second" data-toggle="dropdown" id="button_joined_select"> <span class="caret"></span></button>
+							<ul class="dropdown-menu">
+								<li><a href="#" onclick="return search_before_joined()" id="search_before_joined">{L_BEFORE}</a></li>
+								<li><a href="#" onclick="return search_after_joined()" id="search_after_joined">{L_AFTER}</a></li>
+							</ul>
+						</div><!-- /btn-group -->
+						<input class="form-control" type="text" name="joined" id="joined" value="{JOINED}"  />
+					</div>
 				</div>
 			</div>
-		</div>
-	<!-- IF S_VIEWONLINE -->
-		<div class="form-group">
-			<label class="control-label"  for="active">{L_LAST_ACTIVE}</label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-calendar"></i></span>
-					<select class="input-sm" name="active_select">{S_ACTIVE_TIME_OPTIONS}</select>
-					<input class="input-sm" type="text" name="active" id="active" value="{ACTIVE}"  />
+			
+			<!-- IF S_VIEWONLINE -->
+			<input type="hidden" name="active_select" id="active_select" value=""/>
+			<select style="display:none;" id="active_select_cache" name="active_select_cache" >{S_ACTIVE_TIME_OPTIONS}</select>					
+			<div class="form-group">
+				<label class="control-label col-md-4"  for="active">{L_LAST_ACTIVE}</label>
+				<div class="col-md-8">
+					<div class="input-group">				
+						<div class="input-group-addon"><i class="icon-calendar"></i></div>
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle btn-second" data-toggle="dropdown" id="button_active_select"> <span class="caret"></span></button>
+							<ul class="dropdown-menu">
+								<li><a href="#" onclick="return search_before_active()" id="search_before_active">{L_BEFORE}</a></li>
+								<li><a href="#" onclick="return search_after_active()" id="search_after_active">{L_AFTER}</a></li>
+							</ul>
+						</div><!-- /btn-group -->
+						<input class="form-control" type="text" name="active" id="active" value="{ACTIVE}"  />
+					</div>
 				</div>
 			</div>
-		</div>
-	<!-- ENDIF -->
-		<div class="form-group">
-			<label class="control-label"  for="count">{L_POSTS}</label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-envelope-alt"></i></span>
-					<select class="input-sm" name="count_select">{S_COUNT_OPTIONS}</select>
-					<input class="input-sm" type="text" name="count" id="count" value="{COUNT}"  />
+			<!-- ENDIF -->
+			
+			<input type="hidden" name="count_select" id="count_select" value=""/>
+			<select style="display:none;" id="count_select_cache" name="count_select_cache" >{S_COUNT_OPTIONS}</select>					
+			<div class="form-group">
+				<label class="control-label col-md-4"  for="count">{L_POSTS}</label>
+				<div class="col-md-8">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="icon-envelope-alt"></i></span>
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle btn-second" data-toggle="dropdown" id="button_count_select"> <span class="caret"></span></button>
+							<ul class="dropdown-menu">
+								<li><a href="#" onclick="return search_less_count()" id="search_less_count">{L_LESS_THAN}</a></li>
+								<li><a href="#" onclick="return search_equal_count()" id="search_equal_count">{L_EQUAL_TO}</a></li>
+								<li><a href="#" onclick="return search_more_count()" id="search_more_count">{L_MORE_THAN}</a></li>
+							</ul>
+						</div><!-- /btn-group -->
+						<input class="form-control" type="text" name="count" id="count" value="{COUNT}"  />
+					</div>
 				</div>
 			</div>
-		</div>
-	<!-- IF S_IP_SEARCH_ALLOWED -->
-		<div class="form-group">
-			<label class="control-label"  for="ip">{L_POST_IP}</label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-desktop"></i></span>
-					<input class="input-medium" type="text" name="ip" id="ip" value="{IP}"  />
-				</div>
-			</div>
-		</div>
-	<!-- ENDIF -->
-		<div class="form-group">
-			<label class="control-label"  for="search_group_id">{L_GROUP}</label>
-			<div class="controls">
-				<div class="input-group">
-					<span class="input-group-addon"><i class="icon-group"></i></span>
-					<select class="input-medium" name="search_group_id" id="search_group_id">{S_GROUP_SELECT}</select>/>
-				</div>
-			</div>
-		</div>
-		</fieldset>
-	</div>
-	<hr />
-	<div class="form-group">
-		<label class="control-label"  for="sk" class="label3">{L_SORT_BY}</label>
-		<div class="controls">
-			<div class="input-group">
-				<span class="input-group-addon"><i class="icon-sort"></i></span>
-				<select name="sk" id="sk">{S_SORT_OPTIONS}</select> <select name="sd">{S_ORDER_SELECT}</select>
-			</div>
-		</div>
-	</div>
 
-	<fieldset class="form-actions">
+			<!-- IF S_IP_SEARCH_ALLOWED -->
+			<div class="form-group">
+				<label class="control-label col-md-4"  for="ip">{L_POST_IP}</label>
+				<div class="col-md-8">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="icon-desktop"></i></span>
+						<input class="form-control" type="text" name="ip" id="ip" value="{IP}"  />
+					</div>
+				</div>
+			</div>
+			<!-- ENDIF -->
+			
+			<div class="form-group">
+				<label class="control-label col-md-4"  for="search_group_id">{L_GROUP}</label>
+				<div class="col-md-8">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="icon-group"></i></span>
+						<select class="form-control" name="search_group_id" id="search_group_id">{S_GROUP_SELECT}</select>
+					</div>
+				</div>
+			</div>
+
+			<input type="hidden" name="sd" id="sd" value=""/>
+			<select style="display:none;" id="sd_cache" name="sd_cache" >{S_ORDER_SELECT}</select>					
+			<div class="form-group">
+				<label class="control-label col-md-4"  for="sk">{L_SORT_BY}</label>
+				<div class="col-md-8">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="icon-sort"></i></span>
+						<select name="sk" id="sk" class="form-control">{S_SORT_OPTIONS}</select>
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="button_sd"> <span class="caret"></span></button>
+							<ul class="dropdown-menu">
+								<li><a href="#" onclick="return search_asc_sd()" id="search_asc_sd">{L_ASCENDING} <i class="icon-sort-amount-asc"></i></a></li>
+								<li><a href="#" onclick="return search_desc_sd()" id="search_desc_sd">{L_DESCENDING} <i class="icon-sort-amount-desc"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+	<fieldset class="col-md-offset-2 col-md-10 btn-group">
 		<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" />
 		<input type="submit" name="submit" value="{L_SEARCH}" class="btn btn-primary" />
 		{S_FORM_TOKEN}
 	</fieldset>
-
-</div>
-
+	</div>
 </form>

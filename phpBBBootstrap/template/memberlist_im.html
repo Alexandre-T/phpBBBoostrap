@@ -3,30 +3,30 @@
 <!-- MSNM info from http://www.cdolive.net/ - doesn't seem to work with MSN Messenger -->
 <h2 class="solo"><i class="icon-skype"></i> {L_SEND_IM}</h2>
 
-<form method="post" action="{S_IM_ACTION}" class="form form-horizontal">
+<form method="post" action="{S_IM_ACTION}" class="form-horizontal">
 
 	<p class="text-justify">{L_SEND_IM_EXPLAIN}</p>
 
 	<fieldset>
-		<dl class="dl-horizontal">
-			<dt>{L_IM_RECIPIENT}</dt>
-			<dd>
-				{USERNAME}
+		<div class="form-group">
+			<label class="control-label col-sm-3" for="from">{L_IM_RECIPIENT}</label>
+			<div class="col-sm-9">
+				<input class="form-control" disabled type="text" placeholder="{USERNAME}"/>
 				<!-- IF S_SEND_ICQ or S_SEND_AIM or S_SEND_MSNM or S_NO_SEND_JABBER --> <span class="label">{IM_CONTACT}</span><!-- ENDIF --><!-- IF PRESENCE_IMG --> {PRESENCE_IMG}<!-- ENDIF -->
-			</dd>
-		</dl>
+			</div>
+		</div>
 
 	<!-- IF S_SEND_ICQ -->
 		<div class="form-group">
-			<label class="control-label" for="from">{L_IM_NAME}</label>
-			<div class="controls">
-				<input type="text" name="from" id="from" size="20" />
+			<label class="control-label col-sm-3" for="from">{L_IM_NAME}</label>
+			<div class="col-sm-9">
+				<input class="form-control" type="text" name="from" id="from" size="20" />
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="control-label" for="body">{L_IM_MESSAGE}</label>
-			<div class="controls">
-				<textarea class="input-block-level" name="body" id="body" rows="5" cols="45"></textarea>
+			<label class="control-label col-sm-3" for="body">{L_IM_MESSAGE}</label>
+			<div class="col-sm-9">
+				<textarea class="form-control" name="body" id="body" rows="5" cols="45"></textarea>
 			</div>
 		</div>
 		<div class="form-actions">
@@ -47,14 +47,15 @@
 	<!-- ENDIF -->
 
 	<!-- IF S_SEND_MSNM -->
-		<dl class="dl-horizontal">
-			<dt>&nbsp;</dt>
-			<dd><object classid="clsid:B69003B3-C55E-4B48-836C-BC5946FC3B28" codetype="application/x-oleobject" id="objMessengerApp" width="0" height="0"></object></dd>
-			<dd class="btn-group text-center">
-				<a href="#" class="btn btn-default" onclick="add_contact('{A_IM_CONTACT}'); return false;"><i class="icon-plus"></i> {L_IM_ADD_CONTACT}</a>
-				<a href="#" class="btn btn-default" onclick="im_contact('{A_IM_CONTACT}'); return false;"><i class="icon-envelope"></i> {L_IM_SEND_MESSAGE}</a>
-			</dd>
-		</dl>
+		<div class="row">
+			<div class="col-sm-offset-3 col-sm-9">
+				<object classid="clsid:B69003B3-C55E-4B48-836C-BC5946FC3B28" codetype="application/x-oleobject" id="objMessengerApp" width="0" height="0"></object>
+				<div class="btn-group text-center">
+					<a href="#" class="btn btn-default" onclick="add_contact('{A_IM_CONTACT}'); return false;"><i class="icon-plus"></i> {L_IM_ADD_CONTACT}</a>
+					<a href="#" class="btn btn-default" onclick="im_contact('{A_IM_CONTACT}'); return false;"><i class="icon-envelope"></i> {L_IM_SEND_MESSAGE}</a>
+				</div>
+			</div>
+		</div>
 	<!-- ENDIF -->
 
 	<!-- IF S_SEND_JABBER -->
@@ -78,10 +79,12 @@
 	<!-- ENDIF -->
 	{S_FORM_TOKEN}
 	</fieldset>
-
+	<div class="form-group">
+		<p class="text-center"><a class="btn btn-danger" href="#" onclick="window.close(); return false;"><i class="icon-remove"></i> {L_CLOSE_WINDOW}</a>
+	</div>
 </form>
 
-<p class="text-center"><a class="btn btn-default" href="#" onclick="window.close(); return false;"><i class="icon-remove"></i> {L_CLOSE_WINDOW}</a>
+
 
 <script type="text/javascript">
 // <![CDATA[

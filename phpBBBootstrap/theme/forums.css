@@ -124,8 +124,14 @@ dd.pm_foe_colour, tr.pm_foe_colour td:first-child{
 	/* margin-top:10pt; */
 	line-height: 1pt;
 }
-
-
+button.btn-second{
+	border-radius: 0;
+	border-radius: 0;
+	border-right-style:none;
+}
+table tr td.text-middle{
+	vertical-align: middle;
+}
 /* Responsive
 -------------------------------------------------- */
 

@@ -2,62 +2,64 @@
 
 <h2 class="titlespace">{L_SEND_EMAIL_USER} {USERNAME}</h2>
 
-<form method="post" action="{S_POST_ACTION}" id="post" class="form form-horizontal">
+<form method="post" action="{S_POST_ACTION}" id="post" class="form-horizontal">
 
 	<div class="content">
 		<!-- IF ERROR_MESSAGE --><p class="alert alert-danger alert-block">{ERROR_MESSAGE}</p><!-- ENDIF -->
 		<fieldset>
 		<!-- IF S_SEND_USER -->
 			<div class="form-group">
-				<span class="control-label">{L_RECIPIENT}</span>
-				<div class="controls">
-					<span class="uneditable-input"><strong>{USERNAME}</strong></span>
+				<label class="control-label col-md-3">{L_RECIPIENT}</label>
+				<div class="col-md-4">
+					<input class="form-control" disabled placeholder="{USERNAME}" value="{USERNAME}">
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="subject">{L_SUBJECT}</label>
-				<div class="controls">
-					<input type="text" name="subject" id="subject" size="50" tabindex="1" value="{SUBJECT}" />
+				<label class="control-label col-md-3" for="subject">{L_SUBJECT}</label>
+				<div class="col-md-9">
+					<input type="text" name="subject" id="subject" size="50" tabindex="1" value="{SUBJECT}" class="form-control"/>
 				</div>
 			</div>
 		<!-- ELSE -->
 			<div class="form-group">
-				<label class="control-label" for="email">{L_EMAIL_ADDRESS}</label>
-				<div class="controls">
-					<input type="text" name="email" id="email" size="50" maxlength="100" tabindex="2" value="{EMAIL}" />
+				<label class="control-label col-md-3" for="email">{L_EMAIL_ADDRESS}</label>
+				<div class="col-md-9">
+					<input type="text" name="email" id="email" size="50" maxlength="100" tabindex="2" value="{EMAIL}" class="form-control"/>
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label" for="name">{L_REAL_NAME}</label>
-				<div class="controls">
-					<input class="inputbox autowidth" type="text" name="name" id="name" size="50" tabindex="3" value="{NAME}" />
+				<label class="control-label col-md-3" for="name">{L_REAL_NAME}</label>
+				<div class="col-md-9">
+					<input class="form-control" type="text" name="name" id="name" size="50" tabindex="3" value="{NAME}" />
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="control-label"  for="lang">{L_DEST_LANG}</label>
-				<div class="controls">
-					<select name="lang">{S_LANG_OPTIONS}</select>
+				<label class="control-label col-md-3"  for="lang">{L_DEST_LANG}</label>
+				<div class="col-md-9">
+					<select name="lang" class="form-control">{S_LANG_OPTIONS}</select>
 					<span class="help-block">{L_DEST_LANG_EXPLAIN}</span>
 				</div>
 			</div>
 		<!-- ENDIF -->
 		<div class="form-group">
-			<label class="control-label" for="message">{L_MESSAGE_BODY}</label>
-			<div class="controls">
-				<textarea class="input-block-level" name="message" id="message" rows="15" cols="76" tabindex="4">{MESSAGE}</textarea>
+			<label class="control-label col-md-3" for="message">{L_MESSAGE_BODY}</label>
+			<div class="col-md-9">
+				<textarea class="form-control" name="message" id="message" rows="15" cols="76" tabindex="4">{MESSAGE}</textarea>
 				<span class="help-block">{L_EMAIL_BODY_EXPLAIN}</span>
 			</div>
 		</div>
 		<div class="form-group">
-			<div class="controls"> 
+			<div class="col-md-offset-3 col-md-9"> 
 				<label class="checkbox-inline" for="cc_email"><input type="checkbox" name="cc_email" id="cc_email" value="1" checked="checked" tabindex="5" /> {L_CC_EMAIL}</label>
 			</div>
 		</div>
 		</fieldset>
+		<div class="row">
+			<fieldset class="col-md-offset-3 col-md-9">
+				<input type="submit" tabindex="6" name="submit" class="btn btn-primary" value="{L_SEND_EMAIL}" />
+			</fieldset>
+		</div>
 	</div>
-	<fieldset class="form-actions">
-		<input type="submit" tabindex="6" name="submit" class="btn btn-primary" value="{L_SEND_EMAIL}" />
-	</fieldset>
 	{S_FORM_TOKEN}
 
 </form>
