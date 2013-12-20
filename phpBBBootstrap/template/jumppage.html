@@ -1,19 +1,22 @@
 <!-- IF PAGE_NUMBER and PAGINATION -->
-<div class="modal hide fade" id="jumpPage">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-		<h3>{L_JUMP_TO_PAGE}&hellip;</h3> 
-	</div>
-	<div class="modal-body">
-		<form class="form form-vertical" method="get" id="jumpto" action="{S_FORUM_ACTION}{S_SEARCH_ACTION}{S_TOPIC_ACTION}">
-			<label for="page">{L_JUMP_TO}</label>    	
-    		<input type="number" value="{ON_PAGE}" id="page" name="page" min="1">
-    	</form>
-    	
-	</div>
-	<div class="modal-footer">
-		<a href="#" class="btn btn-default" data-dismiss="modal">{L_CANCEL}</a>
-		<a href="#" class="btn btn-primary" onclick="jumpto('{A_BASE_URL}','{PER_PAGE}');"><i class="icon-mail-forward"></i></a>
+<div class="modal fade" id="jumpPage">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title">{L_JUMP_TO_PAGE}&hellip;</h4> 
+			</div>
+			<div class="modal-body">
+				<form class="form form-vertical" method="get" id="jumpto" action="{S_FORUM_ACTION}{S_SEARCH_ACTION}{S_TOPIC_ACTION}">
+					<label for="page">{L_JUMP_TO}</label>    	
+		    		<input type="number" value="{ON_PAGE}" id="page" name="page" min="1">
+		    	</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">{L_CANCEL}</button>
+				<button type="button" class="btn btn-primary" onclick="jumpto('{A_BASE_URL}','{PER_PAGE}');"><i class="icon-mail-forward"></i></button>
+			</div>
+		</div>
 	</div>
 </div>
 <!-- ENDIF -->
