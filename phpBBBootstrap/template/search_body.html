@@ -5,121 +5,122 @@
 // ]]>
 </script>
 
-<h2 class="solo"><i class="icon-search"></i> {L_SEARCH}</h2>
-
-<form method="get" action="{S_SEARCH_ACTION}" class="form form-horizontal form-large">
-
-<h3>{L_SEARCH_QUERY}</h3>
-
-<fieldset>
-	<div class="form-group">
-		<label for="keywords" class="control-label">{L_SEARCH_KEYWORDS}</label>
-		<div class="controls">
-			<input type="text" class="input-block-level" name="keywords" id="keywords" size="40" title="{L_SEARCH_KEYWORDS}" />
-		</div>
-		<div class="controls">
-			<label class="radio-inline" for="terms1"><input type="radio" name="terms" id="terms1" value="all" checked="checked" /> {L_SEARCH_ALL_TERMS}</label>
-			<label class="radio-inline" for="terms2"><input type="radio" name="terms" id="terms2" value="any" /> {L_SEARCH_ANY_TERMS}</label>
-			<span class=help-block><em>{L_SEARCH_KEYWORDS_EXPLAIN}</em></span>
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label" for="author">{L_SEARCH_AUTHOR}</label>
-		<div class="controls">
-			<input type="text" class="inputbox" name="author" id="author" size="40" title="{L_SEARCH_AUTHOR}" />
-			<span class="help-block">{L_SEARCH_AUTHOR_EXPLAIN}</span>
-		</div>
-	</div>
-</fieldset>
-
-<h3><i class="icon-cogs"></i> {L_SEARCH_OPTIONS}</h3>
-<fieldset>
-	<div class="form-group">
-		<label class="control-label" for="search_forum">{L_SEARCH_FORUMS}</label>
-		<div class="controls">
-			<select name="fid[]" id="search_forum" multiple="multiple" size="8" title="{L_SEARCH_FORUMS}">{S_FORUM_OPTIONS}</select>
-			<span class="help-block">{L_SEARCH_FORUMS_EXPLAIN}</span>
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label" for="search_child1">{L_SEARCH_SUBFORUMS}</label>
-		<div class="controls">
-			<label class="radio-inline" for="search_child1"><input type="radio" name="sc" id="search_child1" value="1" checked="checked" /> {L_YES}</label>
-			<label class="radio-inline" for="search_child2"><input type="radio" name="sc" id="search_child2" value="0" /> {L_NO}</label>
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label" for="sf1">{L_SEARCH_WITHIN}</label>
-		<div class="controls">
-			<label class="radio-inline" for="sf1"><input type="radio" name="sf" id="sf1" value="all" checked="checked" /> {L_SEARCH_TITLE_MSG}</label>
-			<label class="radio-inline" for="sf2"><input type="radio" name="sf" id="sf2" value="msgonly" /> {L_SEARCH_MSG_ONLY}</label>
-			<label class="radio-inline" for="sf3"><input type="radio" name="sf" id="sf3" value="titleonly" /> {L_SEARCH_TITLE_ONLY}</label>
-			<label class="radio-inline" for="sf4"><input type="radio" name="sf" id="sf4" value="firstpost" /> {L_SEARCH_FIRST_POST}</label>
-		</div>
-	</div>
-
-	<hr class="dashed" />
-
-	<div class="form-group">
-		<label class="control-label" for="show_results1">{L_DISPLAY_RESULTS}</label>
-		<div class="controls">
-			<label class="radio-inline" for="show_results1"><input type="radio" name="sr" id="show_results1" value="posts" checked="checked" /> {L_POSTS}</label>
-			<label class="radio-inline" for="show_results2"><input type="radio" name="sr" id="show_results2" value="topics" /> {L_TOPICS}</label>
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label" for="sd">{L_RESULT_SORT}</label>
-		<div class="controls">
-			{S_SELECT_SORT_KEY}&nbsp;
-			<label class="radio-inline" for="sa"><input type="radio" name="sd" id="sa" value="a" /> {L_SORT_ASCENDING}</label>
-			<label class="radio-inline" for="sd"><input type="radio" name="sd" id="sd" value="d" checked="checked" /> {L_SORT_DESCENDING}</label>
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label">{L_RESULT_DAYS}</label>
-		<div class="controls">
-			{S_SELECT_SORT_DAYS}
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label">{L_RETURN_FIRST}</label>
-		<div class="controls">
-		<select name="ch" title="{L_RETURN_FIRST}">{S_CHARACTER_OPTIONS}</select> {L_POST_CHARACTERS}
-		</div>
-	</div>
-</fieldset>
-
-	<fieldset class="form-actions">
-		{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" />&nbsp;
-		<input type="submit" name="submit" value="{L_SEARCH}" class="btn btn-primary" />
-	</fieldset>
 
 
+<form method="get" action="{S_SEARCH_ACTION}" class="form-horizontal">
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h2 class="panel-title"><i class="icon-search"></i> {L_SEARCH}</h2>
+	</div>
+	<div class="panel-body">
+		<fieldset>
+			<legend>{L_SEARCH_QUERY}</legend>
+			<div class="form-group">
+				<label for="keywords" class="control-label col-sm-3">{L_SEARCH_KEYWORDS}</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" name="keywords" id="keywords" size="40" title="{L_SEARCH_KEYWORDS}" />
+				</div>
+				<div class="col-sm-offset-3 col-sm-9">
+					<label class="radio-inline" for="terms1"><input type="radio" name="terms" id="terms1" value="all" checked="checked" /> {L_SEARCH_ALL_TERMS}</label>
+					<label class="radio-inline" for="terms2"><input type="radio" name="terms" id="terms2" value="any" /> {L_SEARCH_ANY_TERMS}</label>
+					<span class=help-block><em>{L_SEARCH_KEYWORDS_EXPLAIN}</em></span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-3" for="author">{L_SEARCH_AUTHOR}</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" name="author" id="author" size="40" title="{L_SEARCH_AUTHOR}" />
+					<span class="help-block">{L_SEARCH_AUTHOR_EXPLAIN}</span>
+				</div>
+			</div>
+		</fieldset>
+		
+		<fieldset>
+			<legend><i class="icon-cogs"></i> {L_SEARCH_OPTIONS}</legend>
+			<div class="form-group">
+				<label class="control-label col-sm-3" for="search_forum">{L_SEARCH_FORUMS}</label>
+				<div class="col-sm-9">
+					<select class="form-control" name="fid[]" id="search_forum" multiple="multiple" size="8" title="{L_SEARCH_FORUMS}">{S_FORUM_OPTIONS}</select>
+					<span class="help-block">{L_SEARCH_FORUMS_EXPLAIN}</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-3" for="search_child1">{L_SEARCH_SUBFORUMS}</label>
+				<div class="col-sm-9">
+					<label class="radio-inline" for="search_child1"><input type="radio" name="sc" id="search_child1" value="1" checked="checked" /> {L_YES}</label>
+					<label class="radio-inline" for="search_child2"><input type="radio" name="sc" id="search_child2" value="0" /> {L_NO}</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-3" for="sf1">{L_SEARCH_WITHIN}</label>
+				<div class="col-sm-9">
+					<label class="radio-inline" for="sf1"><input type="radio" name="sf" id="sf1" value="all" checked="checked" /> {L_SEARCH_TITLE_MSG}</label>
+					<label class="radio-inline" for="sf2"><input type="radio" name="sf" id="sf2" value="msgonly" /> {L_SEARCH_MSG_ONLY}</label>
+					<label class="radio-inline" for="sf3"><input type="radio" name="sf" id="sf3" value="titleonly" /> {L_SEARCH_TITLE_ONLY}</label>
+					<label class="radio-inline" for="sf4"><input type="radio" name="sf" id="sf4" value="firstpost" /> {L_SEARCH_FIRST_POST}</label>
+				</div>
+			</div>
+		
+			<hr class="dashed" />
+		
+			<div class="form-group">
+				<label class="control-label col-sm-3" for="show_results1">{L_DISPLAY_RESULTS}</label>
+				<div class="col-sm-9">
+					<label class="radio-inline" for="show_results1"><input type="radio" name="sr" id="show_results1" value="posts" checked="checked" /> {L_POSTS}</label>
+					<label class="radio-inline" for="show_results2"><input type="radio" name="sr" id="show_results2" value="topics" /> {L_TOPICS}</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-3" for="sd">{L_RESULT_SORT}</label>
+				<div class="col-sm-9">
+					{S_SELECT_SORT_KEY}&nbsp;
+					<label class="radio-inline" for="sa"><input type="radio" name="sd" id="sa" value="a" /> {L_SORT_ASCENDING}</label>
+					<label class="radio-inline" for="sd"><input type="radio" name="sd" id="sd" value="d" checked="checked" /> {L_SORT_DESCENDING}</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-3">{L_RESULT_DAYS}</label>
+				<div class="col-sm-9">
+					{S_SELECT_SORT_DAYS}
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-3">{L_RETURN_FIRST}</label>
+				<div class="col-sm-9">
+				<select name="ch" title="{L_RETURN_FIRST}" class="form-control">{S_CHARACTER_OPTIONS}</select> {L_POST_CHARACTERS}
+				</div>
+			</div>
+		</fieldset>
+	</div>
+	<div class="panel-footer text-right">
+		{S_HIDDEN_FIELDS}
+		<fieldset class=" btn-group">
+			<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" />
+			<input type="submit" name="submit" value="{L_SEARCH}" class="btn btn-primary" />
+		</fieldset>
+	</div>
+</div>
 </form>
 
 <!-- IF .recentsearch -->
-<div class="forumbg forumbg-table">
+<div class="panel panel-default">
+	<div class="panel-heading"><h3 class="panel-title">{L_RECENT_SEARCHES}</h3></div>
 
-	<table class="table1" cellspacing="1">
-	<thead>
-	<tr>
-		<th colspan="2" class="name">{L_RECENT_SEARCHES}</th>
-	</tr>
-	</thead>
+	<table class="table table-striped table-bordered table-hover">
 	<tbody>
 	<!-- BEGIN recentsearch -->
-		<tr class="<!-- IF recentsearch.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+		<tr>
 			<td><a href="{recentsearch.U_KEYWORDS}">{recentsearch.KEYWORDS}</a></td>
-			<td class="active"><span>&nbsp;{recentsearch.TIME}</span></td>
+			<td><span>&nbsp;{recentsearch.TIME}</span></td>
+			<td><div class="btn-group"><a class="btn btn-default tooltip-link" href="{recentsearch.U_KEYWORDS}" title="{L_SEARCH}"><i class="icon-search"></i></a></div></td>
 		</tr>
 	<!-- BEGINELSE -->
-		<tr class="bg1">
-			<td colspan="2">{L_NO_RECENT_SEARCHES}</td>
+		<tr>
+			<td>{L_NO_RECENT_SEARCHES}</td>
 		</tr>
 	<!-- END recentsearch -->
 	</tbody>
 	</table>
-
 </div>
 <!-- ENDIF -->
 
