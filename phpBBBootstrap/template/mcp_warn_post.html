@@ -4,29 +4,29 @@
 <div class="panel panel-default">
 	<div class="panel-heading"><h4>{L_MCP_WARN_POST}</h4></div>
 	<div class="panel-body">
-
-		<div class="col-md-4 avatar pull-right">
-			<!-- IF AVATAR_IMG --><span class="avatar">{AVATAR_IMG}</span><!-- ENDIF -->
-			<ul class="list-group">
-				<!-- IF RANK_TITLE --><li class="list-group-item">{L_RANK}&nbsp;: {RANK_TITLE}</li><!-- ENDIF -->
- 					<li class="list-group-item"><span class="badge">{JOINED}</span>{L_JOINED}</li>
- 					<li class="list-group-item"><span class="badge">{POSTS}</span>{L_TOTAL_POSTS}</li>
- 					<li class="list-group-item"><span class="badge">{WARNINGS}</span>{L_WARNINGS}</li>
-			</ul>
-		</div>
-		<div class="col-md-8 corps">
-			<h4 class="fieldset">{L_POST_DETAILS}</h4>
-			<div class="postbody">			
-				<div class="content">
-					<blockquote>
-						{POST}
-						<small>{USERNAME}</small>
-					</blockquote>
-					
+		<div class="row">
+			<div class="col-md-4 avatar pull-right">
+				<!-- IF AVATAR_IMG --><span class="avatar">{AVATAR_IMG}</span><!-- ENDIF -->
+				<ul class="list-group">
+					<!-- IF RANK_TITLE --><li class="list-group-item">{L_RANK}&nbsp;: {RANK_TITLE}</li><!-- ENDIF -->
+	 					<li class="list-group-item"><span class="badge">{JOINED}</span>{L_JOINED}</li>
+	 					<li class="list-group-item"><span class="badge">{POSTS}</span>{L_TOTAL_POSTS}</li>
+	 					<li class="list-group-item"><span class="badge">{WARNINGS}</span>{L_WARNINGS}</li>
+				</ul>
+			</div>
+			<div class="col-md-8 corps">
+				<h4 class="fieldset">{L_POST_DETAILS}</h4>
+				<div class="postbody">			
+					<div class="content">
+						<blockquote>
+							{POST}
+							<small>{USERNAME}</small>
+						</blockquote>
+						
+					</div>
 				</div>
 			</div>
 		</div>
-			
 		<fieldset>
 			<h4 class="fieldset">{L_ADD_WARNING}</h4>
 			<div class="form-group">

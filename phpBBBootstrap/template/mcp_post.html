@@ -233,26 +233,27 @@
 			<!-- ENDIF -->
 		
 			<!-- IF S_SHOW_REPORTS -->
-				<div class="panel" id="reports">
-		
-					<h3>{L_MCP_POST_REPORTS}</h3>
-		
-					<!-- BEGIN reports -->
-						<strong>{L_REPORTED_BY}: <!-- IF reports.U_REPORTER --><a href="{reports.U_REPORTER}">{reports.REPORTER}</a><!-- ELSE -->{reports.REPORTER}<!-- ENDIF --> &laquo; {reports.REPORT_TIME}</strong>
-						<p><em>{reports.REASON_TITLE}: {reports.REASON_DESC}</em><!-- IF reports.REPORT_TEXT --><br />{reports.REPORT_TEXT}<!-- ENDIF --></p>
-					<!-- END reports -->
+				<div class="panel panel-default" id="reports">
+					<div class="panel-heading"><h3 class="panel-title">{L_MCP_POST_REPORTS}</h3></div>
+					<div class="panel-body">
+						<!-- BEGIN reports -->
+							<strong>{L_REPORTED_BY}: <!-- IF reports.U_REPORTER --><a href="{reports.U_REPORTER}">{reports.REPORTER}</a><!-- ELSE -->{reports.REPORTER}<!-- ENDIF --> &laquo; {reports.REPORT_TIME}</strong>
+							<p><em>{reports.REASON_TITLE}: {reports.REASON_DESC}</em><!-- IF reports.REPORT_TEXT --><br />{reports.REPORT_TEXT}<!-- ENDIF --></p>
+						<!-- END reports -->
+					</div>
 		
 				</div>
 			<!-- ENDIF -->
 		
 			<!-- IF S_CAN_VIEWIP and not S_MCP_REPORT -->
-				<div class="panel" id="ip">
-		
-					<p>{L_THIS_POST_IP}: <!-- IF U_WHOIS -->
-						<a href="{U_WHOIS}"><!-- IF POST_IPADDR -->{POST_IPADDR}<!-- ELSE -->{POST_IP}<!-- ENDIF --></a> (<!-- IF POST_IPADDR -->{POST_IP}<!-- ELSE --><a href="{U_LOOKUP_IP}">{L_LOOKUP_IP}</a><!-- ENDIF -->)
-					<!-- ELSE -->
-						<!-- IF POST_IPADDR -->{POST_IPADDR} ({POST_IP})<!-- ELSE -->{POST_IP}<!-- IF U_LOOKUP_IP --> (<a href="{U_LOOKUP_IP}">{L_LOOKUP_IP}</a>)<!-- ENDIF --><!-- ENDIF -->
-					<!-- ENDIF --></p>
+				<div class="panel panel-default" id="ip">
+					<div class="panel-heading">
+						<h4 class="panel-title">{L_THIS_POST_IP}: <!-- IF U_WHOIS -->
+							<a href="{U_WHOIS}"><!-- IF POST_IPADDR -->{POST_IPADDR}<!-- ELSE -->{POST_IP}<!-- ENDIF --></a> (<!-- IF POST_IPADDR -->{POST_IP}<!-- ELSE --><a href="{U_LOOKUP_IP}">{L_LOOKUP_IP}</a><!-- ENDIF -->)
+						<!-- ELSE -->
+							<!-- IF POST_IPADDR -->{POST_IPADDR} ({POST_IP})<!-- ELSE -->{POST_IP}<!-- IF U_LOOKUP_IP --> (<a href="{U_LOOKUP_IP}">{L_LOOKUP_IP}</a>)<!-- ENDIF --><!-- ENDIF -->
+						<!-- ENDIF --></h4>
+					</div>
 		
 					<table class="table table-striped table-bordered table-hover" >
 						<thead>
@@ -274,7 +275,6 @@
 					<!-- END userrow -->
 					</tbody>
 					</table>
-		
 					<table class="table table-striped table-bordered table-hover" >
 						<thead>
 							<tr>
@@ -295,8 +295,9 @@
 							<!-- END iprow -->
 						</tbody>
 					</table>
-		
-					<p><a class="btn btn-info" href="{U_LOOKUP_ALL}#ip"><i class="icon-search"></i> {L_LOOKUP_ALL}</a></p>
+					<div class="panel-footer text-right">
+						<p><a class="btn btn-default" href="{U_LOOKUP_ALL}#ip"><i class="icon-search"></i> {L_LOOKUP_ALL}</a></p>
+					</div>
 		
 				</div>
 			<!-- ENDIF -->
