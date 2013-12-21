@@ -1,44 +1,50 @@
 <!-- INCLUDE ucp_header.html -->
 
-<form id="postform" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
-
-<h3><i class="icon-pencil"></i> {L_TITLE}</h3>
-
-<!-- IF SIGNATURE_PREVIEW != '' -->
-	<h4>{L_SIGNATURE_PREVIEW}</h4>
-	<div class="signature">
-		{SIGNATURE_PREVIEW}
-		<hr/>
+<form id="postform" method="post" action="{S_UCP_ACTION}" class="form-horizontal" {S_FORM_ENCTYPE}>
+<div class="panel panel-default">
+	<div class="panel-heading"><h3 class="panel-title"><i class="icon-pencil"></i> {L_TITLE}</h3></div>
+	<div class="panel-body">
+		<p class="text-justify">{L_SIGNATURE_EXPLAIN}</p>
+		<!-- IF SIGNATURE_PREVIEW != '' -->
+			<hr/>
+			<h4>{L_SIGNATURE_PREVIEW}</h4>
+			<div class="signature">
+				{SIGNATURE_PREVIEW}
+				<hr/>
+			</div>
+		<!-- ENDIF -->
+		
+		<!-- DEFINE $SIG_EDIT = 1 -->
+		<!-- INCLUDE posting_editor.html -->
+		<!-- IF S_BBCODE_ALLOWED or S_SMILIES_ALLOWED or S_LINKS_ALLOWED -->
+		<div class="form-group">
+			<label class="control-label col-sm-2">{L_OPTIONS}</label>
+			<div class="col-sm-10">
+				<!-- IF S_BBCODE_ALLOWED -->
+					<label class="checkbox-inline" for="disable_bbcode"><input type="checkbox" name="disable_bbcode" id="disable_bbcode"{S_BBCODE_CHECKED} /> {L_DISABLE_BBCODE}</label>
+				<!-- ENDIF -->
+				<!-- IF S_SMILIES_ALLOWED -->
+					<label class="checkbox-inline" for="disable_smilies"><input type="checkbox" name="disable_smilies" id="disable_smilies"{S_SMILIES_CHECKED} /> {L_DISABLE_SMILIES}</label>
+				<!-- ENDIF -->
+				<!-- IF S_LINKS_ALLOWED -->
+					<label class="checkbox-inline" for="disable_magic_url"><input type="checkbox" name="disable_magic_url" id="disable_magic_url"{S_MAGIC_URL_CHECKED} /> {L_DISABLE_MAGIC_URL}</label>
+				<!-- ENDIF -->	
+			</div>
+		</div>
+		<!-- ENDIF -->
 	</div>
-<!-- ENDIF -->
-
-<p class="text-justify">{L_SIGNATURE_EXPLAIN}</p>
-
-	<!-- DEFINE $SIG_EDIT = 1 -->
-	<!-- INCLUDE posting_editor.html -->
-	<h4>{L_OPTIONS}</h4>
-	<fieldset>
-		<!-- IF S_BBCODE_ALLOWED -->
-			<div><label class="checkbox" for="disable_bbcode"><input type="checkbox" name="disable_bbcode" id="disable_bbcode"{S_BBCODE_CHECKED} /> {L_DISABLE_BBCODE}</label></div>
-		<!-- ENDIF -->
-		<!-- IF S_SMILIES_ALLOWED -->
-			<div><label class="checkbox" for="disable_smilies"><input type="checkbox" name="disable_smilies" id="disable_smilies"{S_SMILIES_CHECKED} /> {L_DISABLE_SMILIES}</label></div>
-		<!-- ENDIF -->
-		<!-- IF S_LINKS_ALLOWED -->
-			<div><label class="checkbox" for="disable_magic_url"><input type="checkbox" name="disable_magic_url" id="disable_magic_url"{S_MAGIC_URL_CHECKED} /> {L_DISABLE_MAGIC_URL}</label></div>
-		<!-- ENDIF -->
-
-	</fieldset>
-
-<fieldset class="form-actions">
-	{S_HIDDEN_FIELDS}
-	<div class="btn-group">
-		<input type="reset" name="reset" value="{L_RESET}" class="btn btn-default" />
-		<input type="submit" name="preview" value="{L_PREVIEW}" class="btn btn-default" />
-		<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
+	<div class="panel-footer">
+		{S_HIDDEN_FIELDS}
+		<div class="row">
+			<div class="btn-group col-sm-offset-2 col-sm-10">
+				<input type="reset" name="reset" value="{L_RESET}" class="btn btn-default" />
+				<input type="submit" name="preview" value="{L_PREVIEW}" class="btn btn-default" />
+				<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
+			</div>
+		</div>
+		{S_FORM_TOKEN}
 	</div>
-	{S_FORM_TOKEN}
-</fieldset>
+</div>
 </form>
 
 <!-- INCLUDE ucp_footer.html -->

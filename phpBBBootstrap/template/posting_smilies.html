@@ -7,16 +7,18 @@
 // ]]>
 </script>
 <script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/editor.js"></script>
-
-<h1>{L_SMILIES}</h1>
-<div class="panel">
-	<!-- BEGIN smiley --> 
-		<a href="#" onclick="insert_text('{smiley.A_SMILEY_CODE}', true, true); return false;"><img src="{smiley.SMILEY_IMG}" width="{smiley.SMILEY_WIDTH}" height="{smiley.SMILEY_HEIGHT}" alt="{smiley.SMILEY_CODE}" title="{smiley.SMILEY_DESC}" /></a> 
-	<!-- END smiley	-->
-</div>
-<div class="btn-group pagination-line">
-	{PAGINATION}
-	<a  href="#" class="btn btn-xs btn-danger" onclick="window.close(); return false;" title="{L_CLOSE_WINDOW}"><i class="icon-remove-sign"></i></a>
+<div class="panel panel-default">
+	<div class="panel-heading"><h1 class="panel-title">{L_SMILIES}</h1></div>
+	<div class="panel-body">
+		<!-- BEGIN smiley --> 
+			<a href="#" onclick="insert_text('{smiley.A_SMILEY_CODE}', true, true); return false;"><img src="{smiley.SMILEY_IMG}" width="{smiley.SMILEY_WIDTH}" height="{smiley.SMILEY_HEIGHT}" alt="{smiley.SMILEY_CODE}" title="{smiley.SMILEY_DESC}" /></a> 
+		<!-- END smiley	-->
+	</div>
+	<div class="panel-footer text-right">
+		<div class="btn-group pagination-line">
+			{PAGINATION}<a  href="#" class="btn btn-xs btn-danger" onclick="window.close(); return false;" title="{L_CLOSE_WINDOW}"><i class="icon-remove-sign"></i></a>
+		</div>
+	</div>
 </div>
 
 

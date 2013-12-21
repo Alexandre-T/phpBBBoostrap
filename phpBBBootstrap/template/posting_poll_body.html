@@ -8,56 +8,61 @@
 	<!-- IF S_SHOW_POLL_BOX -->
 		<!-- IF S_POLL_DELETE -->
 			<div class="form-group">
-				<label class="control-label" for="poll_delete">{L_POLL_DELETE} </label>
-				<div class="controls">
+				<label class="control-label col-sm-2" for="poll_delete">{L_POLL_DELETE} </label>
+				<div class="col-sm-10">
 					<input type="checkbox" name="poll_delete" id="poll_delete"<!-- IF S_POLL_DELETE_CHECKED --> checked="checked"<!-- ENDIF --> />
 				</div>
 			</div>
 		<!-- ENDIF -->
 		<div class="form-group">
-			<label class="control-label" for="poll_title">{L_POLL_QUESTION} </label>
-			<div class="controls">
-				<input type="text" name="poll_title" id="poll_title" maxlength="255" value="{POLL_TITLE}" class="input-block-level" />
+			<label class="control-label col-sm-2" for="poll_title">{L_POLL_QUESTION} </label>
+			<div class="col-sm-10">
+				<input type="text" name="poll_title" id="poll_title" maxlength="255" value="{POLL_TITLE}" class="form-control" />
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="control-label" for="poll_option_text">{L_POLL_OPTIONS} </label>
-			<div class="controls">
-				<textarea name="poll_option_text" id="poll_option_text" rows="5" cols="35" class="input-block-level">{POLL_OPTIONS}</textarea>
+			<label class="control-label col-sm-2" for="poll_option_text">{L_POLL_OPTIONS} </label>
+			<div class="col-sm-10">
+				<textarea name="poll_option_text" id="poll_option_text" rows="5" cols="35" class="form-control">{POLL_OPTIONS}</textarea>
 			</div>
 		</div>
 
 		<hr class="dashed" />
 
 		<div class="form-group">
-			<label class="control-label" for="poll_max_options">{L_POLL_MAX_OPTIONS} </label>
-			<div class="controls">
-				<input type="text" name="poll_max_options" id="poll_max_options" size="3" maxlength="3" value="{POLL_MAX_OPTIONS}" class="inputbox autowidth" />
-				<span class="form-explications">{L_POLL_MAX_OPTIONS_EXPLAIN}</span>
+			<label class="control-label col-sm-2" for="poll_max_options">{L_POLL_MAX_OPTIONS} </label>
+			<div class="col-sm-10">
+				<input type="text" name="poll_max_options" id="poll_max_options" size="3" maxlength="3" value="{POLL_MAX_OPTIONS}" class="form-control" />
+				<span class="help-block">{L_POLL_MAX_OPTIONS_EXPLAIN}</span>
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="control-label" for="poll_length">{L_POLL_FOR} </label>
-			<div class="controls">
-				<input type="text" name="poll_length" id="poll_length" size="3" maxlength="3" value="{POLL_LENGTH}" class="inputbox autowidth" /> {L_DAYS}
-				<span class="form-explications">{L_POLL_FOR_EXPLAIN}</span>
+			<label class="control-label col-sm-2" for="poll_length">{L_POLL_FOR} </label>
+			<div class="col-sm-10">
+				<div class="input-group">
+					<input type="text" name="poll_length" id="poll_length" size="3" maxlength="3" value="{POLL_LENGTH}" class="form-control" />
+					<div class="input-group-addon">
+					 	{L_DAYS}
+					 </div>
+				</div>
+				<span class="help-block">{L_POLL_FOR_EXPLAIN}</span>
 			</div>
 		</div>
 		<!-- IF S_POLL_VOTE_CHANGE -->
 			<hr class="dashed" />
 			
 			<div class="form-group">
-				<label class="control-label" for="poll_vote_change">{L_POLL_VOTE_CHANGE} </label>
-				<div class="controls">
-					<label for="poll_vote_change"><input type="checkbox" id="poll_vote_change" name="poll_vote_change"{VOTE_CHANGE_CHECKED} /> {L_POLL_VOTE_CHANGE_EXPLAIN}</label>
+				<label class="control-label col-sm-2" for="poll_vote_change">{L_POLL_VOTE_CHANGE} </label>
+				<div class="col-sm-10">
+					<label class="checkbox-inline" for="poll_vote_change"><input type="checkbox" id="poll_vote_change" name="poll_vote_change" {VOTE_CHANGE_CHECKED} /> {L_POLL_VOTE_CHANGE_EXPLAIN}</label>
 				</div>
 			</div>
 		<!-- ENDIF -->
 
 	<!-- ELSEIF S_POLL_DELETE -->
 		<div class="form-group">
-			<label class="control-label" for="poll_delete">{L_POLL_DELETE} </label>
-			<div class="controls">
+			<label class="control-label col-sm-2" for="poll_delete">{L_POLL_DELETE} </label>
+			<div class="col-sm-10">
 				<label class="checkbox" for="poll_delete"><input type="checkbox" name="poll_delete" id="poll_delete"<!-- IF S_POLL_DELETE_CHECKED --> checked="checked"<!-- ENDIF --> /></label>
 			</div>
 		</div>
