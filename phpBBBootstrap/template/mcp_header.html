@@ -1,5 +1,4 @@
 <!-- INCLUDE overall_header.html -->
-<section>
 	<div class="row">
 		<div class="col-sm-10 col-lg-6">
 			<h3>{L_MCP} <!-- IF PAGE_TITLE -->&bull; {PAGE_TITLE}<!-- ENDIF --></h3>
@@ -17,52 +16,55 @@
 		</div>
 		<!-- ENDIF -->
 	</div>
-
-	<ul class="nav nav-tabs">
-		<!-- BEGIN l_block1 -->
-		<li<!-- IF l_block1.S_SELECTED --> class="active"<!-- ENDIF -->><a href="{l_block1.U_TITLE}"><span>{l_block1.L_TITLE}</span></a></li>
-		<!-- END l_block1 -->
-	</ul>
+	<div class="ensemble"> 
+		<ul class="nav nav-tabs">
+			<!-- BEGIN l_block1 -->
+			<li<!-- IF l_block1.S_SELECTED --> class="active"<!-- ENDIF -->><a href="{l_block1.U_TITLE}"><span>{l_block1.L_TITLE}</span></a></li>
+			<!-- END l_block1 -->
+		</ul>
+		<br/>
+		<div class="tab-content">
 	
-	<div class="tab-content">
-
-		<div class="tabbable tabs-left">
-			
-			<ul class="nav nav-tabs">
-				<!-- BEGIN l_block1 -->
-				<!-- IF l_block1.S_SELECTED -->
-					<!-- BEGIN l_block2 -->
-					<!-- IF l_block1.l_block2.S_SELECTED -->
-					<li class="active"><a href="{l_block1.l_block2.U_TITLE}"><span>{l_block1.l_block2.L_TITLE}<!-- IF l_block1.l_block2.ADD_ITEM --> ({l_block1.l_block2.ADD_ITEM})<!-- ENDIF --></span></a></li>
-					<!-- ELSE -->
-					<li><a href="{l_block1.l_block2.U_TITLE}"><span>{l_block1.l_block2.L_TITLE}<!-- IF l_block1.l_block2.ADD_ITEM --> ({l_block1.l_block2.ADD_ITEM})<!-- ENDIF --></span></a></li>
-					<!-- ENDIF -->
-					<!-- END l_block2 -->
-				<!-- ENDIF -->
-				<!-- END l_block1 -->
-			</ul>
-			<div class="clearfix hidden-md hidden-lg"></div>
-			<div class="tab-content col-sm-offset-2">
-				<!-- IF MESSAGE -->
-				<div class="alert alert-danger">
-					<h4>{L_MESSAGE}</h4>
-					<p >{MESSAGE}</p>
-					<p>
-						<!-- BEGIN return_links -->{return_links.MESSAGE_LINK}<br /><br /><!-- END return_links -->
-					</p>
-				</div>
-				<!-- ENDIF -->
-		
-				<!-- IF CONFIRM_MESSAGE -->
-					<form id="confirm" method="post" action="{S_CONFIRM_ACTION}"{S_FORM_ENCTYPE}>
-						<div class="alert alert-info">
-							<h4>{L_PLEASE_CONFIRM}</h4>
-							<p>{CONFIRM_MESSAGE}</p>
-							{S_HIDDEN_FIELDS}
-							<div class="btn-group">
-								<input class="btn btn-primary" type="submit" name="submit" value="{L_YES}" /> 
-								<input class="btn btn-default" type="button" value="{L_NO}" />
+			<div class="tab-pane in active">
+				<div class="row">
+					<div class="col-sm-3 tabs-left">
+						<ul class="nav nav-tabs ">
+							<!-- BEGIN l_block1 -->
+							<!-- IF l_block1.S_SELECTED -->
+								<!-- BEGIN l_block2 -->
+								<!-- IF l_block1.l_block2.S_SELECTED -->
+								<li class="active"><a href="{l_block1.l_block2.U_TITLE}"><span>{l_block1.l_block2.L_TITLE}<!-- IF l_block1.l_block2.ADD_ITEM --> ({l_block1.l_block2.ADD_ITEM})<!-- ENDIF --></span></a></li>
+								<!-- ELSE -->
+								<li><a href="{l_block1.l_block2.U_TITLE}"><span>{l_block1.l_block2.L_TITLE}<!-- IF l_block1.l_block2.ADD_ITEM --> ({l_block1.l_block2.ADD_ITEM})<!-- ENDIF --></span></a></li>
+								<!-- ENDIF -->
+								<!-- END l_block2 -->
+							<!-- ENDIF -->
+							<!-- END l_block1 -->
+						</ul>
+					</div>
+					<!-- <div class="clearfix hidden-md hidden-lg"></div> -->
+					<div class="col-sm-9">
+						<div class="tab-content">
+							<!-- IF MESSAGE -->
+							<div class="alert alert-danger">
+								<h4>{L_MESSAGE}</h4>
+								<p >{MESSAGE}</p>
+								<p>
+									<!-- BEGIN return_links -->{return_links.MESSAGE_LINK}<br /><br /><!-- END return_links -->
+								</p>
 							</div>
-						</div>
-					</form>
-				<!-- ENDIF -->
+							<!-- ENDIF -->
+					
+							<!-- IF CONFIRM_MESSAGE -->
+								<form id="confirm" method="post" action="{S_CONFIRM_ACTION}"{S_FORM_ENCTYPE}>
+									<div class="alert alert-info">
+										<h4>{L_PLEASE_CONFIRM}</h4>
+										<p>{CONFIRM_MESSAGE}</p>
+										{S_HIDDEN_FIELDS}
+										<div class="btn-group">
+											<input class="btn btn-primary" type="submit" name="submit" value="{L_YES}" /> 
+											<input class="btn btn-default" type="button" value="{L_NO}" />
+										</div>
+									</div>
+								</form>
+							<!-- ENDIF -->

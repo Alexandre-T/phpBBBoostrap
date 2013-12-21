@@ -6,6 +6,10 @@
 .tabs-left > .nav-tabs {
   border-bottom: 0;
 }
+.tabs-right > .nav-tabs,
+.tabs-left > .nav-tabs{
+	  width:100%;
+}
 
 .tabs-below > .nav-tabs {
   border-top: 1px solid #ddd;

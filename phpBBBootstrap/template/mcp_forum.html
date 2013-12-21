@@ -4,23 +4,36 @@
 <!-- INCLUDE jumpbox.html -->
 
 <form method="post" id="mcp" action="{S_MCP_ACTION}" class="form-horizontal">
-<div class="panel">
-	<!-- IF PAGINATION or TOTAL_TOPICS -->
-	<div class="btn-group pull-right">
-		<!-- IF TOTAL --><span class="btn btn-default btn-xs disabled">{TOTAL}</span><!-- ENDIF -->
-		<!-- IF PAGE_NUMBER -->
-			<!-- IF PAGINATION -->
-				<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-xs">{PAGE_NUMBER}</a>
-				{PAGINATION}
-			<!-- ELSE -->
-				<span class="btn btn-default btn-xs disabled">{PAGE_NUMBER}</span>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<!-- IF PAGINATION or TOTAL_TOPICS -->
+		<div class="btn-group pull-right">
+			<!-- IF TOTAL_TOPICS --><span class="btn btn-default btn-xs disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
+			<!-- IF PAGE_NUMBER -->
+				<!-- IF PAGINATION -->
+					<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-xs">{PAGE_NUMBER}</a>
+					{PAGINATION}
+				<!-- ELSE -->
+					<span class="btn btn-default btn-xs disabled">{PAGE_NUMBER}</span>
+				<!-- ENDIF -->
 			<!-- ENDIF -->
+		</div>
 		<!-- ENDIF -->
+		
+		<h3><a href="{U_VIEW_FORUM}">{L_FORUM}: {FORUM_NAME}</a></h3>
 	</div>
-	<!-- ENDIF -->
-	
-	<h3><a href="{U_VIEW_FORUM}">{L_FORUM}: {FORUM_NAME}</a></h3>
+	<div class="panel-body">
+		
+		<div class="alert alert-info">
+			<p>{L_NO_TOPICS}</p>
+		</div>
 
+		<fieldset class="display-options form-inline text-center">
+			<label>{L_DISPLAY_TOPICS}: {S_SELECT_SORT_DAYS}</label>
+			<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
+			<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-primary" /></label>
+		</fieldset>
+	</div>	
 	<!-- IF .topicrow -->
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
@@ -73,10 +86,10 @@
 						<br />
 						{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
 					</td>
-					<td>{topicrow.REPLIES}</td>
+					<td class="text-center"><div class="badge">{topicrow.REPLIES}</div></td>
 					<td><span><dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}<br />{topicrow.LAST_POST_TIME}</span></td>										
 					<!-- IF not S_MERGE_SELECT -->
-					<td>
+					<td class="text-center">
 						<!-- IF not topicrow.S_MOVED_TOPIC --><input type="checkbox" name="topic_id_list[]" value="{topicrow.TOPIC_ID}"<!-- IF topicrow.S_TOPIC_CHECKED --> checked="checked"<!-- ENDIF --> /><!-- ELSE -->&nbsp;<!-- ENDIF -->
 					</td>
 					<!-- ENDIF -->
@@ -84,19 +97,8 @@
 				<!-- END topicrow -->
 			</tbody>		
 		</table>
-	<!-- ELSE -->
-		<div class="alert alert-info">
-			<p>{L_NO_TOPICS}</p>
-		</div>
-	<!-- ENDIF -->
-
-	<fieldset class="display-options form-inline">
-		<label>{L_DISPLAY_TOPICS}: {S_SELECT_SORT_DAYS}</label>
-		<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
-		<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-primary" /></label>
-	</fieldset>
-	<hr class="dashed"/>
-
+		<!-- ENDIF -->
+	<div class="panel-footer">
 	<!-- IF PAGINATION or TOTAL_TOPICS -->
 		<div class="btn-group pull-right">
 			<!-- IF TOTAL_TOPICS --><span class="btn btn-default btn-xs disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
@@ -106,29 +108,34 @@
 			<!-- IF not S_MERGE_SELECT --><a class="btn btn-default btn-xs" href="#" onclick="marklist('mcp', 'topic_id_list', true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a><a class="btn btn-default btn-xs" href="#" onclick="marklist('mcp', 'topic_id_list', false); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a><!-- ENDIF -->
 		</div>
 	<!-- ENDIF -->
-	<fieldset class="display-actions form-inline">
+	<fieldset >
 		<!-- IF not S_MERGE_SELECT -->
-			<label for="action">{L_SELECT_ACTION} </label>
-			<select name="action">
-				<option value="" selected="selected">{L_SELECT_ACTION}</option>
-				<!-- IF S_CAN_DELETE --><option value="delete_topic">{L_DELETE}</option><!-- ENDIF -->
-				<!-- IF S_CAN_MERGE --><option value="merge_topics">{L_MERGE}</option><!-- ENDIF -->
-				<!-- IF S_CAN_MOVE --><option value="move">{L_MOVE}</option><!-- ENDIF -->
-				<!-- IF S_CAN_FORK --><option value="fork">{L_FORK}</option><!-- ENDIF -->
-				<!-- IF S_CAN_LOCK --><option value="lock">{L_LOCK}</option><option value="unlock">{L_UNLOCK}</option><!-- ENDIF -->
-				<!-- IF S_CAN_SYNC --><option value="resync">{L_RESYNC}</option><!-- ENDIF -->
-				<!-- IF S_CAN_MAKE_NORMAL --><option value="make_normal">{L_MAKE_NORMAL}</option><!-- ENDIF -->
-				<!-- IF S_CAN_MAKE_STICKY --><option value="make_sticky">{L_MAKE_STICKY}</option><!-- ENDIF -->
-				<!-- IF S_CAN_MAKE_ANNOUNCE -->
-					<option value="make_announce">{L_MAKE_ANNOUNCE}</option>
-					<option value="make_global">{L_MAKE_GLOBAL}</option>
-				<!-- ENDIF -->
-			</select>
-			<input class="btn btn-success" type="submit" value="{L_SUBMIT}" />		
+		<div class="col-sm-12">
+			<div class="input-group">
+				<select name="action" class="form-control">
+					<option value="" selected="selected">{L_SELECT_ACTION}</option>
+					<!-- IF S_CAN_DELETE --><option value="delete_topic">{L_DELETE}</option><!-- ENDIF -->
+					<!-- IF S_CAN_MERGE --><option value="merge_topics">{L_MERGE}</option><!-- ENDIF -->
+					<!-- IF S_CAN_MOVE --><option value="move">{L_MOVE}</option><!-- ENDIF -->
+					<!-- IF S_CAN_FORK --><option value="fork">{L_FORK}</option><!-- ENDIF -->
+					<!-- IF S_CAN_LOCK --><option value="lock">{L_LOCK}</option><option value="unlock">{L_UNLOCK}</option><!-- ENDIF -->
+					<!-- IF S_CAN_SYNC --><option value="resync">{L_RESYNC}</option><!-- ENDIF -->
+					<!-- IF S_CAN_MAKE_NORMAL --><option value="make_normal">{L_MAKE_NORMAL}</option><!-- ENDIF -->
+					<!-- IF S_CAN_MAKE_STICKY --><option value="make_sticky">{L_MAKE_STICKY}</option><!-- ENDIF -->
+					<!-- IF S_CAN_MAKE_ANNOUNCE -->
+						<option value="make_announce">{L_MAKE_ANNOUNCE}</option>
+						<option value="make_global">{L_MAKE_GLOBAL}</option>
+					<!-- ENDIF -->
+				</select>
+				<div class="input-group-btn">
+					<input class="btn btn-success" type="submit" value="{L_SUBMIT}" />
+				</div>
+			</div>		
+		</div>
 		<!-- ENDIF -->
 		{S_FORM_TOKEN}
 	</fieldset>
-	
+	</div>
 </div>
 </form>
 <!-- INCLUDE mcp_footer.html -->

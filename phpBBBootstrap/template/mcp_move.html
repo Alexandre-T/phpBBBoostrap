@@ -2,8 +2,9 @@
 <section>
 <form id="confirm" action="{S_CONFIRM_ACTION}" method="post" class="form-inline">
 
-<h3>{MESSAGE_TITLE}</h3>
-<div class="panel">
+<div class="panel panel-default">
+	<div class="panel-heading"><h3>{MESSAGE_TITLE}</h3></div>
+	<div class="panel-body">
 
 		<!-- IF ADDITIONAL_MSG --><p>{ADDITIONAL_MSG}</p><!-- ENDIF -->
 		<p>{MESSAGE_TEXT}</p>
@@ -16,13 +17,14 @@
 				<label class="checkbox" for="move_leave_shadow"><input type="checkbox" name="move_leave_shadow" id="move_leave_shadow" />{L_LEAVE_SHADOW}</label>
 			<!-- ENDIF -->		
 		</fieldset>
-		<hr class="dashed"/>
+	</div>
+	<div class="panel-footer">
 		<fieldset class="btn-group">
 			<input type="submit" name="confirm" value="{YES_VALUE}" class="btn btn-success" /> 
 			<input type="submit" name="cancel" value="{L_NO}" class="btn btn-default"/>		
 		</fieldset>
 		{S_FORM_TOKEN}
-
+	</div>
 </div>
 </form>
 </section>
