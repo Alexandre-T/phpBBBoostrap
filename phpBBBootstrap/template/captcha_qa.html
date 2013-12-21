@@ -1,19 +1,19 @@
+<!-- IF ! $CAPTCHA_COL_LABEL -->
+	<!-- DEFINE $CAPTCHA_COL_LABEL = 'col-sm-4' -->
+	<!-- DEFINE $CAPTCHA_COL_INPUT = 'col-sm-8' -->
+<!-- ENDIF -->
 <!-- IF S_TYPE == 1 -->
 	<h3>{L_CONFIRMATION}</h3>
-	<fieldset class="col-md-8">
 <!-- ENDIF -->
 
 <div class="form-group">
 	<input type="hidden" name="qa_confirm_id" id="qa_confirm_id" value="{QA_CONFIRM_ID}" />
-	<label class="control-label col-sm-4" for="answer">{QA_CONFIRM_QUESTION}</label>
-	<div class="input-group">
-		<span class="input-group-addon"><i class="icon-question"></i></span>
-		<input type="text" tabindex="{$CAPTCHA_TAB_INDEX}" name="qa_answer" id="answer" size="45"  class="form-control" title="{L_ANSWER}" />
+	<label class="control-label {$CAPTCHA_COL_LABEL}" for="answer">{QA_CONFIRM_QUESTION}</label>
+	<div class="{$CAPTCHA_COL_INPUT}">
+		<div class="input-group">
+			<span class="input-group-addon"><i class="icon-question"></i></span>
+			<input type="text" tabindex="{$CAPTCHA_TAB_INDEX}" name="qa_answer" id="answer" size="45"  class="form-control" title="{L_ANSWER}" />
+		</div>
+		<p class="help-block"><em>{L_CONFIRM_QUESTION_EXPLAIN}</em></p>
 	</div>
-	<p class="help-block col-sm-offset-4"><em>{L_CONFIRM_QUESTION_EXPLAIN}</em></p>
 </div>
-	
-<!-- IF S_TYPE == 1 -->
-	</fieldset>
-	<div class="clearfix"></div>
-<!-- ENDIF -->

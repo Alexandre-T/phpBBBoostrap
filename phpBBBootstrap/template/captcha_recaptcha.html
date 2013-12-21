@@ -1,11 +1,15 @@
+<!-- IF ! $CAPTCHA_COL_LABEL -->
+	<!-- DEFINE $CAPTCHA_COL_LABEL = 'col-sm-4' -->
+	<!-- DEFINE $CAPTCHA_COL_INPUT = 'col-sm-8' -->
+<!-- ENDIF -->
 <!-- IF S_TYPE == 1 -->
 	<h3>{L_CONFIRMATION}</h3>
 	<p class="text-justify">{L_CONFIRM_EXPLAIN}</p>
 <!-- ENDIF -->
 
+	<div class="form-group">
+		<label class="control-label {$CAPTCHA_COL_LABEL}" for="answer">{L_CONFIRM_CODE}</label>
 <!-- IF S_RECAPTCHA_AVAILABLE -->
-	<div class="form-group col-sm-8">
-		<label class="control-label col-sm-4" for="answer">{L_CONFIRM_CODE}</label>
 		<script type="text/javascript">
 		// <![CDATA[
 		var RecaptchaOptions = {
@@ -24,15 +28,16 @@
 		// ]]>
 		</script>
 		<noscript>
-			<div class="controls">
+			<div class="{$CAPTCHA_COL_INPUT}">
 				<object data="{RECAPTCHA_SERVER}/noscript?k={RECAPTCHA_PUBKEY}{RECAPTCHA_ERRORGET}" type="text/html" height="300" width="500"></object><br />
 				<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
 				<input type="hidden" name="recaptcha_response_field" value="manual_challenge" />
 			</div>
 		</noscript>
-		<p class="help-block col-sm-offset-4"><em>{L_RECAPTCHA_EXPLAIN}</em></p>
-	</div>
-	<div class="clearfix"></div>
+		<p class="help-block"><em>{L_RECAPTCHA_EXPLAIN}</em></p>
 <!-- ELSE -->
-	{L_RECAPTCHA_NOT_AVAILABLE}
+			<div class="{$CAPTCHA_COL_INPUT}">
+				<p class="form-control-static">{L_RECAPTCHA_NOT_AVAILABLE}</p>
+			</div>
 <!-- ENDIF -->
+	</div>

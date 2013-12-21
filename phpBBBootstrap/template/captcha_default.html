@@ -1,27 +1,38 @@
+<!-- IF ! $CAPTCHA_COL_LABEL -->
+	<!-- DEFINE $CAPTCHA_COL_LABEL = 'col-sm-4' -->
+	<!-- DEFINE $CAPTCHA_COL_INPUT = 'col-sm-8' -->
+<!-- ENDIF -->
 <!-- IF S_TYPE == 1 -->
 	<h3>{L_CONFIRMATION}</h3>
 	<p class="text-justify">{L_CONFIRM_EXPLAIN}</p>
-	<fieldset class="col-sm-8 form-horizontal">
+	<fieldset class="form-horizontal">
 <!-- ENDIF -->
 	<div class="form-group">
-		<label class="control-label col-sm-4" for="confirm_code">{L_CONFIRM_CODE}</label>
-		<img src="{CONFIRM_IMAGE_LINK}" alt="{L_CONFIRM_CODE}"/>
+		<label class="control-label {$CAPTCHA_COL_LABEL}" for="confirm_code">{L_CONFIRM_CODE}</label>
+		<div class="{$CAPTCHA_COL_INPUT}">
+			<p class="form-control-static"><img src="{CONFIRM_IMAGE_LINK}" alt="{L_CONFIRM_CODE}"/></p>
+		</div>
 	</div>
 	<div class="form-group">
-		<label class="control-label col-sm-4" for="confirm_code"></label>
-		<div class="input-group">		
-			<input type="text" class="form-control" name="confirm_code" id="confirm_code" maxlength="8" tabindex="{$CAPTCHA_TAB_INDEX}" title="{L_CONFIRM_CODE}" />			
+		<label class="control-label {$CAPTCHA_COL_LABEL}" for="confirm_code"></label>
+		<div class="{$CAPTCHA_COL_INPUT}">
 			<!-- IF S_CONFIRM_REFRESH -->
-			<span class="input-group-btn">
-				<input type="submit" name="refresh_vc" id="refresh_vc" class="btn btn-default" value="{L_VC_REFRESH}" />
-			</span>
+			<div class="input-group">	
+			<!-- ENDIF -->	
+				<input type="text" class="form-control" name="confirm_code" id="confirm_code" maxlength="8" tabindex="{$CAPTCHA_TAB_INDEX}" title="{L_CONFIRM_CODE}" />			
+				<!-- IF S_CONFIRM_REFRESH -->
+				<div class="input-group-btn">
+					<input type="submit" name="refresh_vc" id="refresh_vc" class="btn btn-default" value="{L_VC_REFRESH}" />
+				</div>
+				<!-- ENDIF -->
+			<!-- IF S_CONFIRM_REFRESH -->
+			</div>
 			<!-- ENDIF -->
+			<span class="help-block">{L_CONFIRM_CODE_EXPLAIN}</span>
 		</div>
-		<span class="help-block col-sm-offset-4">{L_CONFIRM_CODE_EXPLAIN}</span>
 		<input type="hidden" name="confirm_id" id="confirm_id" value="{CONFIRM_ID}" />
 	</div>
 	
 <!-- IF S_TYPE == 1 -->
 	</fieldset>
-	<div class="clearfix"></div>
 <!-- ENDIF -->
