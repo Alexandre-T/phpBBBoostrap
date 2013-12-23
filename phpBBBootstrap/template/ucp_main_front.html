@@ -1,12 +1,20 @@
 <!-- INCLUDE ucp_header.html -->
-
-<h3>{L_TITLE}</h3>
-
-<p>{L_UCP_WELCOME}</p>
-
+<div class="panel panel-default">
+	<div class="panel-heading"><h2 class="panel-title">{L_TITLE}</h2></div>
+	<div class="panel-body">
+		<p>{L_UCP_WELCOME}</p>
+		<h4><i class="icon-bar-chart-o"></i> {L_YOUR_DETAILS}</h4>
+		<dl class="dl-horizontal">
+			<dt>{L_JOINED}:</dt> <dd>{JOINED}</dd>
+			<dt>{L_VISITED}:</dt> <dd>{LAST_VISIT_YOU}</dd>
+			<dt>{L_TOTAL_POSTS}:</dt> <dd><!-- IF POSTS_PCT -->{POSTS}<!-- IF S_DISPLAY_SEARCH --> | <strong><a href="{U_SEARCH_USER}">{L_SEARCH_YOUR_POSTS}</a></strong><!-- ENDIF --><br />({POSTS_DAY} / {POSTS_PCT})<!-- ELSE -->{POSTS}<!-- ENDIF --></dd>
+			<!-- IF ACTIVE_FORUM != '' --><dt>{L_ACTIVE_IN_FORUM}:</dt> <dd><strong><a href="{U_ACTIVE_FORUM}">{ACTIVE_FORUM}</a></strong><br />({ACTIVE_FORUM_POSTS} / {ACTIVE_FORUM_PCT})</dd><!-- ENDIF -->
+			<!-- IF ACTIVE_TOPIC != '' --><dt>{L_ACTIVE_IN_TOPIC}:</dt> <dd><strong><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a></strong><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT})</dd><!-- ENDIF -->
+			<!-- IF WARNINGS --><dt>{L_YOUR_WARNINGS}:</dt> <dd class="error">{WARNING_IMG} [{WARNINGS}]</dd><!-- ENDIF -->
+		</dl>
+		<h4><i class="icon-rss"></i> {L_IMPORTANT_NEWS}</h4>
+	</div>
 <!-- IF .topicrow -->
-	<h4><i class="icon-rss"></i> {L_IMPORTANT_NEWS}</h4>
-
 	<table class="table table-striped table-bordered table-hover">
 		<thead>
 			<tr>
@@ -63,17 +71,5 @@
 		</tbody>
 	</table>
 <!-- ENDIF -->
-
-
-<h4>{L_YOUR_DETAILS}</h4>
-
-	<dl class="dl-horizontal">
-		<dt>{L_JOINED}:</dt> <dd>{JOINED}</dd>
-		<dt>{L_VISITED}:</dt> <dd>{LAST_VISIT_YOU}</dd>
-		<dt>{L_TOTAL_POSTS}:</dt> <dd><!-- IF POSTS_PCT -->{POSTS}<!-- IF S_DISPLAY_SEARCH --> | <strong><a href="{U_SEARCH_USER}">{L_SEARCH_YOUR_POSTS}</a></strong><!-- ENDIF --><br />({POSTS_DAY} / {POSTS_PCT})<!-- ELSE -->{POSTS}<!-- ENDIF --></dd>
-		<!-- IF ACTIVE_FORUM != '' --><dt>{L_ACTIVE_IN_FORUM}:</dt> <dd><strong><a href="{U_ACTIVE_FORUM}">{ACTIVE_FORUM}</a></strong><br />({ACTIVE_FORUM_POSTS} / {ACTIVE_FORUM_PCT})</dd><!-- ENDIF -->
-		<!-- IF ACTIVE_TOPIC != '' --><dt>{L_ACTIVE_IN_TOPIC}:</dt> <dd><strong><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a></strong><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT})</dd><!-- ENDIF -->
-		<!-- IF WARNINGS --><dt>{L_YOUR_WARNINGS}:</dt> <dd class="error">{WARNING_IMG} [{WARNINGS}]</dd><!-- ENDIF -->
-	</dl>
-
+</div>
 <!-- INCLUDE ucp_footer.html -->
