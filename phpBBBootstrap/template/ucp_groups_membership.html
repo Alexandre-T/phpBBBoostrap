@@ -1,75 +1,67 @@
 <!-- INCLUDE ucp_header.html -->
-
-<h2><i class="icon-group"></i> {L_USERGROUPS}</h2>
-
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
-
-	<p class="text-justify">{L_GROUPS_EXPLAIN}</p>
+<div class="panel panel-default">
+	<div class="panel panel-heading">
+		<h2 class="panel-title"><i class="icon-group"></i> {L_USERGROUPS}</h2>	
+	</div>
+	<div class="panel-body">
+		<p class="text-justify">{L_GROUPS_EXPLAIN}</p>
+	</div>
 	<!-- DEFINE $SHOW_BUTTONS = 0 -->
-	<!-- IF .leader -->
+	<!-- IF .leader or .member or .pending or .nonmember -->
 		<table class="table table-striped table-hover table-bordered">
-			<thead>
-				<tr>
-					<th>{L_GROUP_LEADER}</th>
-					<th>{L_SELECT}</th>
-				</tr>
-			</thead>
-			<tbody>
+		<!-- IF .leader -->
+			<tr>
+				<th>{L_GROUP_LEADER}</th>
+				<th>{L_SELECT}</th>
+			</tr>
 			<!-- BEGIN leader -->
 				<tr>
 				<!-- IF not leader.GROUP_SPECIAL -->
 					<!-- DEFINE $SHOW_BUTTONS = 1 -->
 				<!-- ENDIF -->
 					<td>
-						<!-- IF S_CHANGE_DEFAULT --><input title="{L_CHANGE_DEFAULT_GROUP}" type="radio" class="radio" name="default"<!-- IF leader.S_GROUP_DEFAULT --> checked="checked"<!-- ENDIF --> value="{leader.GROUP_ID}" /> <!-- ENDIF -->
-						<label class="radio-inline"><a href="{leader.U_VIEW_GROUP}" class="forumtitle"<!-- IF leader.GROUP_COLOUR --> style="color:#{leader.GROUP_COLOUR}"<!-- ENDIF -->>{leader.GROUP_NAME}</a></label>
+						<label class="radio-inline">
+							<!-- IF S_CHANGE_DEFAULT --><input title="{L_CHANGE_DEFAULT_GROUP}" type="radio" class="radio-inline" name="default"<!-- IF leader.S_GROUP_DEFAULT --> checked="checked"<!-- ENDIF --> value="{leader.GROUP_ID}" /> <!-- ENDIF -->
+							<a href="{leader.U_VIEW_GROUP}" class="forumtitle"<!-- IF leader.GROUP_COLOUR --> style="color:#{leader.GROUP_COLOUR}"<!-- ENDIF -->>{leader.GROUP_NAME}</a>
+						</label>
 						<!-- IF leader.GROUP_DESC --><br />{leader.GROUP_DESC}<!-- ENDIF -->
 						<!-- IF not leader.GROUP_SPECIAL --><br /><i>{leader.GROUP_STATUS}</i><!-- ENDIF -->
 					</td>
-					<td><input type="radio" name="selected" value="{leader.GROUP_ID}" <!-- IF leader.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> /></td>
+					<td class="text-center"><input type="radio" name="selected" value="{leader.GROUP_ID}" <!-- IF leader.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> /></td>
 				</tr>
 			<!-- END leader -->
-			</tbody>
-		</table>
-	<!-- ENDIF -->
+		<!-- ENDIF -->
 
-	<!-- IF .member -->
-		<table class="table table-striped table-hover table-bordered">
-			<thead>
-				<tr>
-					<th>{L_GROUP_MEMBER}</th>
-					<th>{L_SELECT}</th>
-				</tr>
-			</thead>
-			<tbody>
+		<!-- IF .member -->
+			<tr>
+				<th>{L_GROUP_MEMBER}</th>
+				<th>{L_SELECT}</th>
+			</tr>
 			<!-- BEGIN member -->
 				<tr>
 				<!-- IF not member.GROUP_SPECIAL -->
 					<!-- DEFINE $SHOW_BUTTONS = 1 -->
 				<!-- ENDIF -->	
 					<td>
-						<!-- IF S_CHANGE_DEFAULT --><input title="{L_CHANGE_DEFAULT_GROUP}" type="radio" class="radio" name="default"<!-- IF member.S_GROUP_DEFAULT --> checked="checked"<!-- ENDIF --> value="{member.GROUP_ID}" /> <!-- ENDIF -->
-						<label class="radio-inline"><a href="{member.U_VIEW_GROUP}" class="forumtitle"<!-- IF member.GROUP_COLOUR --> style="color:#{member.GROUP_COLOUR}"<!-- ENDIF -->>{member.GROUP_NAME}</a></label>
+						<label class="radio-inline">
+							<!-- IF S_CHANGE_DEFAULT --><input title="{L_CHANGE_DEFAULT_GROUP}" type="radio" class="radio-inline" name="default"<!-- IF member.S_GROUP_DEFAULT --> checked="checked"<!-- ENDIF --> value="{member.GROUP_ID}" /> <!-- ENDIF -->
+							<a href="{member.U_VIEW_GROUP}" class="forumtitle"<!-- IF member.GROUP_COLOUR --> style="color:#{member.GROUP_COLOUR}"<!-- ENDIF -->>{member.GROUP_NAME}</a>
+						</label>
 						<!-- IF member.GROUP_DESC --><br />{member.GROUP_DESC}<!-- ENDIF -->
 						<!-- IF not member.GROUP_SPECIAL --><br /><i>{member.GROUP_STATUS}</i><!-- ENDIF -->
 					</td>
-					<td><input type="radio" name="selected" value="{member.GROUP_ID}" <!-- IF member.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> /></td>
+					<td class="text-center"><input type="radio" name="selected" value="{member.GROUP_ID}" <!-- IF member.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> /></td>
 				</tr>
 			<!-- END member -->
-			</tbody>
-		</table>
-	<!-- ENDIF -->
+		<!-- ENDIF -->
 
-	<!-- IF .pending -->
-	<table class="table table-striped table-hover table-bordered">
-		<thead>
+		<!-- IF .pending -->
 			<tr>
 				<th>{L_GROUP_PENDING}</th>
 				<th>{L_SELECT}</th>
-		</tr>
-		</thead>
-		<tbody>
-		<!-- BEGIN pending -->
+			</tr>
+			<!-- BEGIN pending -->
 			<tr>
 			<!-- IF not pending.GROUP_SPECIAL -->
 				<!-- DEFINE $SHOW_BUTTONS = 1 -->
@@ -79,23 +71,17 @@
 					<!-- IF pending.GROUP_DESC --><br />{pending.GROUP_DESC}<!-- ENDIF -->
 					<!-- IF not pending.GROUP_SPECIAL --><br /><i>{pending.GROUP_STATUS}</i><!-- ENDIF -->
 				</td>
-				<td><input type="radio" name="selected" value="{pending.GROUP_ID}" <!-- IF pending.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> /></td>
+				<td class="text-center"><input type="radio" name="selected" value="{pending.GROUP_ID}" <!-- IF pending.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> /></td>
 			</tr>
-		<!-- END pending -->
-		</tbody>
-	</table>
-	<!-- ENDIF -->
+			<!-- END pending -->
+		<!-- ENDIF -->
 
-	<!-- IF .nonmember -->
-	<table class="table table-striped table-hover table-bordered">
-		<thead>
+		<!-- IF .nonmember -->
 			<tr>
 				<th>{L_GROUP_NONMEMBER}</th>
 				<th>{L_SELECT}</th>
 		</tr>
-		</thead>
-		<tbody>
-		<!-- BEGIN nonmember -->
+			<!-- BEGIN nonmember -->
 			<tr>
 			<!-- IF nonmember.S_CAN_JOIN -->
 				<!-- DEFINE $SHOW_BUTTONS = 1 -->
@@ -105,40 +91,47 @@
 					<!-- IF nonmember.GROUP_DESC --><br />{nonmember.GROUP_DESC}<!-- ENDIF -->
 					<!-- IF not nonmember.GROUP_SPECIAL --><br /><i>{nonmember.GROUP_STATUS}</i><!-- ENDIF -->
 				</td>
-				<td class="mark"><input type="radio" name="selected" value="{nonmember.GROUP_ID}" <!-- IF not nonmember.S_CAN_JOIN -->disabled="disabled"<!-- ENDIF --> /></td>
+				<td class="text-center"><input type="radio" name="selected" value="{nonmember.GROUP_ID}" <!-- IF not nonmember.S_CAN_JOIN -->disabled="disabled"<!-- ENDIF --> /></td>
 			</tr>
-		<!-- END nonmember -->
-		</tbody>
-	</table>
+			<!-- END nonmember -->
+		</table>
+		<!-- ENDIF -->
 	<!-- ENDIF -->
-	
-
-	<!-- IF S_CHANGE_DEFAULT or $SHOW_BUTTONS eq 1 -->
-	<fieldset class="form-actions">
-		<div class="row">
-		<!-- IF S_CHANGE_DEFAULT -->
-			<div class="col-md-6">
-			<input class="btn btn-default" type="submit" name="change_default" value="{L_CHANGE_DEFAULT_GROUP}" />
-			{S_FORM_TOKEN}
+	<div class="panel-footer">
+		<!-- IF S_CHANGE_DEFAULT or $SHOW_BUTTONS eq 1 -->
+		<fieldset>
+			<div class="row">
+			<!-- IF S_CHANGE_DEFAULT -->
+				<div class="col-md-6">
+					<input class="btn btn-default" type="submit" name="change_default" value="{L_CHANGE_DEFAULT_GROUP}" />
+					{S_FORM_TOKEN}
+				</div>
+			<!-- ENDIF -->
+			
+			<!-- IF $SHOW_BUTTONS eq 1 -->
+			<div class=" col-md-6 text-right">
+				<div class="input-group">
+					<div class="input-group-addon">
+						{L_SELECT}
+					</div> 
+					<select name="action" id="action" class="form-control">
+						<option value="join">{L_JOIN_SELECTED}</option>
+						<option value="resign">{L_RESIGN_SELECTED}</option>
+						<option value="demote">{L_DEMOTE_SELECTED}</option>
+					</select>
+					<div class="input-group-btn">
+						<input class="btn btn-primary" type="submit" name="submit" value="{L_SUBMIT}" />
+					</div>
+				</div>
+				{S_FORM_TOKEN}
 			</div>
+			<!-- ENDIF -->
+			</div>
+			
+		</fieldset>
 		<!-- ENDIF -->
-		
-		<!-- IF $SHOW_BUTTONS eq 1 -->
-		<div class="form-inline col-md-6 text-right">
-			<label for="action">{L_SELECT}</label> 
-			<select name="action" id="action">
-				<option value="join">{L_JOIN_SELECTED}</option>
-				<option value="resign">{L_RESIGN_SELECTED}</option>
-				<option value="demote">{L_DEMOTE_SELECTED}</option>
-			</select>
-			<input class="btn btn-default" type="submit" name="submit" value="{L_SUBMIT}" />
-			{S_FORM_TOKEN}
-		</div>
-		<!-- ENDIF -->
-		</div>
-		
-	</fieldset>
-	<!-- ENDIF -->
+	</div>	
+</div>
 
 </form>
 
