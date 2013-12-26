@@ -1,17 +1,17 @@
-<div class="topic-actions">
-	<div class="row">
-	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
-		<div class="col-sm-4">
-			<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-default<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED --><i class="icon-white icon-lock"></i> {L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-white icon-pencil"></i> {L_POST_REPLY}<!-- ENDIF --></a>
-			<!-- IF $S_BUTTON_QR -->
-			<button name="show_qr" tabindex="1" class="btn btn-default" onclick="javascript:hide_qr(true);return false;"><i class="icon-pencil"></i> {L_SHOW_QR}</button>
-			<!-- ENDIF -->
-		</div>
-	<!-- ENDIF -->	
-	<!-- IF PAGINATION or TOTAL_POSTS -->		
-		<div class="col-sm-8 btn-group text-right">
-			<!-- INCLUDE pagination.html -->			
-		</div>
-	<!-- ENDIF -->
-	</div><!-- .row -->
-</div>
+<div class="row">
+<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
+	<div class="col-sm-4">
+		<a class="btn <!-- IF S_IS_LOCKED -->btn-danger<!-- ELSE -->btn-default<!-- ENDIF -->" href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->"><!-- IF S_IS_LOCKED --><i class="icon-white icon-lock"></i> {L_TOPIC_LOCKED_SHORT}<!-- ELSE --><i class="icon-white icon-pencil"></i> {L_POST_REPLY}<!-- ENDIF --></a>
+		<!-- IF $S_BUTTON_QR -->
+		<button name="show_qr" tabindex="1" class="btn btn-default" onclick="javascript:hide_qr(true);return false;"><i class="icon-pencil"></i> {L_SHOW_QR}</button>
+		<!-- ENDIF -->
+	</div>
+<!-- ENDIF -->	
+<!-- IF PAGINATION or TOTAL_POSTS -->		
+	<div class="col-sm-8">
+		<div class="pull-right">
+			<!-- INCLUDE pagination.html -->
+		</div>			
+	</div>
+<!-- ENDIF -->
+</div><!-- .row -->

@@ -1,10 +1,9 @@
 <!-- INCLUDE overall_header.html -->
-<section>
 	<div class="row">
-		<div class="col-md-9">
+		<div class="col-sm-9">
 			<h2><a href="{U_VIEW_TOPIC}">{TOPIC_TITLE}</a></h2>
 		</div>
-		<div class="col-md-3 text-right intoh2">
+		<div class="col-sm-3 text-right intoh2">
 			<!-- IF S_DISPLAY_SEARCHBOX -->
 			<form method="get" class="form-horizontal" id="topic-search" action="{S_SEARCHBOX_ACTION}">
 				{S_SEARCH_LOCAL_HIDDEN_FIELDS}				
@@ -52,23 +51,23 @@
 			<!-- BEGIN poll_option -->
 			<div class="row">
 				<!-- IF S_DISPLAY_RESULTS -->
-				<div class="col-md-offset-2 col-md-2 text-right">
+				<div class="col-sm-offset-2 col-sm-2 text-right">
 					<!-- IF poll_option.POLL_OPTION_RESULT == 0 -->{L_NO_VOTES}<!-- ELSE -->{poll_option.POLL_OPTION_PERCENT}<!-- ENDIF -->
 				</div>
 				<!-- ENDIF -->
-				<div class="col-md-1 <!-- IF not S_DISPLAY_RESULTS -->col-md-offset-3<!-- ENDIF --> hidden-xs">
+				<div class="col-sm-1 <!-- IF not S_DISPLAY_RESULTS -->col-sm-offset-3<!-- ENDIF --> hidden-xs">
 					<!-- IF poll_option.POLL_OPTION_VOTED -->
 					<span class="btn btn-xs btn-success disabled" title="Votre vote"><i class="icon-ok-sign"></i></span>
 					<!-- ELSE -->
 					<span class="btn btn-xs btn-default disabled" title="Vous n'avez pas voté pour"><i class="icon-remove-sign"></i></span>
 					<!-- ENDIF -->
 				</div>
-				<div class="col-md-3 text-left  hidden-xs">
+				<div class="col-sm-3 text-left  hidden-xs">
 					<div class="progress">
   						<div class="progress-bar" style="width: {poll_option.POLL_OPTION_PCT}%;"></div>
 					</div>				
 				</div>
-				<div class="col-md-4">
+				<div class="col-sm-4">
 					<!-- IF S_CAN_VOTE -->
 					<label class="<!-- IF S_IS_MULTI_CHOICE -->checkbox<!-- ELSE -->radio<!-- ENDIF -->">
 					<!-- ENDIF -->
@@ -128,7 +127,7 @@
 	<!-- ELSE -->
 	<div class="row <!-- IF postrow.S_FIRST_ROW --> firsttopic <!-- ENDIF !--> <!-- IF postrow.S_LAST_ROW --> lasttopic <!-- ENDIF -->  <!-- IF postrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
 		<div id="profile{postrow.POST_ID}" class="<!-- IF postrow.S_UNREAD_POST --> unreadpost<!-- ENDIF -->">
-			<div class="col-md-3 avatar text-center hidden-xs">
+			<div class="col-sm-3 avatar text-center hidden-xs">
 				<ul class="list-unstyled">
 					<!-- IF postrow.POSTER_AVATAR -->
 						<li><!-- IF postrow.U_POST_AUTHOR --><a href="{postrow.U_POST_AUTHOR}">{postrow.POSTER_AVATAR}</a><!-- ELSE -->{postrow.POSTER_AVATAR}<!-- ENDIF --></li>
@@ -195,7 +194,7 @@
 					<!-- ENDIF -->
 				</ul>
 			</div>
-			<div class="col-md-9 corps" id="p{postrow.POST_ID}">
+			<div class="col-sm-9 corps" id="p{postrow.POST_ID}">
 				<!-- IF not S_IS_BOT -->				
 				<!-- IF postrow.U_EDIT or postrow.U_DELETE or postrow.U_REPORT or postrow.U_WARN or postrow.U_INFO or postrow.U_QUOTE -->
 				<div class="btn-group pull-right" style="margin-top:10px;margin-right:10px;">
@@ -271,7 +270,7 @@
 	</div>
 	<!-- ENDIF -->
 <!-- END postrow -->
-
+<hr/>
 
 <!-- IF S_QUICK_REPLY -->
 	<!-- INCLUDE quickreply_editor.html -->
@@ -279,32 +278,47 @@
 <!-- ENDIF -->
 
 <!-- INCLUDE topic_actions.html -->
+<br/>
+<div class="row">
+	<!-- IF S_TOPIC_MOD -->
+	<div class="col-sm-6">
+		<form method="post" action="{S_MOD_ACTION}">
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-addon">	
+						<i class="icon-legal"></i>&nbsp;{L_QUICK_MOD}
+					</div>
+					{S_TOPIC_MOD}
+					<div class="input-group-btn">
+						<input type="submit" value="{L_GO}" class="btn btn-default" />
+					</div>
+				</div>
+			</div>
+			{S_FORM_TOKEN}
+		</form>
+	</div>
+	<!-- ENDIF -->
+	<div class="<!-- IF ! S_TOPIC_MOD -->col-sm-offset-6<!-- ENDIF --> col-sm-6">
+		<!-- INCLUDE jumpbox.html -->
+	</div>
+</div>
 
-<div class="pull-right text-right">
-	<!-- INCLUDE jumpbox.html -->
-<!-- IF S_TOPIC_MOD -->
-	<form method="post" action="{S_MOD_ACTION}" class="form form-inline ">
-		<div class="input-group">	
-			<label for="quick-mod-select"><small>{L_QUICK_MOD}</small> {S_TOPIC_MOD}</label><input type="submit" value="{L_GO}" class="btn btn-default" />
-		</div>
-		{S_FORM_TOKEN}
-	</form>
-<!-- ENDIF -->
-</div>
-<!-- IF S_DISPLAY_ONLINE_LIST -->
-<div class="visible-md">	
-	<h3><!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}"><i class="icon-map-marker"></i> {L_WHO_IS_ONLINE} ?</a><!-- ELSE --><i class="icon-map-marker"></i> {L_WHO_IS_ONLINE} ?<!-- ENDIF --></h3>
-	<p>{LOGGED_IN_USER_LIST}</p>
-</div>
-<!-- ENDIF -->
-<!-- IF MODERATORS -->
-<div class="visible-md">
-	<p class="text-right">
-   		<strong><!-- IF S_SINGLE_MODERATOR -->{L_MODERATOR}<!-- ELSE -->{L_MODERATORS}<!-- ENDIF -->:</strong> {MODERATORS}
-	</p>
+<!-- IF S_DISPLAY_ONLINE_LIST or MODERATORS -->
+<div class="visible-md visible-lg row">	
+	<!-- IF S_DISPLAY_ONLINE_LIST -->
+	<div class="<!-- IF MODERATORS -->col-sm-6<!-- ELSE -->col-sm-12<!-- ENDIF -->">
+		<h3><!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}"><i class="icon-map-marker"></i> {L_WHO_IS_ONLINE}</a><!-- ELSE --><i class="icon-map-marker"></i> {L_WHO_IS_ONLINE}<!-- ENDIF --></h3>
+		<p>{LOGGED_IN_USER_LIST}</p>
+	</div>
+	<!-- ENDIF -->
+	<!-- IF MODERATORS -->
+	<div class="<!-- IF S_DISPLAY_ONLINE_LIST -->col-sm-6<!-- ELSE -->col-sm-12<!-- ENDIF -->">
+		<p class="text-right">
+	   		<strong><!-- IF S_SINGLE_MODERATOR -->{L_MODERATOR}<!-- ELSE -->{L_MODERATORS}<!-- ENDIF -->:</strong> {MODERATORS}
+		</p>
+	</div>
+	<!-- ENDIF -->
 </div>
 <!-- ENDIF -->
-
-</section>
 <!-- INCLUDE jumppage.html -->
 <!-- INCLUDE overall_footer.html -->

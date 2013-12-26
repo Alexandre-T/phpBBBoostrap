@@ -134,6 +134,8 @@ function sort_desc_sd(){
 	$("select[name='post_st']").addClass('form-control');
 	$("select[name='post_sk']").addClass('form-control');
 	$("select[name='post_sd']").addClass('form-control');
+	
+	$("select#quick-mod-select").addClass('form-control');
 
 
   })

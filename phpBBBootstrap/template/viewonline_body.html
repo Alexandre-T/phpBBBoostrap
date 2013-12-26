@@ -1,77 +1,84 @@
 <!-- INCLUDE overall_header.html -->
-<section>
-<h3><i class="icon-map-marker"></i> {L_WHO_IS_ONLINE} ?</h3>
-<p>
-	{TOTAL_REGISTERED_USERS_ONLINE}
-</p>
-
-<div class="row">
-	<div class="col-md-3">
-		<div class="btn-group">
-			<span class="btn btn-default btn-xs disabled">{TOTAL_GUEST_USERS_ONLINE}</span>
-			<!-- IF S_SWITCH_GUEST_DISPLAY --><a class="btn btn-default btn-xs" href="{U_SWITCH_GUEST_DISPLAY}">{L_SWITCH_GUEST_DISPLAY}</a><!-- ENDIF -->
+<div class="panel panel-default">
+	<div class="panel-heading"><h2 class="panel-title"><i class="icon-map-marker"></i> {L_WHO_IS_ONLINE}</h2></div>
+	<div class="panel-body">
+		<p>
+			{TOTAL_REGISTERED_USERS_ONLINE}
+		</p>
+		
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="btn-group">
+					<span class="btn btn-default btn-xs disabled">{TOTAL_GUEST_USERS_ONLINE}</span>
+					<!-- IF S_SWITCH_GUEST_DISPLAY --><a class="btn btn-default btn-xs" href="{U_SWITCH_GUEST_DISPLAY}">{L_SWITCH_GUEST_DISPLAY}</a><!-- ENDIF -->
+				</div>
+			</div>
+			<div class="col-sm-9">
+				<div class="pull-right">
+				<!-- INCLUDE pagination.html -->
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-3">
+				<!-- IF PREVIOUS_PAGE or NEXT_PAGE -->
+				<fieldset class="btn-group pull-right">
+					<!-- IF PREVIOUS_PAGE --><a class="btn btn-default btn-xs" href="{PREVIOUS_PAGE}" class="{S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ELSE -->{L_PREVIOUS}<!-- ENDIF --> &bull; <!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-default btn-xs">{L_NEXT}</a><!-- ELSE -->{L_NEXT}<!-- ENDIF -->
+				</fieldset>
+				<!-- ENDIF -->
+			</div>
+			<div class="col-sm-9">
+				<div class="pull-right">
+				</div>
+			</div>
 		</div>
 	</div>
-	<div class="col-md-9">
-		<div class="pull-right">
-		<!-- INCLUDE pagination.html -->
-		</div>
-	</div>
-</div>
-
-
-<table class="table table-hover table-bordered table-striped">
-<!-- IF .user_row -->
-	<thead>
-		<tr>
-			<th class="name"><a href="{U_SORT_USERNAME}">{L_USERNAME}</a></th>
-			<th class="info"><a href="{U_SORT_LOCATION}">{L_FORUM_LOCATION}</a></th>
-			<th class="active"><a href="{U_SORT_UPDATED}">{L_LAST_UPDATED}</a></th>
-		</tr>
-	</thead>
-	<tbody>
-		<!-- BEGIN user_row -->
+	<table class="table table-hover table-bordered table-striped">
+		<!-- IF .user_row -->
+		<thead>
 			<tr>
-				<td>{user_row.USERNAME_FULL}<!-- IF user_row.USER_IP --> <span style="margin-left: 30px;">{L_IP}: <a href="{user_row.U_USER_IP}">{user_row.USER_IP}</a> &#187; <a href="{user_row.U_WHOIS}" onclick="popup(this.href, 750, 500); return false;">{L_WHOIS}</a></span><!-- ENDIF -->
-					<!-- IF user_row.USER_BROWSER --><br />{user_row.USER_BROWSER}<!-- ENDIF --></td>
-				<td class="info"><a href="{user_row.U_FORUM_LOCATION}">{user_row.FORUM_LOCATION}</a></td>
-				<td class="active">{user_row.LASTUPDATE}</td>
+				<th class="name"><a href="{U_SORT_USERNAME}">{L_USERNAME}</a></th>
+				<th class="info"><a href="{U_SORT_LOCATION}">{L_FORUM_LOCATION}</a></th>
+				<th class="active"><a href="{U_SORT_UPDATED}">{L_LAST_UPDATED}</a></th>
 			</tr>
-		<!-- END user_row -->
-	<!-- ELSE -->
-	<tbody>
-		<tr>
-			<td colspan="3">{L_NO_ONLINE_USERS}<!-- IF S_SWITCH_GUEST_DISPLAY --> &bull; <a href="{U_SWITCH_GUEST_DISPLAY}">{L_SWITCH_GUEST_DISPLAY}</a><!-- ENDIF --></td>
-		</tr>
-	<!-- ENDIF -->
-	</tbody>
-</table>
-	
-</div>
-
-<div class="row">
-	<div class="col-md-3">
-		<!-- IF PREVIOUS_PAGE or NEXT_PAGE -->
-		<fieldset class="btn-group pull-right">
-			<!-- IF PREVIOUS_PAGE --><a class="btn btn-default btn-xs" href="{PREVIOUS_PAGE}" class="{S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ELSE -->{L_PREVIOUS}<!-- ENDIF --> &bull; <!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-default btn-xs">{L_NEXT}</a><!-- ELSE -->{L_NEXT}<!-- ENDIF -->
-		</fieldset>
+		</thead>
+		<tbody>
+			<!-- BEGIN user_row -->
+				<tr>
+					<td>{user_row.USERNAME_FULL}<!-- IF user_row.USER_IP --> <span style="margin-left: 30px;">{L_IP}: <a href="{user_row.U_USER_IP}">{user_row.USER_IP}</a> &#187; <a href="{user_row.U_WHOIS}" onclick="popup(this.href, 750, 500); return false;">{L_WHOIS}</a></span><!-- ENDIF -->
+						<!-- IF user_row.USER_BROWSER --><br />{user_row.USER_BROWSER}<!-- ENDIF --></td>
+					<td class="info"><a href="{user_row.U_FORUM_LOCATION}">{user_row.FORUM_LOCATION}</a></td>
+					<td class="active">{user_row.LASTUPDATE}</td>
+				</tr>
+			<!-- END user_row -->
+		<!-- ELSE -->
+		<tbody>
+			<tr>
+				<td colspan="3">{L_NO_ONLINE_USERS}<!-- IF S_SWITCH_GUEST_DISPLAY --> &bull; <a href="{U_SWITCH_GUEST_DISPLAY}">{L_SWITCH_GUEST_DISPLAY}</a><!-- ENDIF --></td>
+			</tr>
 		<!-- ENDIF -->
-	</div>
-	<div class="col-md-9">
-		<div class="pull-right">
-		<!-- INCLUDE pagination.html -->
+		</tbody>
+	</table>
+
+	<div class="panel-footer">
+		<div class="row">
+			<div class="col-sm-6">
+				<!-- IF LEGEND --><p><em>{L_LEGEND}: {LEGEND}</em></p><!-- ENDIF -->
+			</div>
+			<div class="col-sm-6 text-right">		
+				<!-- INCLUDE pagination.html -->
+			</div>
 		</div>
 	</div>
 </div>
 
 <div class="row">
-	<div class="col-md-6">
-		<!-- IF LEGEND --><p><em>{L_LEGEND}: {LEGEND}</em></p><!-- ENDIF -->
-	</div>
-	<div class="col-md-6 text-right">
+	<div class="col-sm-6 col-sm-offset-6 text-right">		
 		<!-- INCLUDE jumpbox.html -->
 	</div>
 </div>
+
+
 <!-- INCLUDE jumppage.html -->
-</section>
 <!-- INCLUDE overall_footer.html -->

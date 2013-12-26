@@ -1,16 +1,18 @@
 <!-- INCLUDE overall_header.html -->
 <section>
 	<div class="row">
-		<div class="col-md-7">
+		<div class="col-sm-7">
 			<h2><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a></h2>
 		</div>
-		<div class="col-md-5 text-bottom text-right intoh2 hidden-xs">
+		<div class="col-sm-5 text-bottom text-right intoh2 hidden-xs">
 			<!-- IF S_DISPLAY_SEARCHBOX -->
 				<form action="{S_SEARCHBOX_ACTION}" method="get" id="forum-search" >
 					<fieldset>
 						<div class="input-group">
-						<input class="input" type="text" name="keywords" id="search_keywords" size="20" placeholder="{L_SEARCH_FORUM}" />
-						<button type="submit" class="btn btn-default"><i class="icon-search"></i> {L_SEARCH}</button>
+							<input class="form-control" type="text" name="keywords" id="search_keywords" size="20" placeholder="{L_SEARCH_FORUM}" />
+							<div class="input-group-btn">
+								<button type="submit" class="btn btn-default"><i class="icon-search"></i> {L_SEARCH}</button>
+							</div>
 						</div>					
 						{S_SEARCH_LOCAL_HIDDEN_FIELDS}
 					</fieldset>
@@ -51,8 +53,7 @@
 	
 	<!-- ENDIF -->
 	<!-- DEFINE $ALTITUDE = 'text-bottom' -->
-	<!-- INCLUDE forum_actions.html -->
-		
+	<!-- INCLUDE forum_actions.html -->		
 	<!-- IF S_NO_READ_ACCESS -->
 	<div class="alert alert-danger">
 		<strong>{L_NO_READ_ACCESS}</strong>
@@ -174,10 +175,10 @@
 					<br />{topicrow.LAST_POST_TIME}</small>
 				</td>
 				<td class="col-md-2 text-center hidden-xs hidden-sm text-middle">
-					<span class="label">{topicrow.REPLIES}</span>
+					<span class="badge">{topicrow.REPLIES}</span>
 				</td>
 				<td class="col-md-2 text-center hidden-xs hidden-sm text-middle">
-					<span class="label" >{topicrow.VIEWS}</span>
+					<span class="badge" >{topicrow.VIEWS}</span>
 				</td>
 			</tr> 
 		<!-- IF topicrow.S_LAST_ROW or not topicrow.S_TOPIC_TYPE_SWITCH -->
@@ -202,13 +203,13 @@
 	</form>
 		
 	<div class="row hidden-xs">
-		<div class="col-md-7">
+		<div class="col-sm-7">
 			<!-- IF S_DISPLAY_ONLINE_LIST -->
 			   <h3><!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}"><i class="icon-map-marker"></i> {L_WHO_IS_ONLINE}</a><!-- ELSE -->{L_WHO_IS_ONLINE}<!-- ENDIF --></h3>
 			   <p>{LOGGED_IN_USER_LIST}</p>
 			<!-- ENDIF -->
 		</div>
-		<div class="col-md-5 text-right intoh2">
+		<div class="col-sm-5 text-right intoh2">
 			<!-- INCLUDE jumpbox.html -->			
 		</div>
 	</div>
