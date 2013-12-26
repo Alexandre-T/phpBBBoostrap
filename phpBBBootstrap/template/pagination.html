@@ -7,15 +7,14 @@
 	<!-- IF TOTAL_USERS --><span class="btn btn-default disabled btn-xs">{TOTAL_USERS}</span><!-- ENDIF -->
 	<!-- IF SEARCH_MATCHES --><span class="btn btn-default disabled btn-xs">{SEARCH_MATCHES}</span><!-- ENDIF -->
 	<!-- IF TOTAL_MESSAGES --><span class="btn btn-default disabled btn-xs">{TOTAL_MESSAGES}</span><!-- ENDIF -->
+	<!-- IF PAGINATION --><span class="btn btn-default disabled btn-xs">{PAGE_NUMBER}</span><!-- ENDIF -->
 </div>
 <!-- ENDIF -->
 
 <!-- IF PAGE_NUMBER -->
 <div class="btn-group {$ALTITUDE}">
 	<!-- IF PAGINATION -->
-	<a class="btn btn-default btn-xs tooltip-link" href="#jumpPage" data-toggle="modal" title="{L_JUMP_TO_PAGE}">
-		<i class="icon-screenshot"></i> <span class="visible-md">{PAGE_NUMBER}</span>
-	</a>				
+	<a class="btn btn-default btn-xs tooltip-link" href="#jumpPage" data-toggle="modal" title="{L_JUMP_TO_PAGE}"><i class="icon-screenshot"></i></a>
 	<!-- ELSE -->
 	<span class="btn btn-default btn-xs disabled">{PAGE_NUMBER}</span>
 	<!-- ENDIF -->			

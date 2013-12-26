@@ -1,23 +1,7 @@
 <!DOCTYPE html>
 <html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
 <head>
-<meta charset="{S_CONTENT_ENCODING}" />
-
-<!-- Confirmé dans des docs -->
-<meta name="application-name" content="phpbb" />
-<meta name="author" content="" />
-<meta name="description" content="" />
-<meta name="generator" content="" />
-<meta name="keywords" content="" />
-
-<!-- Pas confirmé encore -->
-<!-- Nécessaire à Bootstrap -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="shortcut icon" type="image/png" href="{T_IMAGESET_PATH}/favicon.png" />
-<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
-{META}
-<title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
+<!-- INCLUDE header.inc.html -->
 <!-- IF S_ENABLE_FEEDS -->
 	<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}" /><!-- ENDIF -->
 	<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news" /><!-- ENDIF -->
@@ -26,16 +10,6 @@
 	<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}" href="{U_FEED}?mode=topics_active" /><!-- ENDIF -->	<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{U_FEED}?f={S_FORUM_ID}" /><!-- ENDIF -->
 	<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" /><!-- ENDIF -->
 <!-- ENDIF -->
-<!--
-	phpBB style name: Bootstrap
-	Based on style:   
-	Original author:  Alexandre Tranchant
-	Modified by:
--->
-<script type="text/javascript" src="{T_TEMPLATE_PATH}/forum_fn.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-<script type="text/javascript" src="{T_THEME_PATH}/js/bootstrap.min.js?v=3.0.3"></script>
-<script type="text/javascript" src="{T_THEME_PATH}/initialisation.js"></script>
 </head>
 
 <body class="body-{SCRIPT_NAME}" id="top">

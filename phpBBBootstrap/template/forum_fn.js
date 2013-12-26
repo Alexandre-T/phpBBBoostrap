@@ -396,46 +396,30 @@ function submit_default_button(event, selector, class_name)
 
 /**
 * Apply onkeypress event for forcing default submit button on ENTER key press
-* The jQuery snippet used is based on http://greatwebguy.com/programming/dom/default-html-button-submit-on-enter-with-jquery/
-* The non-jQuery code is a mimick of the jQuery code ;)
+* @todo test it !
 */
 function apply_onkeypress_event()
 {
-	// jQuery code in case jQuery is used
-	if (jquery_present)
+	jQuery('form input[type=text], form input[type=password]').live('keypress', function (e)
 	{
-		jQuery('form input[type=text], form input[type=password]').live('keypress', function (e)
-		{
-			var default_button = jQuery(this).parents('form').find('input[type=submit].default-submit-action');
-			
-			if (!default_button || default_button.length <= 0)
-				return true;
-
-			if (phpbb_check_key(e))
-				return true;
-
-			if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13))
-			{
-				default_button.click();
-				return false;
-			}
-
+		var default_button = jQuery(this).parents('form').find('input[type=submit].default-submit-action');
+		
+		if (!default_button || default_button.length <= 0)
 			return true;
-		});
-	
-		return;
-	}
 
-	var input_tags = document.getElementsByTagName('input');
+		if (phpbb_check_key(e))
+			return true;
 
-	for (var i = 0, element = input_tags[0]; i < input_tags.length ; element = input_tags[++i])
-	{
-		if (element.type == 'text' || element.type == 'password')
+		if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13))
 		{
-			// onkeydown is possible too
-			element.onkeypress = function (evt) { submit_default_button((evt || window.event), this, 'default-submit-action'); };
+			default_button.click();
+			return false;
 		}
-	}
+
+		return true;
+	});
+
+	return;
 }
 
 /**
