@@ -126,6 +126,15 @@ function sort_desc_sd(){
     $('select#st').addClass('form-control ');
     $('select#sk').addClass('form-control ');
     $('select#sd').addClass('sr-only');
+    
+    //@todo Optimiser pour ne le faire que si nécessaire (en même temps on pourrait ajouter cette classe à tous les select...)
+	$("select[name='topic_st']").addClass('form-control');
+	$("select[name='topic_sk']").addClass('form-control');
+	$("select[name='topic_sd']").addClass('form-control');
+	$("select[name='post_st']").addClass('form-control');
+	$("select[name='post_sk']").addClass('form-control');
+	$("select[name='post_sd']").addClass('form-control');
+
 
   })
 }(window.jQuery)

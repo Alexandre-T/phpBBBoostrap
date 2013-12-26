@@ -2,38 +2,44 @@
 
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE} class="form form-horizontal">
 
-<h2><i class="icon-user"></i> {L_TITLE}</h2>
-
-	<p class="text-justify">{L_FOES_EXPLAIN}</p>
-
-	<fieldset>
-	<!-- IF ERROR --><p class="alert alert-danger alert-block">{ERROR}</p><!-- ENDIF -->
-	<div class="form-group">
-		<label class="control-label" for="<!-- IF S_USERNAME_OPTIONS -->usernames<!-- ENDIF -->">{L_YOUR_FOES}</label>
-		<div class="controls">
-			<!-- IF S_USERNAME_OPTIONS -->
-				<select name="usernames[]" id="usernames" multiple="multiple" size="5">{S_USERNAME_OPTIONS}</select>
-			<!-- ELSE -->
-				<strong>{L_NO_FOES}</strong>
-			<!-- ENDIF -->
-			<span class="help-block">{L_YOUR_FOES_EXPLAIN}</span>
-		</div>
+<div class="panel panel-default">
+	<div class="panel-heading"><h2 class="panel-title"><i class="icon-user"></i> {L_TITLE}</h2></div>
+	<div class="panel-body">
+		<p class="text-justify">{L_FOES_EXPLAIN}</p>
+	
+		<fieldset>
+			<!-- IF ERROR --><p class="alert alert-danger alert-block">{ERROR}</p><!-- ENDIF -->
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="<!-- IF S_USERNAME_OPTIONS -->usernames<!-- ENDIF -->">{L_YOUR_FOES}</label>
+				<div class="col-sm-8">
+					<!-- IF S_USERNAME_OPTIONS -->
+						<select name="usernames[]" id="usernames" class="form-control" multiple="multiple" size="5">{S_USERNAME_OPTIONS}</select>
+					<!-- ELSE -->
+						<strong>{L_NO_FOES}</strong>
+					<!-- ENDIF -->
+					<span class="help-block">{L_YOUR_FOES_EXPLAIN}</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-4" for="add">{L_ADD_FOES}</label>
+				<div class="col-sm-8">
+					<textarea name="add" id="add" rows="3" cols="30" class="form-control">{USERNAMES}</textarea>
+					<span class="help-block"><strong><a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;"><i class="icon-search"></i> {L_FIND_USERNAME}</a></strong></span>
+					<span class="help-block">{L_ADD_FOES_EXPLAIN}</span>
+				</div>
+			</div>
+		</fieldset>
 	</div>
-	<div class="form-group">
-		<label class="control-label" for="add">{L_ADD_FOES}</label>
-		<div class="controls">
-			<textarea name="add" id="add" rows="3" cols="30" class="inputbox">{USERNAMES}</textarea>
-			<span class="help-inline"><strong><a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;"><i class="icon-search"></i> {L_FIND_USERNAME}</a></strong></span>
-			<span class="help-block">{L_ADD_FOES_EXPLAIN}</span>
-		</div>
+	<div class="panel-footer">
+		{S_HIDDEN_FIELDS}
+		<fieldset class="btn-group">
+			<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" /> 
+			<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
+		</fieldset>
+		{S_FORM_TOKEN}
 	</div>
-	</fieldset>
+</div>
 
-<fieldset class="form-actions">
-	{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" /> 
-	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-default" />
-	{S_FORM_TOKEN}
-</fieldset>
 </form>
 
 <!-- INCLUDE ucp_footer.html -->

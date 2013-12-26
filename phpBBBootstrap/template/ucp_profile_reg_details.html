@@ -1,78 +1,82 @@
 <!-- INCLUDE ucp_header.html -->
 
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE} class="form-horizontal">
-
-<h3><i class="icon-cog"></i> {L_TITLE}</h3>
-
-<!-- IF S_FORCE_PASSWORD -->
-	<p>{L_FORCE_PASSWORD_EXPLAIN}</p>
-<!-- ENDIF -->
-
-<fieldset>
-	<!-- IF ERROR --><p class="alert alert-danger alert-block">{ERROR}</p><!-- ENDIF -->
-	<div class="form-group">
-		<label class="control-label" for="username">{L_USERNAME}</label>
-		<div class="controls">
-			<!-- IF S_CHANGE_USERNAME -->
-			<input type="text" name="username" id="username" class="input-xlarge" value="{USERNAME}" title="{L_USERNAME}" />
-			<!-- ELSE -->
-			<span class="input-xlarge uneditable-input">{USERNAME}</span>
-			<!-- ENDIF -->
-			<span class="help-block"><em>{L_USERNAME_EXPLAIN}</em></span>
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label" for="email">{L_EMAIL_ADDRESS}</label>
-		<div class="controls">
-			<!-- IF S_CHANGE_EMAIL -->
-			<input type="text" name="email" id="email" maxlength="100" value="{EMAIL}" class="input-xlarge" title="{L_EMAIL_ADDRESS}" />
-			<!-- ELSE -->
-			<span class="input-xlarge uneditable-input">{EMAIL}</span>
-			<!-- ENDIF -->
-		</div>
-	</div>
-	<!-- IF S_CHANGE_EMAIL -->
-	<div class="form-group">
-		<label class="control-label" for="email_confirm">{L_CONFIRM_EMAIL}</label>
-		<div class="controls">
-			<input type="text" name="email_confirm" id="email_confirm" maxlength="100" value="{CONFIRM_EMAIL}" class="input-xlarge" title="{L_CONFIRM_EMAIL}" />
-			<span class="help-block">{L_CONFIRM_EMAIL_EXPLAIN}</span>
-		</div>
-	</div>
-	<!-- ENDIF -->
-	<!-- IF S_CHANGE_PASSWORD -->
-	<div class="form-group">
-		<label class="control-label" for="new_password">{L_NEW_PASSWORD}</label>
-		<div class="controls">
-			<input type="password" name="new_password" id="new_password" maxlength="255" value="{NEW_PASSWORD}" class="input-xlarge" title="{L_CHANGE_PASSWORD}" />
-			<span class="help-block">{L_CHANGE_PASSWORD_EXPLAIN}</span>
-		</div>
-	</div>
-	<div class="form-group">
-		<label class="control-label" for="new_password">{L_CONFIRM_PASSWORD}</label>
-		<div class="controls">
-			<input type="password" name="password_confirm" id="password_confirm" maxlength="255" value="{PASSWORD_CONFIRM}" class="input-xlarge" title="{L_CONFIRM_PASSWORD}" />
-			<span class="help-block"><em>{L_CONFIRM_PASSWORD_EXPLAIN}</em></span>
-		</div>
-	</div>
-	<!-- ENDIF -->
-	</fieldset>
-	<fieldset>
-		<div class="form-group">
-			<label class="control-label" for="cur_password">{L_CURRENT_PASSWORD}</label>
-			<div class="controls">
-				<input type="password" name="cur_password" id="cur_password" maxlength="255" value="{CUR_PASSWORD}" class="input-xlarge" title="{L_CURRENT_PASSWORD}" />
-				<span class="help-block"><em><!-- IF S_CHANGE_PASSWORD -->{L_CURRENT_CHANGE_PASSWORD_EXPLAIN}<!-- ELSE -->{L_CURRENT_PASSWORD_EXPLAIN}<!-- ENDIF --></em></span>
+<div class="panel panel-default">
+	<div class="panel-heading"><h2 class="panel-title"><i class="icon-cog"></i> {L_TITLE}</h2></div>
+	<div class="panel-body">
+		<!-- IF S_FORCE_PASSWORD -->
+		<p>{L_FORCE_PASSWORD_EXPLAIN}</p>
+		<!-- ENDIF -->
+		
+		<fieldset>
+			<!-- IF ERROR --><p class="alert alert-danger alert-block">{ERROR}</p><!-- ENDIF -->
+			<div class="form-group">
+				<label class="control-label col-sm-5" for="username">{L_USERNAME}</label>
+				<div class="col-sm-7">
+					<!-- IF S_CHANGE_USERNAME -->
+					<input type="text" name="username" id="username" class="form-control" value="{USERNAME}" title="{L_USERNAME}" />
+					<!-- ELSE -->
+					<span class="form-control uneditable-input">{USERNAME}</span>
+					<!-- ENDIF -->
+					<span class="help-block"><em>{L_USERNAME_EXPLAIN}</em></span>
+				</div>
 			</div>
-		</div>
-	</fieldset>
-
-	<fieldset class="form-actions">
+			<div class="form-group">
+				<label class="control-label col-sm-5" for="email">{L_EMAIL_ADDRESS}</label>
+				<div class="col-sm-7">
+					<!-- IF S_CHANGE_EMAIL -->
+					<input type="text" name="email" id="email" maxlength="100" value="{EMAIL}" class="form-control" title="{L_EMAIL_ADDRESS}" />
+					<!-- ELSE -->
+					<span class="form-control uneditable-input">{EMAIL}</span>
+					<!-- ENDIF -->
+				</div>
+			</div>
+			<!-- IF S_CHANGE_EMAIL -->
+			<div class="form-group">
+				<label class="control-label col-sm-5" for="email_confirm">{L_CONFIRM_EMAIL}</label>
+				<div class="col-sm-7">
+					<input type="text" name="email_confirm" id="email_confirm" maxlength="100" value="{CONFIRM_EMAIL}" class="form-control" title="{L_CONFIRM_EMAIL}" />
+					<span class="help-block">{L_CONFIRM_EMAIL_EXPLAIN}</span>
+				</div>
+			</div>
+			<!-- ENDIF -->
+			<!-- IF S_CHANGE_PASSWORD -->
+			<div class="form-group">
+				<label class="control-label col-sm-5" for="new_password">{L_NEW_PASSWORD}</label>
+				<div class="col-sm-7">
+					<input type="password" name="new_password" id="new_password" maxlength="255" value="{NEW_PASSWORD}" class="form-control" title="{L_CHANGE_PASSWORD}" />
+					<span class="help-block">{L_CHANGE_PASSWORD_EXPLAIN}</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-5" for="new_password">{L_CONFIRM_PASSWORD}</label>
+				<div class="col-sm-7">
+					<input type="password" name="password_confirm" id="password_confirm" maxlength="255" value="{PASSWORD_CONFIRM}" class="form-control" title="{L_CONFIRM_PASSWORD}" />
+					<span class="help-block"><em>{L_CONFIRM_PASSWORD_EXPLAIN}</em></span>
+				</div>
+			</div>
+			<!-- ENDIF -->
+			<div class="form-group">
+				<label class="control-label col-sm-5" for="cur_password">{L_CURRENT_PASSWORD}</label>
+				<div class="col-sm-7">
+					<input type="password" name="cur_password" id="cur_password" maxlength="255" value="{CUR_PASSWORD}" class="form-control" title="{L_CURRENT_PASSWORD}" />
+					<span class="help-block"><em><!-- IF S_CHANGE_PASSWORD -->{L_CURRENT_CHANGE_PASSWORD_EXPLAIN}<!-- ELSE -->{L_CURRENT_PASSWORD_EXPLAIN}<!-- ENDIF --></em></span>
+				</div>
+			</div>
+		</fieldset>
+	</div>
+	<div class="panel-footer">
 		{S_HIDDEN_FIELDS}
-		<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" />
-		<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
-		{S_FORM_TOKEN}
-	</fieldset>
+		<fieldset class="btn-group">
+			<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" />
+			<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-primary" />
+		</fieldset>
+		{S_FORM_TOKEN}	
+	</div>
+</div>
+
+		
+	
 </form>
 
 <!-- INCLUDE ucp_footer.html -->
