@@ -38,25 +38,21 @@
 					<!-- ENDIF -->
 				<!-- END t_block2 -->
 				<!-- IF .friends_online or .friends_offline -->
-					<li style="margin-left:10px">
-						<hr/>
+					<li class="divider"><hr/></li>
+					<li style="margin-left:17px;margin-right:17px;">
 						<h4>{L_FRIENDS}</h4>
+						<ul class="list-group">
 						<!-- IF .friends_online -->
-						<h5>{L_FRIENDS_ONLINE}</h5>
-						<ul class="icons-ul">
 							<!-- BEGIN friends_online -->
-								<li class="text-success"><i class="icon-li icon-user"></i> {friends_offline.USERNAME_FULL} <!-- IF S_SHOW_PM_BOX --><input type="submit" name="add_to[{friends_offline.USER_ID}]" value="{L_ADD}" class="btn btn-default btn-xs" /><!-- ENDIF --></li>
+								<li class="list-group-item"><i class="icon-user text-success"></i> <strong>{friends_online.USERNAME_FULL}</strong> <!-- IF S_SHOW_PM_BOX --><input type="submit" name="add_to[{friends_online.USER_ID}]" value="{L_ADD}" class="btn btn-success btn-xs pull-right" /><!-- ELSE --><span class="label label-success pull-right">{L_ONLINE}</span><!-- ENDIF --></li>
 							<!-- END friends_online -->
-						</ul>
 						<!-- ENDIF -->
 						<!-- IF .friends_offline -->
-						<h5>&nbsp;&nbsp;{L_FRIENDS_OFFLINE}</h5>
-						<ul class="list-unstyled text-center">
 							<!-- BEGIN friends_offline -->
-								<li class="text-muted"><i class="icon-li icon-user"></i> {friends_offline.USERNAME_FULL} <!-- IF S_SHOW_PM_BOX --><input type="submit" name="add_to[{friends_offline.USER_ID}]" value="{L_ADD}" class="btn btn-default btn-xs" /><!-- ENDIF --></li>
+								<li class="list-group-item"><i class="icon-user"></i> <strong>{friends_offline.USERNAME_FULL}</strong> <!-- IF S_SHOW_PM_BOX --><input type="submit" name="add_to[{friends_offline.USER_ID}]" value="{L_ADD}" class="btn btn-default btn-xs pull-right" /><!-- ELSE --><span class="label label-default pull-right">{L_OFFLINE}</span><!-- ENDIF --></li>
 							<!-- END friends_offline -->
-						</ul>
 						<!-- ENDIF -->
+						</ul>
 					</li>		
 				<!-- ENDIF -->
 				<!-- IF S_SHOW_COLOUR_LEGEND -->
