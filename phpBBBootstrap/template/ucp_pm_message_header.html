@@ -1,26 +1,31 @@
-<h2><i class="icon-folder-open-alt"></i> {L_TITLE}<!-- IF CUR_FOLDER_NAME --> : {CUR_FOLDER_NAME}<!-- ENDIF --></h2>
-
 <form id="viewfolder" method="post" action="{S_PM_ACTION}" class="form form-horizontal">
-	<!-- IF ERROR -->
-	<div class="alert alert-danger">
-		 <button type="button" class="close" data-dismiss="alert">&times;</button>
-		<p>{ERROR}</p>
-	</div>
-	<!-- ENDIF -->
-	
-	<!-- IF FOLDER_STATUS and FOLDER_MAX_MESSAGES neq 0 -->
-	<div class="row">
-		<div class="col-md-4">
-			<p class="small">{FOLDER_STATUS}</p>
+<div class="panel panel-default">
+	<div class="panel-heading"><h2 class="panel-title"><i class="icon-folder-open-alt"></i> {L_TITLE}<!-- IF CUR_FOLDER_NAME --> : {CUR_FOLDER_NAME}<!-- ENDIF --></h2></div>
+	<div class="panel-body">
+		<!-- IF ERROR -->
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<p>{ERROR}</p>
 		</div>
-		<div class="">
-			<div class="progress progress-striped">
-  				<div class="progress-bar" style="width: {FOLDER_PERCENT}%;"></div>
+		<!-- ENDIF -->
+
+
+		<!-- IF FOLDER_STATUS and FOLDER_MAX_MESSAGES neq 0 -->
+		<div class="row">
+			<div class="col-sm-4">
+				<p class="small">{FOLDER_STATUS}</p>
+			</div>
+			<div class="col-sm-8 hidden-xs">
+				<div class="progress progress-striped">
+	  				<div class="progress-bar" style="width: {FOLDER_PERCENT}%;"></div>
+				</div>
 			</div>
 		</div>
-	</div>
-	<!-- ENDIF -->
-			<!-- IF U_POST_REPLY_PM or U_POST_NEW_TOPIC or U_FORWARD_PM or S_VIEW_MESSAGE -->
+		<!-- ENDIF -->
+
+		<!-- IF U_POST_REPLY_PM or U_POST_NEW_TOPIC or U_FORWARD_PM or S_VIEW_MESSAGE or TOTAL_MESSAGES -->
+		<div class="form-group">
+			<div class="col-xs-12">
 				<!-- IF S_VIEW_MESSAGE -->
 					<a class="btn btn-default" href="{U_CURRENT_FOLDER}"><i class="icon-folder-open-alt"></i> {CUR_FOLDER_NAME}</a>
 				<!-- ENDIF -->
@@ -28,7 +33,7 @@
 					<!-- IF U_POST_REPLY_PM -->
 						<a class="btn btn-default tooltip-link" title="{L_POST_REPLY_PM}" href="{U_POST_REPLY_PM}"><i class="icon-mail-reply"></i><span class="hidden"> {U_POST_REPLY_PM}</span></a>
 					<!-- ELSEIF U_POST_NEW_TOPIC -->
-						<a class="btn btn-default tooltip-link" href="{U_POST_NEW_TOPIC}" accesskey="n" title="{L_UCP_PM_COMPOSE}"><i class="icon-file"></i><span class="hidden"> {L_UCP_PM_COMPOSE}</span></a>
+						<a class="btn btn-default tooltip-link" href="{U_POST_NEW_TOPIC}" accesskey="n" title="{L_UCP_PM_COMPOSE}"><i class="icon-file"></i>&nbsp;{L_UCP_PM_COMPOSE}</a>
 					<!-- ENDIF -->
 					<!-- IF U_POST_REPLY_PM and S_PM_RECIPIENTS gt 1 -->
 						<a class="btn btn-default tooltip-link" title="{L_REPLY_TO_ALL}" href="{U_POST_REPLY_ALL}"><i class="icon-mail-reply-all"></i><span class="hidden"> {U_POST_REPLY_ALL}</span></a>
@@ -37,21 +42,33 @@
 						<a class="btn btn-default tooltip-link" title="{L_POST_FORWARD_PM}" href="{U_FORWARD_PM}"><i class="icon-mail-forward"></i><span class="hidden"> {U_FORWARD_PM}</span></a>
 					<!-- ENDIF -->
 				</div>
-				<div class="btn-group">
 				<!-- IF U_DELETE or U_EDIT or U_QUOTE or U_REPORT -->
-					<!-- IF U_EDIT --><a class="btn btn-default tooltip-link" href="{U_EDIT}" title="{L_POST_EDIT_PM}"><i class="icon-pencil"></i><span class="hidden">{L_POST_EDIT_PM}</span></a><!-- ENDIF -->
-					<!-- IF U_DELETE --><a class="btn btn-default tooltip-link" href="{U_DELETE}" title="{L_DELETE_MESSAGE}"><i class="icon-trash"></i><span class="hidden">{L_DELETE_MESSAGE}</span></a><!-- ENDIF -->
-					<!-- IF U_REPORT --><a class="btn btn-default tooltip-link" href="{U_REPORT}" title="{L_REPORT_PM}"><i class="icon-warning-sign"></i><span class="hidden">{L_REPORT_PM}</span></a><!-- ENDIF -->
-					<!-- IF U_QUOTE --><a class="btn btn-default tooltip-link" href="{U_QUOTE}" title="{L_POST_QUOTE_PM}"><i class="icon-quote-right"></i><span class="hidden">{L_POST_QUOTE_PM}</span></a><!-- ENDIF -->
+					<div class="btn-group">
+						<!-- IF U_EDIT --><a class="btn btn-default tooltip-link" href="{U_EDIT}" title="{L_POST_EDIT_PM}"><i class="icon-pencil"></i><span class="hidden">{L_POST_EDIT_PM}</span></a><!-- ENDIF -->
+						<!-- IF U_DELETE --><a class="btn btn-default tooltip-link" href="{U_DELETE}" title="{L_DELETE_MESSAGE}"><i class="icon-trash"></i><span class="hidden">{L_DELETE_MESSAGE}</span></a><!-- ENDIF -->
+						<!-- IF U_REPORT --><a class="btn btn-default tooltip-link" href="{U_REPORT}" title="{L_REPORT_PM}"><i class="icon-warning-sign"></i><span class="hidden">{L_REPORT_PM}</span></a><!-- ENDIF -->
+						<!-- IF U_QUOTE --><a class="btn btn-default tooltip-link" href="{U_QUOTE}" title="{L_POST_QUOTE_PM}"><i class="icon-quote-right"></i><span class="hidden">{L_POST_QUOTE_PM}</span></a><!-- ENDIF -->
+					</div>
 				<!-- ENDIF -->
-				</div>
+				
+				<!-- IF S_DISPLAY_HISTORY and (U_VIEW_PREVIOUS_HISTORY or U_VIEW_NEXT_HISTORY) -->
+					<div class="btn-group">
+						<!-- IF U_VIEW_PREVIOUS_HISTORY --><a href="{U_VIEW_PREVIOUS_HISTORY}" class="btn btn-default">{L_VIEW_PREVIOUS_HISTORY}</a><!-- ENDIF -->
+						<!-- IF U_VIEW_NEXT_HISTORY --><a href="{U_VIEW_NEXT_HISTORY}" class="btn btn-default">{L_VIEW_NEXT_HISTORY}</a><!-- ENDIF -->
+					</div>
+				<!-- ENDIF -->
+				
 				<!-- IF S_VIEW_MESSAGE -->
 					<div class="btn-group">
 						<!-- IF U_PREVIOUS_PM --><a href="{U_PREVIOUS_PM}" class="btn btn-default tooltip-link" title="{L_VIEW_PREVIOUS_PM}"><i class="icon-double-angle-left"></i><span class="hidden">{L_VIEW_PREVIOUS_PM}</span></a><!-- ENDIF -->
 						<!-- IF U_NEXT_PM --><a href="{U_NEXT_PM}" class="btn btn-default tooltip-link" title="{L_VIEW_NEXT_PM}"><i class="icon-double-angle-right"></i><span class="hidden">{L_VIEW_NEXT_PM}</span></a><!-- ENDIF -->
 					</div>
 				<!-- ENDIF -->
-			<!-- ENDIF -->
-		<!-- IF TOTAL_MESSAGES or S_VIEW_MESSAGE -->
-			<span class="pull-right"><!-- INCLUDE pagination.html --></span>
+				<!-- IF TOTAL_MESSAGES or S_VIEW_MESSAGE -->
+					<span class="pull-right"><!-- INCLUDE pagination.html --></span>
+				<!-- ENDIF -->
+			</div>
+		</div>
 		<!-- ENDIF -->
+		
+		

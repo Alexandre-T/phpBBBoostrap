@@ -1,35 +1,48 @@
-
-<h3 id="review">
-	<span class="right-box"><a href="#review" onclick="viewableArea(getElementById('topicreview'), true); var rev_text = getElementById('review').getElementsByTagName('a').item(0).firstChild; if (rev_text.data == '{LA_EXPAND_VIEW}'){rev_text.data = '{LA_COLLAPSE_VIEW}'; } else if (rev_text.data == '{LA_COLLAPSE_VIEW}'){rev_text.data = '{LA_EXPAND_VIEW}'};">{L_EXPAND_VIEW}</a></span>
-	{L_MESSAGE_HISTORY}:
-</h3>
-
-<div id="topicreview">
-	<script type="text/javascript">
-	// <![CDATA[
-		bbcodeEnabled = {S_BBCODE_ALLOWED};
-	// ]]>
-	</script>
-	<!-- BEGIN history_row -->
-	<div class="post <!-- IF history_row.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
-
-		<div class="postbody" id="pr{history_row.MSG_ID}">
-			<!-- IF history_row.U_QUOTE or history_row.MESSAGE_AUTHOR_QUOTE -->
-			<ul class="profile-icons">
-				<li class="quote-icon"><a <!-- IF history_row.U_QUOTE -->href="{history_row.U_QUOTE}"<!-- ELSE -->href="#postingbox" onclick="addquote({history_row.MSG_ID}, '{history_row.MESSAGE_AUTHOR_QUOTE}', '{LA_WROTE}');"<!-- ENDIF --> title="{L_QUOTE} {history_row.MESSAGE_AUTHOR}"><span>{L_QUOTE} {history_row.MESSAGE_AUTHOR}</span></a></li>
-			</ul>
-			<!-- ENDIF -->
-
-			<h3><a href="{history_row.U_VIEW_MESSAGE}" <!-- IF history_row.S_CURRENT_MSG -->class="current"<!-- ENDIF -->>{history_row.SUBJECT}</a></h3>
-			<p class="author">{history_row.MINI_POST_IMG} {L_SENT_AT}: <strong>{history_row.SENT_DATE}</strong><br />
-				{L_MESSAGE_BY_AUTHOR} {history_row.MESSAGE_AUTHOR_FULL}</p>
-			<div class="content"><!-- IF history_row.MESSAGE -->{history_row.MESSAGE}<!-- ELSE --><span class="error">{L_MESSAGE_REMOVED_FROM_OUTBOX}</span><!-- ENDIF --></div>
-			<div id="message_{history_row.MSG_ID}" style="display: none;">{history_row.DECODED_MESSAGE}</div>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="pull-right">
+			<a id ="review" href="#topicreview" onclick="viewableArea(getElementById('topicreview'), true); ; if ($('#review').html() == '{LA_EXPAND_VIEW}'){$('#review').html('{LA_COLLAPSE_VIEW}'); } else {$('#review').html('{LA_EXPAND_VIEW}')};">{L_EXPAND_VIEW}</a>		
 		</div>
-
+		<h2 class="panel-title">{L_MESSAGE_HISTORY}</h2>
 	</div>
-	<!-- END history_row -->
+	<div class="panel-body">
+	
+		<div id="topicreview">
+			<script type="text/javascript">
+			// <![CDATA[
+				bbcodeEnabled = {S_BBCODE_ALLOWED};
+			// ]]>
+			</script>
+			<!-- BEGIN history_row -->
+			<div class="post <!-- IF history_row.S_ROW_COUNT is even -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+		
+				<div class="postbody" id="pr{history_row.MSG_ID}">
+					<!-- IF ! history_row.S_FIRST_ROW -->
+					<hr/>
+					<!-- ENDIF -->
+					<!-- IF history_row.U_QUOTE or history_row.MESSAGE_AUTHOR_QUOTE -->
+					<div class="btn-group pull-right">
+						<a class="btn btn-default btn-xs" <!-- IF history_row.U_QUOTE -->href="{history_row.U_QUOTE}"<!-- ELSE -->href="#postingbox" onclick="addquote({history_row.MSG_ID}, '{history_row.MESSAGE_AUTHOR_QUOTE}', '{LA_WROTE}');"<!-- ENDIF --> title="{L_QUOTE} {history_row.MESSAGE_AUTHOR}"><i class="icon-quote"></i> {L_QUOTE} {history_row.MESSAGE_AUTHOR}</a>
+					</div>
+					<!-- ENDIF -->
+		
+					<h4><a href="{history_row.U_VIEW_MESSAGE}" <!-- IF history_row.S_CURRENT_MSG -->class="current"<!-- ENDIF -->>{history_row.SUBJECT}</a></h4>
+					<blockquote>
+						<!-- IF history_row.MESSAGE -->{history_row.MESSAGE}<!-- ELSE --><span class="error">{L_MESSAGE_REMOVED_FROM_OUTBOX}</span><!-- ENDIF -->
+						<small>{history_row.MINI_POST_IMG} {L_SENT_AT}: <strong>{history_row.SENT_DATE}</strong>{L_MESSAGE_BY_AUTHOR} {history_row.MESSAGE_AUTHOR_FULL}</small>
+					</blockquote>
+					<!-- Ceci sert à la citation -->
+					<div id="message_{history_row.MSG_ID}" style="display: none;">{history_row.DECODED_MESSAGE}</div>
+				</div>
+		
+			</div>
+			<!-- END history_row -->
+		</div>
+	
+	</div>
+	<div class="panel-footer"></div>
 </div>
+
 
 <hr />
 <p><a href="#cp-main" class="top2">{L_BACK_TO_TOP}</a></p>

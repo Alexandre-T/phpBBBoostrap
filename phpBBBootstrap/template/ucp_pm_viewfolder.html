@@ -5,30 +5,39 @@
 <!-- ENDIF -->
 
 <!-- IF PROMPT -->
-	<h3><i class="icon-list-alt"></i> {L_EXPORT_AS_CSV}</h3>
-	<form id="viewfolder" method="post" action="{S_PM_ACTION}" class="form form-horizontal">
-		<h4><i class="icon-cogs"></i> {L_OPTIONS}</h4>
-		<fieldset>
-			<div class="form-group">
-				<label class="control-label" for="delimiter">{L_DELIMITER}</label>
-				<div class="controls">
-					<input class="inputbox" type="text" id="delimiter" name="delimiter" value="," />
+<form id="viewfolder" method="post" action="{S_PM_ACTION}" class="form-horizontal">			
+	<div class="panel panel-default">
+		<div class="panel-heading"><h2 class="panel-title"><i class="icon-list-alt"></i> {L_EXPORT_AS_CSV}</h2></div>
+		<div class="panel-body">
+		
+			<fieldset>
+				<legend><i class="icon-cogs"></i> {L_OPTIONS}</legend>
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="delimiter">{L_DELIMITER}</label>
+					<div class="col-sm-8">
+						<input class="form-control" type="text" id="delimiter" name="delimiter" value="," />
+					</div>
 				</div>
-			</div>
-			<div class="form-group">
-				<label class="control-label" for="enclosure">{L_ENCLOSURE}</label>
-				<div class="controls">
-					<input class="inputbox" type="text" id="enclosure" name="enclosure" value="&#034;" />
+				<div class="form-group">
+					<label class="control-label col-sm-4" for="enclosure">{L_ENCLOSURE}</label>
+					<div class="col-sm-8">
+						<input class="form-control" type="text" id="enclosure" name="enclosure" value="&#034;" />
+					</div>
 				</div>
-			</div>
-		</fieldset>
-		<fieldset class="form-actions">
+			</fieldset>
+	
+		</div>
+		<div class="panel-footer">
 			<input type="hidden" name="export_option" value="CSV" />
-			<input class="btn btn-primary" type="submit" name="submit_export" value="{L_EXPORT_FOLDER}" />&nbsp;
-			<input class="btn btn-default" type="reset" value="Reset" name="reset" />&nbsp;
-			{S_FORM_TOKEN}
-		</fieldset>
-	</form>
+			<fieldset class="btn-group">
+				<input class="btn btn-default" type="reset" value="{L_RESET}" name="reset" />&nbsp;
+				<input class="btn btn-primary" type="submit" name="submit_export" value="{L_EXPORT_FOLDER}" />&nbsp;
+				{S_FORM_TOKEN}
+			</fieldset>
+		</div>
+	</div>
+</form>
+	
 
 <!-- ELSE -->
 
@@ -37,15 +46,55 @@
 	<!-- ENDIF -->
 
 	<!-- IF NUM_NOT_MOVED -->
-		<div class="alert alert-danger alert-block">
-			
+		<div class="alert alert-warning">
+			<a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
 			<h4>{NOT_MOVED_MESSAGES}</h4>
 			<p>{RELEASE_MESSAGE_INFO}</p>
 		</div>
 	<!-- ENDIF -->
 
+	<!-- IF ! .messagerow -->
+		<!-- IF S_COMPOSE_PM_VIEW and S_NO_AUTH_SEND_MESSAGE -->
+			<p class="alert alert-block"><!-- IF S_USER_NEW -->{L_USER_NEW_PERMISSION_DISALLOWED}<!-- ELSE -->{L_NO_AUTH_SEND_MESSAGE}<!-- ENDIF --></p>
+		<!-- ELSE -->
+			<p class="alert alert-block alert-info">{L_NO_MESSAGES}</p>
+		<!-- ENDIF -->
+	<!-- ENDIF -->
+
+	<!-- IF FOLDER_CUR_MESSAGES neq 0 -->
+	<div class="form-horizontal text-center">
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="input-group">
+					<div class="input-group-addon">{L_DISPLAY}</div>
+					{S_SELECT_SORT_DAYS}
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="input-group">
+					<div class="input-group-addon">{L_SORT_BY}</div>
+					{S_SELECT_SORT_KEY}
+					{S_SELECT_SORT_DIR}
+					<div class="input-group-btn">
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="button_sort_sd">{L_GO} <span class="caret"></span></button>
+						<ul class="dropdown-menu">
+							<li><a href="#" onclick="if (sort_asc_sd()) $('#viewfolder').submit();" id="sort_asc_sd"><i class="icon-sort-amount-asc"></i> Croissant</a></li>
+							<li><a href="#" onclick="if (sort_desc_sd()) $('#viewfolder').submit();" id="sort_desc_sd"><i class="icon-sort-amount-desc"></i> Décroissant</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<input type="hidden" name="cur_folder_id" value="{CUR_FOLDER_ID}" />
+
+	<!-- ENDIF -->
+
+	</div><!-- Fermeture de div panel-body -->
+	
 	<!-- IF .messagerow -->
-		<table class="table table-striped table-bordered table-hover table-condensed">
+			<table class="table table-striped table-bordered table-hover table-condensed">
 			<thead>
 				<tr>
 					<th>{L_MESSAGE}</th>
@@ -112,51 +161,39 @@
 		<!-- END messagerow -->
 			</tbody>
 		</table>
-
-	<!-- ELSE -->
-		<!-- IF S_COMPOSE_PM_VIEW and S_NO_AUTH_SEND_MESSAGE -->
-			<p class="alert alert-block"><!-- IF S_USER_NEW -->{L_USER_NEW_PERMISSION_DISALLOWED}<!-- ELSE -->{L_NO_AUTH_SEND_MESSAGE}<!-- ENDIF --></p>
-		<!-- ELSE -->
-			<p class="alert alert-block alert-info">{L_NO_MESSAGES}</p>
-		<!-- ENDIF -->
 	<!-- ENDIF -->
-
 	<!-- IF FOLDER_CUR_MESSAGES neq 0 -->
-	<fieldset class="form-inline pull-right">
-		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
-		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
-		<label>{L_DISPLAY} {S_SELECT_SORT_DAYS}</label>
-		<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
-		<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-default" /></label>
-		<input type="hidden" name="cur_folder_id" value="{CUR_FOLDER_ID}" />
-	</fieldset>
-
-	<!-- INCLUDE pagination.html -->
-
-	<fieldset class="form-actions">
-		<div class="input-group">
-			<select name="mark_option">{S_MARK_OPTIONS}{S_MOVE_MARKED_OPTIONS}</select>
-			<input class="btn btn-default" type="submit" name="submit_mark" value="{L_GO}" />
-		</div>
-			<div class="btn-group">
-			<a class="btn btn-default visible-md" href="#" onclick="$(':checkbox','#viewfolder').prop('checked',true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
-			<a class="btn btn-default visible-md" href="#" onclick="$(':checkbox','#viewfolder').removeAttr('checked'); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
-		</div>
-		
-	</fieldset>
-	
-	
-	<fieldset class="form form-inline">
-		<div class="text-right">
-			<label for="export_option">{L_EXPORT_FOLDER}</label>
-			<div class="input-group">
-				<select name="export_option" id="export_option"><option value="CSV">{L_EXPORT_AS_CSV}</option><option value="CSV_EXCEL">{L_EXPORT_AS_CSV_EXCEL}</option><option value="XML">{L_EXPORT_AS_XML}</option></select> <input class="btn btn-default" type="submit" name="submit_export" value="{L_GO}" />
+	<div class="panel-footer">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="input-group">
+					<select class="form-control" name="mark_option">{S_MARK_OPTIONS}{S_MOVE_MARKED_OPTIONS}</select>
+					<div class="input-group-btn">
+						<input class="btn btn-default" type="submit" name="submit_mark" value="{L_GO}" />
+					</div>
+				</div>
+				<div class="btn-group">
+					<a class="btn btn-default visible-md" href="#" onclick="$(':checkbox','#viewfolder').prop('checked',true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
+					<a class="btn btn-default visible-md" href="#" onclick="$(':checkbox','#viewfolder').removeAttr('checked'); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+				</div>
+			</div>
+			<div class="col-sm-6 text-right">
+				<div class="input-group">
+					<div class="input-group-addon">{L_EXPORT_FOLDER}</div>
+					<select class="form-control" name="export_option" id="export_option">
+						<option value="CSV">{L_EXPORT_AS_CSV}</option>
+						<option value="CSV_EXCEL">{L_EXPORT_AS_CSV_EXCEL}</option>
+						<option value="XML">{L_EXPORT_AS_XML}</option>
+					</select>
+					<div class="input-group-btn">
+						<input class="btn btn-default" type="submit" name="submit_export" value="{L_GO}" />
+					</div>
+				</div>
 			</div>
 		</div>
-	</fieldset>
-
-	<hr />
+	</div>
 	<!-- ENDIF -->
+
 
 	<!-- INCLUDE ucp_pm_message_footer.html -->
 <!-- ENDIF -->

@@ -1,11 +1,9 @@
 <!-- IF S_SELECT_SORT_DAYS and not S_DISPLAY_ACTIVE -->
-	<form method="post" action="{S_FORUM_ACTION}" class="form form-inline text-right">
-		<fieldset class="display-options">
-			<!-- IF topicrow and not S_IS_BOT  -->
-				<label><small>{L_DISPLAY_TOPICS}: {S_SELECT_SORT_DAYS}</small></label>
-				<label><small>{L_SORT_BY} {S_SELECT_SORT_KEY}</small></label>
-				{S_SELECT_SORT_DIR} <button type="submit" name="sort" class="btn btn-default" ><i class="icon-sort-by-attributes"></i></button>
-			<!-- ENDIF -->
-		</fieldset>
-	</form>
+	<fieldset class="display-options">
+		<!-- IF topicrow and not S_IS_BOT  -->
+			<label><small>{L_DISPLAY_TOPICS}: {S_SELECT_SORT_DAYS}</small></label>
+			<label><small>{L_SORT_BY} {S_SELECT_SORT_KEY}</small></label>
+			{S_SELECT_SORT_DIR} <button type="submit" name="sort" class="btn btn-default" ><i class="icon-sort-by-attributes"></i></button>
+		<!-- ENDIF -->
+	</fieldset>
 <!-- ENDIF -->

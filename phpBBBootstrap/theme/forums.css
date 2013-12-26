@@ -126,8 +126,11 @@ dd.pm_foe_colour, tr.pm_foe_colour td:first-child{
 }
 button.btn-second{
 	border-radius: 0;
-	border-radius: 0;
 	border-right-style:none;
+}
+/* en français deuxième signifie la présence d'un troisième */
+.input-group-btn-deuxieme a.btn{
+	border-radius: 0;
 }
 table tr td.text-middle{
 	vertical-align: middle;

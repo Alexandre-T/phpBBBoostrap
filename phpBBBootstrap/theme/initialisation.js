@@ -74,6 +74,16 @@ function search_desc_sd(){
 	$('#button_sd').html( $('#search_desc_sd').html() + ' <span class="caret"></span>');
 	return false;
 }
+function sort_asc_sd(){
+	$('#sd').val('a');
+	$('#button_sort_sd').html( $('#sort_asc_sd').html() + ' <span class="caret"></span>');
+	return true;
+}
+function sort_desc_sd(){
+	$('#sd').val('d');
+	$('#button_sort_sd').html( $('#sort_desc_sd').html() + ' <span class="caret"></span>');
+	return true;
+}
 
 
 	
@@ -92,9 +102,6 @@ function search_desc_sd(){
     $('.tooltip-top').tooltip({      
         container : 'body'
       });
-    $('select#st').addClass('form-control ');
-    $('select#sk').addClass('form-control ');
-    $('select#sd').addClass('form-control ');
     
     $('a','.pagination-line').addClass('btn btn-default btn-xs');
     $('span.page-dots','.pagination-line').addClass('btn btn-default btn-xs disabled');
@@ -115,5 +122,10 @@ function search_desc_sd(){
     $('#count_select').val($('#count_select_cache').val());
     $('#button_sd').html($('#sd_cache option:selected').html() + ' ' + $('#button_sd').html());
     $('#sd').val($('#sd_cache').val());
+    //Paramètre pour les tris
+    $('select#st').addClass('form-control ');
+    $('select#sk').addClass('form-control ');
+    $('select#sd').addClass('sr-only');
+
   })
 }(window.jQuery)
