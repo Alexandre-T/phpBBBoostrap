@@ -2,13 +2,13 @@
 <form method="post" id="mcp" action="{U_POST_ACTION}">
 
 <div class="panel panel-default">
-	<div class="panel-heading"><h4>{L_WARNED_USERS}</h4></div>
+	<div class="panel-heading"><h3 class="panel-title">{L_WARNED_USERS}</h3></div>
 	<div class="panel-body">
 	
 		<!-- IF .user -->
 			<div class="btn-group pull-right">
 				<!-- IF TOTAL_USERS --><span class="btn btn-default btn-xs disabled">{TOTAL_USERS}</span><!-- ENDIF -->
-				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --><a href="#" class="btn btn-default btn-xs" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>{PAGINATION}<!-- ELSE --><span class="btn btn-default btn-xs">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->		
+				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --><a href="#" class="btn btn-default btn-xs" onclick="jumpto('{A_BASE_URL}','{PER_PAGE}'); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>{PAGINATION}<!-- ELSE --><span class="btn btn-default btn-xs">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->		
 			</div>
 		<!-- ENDIF -->
 		<p>{L_WARNED_USERS_EXPLAIN}</p>

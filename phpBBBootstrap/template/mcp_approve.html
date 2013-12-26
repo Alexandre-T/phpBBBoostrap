@@ -1,9 +1,9 @@
 <!-- INCLUDE overall_header.html -->
-<section>
 <form id="confirm" action="{S_CONFIRM_ACTION}" method="post" class="form-horizontal">
-<div class="panel">
-	{S_FORM_TOKEN}
-		<h3>{MESSAGE_TITLE}</h3>
+{S_FORM_TOKEN}
+<div class="panel panel-default">
+	<div class="panel-heading"><h3 class="panel-title">{MESSAGE_TITLE}</h3></div>
+	<div class="panel-body">
 		<!-- IF ADDITIONAL_MSG -->
 			<div class="alert alert-danger">
 				{ADDITIONAL_MSG}
@@ -26,35 +26,41 @@
 			</div>
 		<!-- ENDIF -->
 
-		<!-- IF not S_APPROVE -->
+		<!-- IF S_APPROVE -->
+			<p>
+				<strong>{MESSAGE_TEXT}</strong>
+			</p>
+		<!-- ELSE -->		
 			<div class="form-group">
-				<label for="notify_poster" class="control-label">{L_DISAPPROVE_REASON} </label>
-				<div class="controls">
-					<select name="reason_id">
+				<label for="notify_poster" class="control-label col-sm-4">{L_DISAPPROVE_REASON} </label>
+				<div class="col-sm-8">
+					<select class="form-control" name="reason_id">
 					<!-- BEGIN reason --><option value="{reason.ID}"<!-- IF reason.S_SELECTED --> selected="selected"<!-- ENDIF -->>{reason.DESCRIPTION}</option><!-- END reason -->
 					</select>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="reason" class="control-label">{L_MORE_INFO} </label>
-				<div class="controls">
-					<textarea class="input-block-level" name="reason" id="reason" rows="4" cols="40">{REASON}</textarea>
-					<span class="form-explications">{L_CAN_LEAVE_BLANK}</span>
+				<label for="reason" class="control-label col-sm-4">{L_MORE_INFO} </label>
+				<div class="col-sm-8">
+					<textarea class="form-control" name="reason" id="reason" rows="4" cols="40">{REASON}</textarea>
+					<span class="help-block">{L_CAN_LEAVE_BLANK}</span>
 				</div>
 			</div>
 		<!-- ENDIF -->
 		</fieldset>
-		<hr class="dashed"/>
-		<p>
-			<strong>{MESSAGE_TEXT}</strong>
-		</p>
+	</div>
+	<div class="panel-footer">
+		<!-- IF ! S_APPROVE -->
+			<p>
+				<strong>{MESSAGE_TEXT}</strong>
+			</p>
+		<!-- ENDIF -->
 		{S_HIDDEN_FIELDS}
 		<div class="btn-group text-center">
 			<input type="submit" name="confirm" value="{YES_VALUE}" class="btn btn-primary" />
 			<input type="submit" name="cancel" value="{L_CANCEL}" class="btn btn-default" />
 		</div>
-		<br/><br/>
+	</div>
 </div>
 </form>
-</section>
 <!-- INCLUDE overall_footer.html -->

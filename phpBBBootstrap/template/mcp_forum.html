@@ -6,21 +6,8 @@
 <form method="post" id="mcp" action="{S_MCP_ACTION}" class="form-horizontal">
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<!-- IF PAGINATION or TOTAL_TOPICS -->
-		<div class="btn-group pull-right">
-			<!-- IF TOTAL_TOPICS --><span class="btn btn-default btn-xs disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
-			<!-- IF PAGE_NUMBER -->
-				<!-- IF PAGINATION -->
-					<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-xs">{PAGE_NUMBER}</a>
-					{PAGINATION}
-				<!-- ELSE -->
-					<span class="btn btn-default btn-xs disabled">{PAGE_NUMBER}</span>
-				<!-- ENDIF -->
-			<!-- ENDIF -->
-		</div>
-		<!-- ENDIF -->
-		
-		<h3><a href="{U_VIEW_FORUM}">{L_FORUM}: {FORUM_NAME}</a></h3>
+		<div class="btn-group pull-right"><!-- INCLUDE pagination.html --></div>
+		<h3 class="panel-title"><a href="{U_VIEW_FORUM}">{L_FORUM}: {FORUM_NAME}</a></h3>
 	</div>
 	<div class="panel-body">
 		
@@ -101,11 +88,7 @@
 	<div class="panel-footer">
 	<!-- IF PAGINATION or TOTAL_TOPICS -->
 		<div class="btn-group pull-right">
-			<!-- IF TOTAL_TOPICS --><span class="btn btn-default btn-xs disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
-			<!-- IF PREVIOUS_PAGE --><a class="btn btn-default btn-xs" href="{PREVIOUS_PAGE}" title="{L_PREVIOUS}"><i class="icon-double-angle-left"></i></a><!-- ENDIF -->
-			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --><a href="#" class="btn btn-default btn-xs" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>{PAGINATION}<!-- ELSE --><span class="btn btn-default btn-xs disabled">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->
-			<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-default btn-xs" title="{L_NEXT}"><i class="icon-double-angle-right"></i></a><!-- ENDIF -->
-			<!-- IF not S_MERGE_SELECT --><a class="btn btn-default btn-xs" href="#" onclick="marklist('mcp', 'topic_id_list', true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a><a class="btn btn-default btn-xs" href="#" onclick="marklist('mcp', 'topic_id_list', false); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a><!-- ENDIF -->
+			<!-- INCLUDE pagination.html -->
 		</div>
 	<!-- ENDIF -->
 	<fieldset >

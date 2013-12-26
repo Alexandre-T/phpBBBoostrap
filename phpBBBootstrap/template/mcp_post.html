@@ -1,13 +1,15 @@
 <!-- INCLUDE mcp_header.html -->
 	<div class="panel panel-default">
 		<div class="panel-heading">
+			<h3 class="panel-title">
 			<!-- IF S_MCP_REPORT and S_PM -->
-			<h4>{L_PM_REPORT_DETAILS}</h4>
+			{L_PM_REPORT_DETAILS}
 			<!-- ELSEIF S_MCP_REPORT -->
-			<h4>{L_REPORT_DETAILS}</h4>
+			{L_REPORT_DETAILS}
 			<!-- ELSE -->
-			<h4>{L_POST_DETAILS}</h4>
+			{L_POST_DETAILS}
 			<!-- ENDIF -->
+			</h3>
 		</div>
 		<div class="panel-body">
 			<!-- IF S_MCP_REPORT -->			
@@ -50,19 +52,6 @@
 		
 			<h4><a href="{U_VIEW_POST}">{POST_SUBJECT}</a></h4>
 
-		
-			<!-- IF S_POST_UNAPPROVED -->
-				<form method="post" id="mcp_approve" action="{U_APPROVE_ACTION}">
-				
-				<!-- IF not S_FIRST_POST --><input type="hidden" name="mode" value="unapproved_posts" /><!-- ENDIF -->
-				<input type="hidden" name="post_id_list[]" value="{POST_ID}" />
-				{S_FORM_TOKEN}
-				<div class="btn-group">
-					<input class="btn btn-warning" type="submit" value="{L_DISAPPROVE}" name="action[disapprove]" />
-					<input class="btn btn-success" type="submit" value="{L_APPROVE}" name="action[approve]" /> 				
-				</div>
-				</form>
-			<!-- ENDIF -->
 		
 			<!-- IF S_MESSAGE_REPORTED -->
 				<div class="btn-group">
@@ -109,12 +98,26 @@
 				</div>
 			<!-- ENDIF -->
 		</div><!-- panel-body -->
+		<div class="panel-footer">
+			<!-- IF S_POST_UNAPPROVED -->
+				<form method="post" id="mcp_approve" action="{U_APPROVE_ACTION}">
+				
+				<!-- IF not S_FIRST_POST --><input type="hidden" name="mode" value="unapproved_posts" /><!-- ENDIF -->
+				<input type="hidden" name="post_id_list[]" value="{POST_ID}" />
+				{S_FORM_TOKEN}
+				<div class="btn-group">
+					<input class="btn btn-warning" type="submit" value="{L_DISAPPROVE}" name="action[disapprove]" />
+					<input class="btn btn-success" type="submit" value="{L_APPROVE}" name="action[approve]" /> 				
+				</div>
+				</form>
+			<!-- ENDIF -->
+		</div>
 	</div>
 	<!-- IF S_CAN_LOCK_POST or S_CAN_DELETE_POST or S_CAN_CHGPOSTER -->
 	
 	<div class="panel panel-default">
 		<div class="panel-heading">	
-			<h4>{L_MOD_OPTIONS}</h4>
+			<h3 class="panel-title">{L_MOD_OPTIONS}</h3>
 		</div>
 		<div class="panel-body">
 			<!-- IF S_CAN_CHGPOSTER -->
@@ -167,26 +170,29 @@
 			<!-- ENDIF -->
 			
 			</div>
+			<!-- IF S_MCP_QUEUE or S_MCP_REPORT or RETURN_TOPIC -->
+			<div class="panel-footer">
+				<div class="btn-group">
+					<!-- IF S_MCP_QUEUE -->
+						<span class="btn btn-default"><i class="icon-reply"></i>&nbsp;{RETURN_QUEUE}{RETURN_TOPIC_SIMPLE}{RETURN_POST}</span>
+					<!-- ELSEIF S_MCP_REPORT -->
+						<span class="btn btn-default"><i class="icon-reply"></i>&nbsp;{RETURN_REPORTS}</span>
+						<!-- IF not S_PM -->
+							<a class="btn btn-default" href="{U_VIEW_POST}">{L_VIEW_POST}</a>
+							<a class="btn btn-default" href="{U_VIEW_TOPIC}">{L_VIEW_TOPIC}</a>
+							<a class="btn btn-default" href="{U_VIEW_FORUM}">{L_VIEW_FORUM}</a>
+						<!-- ENDIF -->
+					<!-- ELSE -->
+						<span class="btn btn-default"><i class="icon-reply"></i>&nbsp;{RETURN_TOPIC}</span>
+					<!-- ENDIF -->
+				</div>
+			</div>
+		<!-- ENDIF -->
 		</div>
 		<!-- ENDIF -->
 			
 			
-		<!-- IF S_MCP_QUEUE or S_MCP_REPORT or RETURN_TOPIC -->
-			<div class="btn-group">
-				<!-- IF S_MCP_QUEUE -->
-					<span class="btn btn-default"><i class="icon-reply"></i>&nbsp;{RETURN_QUEUE}{RETURN_TOPIC_SIMPLE}{RETURN_POST}</span>
-				<!-- ELSEIF S_MCP_REPORT -->
-					<span class="btn btn-default"><i class="icon-reply"></i>&nbsp;{RETURN_REPORTS}</span>
-					<!-- IF not S_PM -->
-						<a class="btn btn-default" href="{U_VIEW_POST}">{L_VIEW_POST}</a>
-						<a class="btn btn-default" href="{U_VIEW_TOPIC}">{L_VIEW_TOPIC}</a>
-						<a class="btn btn-default" href="{U_VIEW_FORUM}">{L_VIEW_FORUM}</a>
-					<!-- ENDIF -->
-				<!-- ELSE -->
-					<span class="btn btn-default"><i class="icon-reply"></i>&nbsp;{RETURN_TOPIC}</span>
-				<!-- ENDIF -->
-			</div>
-		<!-- ENDIF -->
+		
 			
 		<!-- IF not S_MCP_QUEUE -->
 		
@@ -196,7 +202,7 @@
 					<form method="post" id="mcp_notes" action="{U_POST_ACTION}">
 		
 					<!-- IF S_USER_NOTES -->
-						<div class="panel-heading"><h4>{L_FEEDBACK}</h4></div>
+						<div class="panel-heading"><h3 class="panel-title">{L_FEEDBACK}</h3></div>
 						<div class="panel-body">
 							<!-- BEGIN usernotes -->
 								<strong>{L_REPORTED_BY}: {usernotes.REPORT_BY} &laquo; {usernotes.REPORT_AT}</strong>
@@ -248,11 +254,11 @@
 			<!-- IF S_CAN_VIEWIP and not S_MCP_REPORT -->
 				<div class="panel panel-default" id="ip">
 					<div class="panel-heading">
-						<h4 class="panel-title">{L_THIS_POST_IP}: <!-- IF U_WHOIS -->
+						<h3 class="panel-title">{L_THIS_POST_IP}: <!-- IF U_WHOIS -->
 							<a href="{U_WHOIS}"><!-- IF POST_IPADDR -->{POST_IPADDR}<!-- ELSE -->{POST_IP}<!-- ENDIF --></a> (<!-- IF POST_IPADDR -->{POST_IP}<!-- ELSE --><a href="{U_LOOKUP_IP}">{L_LOOKUP_IP}</a><!-- ENDIF -->)
 						<!-- ELSE -->
 							<!-- IF POST_IPADDR -->{POST_IPADDR} ({POST_IP})<!-- ELSE -->{POST_IP}<!-- IF U_LOOKUP_IP --> (<a href="{U_LOOKUP_IP}">{L_LOOKUP_IP}</a>)<!-- ENDIF --><!-- ENDIF -->
-						<!-- ENDIF --></h4>
+						<!-- ENDIF --></h3>
 					</div>
 		
 					<table class="table table-striped table-bordered table-hover" >
@@ -295,10 +301,9 @@
 							<!-- END iprow -->
 						</tbody>
 					</table>
-					<div class="panel-footer text-right">
-						<p><a class="btn btn-default" href="{U_LOOKUP_ALL}#ip"><i class="icon-search"></i> {L_LOOKUP_ALL}</a></p>
+					<div class="panel-footer">
+						<a class="btn btn-default" href="{U_LOOKUP_ALL}#ip"><i class="icon-search"></i> {L_LOOKUP_ALL}</a>
 					</div>
-		
 				</div>
 			<!-- ENDIF -->
 		

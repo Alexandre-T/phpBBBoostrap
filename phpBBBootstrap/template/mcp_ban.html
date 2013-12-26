@@ -35,7 +35,7 @@
 
 
 <div class="panel panel-default">
-	<div class="panel-heading"><h4>{L_TITLE}</h4></div>
+	<div class="panel-heading"><h3 class="panel-title">{L_TITLE}</h3></div>
 	<div class="panel-body">
 		<p>{L_EXPLAIN}</p>
 		<fieldset>
@@ -78,21 +78,21 @@
 					<span class="help-block">{L_BAN_EXCLUDE_EXPLAIN}</span>
 				</div>
 			</div>
-			<div class="form-group">
-			<div class="col-md-offset-4 col-md-8 btn-group">
-				<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" /> 
-				<input type="submit" name="bansubmit" value="{L_SUBMIT}" class="btn btn-primary" />	
-			</div>
-			</div>
 		</fieldset>
 		{S_HIDDEN_FIELDS}
 		{S_FORM_TOKEN}
+	</div>
+	<div class="panel-footer">
+		<div class="btn-group">
+			<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" /> 
+			<input type="submit" name="bansubmit" value="{L_SUBMIT}" class="btn btn-primary" />	
+		</div>
 	</div>
 </div>
 
 
 <div class="panel panel-default">
-	<div class="panel-heading"><h4>{L_UNBAN_TITLE}</h4></div>
+	<div class="panel-heading"><h3 class="panel-title">{L_UNBAN_TITLE}</h3></div>
 	<div class="panel-body">
 		<p>{L_UNBAN_EXPLAIN}</p>
 	
@@ -122,17 +122,16 @@
 					<input type="text" disabled="disabled" id="unbangivereason" value="" class="form-control"/>
 				</div>
 			</div>
-			<div class="form-group">
-				<div class="col-md-offset-4 col-md-8 btn-group">
-					<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" /> 
-					<input type="submit" name="unbansubmit" value="{L_SUBMIT}" class="btn btn-primary" />	
-				</div>
-			</div>
 			</fieldset>
 			{S_HIDDEN_FIELDS}
 		</div>
+		<div class="panel-footer">
+			<div class="btn-group">
+				<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" /> 
+				<input type="submit" name="unbansubmit" value="{L_SUBMIT}" class="btn btn-primary" />	
+			</div>
+		</div>
 	</div>
-
 
 	<!-- ELSE -->
 	<div class="alert alert-success">

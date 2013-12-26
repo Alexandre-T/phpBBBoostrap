@@ -1,13 +1,13 @@
 <!-- INCLUDE mcp_header.html -->
 <form id="mcp" method="post" action="{S_MCP_ACTION}" class="form-horizontal">
 <div class="panel panel-default">
-	<div class="panel-heading"><h4>{L_TITLE}
-	<!-- IF ! TOPIC_ID -->
+	<div class="panel-heading">
+		<!-- IF ! TOPIC_ID -->
 		<fieldset class="pull-right smallbande hidden-xs hidden-sm">
 			{S_FORM_TOKEN}
 			<div class="form-group">
 				<div class="input-group input-group-sm">
-					<span class="input-group-addon">{L_FORUM}</span>
+					<span class="input-group-addon"><i class="icon-filter"></i>&nbsp;{L_FORUM}</span>
 					<select class="form-control" name="f" id="fo">{S_FORUM_OPTIONS}</select>
 					<span class="input-group-btn">
 						<input type="submit" name="sort" value="{L_GO}" class="btn btn-primary" />
@@ -15,8 +15,8 @@
 				</div>
 			</div>
 		</fieldset>
-	<!-- ENDIF -->
-	</h4>
+		<!-- ENDIF -->
+		<h3 class="panel-title">{L_TITLE}</h3>
 	</div>
 	<div class="panel-body">
 		<!-- IF .postrow -->
@@ -24,7 +24,7 @@
 				<!-- IF TOTAL --><span class="btn btn-default btn-xs disabled">{TOTAL}</span><!-- ENDIF -->
 				<!-- IF PAGE_NUMBER -->
 					<!-- IF PAGINATION -->
-						<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-xs">{PAGE_NUMBER}</a>
+						<a href="#" onclick="jumpto('{A_BASE_URL}','{PER_PAGE}'); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-xs">{PAGE_NUMBER}</a>
 						{PAGINATION}
 					<!-- ELSE -->
 						<span class="btn btn-default btn-xs disabled">{PAGE_NUMBER}</span>
@@ -48,6 +48,11 @@
 			<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
 			<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn-primary btn" /></label>
 		</fieldset>
+		<!-- ENDIF -->
+		<!-- IF ! .postrow -->
+		<div class="alert alert-success alert-block">
+			<strong><!-- IF S_TOPICS -->{L_NO_TOPICS_QUEUE}<!-- ELSE -->{L_UNAPPROVED_POSTS_ZERO_TOTAL}<!-- ENDIF --></strong>
+		</div>
 		<!-- ENDIF -->
 	</div><!-- end panel-body -->
 	<!-- IF .postrow -->
@@ -84,22 +89,19 @@
 		<!-- END postrow -->
 			</tbody>			
 		</table>
+	<div class="panel-footer">
+		<div class="btn-group pull-right">
+			<a class="btn btn-default btn-xs" href="#" onclick="marklist('mcp', 'post_id_list', true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
+			<a class="btn btn-default btn-xs" href="#" onclick="marklist('mcp', 'post_id_list', false); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+		</div>
+		<fieldset class="btn-group">
+			<input class="btn btn-warning" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />
+			<input class="btn btn-success" type="submit" name="action[approve]" value="{L_APPROVE}" />
+		</fieldset>
+	<!-- ELSE -->
+	<!-- ENDIF --><!-- fin du postrow -->
+	</div>
 </div><!-- end panel -->
-
-	<hr class="dashed"/>
-	<div class="btn-group pull-right">
-		<a class="btn btn-default btn-xs" href="#" onclick="marklist('mcp', 'post_id_list', true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
-		<a class="btn btn-default btn-xs" href="#" onclick="marklist('mcp', 'post_id_list', false); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
-	</div>
-	<fieldset class="btn-group">
-		<input class="btn btn-warning" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />
-		<input class="btn btn-success" type="submit" name="action[approve]" value="{L_APPROVE}" />
-	</fieldset>
-<!-- ELSE -->
-	<div class="alert alert-success">
-		<strong><!-- IF S_TOPICS -->{L_NO_TOPICS_QUEUE}<!-- ELSE -->{L_UNAPPROVED_POSTS_ZERO_TOTAL}<!-- ENDIF --></strong>
-	</div>
-<!-- ENDIF --><!-- fin du postrow -->
 
 </form>
 <!-- INCLUDE mcp_footer.html -->

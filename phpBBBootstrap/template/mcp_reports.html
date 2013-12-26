@@ -3,23 +3,23 @@
 
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h4>
-			{L_TITLE}
-			<!-- IF not S_PM -->
-				{S_FORM_TOKEN}
-				<fieldset class="hidden-xs hidden-sm smallbande pull-right">
-					<div class="form-group">
-						<div class="input-group">
-							<span class="input-group-addon">{L_FORUM}</span>
-							<select class="form-control" name="f" id="fo">{S_FORUM_OPTIONS}</select>
-							<span class="input-group-btn">
-								<input type="submit" name="sort" value="{L_GO}" class="btn btn-primary" />
-							</span>
-						</div>
+		<!-- IF not S_PM -->
+			{S_FORM_TOKEN}
+			<fieldset class="hidden-xs hidden-sm smallbande pull-right">
+				<div class="form-group">
+					<div class="input-group input-group-sm">
+						<span class="input-group-addon"><i class="icon-filter"></i>&nbsp;{L_FORUM}</span>
+						<select class="form-control" name="f" id="fo">{S_FORUM_OPTIONS}</select>
+						<span class="input-group-btn">
+							<input type="submit" name="sort" value="{L_GO}" class="btn btn-primary" />
+						</span>
 					</div>
-				</fieldset>	
-			<!-- ENDIF -->
-		</h4>
+				</div>
+			</fieldset>	
+		<!-- ENDIF -->
+		<h3 class="panel-title">
+			{L_TITLE}
+		</h3>
 	</div>
 	<div class="panel-body">
 		<!-- IF ! .postrow -->
@@ -32,7 +32,7 @@
 					<!-- IF TOTAL --><span class="btn btn-default btn-xs disabled">{TOTAL}</span><!-- ENDIF -->
 					<!-- IF PAGE_NUMBER -->
 						<!-- IF PAGINATION -->
-							<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-xs">{PAGE_NUMBER}</a>
+							<a href="#" onclick="jumpto('{A_BASE_URL}','{PER_PAGE}'); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-xs">{PAGE_NUMBER}</a>
 							{PAGINATION}
 						<!-- ELSE -->
 							<span class="btn btn-default btn-xs disabled">{PAGE_NUMBER}</span>
@@ -88,18 +88,20 @@
 			</tbody>
 		</table>
 	<!-- ENDIF -->
+	<!-- IF .postrow -->
+	<div class="panel-footer">
+		<fieldset class="btn-group pull-right">
+			<a href="#" class="btn btn-default btn-xs" onclick="marklist('mcp', 'report_id_list', true); return false;">{L_MARK_ALL}</a>
+			<a href="#" class="btn btn-default btn-xs" onclick="marklist('mcp', 'report_id_list', false); return false;">{L_UNMARK_ALL}</a>
+		</fieldset>
+		<fieldset class="btn-group">
+			<input class="btn btn-primary" type="submit" value="{L_DELETE_REPORTS}" name="action[delete]" />
+			<!-- IF not S_CLOSED --><input class="btn btn-default" type="submit" name="action[close]" value="{L_CLOSE_REPORTS}" /><!-- ENDIF -->
+		</fieldset>
+	</div>
+	<!-- ENDIF -->
 </div>
 
-<!-- IF .postrow -->
-				<fieldset class="btn-group pull-right">
-					<a href="#" class="btn btn-default btn-xs" onclick="marklist('mcp', 'report_id_list', true); return false;">{L_MARK_ALL}</a>
-					<a href="#" class="btn btn-default btn-xs" onclick="marklist('mcp', 'report_id_list', false); return false;">{L_UNMARK_ALL}</a>
-				</fieldset>
-				<fieldset class="btn-group">
-					<input class="btn btn-primary" type="submit" value="{L_DELETE_REPORTS}" name="action[delete]" />
-					<!-- IF not S_CLOSED --><input class="btn btn-default" type="submit" name="action[close]" value="{L_CLOSE_REPORTS}" /><!-- ENDIF -->
-				</fieldset>
-<!-- ENDIF -->
 </form>
 
 <!-- INCLUDE mcp_footer.html -->

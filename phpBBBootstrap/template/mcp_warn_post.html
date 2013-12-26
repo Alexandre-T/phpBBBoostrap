@@ -2,7 +2,7 @@
 <form method="post" id="mcp" action="{U_POST_ACTION}">
 
 <div class="panel panel-default">
-	<div class="panel-heading"><h4>{L_MCP_WARN_POST}</h4></div>
+	<div class="panel-heading"><h3 class="panel-title">{L_MCP_WARN_POST}</h3></div>
 	<div class="panel-body">
 		<div class="row">
 			<div class="col-md-4 avatar pull-right">
@@ -37,7 +37,8 @@
 				<label class="checkbox" for="notify_user"><input type="checkbox" name="notify_user" checked="checked" /> {L_NOTIFY_USER_WARN}</label>
 			<!-- ENDIF -->
 		</fieldset>
-	
+	</div>
+	<div class="panel-footer text-right">
 		{S_FORM_TOKEN}
 		<fieldset class="btn-group">
 			<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" />
