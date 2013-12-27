@@ -20,15 +20,15 @@
 				<!-- ENDIF -->
 				<div class="<!-- IF ! S_DISPLAY_POST_INFO -->col-sm-offset-2<!-- ENDIF --> col-sm-5 text-right">
 					<div class="btn-group">
-						<!-- IF U_EMAIL_TOPIC --><a class="btn btn-default btn-xs tooltip-top" href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}"><i class="icon-envelope"></i><span class="hidden">{L_EMAIL_TOPIC}</span></a><!-- ENDIF -->
-						<!-- IF U_EMAIL_PM --><a class="btn btn-default btn-xs tooltip-top" href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class=""><i class="icon-envelope"></i><span class="hidden">{L_EMAIL_PM}</span></a><!-- ENDIF -->
-						<!-- IF U_PRINT_TOPIC --><a class="btn btn-default btn-xs tooltip-top" href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p"><i class="icon-print"></i><span class="hidden">{L_PRINT_TOPIC}</span></a><!-- ENDIF -->
-						<!-- IF U_PRINT_PM --><a class="btn btn-default btn-xs tooltip-top" href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p"><i class="icon-print"></i><span class="hidden">{L_PRINT_PM}</span></a><!-- ENDIF -->
+						<!-- IF U_EMAIL_TOPIC --><a class="btn btn-default btn-xs tooltip-top" href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}"><i class="icon-envelope"></i><span class="sr-only">{L_EMAIL_TOPIC}</span></a><!-- ENDIF -->
+						<!-- IF U_EMAIL_PM --><a class="btn btn-default btn-xs tooltip-top" href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class=""><i class="icon-envelope"></i><span class="sr-only">{L_EMAIL_PM}</span></a><!-- ENDIF -->
+						<!-- IF U_PRINT_TOPIC --><a class="btn btn-default btn-xs tooltip-top" href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p"><i class="icon-print"></i><span class="sr-only">{L_PRINT_TOPIC}</span></a><!-- ENDIF -->
+						<!-- IF U_PRINT_PM --><a class="btn btn-default btn-xs tooltip-top" href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p"><i class="icon-print"></i><span class="sr-only">{L_PRINT_PM}</span></a><!-- ENDIF -->
 						<!-- IF not S_IS_BOT -->
-							<!-- IF S_WATCH_FORUM_LINK --><a class="btn btn-default btn-xs tooltip-top" href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}"><i class="<!-- IF S_WATCHING_FORUM -->icon-eye-close<!-- ELSE -->icon-eye-open<!-- ENDIF -->"></i><span class="hidden">{S_WATCH_FORUM_TITLE}</span></a><!-- ENDIF -->
-							<!-- IF U_WATCH_TOPIC --><a class="btn btn-default btn-xs tooltip-top" href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}"><i class="<!-- IF S_WATCHING_TOPIC -->icon-eye-close<!-- ELSE -->icon-eye-open<!-- ENDIF -->"></i><span class="hidden">{L_WATCH_TOPIC}</span></a><!-- ENDIF -->
-							<!-- IF U_BOOKMARK_TOPIC --><a class="btn btn-default btn-xs tooltip-top" href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><i class="icon-bookmark"></i><span class="hidden">{L_BOOKMARK_TOPIC}</span></a><!-- ENDIF -->
-							<!-- IF U_BUMP_TOPIC --><a class="btn btn-default btn-xs tooltip-top" href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}"><i class="icon-arrow-circle-o-up"></i><span class="hidden">{L_BUMP_TOPIC}</span></a><!-- ENDIF -->
+							<!-- IF S_WATCH_FORUM_LINK --><a class="btn btn-default btn-xs tooltip-top" href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}"><i class="<!-- IF S_WATCHING_FORUM -->icon-eye-close<!-- ELSE -->icon-eye-open<!-- ENDIF -->"></i><span class="sr-only">{S_WATCH_FORUM_TITLE}</span></a><!-- ENDIF -->
+							<!-- IF U_WATCH_TOPIC --><a class="btn btn-default btn-xs tooltip-top" href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}"><i class="<!-- IF S_WATCHING_TOPIC -->icon-eye-close<!-- ELSE -->icon-eye-open<!-- ENDIF -->"></i><span class="sr-only">{L_WATCH_TOPIC}</span></a><!-- ENDIF -->
+							<!-- IF U_BOOKMARK_TOPIC --><a class="btn btn-default btn-xs tooltip-top" href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><i class="icon-bookmark"></i><span class="sr-only">{L_BOOKMARK_TOPIC}</span></a><!-- ENDIF -->
+							<!-- IF U_BUMP_TOPIC --><a class="btn btn-default btn-xs tooltip-top" href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}"><i class="icon-arrow-circle-o-up"></i><span class="sr-only">{L_BUMP_TOPIC}</span></a><!-- ENDIF -->
 						<!-- ENDIF -->
 					</div>
 				</div>
@@ -51,9 +51,9 @@
 			<div class="col-lg-2 col-md-2 text-center">	
 				<!-- IF S_USER_LOGGED_IN or U_ACP or U_MCP  -->
 				<div class="btn-group">
-					<!-- IF S_USER_LOGGED_IN --><a href="{U_PROFILE}" class="btn btn-default btn-xs tooltip-top" title="{L_PROFILE}"><i class="icon-user"></i><span class="hidden">{L_PROFILE}</span></a><!-- ENDIF -->
-					<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-xs btn-warning tooltip-top" title="{L_MCP}"><i class="icon-legal"></i><span class="hidden">{L_MCP}</span></a><!-- ENDIF -->
-					<!-- IF U_ACP --><a href="{U_ACP}" class="btn btn-xs btn-danger tooltip-top" title="{L_ACP}"><i class="icon-wrench"></i><span class="hidden">{L_ACP}</span></a><!-- ENDIF -->
+					<!-- IF S_USER_LOGGED_IN --><a href="{U_PROFILE}" class="btn btn-default btn-xs tooltip-top" title="{L_PROFILE}"><i class="icon-user"></i><span class="sr-only">{L_PROFILE}</span></a><!-- ENDIF -->
+					<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-xs btn-warning tooltip-top" title="{L_MCP}"><i class="icon-legal"></i><span class="sr-only">{L_MCP}</span></a><!-- ENDIF -->
+					<!-- IF U_ACP --><a href="{U_ACP}" class="btn btn-xs btn-danger tooltip-top" title="{L_ACP}"><i class="icon-wrench"></i><span class="sr-only">{L_ACP}</span></a><!-- ENDIF -->
 				</div>
 				<div class="btn-group">
 					<span class="btn btn-default btn-xs tooltip-top" title="HTML5"><i class="icon-html5"></i></span> 

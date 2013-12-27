@@ -23,7 +23,7 @@
 					<!-- Boutons de droite -->
 					<span class="btn-group pull-right">
 						<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a class="btn btn-xs btn-warning" href="{forumrow.U_UNAPPROVED_TOPICS}"><i class="icon-bell"></i></a><!-- ENDIF -->
-						<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED --><a class="btn btn-default btn-xs pull-right tooltip-link" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}"><i class="icon-rss"></i> <span class="hidden">{L_FEED} - {forumrow.FORUM_NAME}</span></a><!-- ENDIF -->
+						<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED --><a class="btn btn-default btn-xs pull-right tooltip-link" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}"><i class="icon-rss"></i> <span class="sr-only">{L_FEED} - {forumrow.FORUM_NAME}</span></a><!-- ENDIF -->
 					</span>					
 					
 					<span class="pull-left" style="margin-left:15px;margin-right:15px">
@@ -57,11 +57,11 @@
 						<td colspan="3" class="hidden-xs">
 					<!-- ENDIF -->
 				<!-- ELSE -->
-					<td class="hidden-xs topics"><span class="badge">{forumrow.TOPICS}</span> <dfn class="hidden">{L_TOPICS}</dfn></td>
-					<td class="hidden-xs posts"><span class="badge">{forumrow.POSTS}</span> <dfn class="hidden">{L_POSTS}</dfn></td>
+					<td class="hidden-xs topics"><span class="badge">{forumrow.TOPICS}</span> <dfn class="sr-only">{L_TOPICS}</dfn></td>
+					<td class="hidden-xs posts"><span class="badge">{forumrow.POSTS}</span> <dfn class="sr-only">{L_POSTS}</dfn></td>
 					<td class="hidden-xs lastpost">
 						<!-- IF forumrow.LAST_POST_TIME and not S_IS_BOT -->
-							<a class="tooltip-link" href="{forumrow.U_LAST_POST}" title="{L_LAST_POST}"><i class="icon-mail-forward"></i><dfn class="hidden">{L_LAST_POST}</dfn></a>
+							<a class="tooltip-link" href="{forumrow.U_LAST_POST}" title="{L_LAST_POST}"><i class="icon-mail-forward"></i><dfn class="sr-only">{L_LAST_POST}</dfn></a>
 						<!-- ENDIF -->
 						<!-- IF forumrow.LAST_POST_TIME -->
 							{L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}

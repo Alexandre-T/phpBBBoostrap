@@ -31,23 +31,23 @@
 				<!-- ENDIF -->
 				<div class="btn-group">
 					<!-- IF U_POST_REPLY_PM -->
-						<a class="btn btn-default tooltip-link" title="{L_POST_REPLY_PM}" href="{U_POST_REPLY_PM}"><i class="icon-mail-reply"></i><span class="hidden"> {U_POST_REPLY_PM}</span></a>
+						<a class="btn btn-default tooltip-link" title="{L_POST_REPLY_PM}" href="{U_POST_REPLY_PM}"><i class="icon-mail-reply"></i><span class="sr-only"> {U_POST_REPLY_PM}</span></a>
 					<!-- ELSEIF U_POST_NEW_TOPIC -->
 						<a class="btn btn-default tooltip-link" href="{U_POST_NEW_TOPIC}" accesskey="n" title="{L_UCP_PM_COMPOSE}"><i class="icon-file"></i>&nbsp;{L_UCP_PM_COMPOSE}</a>
 					<!-- ENDIF -->
 					<!-- IF U_POST_REPLY_PM and S_PM_RECIPIENTS gt 1 -->
-						<a class="btn btn-default tooltip-link" title="{L_REPLY_TO_ALL}" href="{U_POST_REPLY_ALL}"><i class="icon-mail-reply-all"></i><span class="hidden"> {U_POST_REPLY_ALL}</span></a>
+						<a class="btn btn-default tooltip-link" title="{L_REPLY_TO_ALL}" href="{U_POST_REPLY_ALL}"><i class="icon-mail-reply-all"></i><span class="sr-only"> {U_POST_REPLY_ALL}</span></a>
 					<!-- ENDIF -->			
 					<!-- IF U_FORWARD_PM -->
-						<a class="btn btn-default tooltip-link" title="{L_POST_FORWARD_PM}" href="{U_FORWARD_PM}"><i class="icon-mail-forward"></i><span class="hidden"> {U_FORWARD_PM}</span></a>
+						<a class="btn btn-default tooltip-link" title="{L_POST_FORWARD_PM}" href="{U_FORWARD_PM}"><i class="icon-mail-forward"></i><span class="sr-only"> {U_FORWARD_PM}</span></a>
 					<!-- ENDIF -->
 				</div>
 				<!-- IF U_DELETE or U_EDIT or U_QUOTE or U_REPORT -->
 					<div class="btn-group">
-						<!-- IF U_EDIT --><a class="btn btn-default tooltip-link" href="{U_EDIT}" title="{L_POST_EDIT_PM}"><i class="icon-pencil"></i><span class="hidden">{L_POST_EDIT_PM}</span></a><!-- ENDIF -->
-						<!-- IF U_DELETE --><a class="btn btn-default tooltip-link" href="{U_DELETE}" title="{L_DELETE_MESSAGE}"><i class="icon-trash"></i><span class="hidden">{L_DELETE_MESSAGE}</span></a><!-- ENDIF -->
-						<!-- IF U_REPORT --><a class="btn btn-default tooltip-link" href="{U_REPORT}" title="{L_REPORT_PM}"><i class="icon-warning-sign"></i><span class="hidden">{L_REPORT_PM}</span></a><!-- ENDIF -->
-						<!-- IF U_QUOTE --><a class="btn btn-default tooltip-link" href="{U_QUOTE}" title="{L_POST_QUOTE_PM}"><i class="icon-quote-right"></i><span class="hidden">{L_POST_QUOTE_PM}</span></a><!-- ENDIF -->
+						<!-- IF U_EDIT --><a class="btn btn-default tooltip-link" href="{U_EDIT}" title="{L_POST_EDIT_PM}"><i class="icon-pencil"></i><span class="sr-only">{L_POST_EDIT_PM}</span></a><!-- ENDIF -->
+						<!-- IF U_DELETE --><a class="btn btn-default tooltip-link" href="{U_DELETE}" title="{L_DELETE_MESSAGE}"><i class="icon-trash"></i><span class="sr-only">{L_DELETE_MESSAGE}</span></a><!-- ENDIF -->
+						<!-- IF U_REPORT --><a class="btn btn-default tooltip-link" href="{U_REPORT}" title="{L_REPORT_PM}"><i class="icon-warning-sign"></i><span class="sr-only">{L_REPORT_PM}</span></a><!-- ENDIF -->
+						<!-- IF U_QUOTE --><a class="btn btn-default tooltip-link" href="{U_QUOTE}" title="{L_POST_QUOTE_PM}"><i class="icon-quote-right"></i><span class="sr-only">{L_POST_QUOTE_PM}</span></a><!-- ENDIF -->
 					</div>
 				<!-- ENDIF -->
 				
@@ -60,8 +60,8 @@
 				
 				<!-- IF S_VIEW_MESSAGE -->
 					<div class="btn-group">
-						<!-- IF U_PREVIOUS_PM --><a href="{U_PREVIOUS_PM}" class="btn btn-default tooltip-link" title="{L_VIEW_PREVIOUS_PM}"><i class="icon-double-angle-left"></i><span class="hidden">{L_VIEW_PREVIOUS_PM}</span></a><!-- ENDIF -->
-						<!-- IF U_NEXT_PM --><a href="{U_NEXT_PM}" class="btn btn-default tooltip-link" title="{L_VIEW_NEXT_PM}"><i class="icon-double-angle-right"></i><span class="hidden">{L_VIEW_NEXT_PM}</span></a><!-- ENDIF -->
+						<!-- IF U_PREVIOUS_PM --><a href="{U_PREVIOUS_PM}" class="btn btn-default tooltip-link" title="{L_VIEW_PREVIOUS_PM}"><i class="icon-double-angle-left"></i><span class="sr-only">{L_VIEW_PREVIOUS_PM}</span></a><!-- ENDIF -->
+						<!-- IF U_NEXT_PM --><a href="{U_NEXT_PM}" class="btn btn-default tooltip-link" title="{L_VIEW_NEXT_PM}"><i class="icon-double-angle-right"></i><span class="sr-only">{L_VIEW_NEXT_PM}</span></a><!-- ENDIF -->
 					</div>
 				<!-- ENDIF -->
 				<!-- IF TOTAL_MESSAGES or S_VIEW_MESSAGE -->

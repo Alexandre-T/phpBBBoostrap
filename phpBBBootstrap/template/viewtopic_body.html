@@ -9,7 +9,9 @@
 				{S_SEARCH_LOCAL_HIDDEN_FIELDS}				
 				<div class="input-group">
   					<input class="form-control" type="text" name="keywords" placeholder="{L_SEARCH_TOPIC}"/>
-					<button class="btn btn-default" type="submit" value="{L_SEARCH}"><i class="icon-search"></i> {L_SEARCH}</button>
+  					<div class="input-group-btn">
+						<button class="btn btn-default" type="submit" value="{L_SEARCH}"><i class="icon-search"></i> {L_SEARCH}</button>
+					</div>
 				</div>
 			</form>
 			<!-- ENDIF -->
@@ -198,12 +200,12 @@
 				<!-- IF not S_IS_BOT -->				
 				<!-- IF postrow.U_EDIT or postrow.U_DELETE or postrow.U_REPORT or postrow.U_WARN or postrow.U_INFO or postrow.U_QUOTE -->
 				<div class="btn-group pull-right" style="margin-top:10px;margin-right:10px;">
-					<!-- IF postrow.U_EDIT --><a href="{postrow.U_EDIT}" title="{L_EDIT_POST}" class="btn btn-default btn-xs tooltip-link"><i class="icon-pencil"></i> <span class="hidden">{L_EDIT}</span></a><!-- ENDIF -->
-					<!-- IF postrow.U_DELETE --><a href="{postrow.U_DELETE}" title="{L_DELETE_POST}" class="btn btn-default btn-xs tooltip-link "><i class="icon-remove"></i> <span class="hidden">{L_DELETE}</span></a><!-- ENDIF -->
-					<!-- IF postrow.U_REPORT --><a href="{postrow.U_REPORT}" title="{L_REPORT_POST}" class="btn btn-xs btn-warning  tooltip-link"><i class="icon-share-alt"></i> <span class="hidden">{L_REPORT}</span></a><!-- ENDIF -->
-					<!-- IF postrow.U_WARN --><a href="{postrow.U_WARN}" title="{L_WARN_USER}" class="btn btn-xs btn-warning tooltip-link"><i class="icon-legal"></i> <span class="hidden">{L_WARN_USER}</span></a><!-- ENDIF -->
-					<!-- IF postrow.U_INFO --><a href="{postrow.U_INFO}" title="{L_INFORMATION}" class="btn btn-xs btn-warning tooltip-link"><i class="icon-info-sign"></i> <span class="hidden">{L_INFORMATION}</span></a><!-- ENDIF -->
-					<!-- IF postrow.U_QUOTE --><a href="{postrow.U_QUOTE}" title="{L_REPLY_WITH_QUOTE}" class="btn btn-default btn-xs tooltip-link"><i class="icon-quote-right"></i> <span class="hidden">{L_REPLY}</span></a><!-- ENDIF -->
+					<!-- IF postrow.U_EDIT --><a href="{postrow.U_EDIT}" title="{L_EDIT_POST}" class="btn btn-default btn-xs tooltip-link"><i class="icon-pencil"></i> <span class="sr-only">{L_EDIT}</span></a><!-- ENDIF -->
+					<!-- IF postrow.U_DELETE --><a href="{postrow.U_DELETE}" title="{L_DELETE_POST}" class="btn btn-default btn-xs tooltip-link "><i class="icon-remove"></i> <span class="sr-only">{L_DELETE}</span></a><!-- ENDIF -->
+					<!-- IF postrow.U_REPORT --><a href="{postrow.U_REPORT}" title="{L_REPORT_POST}" class="btn btn-xs btn-warning  tooltip-link"><i class="icon-share-alt"></i> <span class="sr-only">{L_REPORT}</span></a><!-- ENDIF -->
+					<!-- IF postrow.U_WARN --><a href="{postrow.U_WARN}" title="{L_WARN_USER}" class="btn btn-xs btn-warning tooltip-link"><i class="icon-legal"></i> <span class="sr-only">{L_WARN_USER}</span></a><!-- ENDIF -->
+					<!-- IF postrow.U_INFO --><a href="{postrow.U_INFO}" title="{L_INFORMATION}" class="btn btn-xs btn-warning tooltip-link"><i class="icon-info-sign"></i> <span class="sr-only">{L_INFORMATION}</span></a><!-- ENDIF -->
+					<!-- IF postrow.U_QUOTE --><a href="{postrow.U_QUOTE}" title="{L_REPLY_WITH_QUOTE}" class="btn btn-default btn-xs tooltip-link"><i class="icon-quote-right"></i> <span class="sr-only">{L_REPLY}</span></a><!-- ENDIF -->
 				</div>
 				<!-- ENDIF -->
 				<h4 class="forum-topic-subject" ><!-- IF postrow.POST_ICON_IMG --><img src="{T_ICONS_PATH}{postrow.POST_ICON_IMG}" width="{postrow.POST_ICON_IMG_WIDTH}" height="{postrow.POST_ICON_IMG_HEIGHT}" alt="Icone" /> <!-- ENDIF --><a class="bleu" href="{U_VIEW_TOPIC}#p{postrow.POST_ID}">{postrow.POST_SUBJECT}</a></h4>
