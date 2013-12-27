@@ -1,6 +1,5 @@
 
-<script type="text/javascript">
-// <![CDATA[
+<script>
 	var form_name = 'postform';
 	var text_name = <!-- IF $SIG_EDIT -->'signature'<!-- ELSE -->'message'<!-- ENDIF -->;
 	var load_draft = false;
@@ -35,17 +34,14 @@
 	var panels = new Array('options-panel', 'attach-panel', 'poll-panel');
 	var show_panel = 'options-panel';
 
-
-// ]]>
 </script>
-<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/editor.js"></script>
+<script src="{T_SUPER_TEMPLATE_PATH}/editor.js"></script>
 
 <!-- IF S_BBCODE_ALLOWED -->
 <div id="colour_palette" style="display: none;" class="form-group">
 	<label class="control-label {$CAPTCHA_COL_LABEL}">{L_FONT_COLOR}</label>
 	<div class="{$CAPTCHA_COL_INPUT}">
-		<script type="text/javascript">
-		// <![CDATA[
+		<script>
 			function change_palette()
 			{
 				dE('colour_palette');
@@ -62,7 +58,6 @@
 			}
 
 			colorPalette('h', 15, 10);
-		// ]]>
 		</script>
 	</div>
 </div>

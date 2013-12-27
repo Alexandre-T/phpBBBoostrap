@@ -1,11 +1,9 @@
 <!-- INCLUDE overall_header.html -->
 <section>
-<script type="text/javascript">
-// <![CDATA[
+<script>
 	$( document ).ready(function() {
 	    $('#<!-- IF S_ADMIN_AUTH -->{PASSWORD_CREDENTIAL}<!-- ELSE -->{USERNAME_CREDENTIAL}<!-- ENDIF -->').focus();    
 	});
-// ]]>
 </script>
 
 <form action="{S_LOGIN_ACTION}" method="post" id="login" class="form-horizontal">

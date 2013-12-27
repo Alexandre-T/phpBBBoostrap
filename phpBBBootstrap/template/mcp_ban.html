@@ -1,7 +1,5 @@
 <!-- INCLUDE mcp_header.html -->
-<script type="text/javascript">
-// <![CDATA[
-
+<script>
 	var ban_length = new Array();
 		ban_length[-1] = '';
 	<!-- BEGIN ban_length -->
@@ -26,8 +24,6 @@
 		$('#unbanreason').val(ban_reason[option]);
 		$('#unbanlength').val(ban_length[option]);
 	}
-
-// ]]>
 </script>
 
 <form id="mcp_ban" method="post" action="{U_ACTION}" class="form-horizontal">

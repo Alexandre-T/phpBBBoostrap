@@ -10,23 +10,19 @@
 	<div class="form-group">
 		<label class="control-label {$CAPTCHA_COL_LABEL}" for="answer">{L_CONFIRM_CODE}</label>
 <!-- IF S_RECAPTCHA_AVAILABLE -->
-		<script type="text/javascript">
-		// <![CDATA[
+		<script>
 		var RecaptchaOptions = {
 			lang : '{LA_RECAPTCHA_LANG}',
 			theme : 'clean',
 			tabindex : <!-- IF $CAPTCHA_TAB_INDEX -->{$CAPTCHA_TAB_INDEX}<!-- ELSE -->10<!-- ENDIF -->
 		};
-		// ]]>
 		</script>
-		<script type="text/javascript" src="{RECAPTCHA_SERVER}/challenge?k={RECAPTCHA_PUBKEY}{RECAPTCHA_ERRORGET}"></script>
-		<script type="text/javascript">
-		// <![CDATA[
+		<script src="{RECAPTCHA_SERVER}/challenge?k={RECAPTCHA_PUBKEY}{RECAPTCHA_ERRORGET}"></script>
 		<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+		<script>
 			document.getElementById('recaptcha_table').style.direction = 'ltr';
-		<!-- ENDIF -->
-		// ]]>
 		</script>
+		<!-- ENDIF -->
 		<noscript>
 			<div class="{$CAPTCHA_COL_INPUT}">
 				<object data="{RECAPTCHA_SERVER}/noscript?k={RECAPTCHA_PUBKEY}{RECAPTCHA_ERRORGET}" type="text/html" height="300" width="500"></object><br />

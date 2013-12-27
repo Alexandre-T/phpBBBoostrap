@@ -93,8 +93,7 @@
 				<embed name="ctrls_{_file.ATTACH_ID}" type="audio/x-pn-realaudio-plugin" width="200" height="36" controls="ControlPanel" console="ctrls_{_file.ATTACH_ID}"></embed>
 			</object>
 
-			<script type="text/javascript">
-			// <![CDATA[
+			<script>
 				if (document.rmstream_{_file.ATTACH_ID}.GetClipWidth)
 				{
 					while (!document.rmstream_{_file.ATTACH_ID}.GetClipWidth())
@@ -108,7 +107,6 @@
 					document.rmstream_{_file.ATTACH_ID}.height = height;
 					document.ctrls_{_file.ATTACH_ID}.width = width;
 				}
-			// ]]>
 			</script>
 		<!-- ENDIF -->
 
