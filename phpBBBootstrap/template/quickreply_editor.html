@@ -1,24 +1,3 @@
-<script>
-	function hide_qr(show)
-	{
-		dE('qr_editor_div');
-		dE('qr_showeditor_div');
-		if (show && document.getElementById('qr_editor_div').style.display != 'none')
-		{
-			document.getElementsByName('message')[0].focus();
-		}
-		return true;
-	}
-
-
-	function init_qr()
-	{
-		dE('qr_editor_div');
-		dE('qr_showeditor_div');
-		return false;
-	}
-	onload_functions.push('init_qr();');
-</script>
 <noscript>
 	<form method="post" class="form-horizontal" action="{U_QR_ACTION}">
 		<div class="panel" id="qr_ns_editor_div">
@@ -49,7 +28,7 @@
 	</form>
 </noscript>
 <form method="post" class="form-horizontal" action="{U_QR_ACTION}">
-	<div class="row" style="display: none" id="qr_editor_div">
+	<div class="row" class="hidden" id="qr_editor_div">
 		<div>
 			<fieldset>
 				<legend>{L_QUICKREPLY}</legend>
@@ -72,7 +51,7 @@
 					</div>
 				</div> 
 			</fieldset>
-			<a href="#" class="bleu pull-right" onclick="hide_qr(false); return false;" title="{L_COLLAPSE_QR}"><i class="icon-double-angle-up"></i> {L_COLLAPSE_QR}</a>
+			<a href="#" class="bleu pull-right" onclick="$('#qr_editor_div').hide(); return false;" title="{L_COLLAPSE_QR}"><i class="icon-double-angle-up"></i> {L_COLLAPSE_QR}</a>
 			{S_FORM_TOKEN}
 			{QR_HIDDEN_FIELDS}
 		</div>

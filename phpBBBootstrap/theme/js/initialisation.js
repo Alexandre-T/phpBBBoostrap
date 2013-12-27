@@ -20,28 +20,6 @@ $(document).ready( function() {
 	});
 });		
 
-var onload_functions = new Array();
-var onunload_functions = new Array();
-
-/**
-* New function for handling multiple calls to window.onload and window.unload by pentapenguin
-*/
-window.onload = function()
-{
-	for (var i = 0; i < onload_functions.length; i++)
-	{
-		eval(onload_functions[i]);
-	}
-}
-
-window.onunload = function()
-{
-	for (var i = 0; i < onunload_functions.length; i++)
-	{
-		eval(onunload_functions[i]);
-	}
-}
-
 /**
 * Find a member
 */
@@ -157,6 +135,9 @@ function sort_desc_sd(){
 	$("select[name='post_sd']").addClass('form-control');
 	
 	$("select#quick-mod-select").addClass('form-control');
+	
+	$('#qr_ns_editor_div').hide();
+	$('#qr_editor_div').hide();
 
 
   })

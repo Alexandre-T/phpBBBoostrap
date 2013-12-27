@@ -42,21 +42,6 @@
 	<label class="control-label {$CAPTCHA_COL_LABEL}">{L_FONT_COLOR}</label>
 	<div class="{$CAPTCHA_COL_INPUT}">
 		<script>
-			function change_palette()
-			{
-				dE('colour_palette');
-				e = document.getElementById('colour_palette');
-				
-				if (e.style.display == 'block')
-				{
-					document.getElementById('bbpalette').value = '{LA_FONT_COLOR_HIDE}';
-				}
-				else
-				{
-					document.getElementById('bbpalette').value = '{LA_FONT_COLOR}';
-				}
-			}
-
 			colorPalette('h', 15, 10);
 		</script>
 	</div>
@@ -86,7 +71,7 @@
 					<!-- IF S_BBCODE_FLASH -->
 						<button class="btn btn-default tooltip-link" accesskey="d" name="addbbcode18" value="Flash" onclick=" bbstyle(18); return false;" title="{L_BBCODE_D_HELP}">F</button>
 					<!-- ENDIF -->
-					<button class="btn btn-default tooltip-link" name="bbpalette" id="bbpalette" value="{L_FONT_COLOR}" onclick="change_palette(); return false;" title="{L_BBCODE_S_HELP}"><i class="icon-beaker"></i></button>
+					<button class="btn btn-default tooltip-link" name="bbpalette" value="{L_FONT_COLOR}" onclick="$('#colour_palette').toggle(); return false;" title="{L_BBCODE_S_HELP}"><i class="icon-beaker"></i></button>
 				</div>
 			</div>
 			<div class="col-md-3">
