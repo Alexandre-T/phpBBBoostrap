@@ -6,10 +6,12 @@
 	Modified by:		
     --------------------------------------------------------------
 */
-
-@import url("css/bootstrap.min.css");
-@import url("css/bootstrap-theme.min.css");
-@import url("css/bootstrap.min.css");
+/**
+ * Be carefull, cache won't be updated if you edit css file into subdirectory "theme/css"
+ * This subdirectory is only used by print.css  
+ */
+@import url("bootstrap.min.css");
+@import url("bootstrap-theme.min.css");
 @import url("font-awesome.min.css");
 @import url("tabs.css");
 @import url("forums.css");
