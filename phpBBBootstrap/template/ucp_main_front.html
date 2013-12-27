@@ -12,7 +12,9 @@
 			<!-- IF ACTIVE_TOPIC != '' --><dt>{L_ACTIVE_IN_TOPIC}:</dt> <dd><strong><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a></strong><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT})</dd><!-- ENDIF -->
 			<!-- IF WARNINGS --><dt>{L_YOUR_WARNINGS}:</dt> <dd class="error">{WARNING_IMG} [{WARNINGS}]</dd><!-- ENDIF -->
 		</dl>
+		<!-- IF .topicrow -->
 		<h4><i class="icon-rss"></i> {L_IMPORTANT_NEWS}</h4>
+		<!-- ENDIF -->
 	</div>
 <!-- IF .topicrow -->
 	<table class="table table-striped table-bordered table-hover">
@@ -21,8 +23,8 @@
 				<th>
 					<!-- IF S_DISPLAY_ACTIVE -->{L_ACTIVE_TOPICS}<!-- ELSEIF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF -->
 				</th>
-				<th class="col-md-2 text-center hidden-sm">
-					<span class="visible-md">{L_LAST_POST}</span>
+				<th class="col-md-2 text-center hidden-sm hidden-xs">
+					<span>{L_LAST_POST}</span>
 				</th>
 			</tr>
 		</thead>
@@ -62,7 +64,7 @@
 						<a class="bleu" href="{topicrow.U_VIEW_TOPIC}" class="topictitle"><strong>{topicrow.TOPIC_TITLE}</strong></a><br/>					
 					 	<small>{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</small>
 					 </td>
-					 <td class="col-md-3 hidden-xs">
+					 <td class="col-md-3 hidden-xs hidden-sm">
 						<small>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}						
 						<br />{topicrow.LAST_POST_TIME}</small>
 					</td>

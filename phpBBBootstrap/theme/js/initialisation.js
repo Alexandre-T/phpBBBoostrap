@@ -107,8 +107,8 @@ function sort_desc_sd(){
     $('strong','.pagination-line').addClass('btn btn-default btn-xs disabled');
     //$('strong','.btn').removeClass('btn btn-xs disabled');
     $('span.page-sep','.pagination-line').remove();
-    $('img','.forum-avatar-cadre').addClass('img-thumbnail');
-    $('img','span.avatar').addClass('thumbnail');
+    $('img','.forum-avatar-cadre').addClass('img-thumbnail img-responsive');
+    $('img','.avatar').addClass('img-thumbnail img-responsive');
     //$('.tooltip-link').tooltip()
     //$('.popover-test').popover()
     

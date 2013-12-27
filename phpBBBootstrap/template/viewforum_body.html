@@ -109,8 +109,8 @@
 				<th>
 					<!-- IF S_DISPLAY_ACTIVE -->{L_ACTIVE_TOPICS}<!-- ELSEIF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) -->{L_ANNOUNCEMENTS}<!-- ELSE -->{L_TOPICS}<!-- ENDIF -->
 				</th>
-				<th class="col-md-2 text-center hidden-sm">
-					<span class="visible-md">{L_LAST_POST}</span>
+				<th class="col-md-2 text-center hidden-sm hidden-xs">
+					<span>{L_LAST_POST}</span>
 				</th>
 				<th class="col-md-2 text-center hidden-xs hidden-sm">
 					<span>{L_REPLIES}</span>
@@ -170,7 +170,7 @@
 					<a class="bleu" href="{topicrow.U_VIEW_TOPIC}" class="topictitle"><strong>{topicrow.TOPIC_TITLE}</strong></a><br/>					
 				 	<small>{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</small>
 				</td>
-				<td class="col-md-3 hidden-xs">
+				<td class="col-md-3 hidden-xs hidden-sm">
 					<small>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}						
 					<br />{topicrow.LAST_POST_TIME}</small>
 				</td>
