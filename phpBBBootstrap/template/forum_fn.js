@@ -43,26 +43,8 @@ function jumpto(base_url,per_page)
 */
 function marklist(id, name, state)
 {
-	var parent = document.getElementById(id);
-	if (!parent)
-	{
-		eval('parent = document.' + id);
-	}
-
-	if (!parent)
-	{
-		return;
-	}
-
-	var rb = parent.getElementsByTagName('input');
-	
-	for (var r = 0; r < rb.length; r++)
-	{	
-		if (rb[r].name.substr(0, name.length) == name)
-		{
-			rb[r].checked = state;
-		}
-	}
+	$("input[name^='"+ name +"']","#"+id).prop('checked', state);
+	return false;
 }
 
 /**
@@ -114,45 +96,6 @@ function dE(n, s, type)
 		s = (e.style.display == '' || e.style.display == type) ? -1 : 1;
 	}
 	e.style.display = (s == 1) ? type : 'none';
-}
-
-/**
-* Alternate display of subPanels
-*/
-function subPanels(p)
-{
-	var i, e, t;
-
-	if (typeof(p) == 'string')
-	{
-		show_panel = p;
-	}
-
-	for (i = 0; i < panels.length; i++)
-	{
-		e = document.getElementById(panels[i]);
-		t = document.getElementById(panels[i] + '-tab');
-
-		if (e)
-		{
-			if (panels[i] == show_panel)
-			{
-				e.style.display = 'block';
-				if (t)
-				{
-					t.className = 'activetab';
-				}
-			}
-			else
-			{
-				e.style.display = 'none';
-				if (t)
-				{
-					t.className = '';
-				}
-			}
-		}
-	}
 }
 
 /**
