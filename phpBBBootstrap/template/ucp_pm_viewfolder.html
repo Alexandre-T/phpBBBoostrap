@@ -104,7 +104,7 @@
 			<tbody>
 
 		<!-- BEGIN messagerow -->
-				<tr class="<!-- IF messagerow.PM_CLASS --> {messagerow.PM_CLASS}<!-- ENDIF -->">
+				<tr class="<!-- IF messagerow.PM_CLASS --> forum_{messagerow.PM_CLASS}<!-- ENDIF -->">
 					<td>
 						<!-- IF S_PM_ICONS -->
 						<span class="pull-left forum-topic-icon">
@@ -167,8 +167,8 @@
 		<div class="form-group">
 			<div class="col-md-12">
 				<div class="btn-group visible-md visible-lg pull-right">
-					<a class="btn btn-xs btn-default visible-md visible-lg" href="#" onclick="$(':checkbox','#viewfolder').prop('checked',true); return false;"><i class="icon-check"></i> {L_MARK_ALL}</a>
-					<a class="btn btn-xs btn-default visible-md visible-lg" href="#" onclick="$(':checkbox','#viewfolder').removeAttr('checked'); return false;"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+					<a class="btn btn-xs btn-default visible-md visible-lg" href="#" onclick="return marklist('viewfolder','marked_msg_id',true);"><i class="icon-check"></i> {L_MARK_ALL}</a>
+					<a class="btn btn-xs btn-default visible-md visible-lg" href="#" onclick="return marklist('viewfolder','marked_msg_id',false);"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
 				</div>
 			</div>
 		</div>

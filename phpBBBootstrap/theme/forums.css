@@ -97,21 +97,6 @@ hr.small{
 span.help-block{
 	font-style: italic;
 }
-dd.pm_marked_colour,dd.pm_replied_colour,dd.pm_friend_colour,dd.pm_foe_colour{
-	padding-left:10px;
-}
-dd.pm_marked_colour,tr.pm_marked_colour td:first-child{
-	border-left :solid medium #b94a48;
-}
-dd.pm_replied_colour,tr.pm_replied_colour td:first-child{
-	border-left :solid medium #808080;
-}
-dd.pm_friend_colour, tr.pm_friend_colour td:first-child{
-	border-left :solid medium #468847;
-}
-dd.pm_foe_colour, tr.pm_foe_colour td:first-child{
-    border-left :solid medium #a47e3c;	
-}
 /* Annulation de certaines modifications */
 .jumbotron form.form-search{
 	margin-top:20px;
@@ -134,17 +119,6 @@ button.btn-second{
 }
 table tr td.text-middle{
 	vertical-align: middle;
-}
-/* Responsive
--------------------------------------------------- */
-
-/* Desktop large
-	 Au dessus de 1200
-------------------------- */
-@media (min-width: 1200px) {
-	fieldset.smallbande{
-		width:30%;
-	}
 }
 
 fieldset.smallbande{
@@ -187,6 +161,41 @@ input[readonly] {
 	overflow: auto;
 	height:200px;
 }
+
+/**
+ * Forum elements
+ */
+
+dd.forum_pm_marked_colour,dd.forum_pm_replied_colour,dd.forum_pm_friend_colour,dd.forum_pm_foe_colour{
+	padding-left:10px;
+}
+dd.forum_pm_marked_colour,tr.forum_pm_marked_colour {
+	border-left :solid medium #b94a48;
+}
+dd.forum_pm_replied_colour,tr.forum_pm_replied_colour {
+	border-left :solid medium #808080;
+}
+dd.forum_pm_friend_colour, tr.forum_pm_friend_colour {
+	border-left :solid medium #468847;
+}
+dd.forum_pm_foe_colour, tr.forum_pm_foe_colour{
+    border-left :solid medium #a47e3c;	
+}
+
+
+
+/* Responsive
+-------------------------------------------------- */
+
+/* Desktop large
+	 Au dessus de 1200
+------------------------- */
+@media (min-width: 1200px) {
+	fieldset.smallbande{
+		width:30%;
+	}
+}
+
 /* Desktop entre 980 et 1200
 ------------------------- */
 @media (min-width: 980px) and (max-width: 1199px) {
