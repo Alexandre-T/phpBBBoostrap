@@ -1,30 +1,39 @@
 <!-- INCLUDE overall_header.html -->
-
-
 <form action="{S_PROFILE_ACTION}" method="post" id="resend"  class="form-horizontal">
-
-	<h2>{L_UCP_RESEND}</h2>
-
-	<fieldset>
-		<div class="form-group">
-			<label class="control-label" or="username">{L_USERNAME}</label>
-			<div class="controls">
-				<input class="inputbox narrow" type="text" name="username" id="username"/>
+	<div class="panel panel-default">
+		<div class="panel-heading"><h2 class="panel-title">{L_UCP_RESEND}</h2></div>
+		<div class="panel-body">
+			<div class="form-group">
+				<label class="control-label col-sm-3" or="username">{L_USERNAME}</label>
+				<div class="col-sm-9">					
+					<div class="input-group">
+						<span class="input-group-addon"><i class="icon-user"></i></span>
+						<input type="text" name="username" id="username" class="form-control">
+					</div>
+				</div>
 			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-3" for="email">{L_EMAIL_ADDRESS}</label>
+				<div class="col-sm-9">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="icon-envelope"></i></span>
+						<input type="text" name="email" id="email" maxlength="100" class="form-control">
+					</div>			
+					<span class="help-block">{L_EMAIL_REMIND}</span>
+				</div>
+			</div >
+		
 		</div>
-		<div class="form-group">
-			<label class="control-label" for="email">{L_EMAIL_ADDRESS}</label>
-			<div class="controls">
-				<input class="inputbox narrow" type="text" name="email" id="email" maxlength="100" />
-				<span class="help-block">{L_EMAIL_REMIND}</span>
-			</div>
-		</div >
-	</fieldset>
-	<fieldset class="form-actions">
-		{S_HIDDEN_FIELDS}{S_FORM_TOKEN}
-		<input type="submit" name="submit" id="submit" class="btn btn-primary" value="{L_SUBMIT}" tabindex="2" />
-		<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" />
-	</fieldset>
+		<div class="panel-footer">
+			{S_HIDDEN_FIELDS}
+			<fieldset class="btn-group">
+				<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default">
+				<input type="submit" name="submit" id="submit" class="btn btn-primary" value="{L_SUBMIT}" tabindex="2">
+			</fieldset>
+			{S_FORM_TOKEN}
+		</div>
+	</div>
+	
 
 </form>
 

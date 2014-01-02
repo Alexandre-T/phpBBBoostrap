@@ -29,9 +29,7 @@
 				<textarea class="form-control" name="body" id="body" rows="5" cols="45"></textarea>
 			</div>
 		</div>
-		<div class="form-actions">
-			<input class="btn btn-default" name="submit" type="submit" value="{L_IM_SEND}" />
-		</div>
+		<input class="btn btn-default" name="submit" type="submit" value="{L_IM_SEND}" />
 		<input type="hidden" name="fromemail" value="{EMAIL}" />
 		<input type="hidden" name="subject" value="{SITENAME}" />
 		<input type="hidden" name="to" value="{IM_CONTACT}" />
@@ -61,13 +59,11 @@
 	<!-- IF S_SEND_JABBER -->
 		<div class="form-group">
 			<label class="control-label"  for="message">{L_IM_MESSAGE}</label>
-			<div class="controls">
+			<div class="col-sm-offset-3 col-sm-9">
 				<textarea class="form-control" name="message" id="message" rows="5" cols="45"></textarea>
 			</div>
 		</div>
-		<div class="form-actions">
-			<input class="btn btn-default" name="submit" type="submit" value="{L_IM_SEND}" />
-		</div>
+		<input class="btn btn-default" name="submit" type="submit" value="{L_IM_SEND}" />
 	<!-- ENDIF -->
 
 	<!-- IF S_NO_SEND_JABBER -->

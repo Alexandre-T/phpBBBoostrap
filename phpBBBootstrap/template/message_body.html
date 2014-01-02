@@ -3,11 +3,15 @@
 <!-- ELSE -->
 	<!-- INCLUDE overall_header.html -->
 <!-- ENDIF -->
-<h2><i class="icon-info"></i> {MESSAGE_TITLE}</h2>
-<div class="well">
-	<p class="text-justify">{MESSAGE_TEXT}</p>
+<div class="panel panel-default">
+	<div class="panel-heading"><h2 class="panel-title"><i class="icon-info"></i> {MESSAGE_TITLE}</h2></div>
+	<div class="panel-body">
+		<p class="text-justify">{MESSAGE_TEXT}</p>
+	</div>
 	<!-- IF SCRIPT_NAME == "search" and not S_BOARD_DISABLED and not S_NO_SEARCH and L_RETURN_TO_SEARCH_ADV -->
-		<p><a href="{U_SEARCH}" class="{S_CONTENT_FLOW_BEGIN}">{L_RETURN_TO_SEARCH_ADV}</a></p>
+	<div class="panel-footer">
+		44444<a href="{U_SEARCH}" class="btn btn-primary {S_CONTENT_FLOW_BEGIN}">{L_RETURN_TO_SEARCH_ADV}</a>444444
+	</div>
 	<!-- ENDIF -->
 </div>
 <!-- IF S_SIMPLE_MESSAGE -->

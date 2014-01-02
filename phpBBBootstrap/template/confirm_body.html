@@ -1,17 +1,15 @@
 <!-- INCLUDE overall_header.html -->
-
-<section>
-	<form id="confirm" action="{S_CONFIRM_ACTION}" method="post">
-		<h3>{MESSAGE_TITLE}</h3>
-		<p>{MESSAGE_TEXT}</p>
-		<div class="form-actions">
+<form id="confirm" action="{S_CONFIRM_ACTION}" method="post">
+	<div class="panel panel-default">
+		<div class="panel-heading"><h2 class="panel-title">{MESSAGE_TITLE}</h2></div>
+		<div class="panel-body"><p class="text-justify">{MESSAGE_TEXT}</p></div>
+		<div class="panel-footer">
 			<span class="btn-group">
 				<input type="submit" name="confirm" value="{L_YES}" class="btn btn-primary" /> 
 				<input type="submit" name="cancel" value="{L_NO}" class="btn btn-default" />
 			</span>
 		</div>
-		{S_HIDDEN_FIELDS}
-	</form>
-</section>
-
+	</div>
+	{S_HIDDEN_FIELDS}
+</form>
 <!-- INCLUDE overall_footer.html -->
