@@ -1,33 +1,39 @@
 <!-- INCLUDE overall_header.html -->
-<section>
 <!-- IF FORUM_NAME --><h3><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a></h3><!-- ENDIF -->
 
 <form id="login_forum" method="post" action="{S_LOGIN_ACTION}" class="form-horizontal">
-{S_FORM_TOKEN}
-	<h3>{L_LOGIN}</h3>
+<div class="panel panel-default">
+	<div class="panel-heading"><h2 class="panel-title">{L_LOGIN}</h2></div>
+	<div class="panel-body">	
 	<p class="text-info">{L_LOGIN_FORUM}</p>
-	<fieldset class="col-sm-6">
-	<!-- IF LOGIN_ERROR -->
-		<div class="alert alert-danger">
-			{LOGIN_ERROR}
-		</div>
-	<!-- ENDIF -->
-	<div class="form-group">
-		<label class="control-label col-sm-3" for="password">{L_PASSWORD}</label>
-		<div class="input-group">
-			<span class="input-group-addon"><i class="icon-key"></i></span>
-			<input class="form-control" type="password" name="password" id="password" size="25" tabindex="1" />
-		</div>
-	</div>	
-	<div class="form-group">
-		{S_HIDDEN_FIELDS}
-		<input type="submit" name="login" id="login" class="btn btn-primary col-sm-offset-3" value="{L_LOGIN}" tabindex="2" />
+	<div class="row">
+		<fieldset class="col-sm-6">
+			<!-- IF LOGIN_ERROR -->
+				<div class="alert alert-danger">
+					{LOGIN_ERROR}
+				</div>
+			<!-- ENDIF -->
+			<div class="form-group">
+				<label class="control-label col-sm-3" for="password">{L_PASSWORD}</label>
+				<div class="input-group">
+					<span class="input-group-addon"><i class="icon-key"></i></span>
+					<input class="form-control" type="password" name="password" id="password" size="25" tabindex="1" />
+				</div>
+			</div>
+		</fieldset>	
 	</div>
 	{S_LOGIN_REDIRECT}
-	</fieldset>
+	
+	</div>
+	<div class="panel-footer">
+		{S_HIDDEN_FIELDS}
+		<input type="submit" name="login" id="login" class="btn btn-primary" value="{L_LOGIN}" tabindex="2" />
+		{S_LOGIN_REDIRECT}
+	</div>
+</div>
+	
 </form>
 <div class="text-right">
 	<!-- INCLUDE jumpbox.html -->
 </div>
-</section>
 <!-- INCLUDE overall_footer.html -->

@@ -88,8 +88,10 @@ function sort_desc_sd(){
 */
 function change_language(lang_iso)
 {
-	$("input[name*='change_lang']",'#register').val(lang_iso)
+	alert('go');
+	$("input[name='change_lang']",'#register').val(lang_iso);
 	$('#register').submit();
+	alert('end');
 }
 
 	

@@ -88,19 +88,12 @@ hr.small{
 .page-sep{
 	display: none;
 }
-.form-horizontal.form-large .control-label{
-	width:280px;
-}
-.form-horizontal.form-large div.controls{
-	margin-left:300px;
-}
 span.help-block{
 	font-style: italic;
 }
 /* Annulation de certaines modifications */
 .jumbotron form.form-search{
 	margin-top:20px;
-	
 }
 .jumbotron p.help-block small{
 	font-size:65%;

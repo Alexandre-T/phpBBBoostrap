@@ -1,5 +1,5 @@
 <!-- INCLUDE overall_header.html -->
-<form method="post" action="{S_REPORT_ACTION}" id="report" class="form form-horizontal form-large">
+<form method="post" action="{S_REPORT_ACTION}" id="report" class="form-horizontal">
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3 class="panel-title"><i class="icon-mail-forward"></i> <!-- IF S_REPORT_POST -->{L_REPORT_POST}<!-- ELSE -->{L_REPORT_MESSAGE}<!-- ENDIF --></h3>
@@ -15,15 +15,15 @@
 				<!-- ENDIF -->
 				
 				<div class="form-group">
-					<label class="control-label col-md-4" for="reason_id">{L_REASON}</label>
-					<div class="col-md-8">
+					<label class="control-label col-sm-4" for="reason_id">{L_REASON}</label>
+					<div class="col-sm-8">
 						<select name="reason_id" id="reason_id" class="form-control"><!-- BEGIN reason --><option value="{reason.ID}"<!-- IF reason.S_SELECTED --> selected="selected"<!-- ENDIF -->>{reason.DESCRIPTION}</option><!-- END reason --></select>
 					</div>
 				</div>
 				<!-- IF S_CAN_NOTIFY -->
 					<div class="form-group">
-						<label class="control-label col-md-4" for="notify1">{L_REPORT_NOTIFY}</label>
-						<div class="col-md-8">
+						<label class="control-label col-sm-4" for="notify1">{L_REPORT_NOTIFY}</label>
+						<div class="col-sm-8">
 							<label class="radio-inline" for="notify1"><input type="radio" name="notify" id="notify1" value="1" <!-- IF not S_NOTIFY -->checked="checked"<!-- ENDIF --> /> {L_YES}</label> 
 							<label class="radio-inline" for="notify0"><input type="radio" name="notify" id="notify0" value="0" <!-- IF S_NOTIFY -->checked="checked"<!-- ENDIF --> /> {L_NO}</label>
 							<span class="help-block"><em>{L_REPORT_NOTIFY_EXPLAIN}</em></span>
@@ -31,8 +31,8 @@
 					</div>
 				<!-- ENDIF -->
 				<div class="form-group">
-					<label class="control-label col-md-4" for="report_text">{L_MORE_INFO}</label>
-					<div class="col-md-8">
+					<label class="control-label col-sm-4" for="report_text">{L_MORE_INFO}</label>
+					<div class="col-sm-8">
 						<textarea name="report_text" id="report_text" rows="3" class="form-control">{REPORT_TEXT}</textarea></dd>
 						<span class="help-block"><em>{L_CAN_LEAVE_BLANK}</em></span>
 					</div>
@@ -40,14 +40,15 @@
 				 <!-- IF CAPTCHA_TEMPLATE -->
 		         	<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
 		      	 <!-- ENDIF -->
-		      	 <div class="form-group">
-		      	 	<div class="col-md-offset-4 btn-group">
-						<input type="submit" name="submit" class="btn btn-primary" value="{L_SUBMIT}" />
-						<input type="submit" name="cancel" class="btn btn-default" value="{L_CANCEL}" />
-					</div>
-				</div>
-				{S_FORM_TOKEN}
 			</fieldset>
+		</div>
+		<div class="panel-footer">
+      	 	<div class="btn-group">
+				<input type="submit" name="submit" class="btn btn-primary" value="{L_SUBMIT}" />
+				<input type="submit" name="cancel" class="btn btn-default" value="{L_CANCEL}" />
+			</div>
+			{S_FORM_TOKEN}
+	
 		</div>
 	</div>
 </form>
