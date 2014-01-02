@@ -1,57 +1,47 @@
 <!-- INCLUDE overall_header.html -->
 
-<!-- IF S_SHOW_COPPA or S_REGISTRATION -->
-
-<!-- IF S_LANG_OPTIONS -->
-<script>
-	/**
-	* Change language
-	*/
-	function change_language(lang_iso)
-	{
-		document.forms['register'].change_lang.value = lang_iso;
-		document.forms['register'].submit();
-	}
-</script>
-<div class="pull-right intoh2">
-	<form method="post" action="{S_UCP_ACTION}" id="register" class="form form-inline"  style="float:none">
-		<p class="text-right">
-			<label for="lang"><i class="icon-flag"></i> {L_LANGUAGE} </label>
-			<select name="lang" class="form-control" id="lang" onchange="change_language(this.value); return false;" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<div class="row">
+			<div class="<!-- IF S_LANG_OPTIONS -->col-sm-9<!-- ELSE -->col-sm-12<!-- ENDIF -->">
+				<h2 class="panel-title <!-- IF S_LANG_OPTIONS -->forum-title-form<!-- ENDIF -->">
+					{SITENAME} - <!-- IF S_SHOW_COPPA or S_REGISTRATION -->{L_REGISTRATION}<!-- ELSEIF S_AGREEMENT -->{AGREEMENT_TITLE}<!-- ENDIF -->
+				</h2>		
+			</div>
+			<!-- IF S_LANG_OPTIONS -->
+				<div class="col-sm-3">
+					<form method="post" action="{S_UCP_ACTION}" id="register" class="pull-right form-inline">
+						<div class="form-group">
+							<div class="input-group input-group-sm">
+								<div class="input-group-addon"><i class="icon-flag"></i> {L_LANGUAGE}</div>
+								<select name="lang" class="form-control" id="lang" onchange="change_language(this.value); return false;" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select>
+							</div>
+							{S_HIDDEN_FIELDS}
+						</div>
+					</form>
+				</div>
+			<!-- ENDIF -->
+		</div>
+	</div>
+	<div class="panel-body">
+		<p class="text-justify"><!-- IF S_SHOW_COPPA -->{L_COPPA_BIRTHDAY}<!-- ELSEIF S_AGREEMENT -->{AGREEMENT_TEXT}<!-- ELSE -->{L_TERMS_OF_USE}<!-- ENDIF --></p>
+	</div>
+	<div class="panel-footer">
+		<form method="post" action="{S_UCP_ACTION}" id="agreement">
 			{S_HIDDEN_FIELDS}
-		</p>
-	</form>
-</div>
-<!-- ENDIF -->
-	<h2 class="hr">{SITENAME} - {L_REGISTRATION}</h2>
-	<p class="text-justify"><!-- IF S_SHOW_COPPA -->{L_COPPA_BIRTHDAY}<!-- ELSE -->{L_TERMS_OF_USE}<!-- ENDIF --></p>
-	
-	<form method="post" action="{S_UCP_ACTION}" id="agreement">
-		{S_HIDDEN_FIELDS}
-		{S_FORM_TOKEN}
-		<div class="form-actions">
+			{S_FORM_TOKEN}
 			<div class="btn-group">
 			<!-- IF S_SHOW_COPPA -->
 				<a href="{U_COPPA_NO}" class="btn btn-primary"><i class="icon-calendar"></i>&nbsp;{L_COPPA_NO}</a>
 				<a href="{U_COPPA_YES}" class="btn btn-default"><i class="icon-calendar"></i>&nbsp;{L_COPPA_YES}</a>
+			<!-- ELSEIF S_AGREEMENT -->
+				<a href="{U_BACK}" class="btn btn-default"><i class="icon-reply"></i>&nbsp;{L_BACK}</a>
 			<!-- ELSE -->
 				<button type="submit" name="agreed" id="agreed" value="1" class="btn btn-primary"><i class="icon-thumbs-up-alt"></i> {L_AGREE}</button>
 				<button type="submit" name="not_agreed" class="btn btn-default"><i class="icon-thumbs-down-alt"></i> {L_NOT_AGREE}</button>
 			<!-- ENDIF -->
 			</div>
-		</div>
-	</form>
-
-<!-- ELSEIF S_AGREEMENT -->
-
-	<div>
-		<h2 class="hr">{SITENAME} - {AGREEMENT_TITLE}</h2>
-		<p class="text-justify">{AGREEMENT_TEXT}</p>
-		<div class="form-actions">
-			<p><a href="{U_BACK}" class="btn btn-default"><i class="icon-reply"></i> {L_BACK}</a></p>
-		</div>
+		</form>
 	</div>
-
-<!-- ENDIF -->
-
+</div>
 <!-- INCLUDE overall_footer.html -->

@@ -83,7 +83,14 @@ function sort_desc_sd(){
 	$('#button_sort_sd').html( $('#sort_desc_sd').html() + ' <span class="caret"></span>');
 	return true;
 }
-
+/**
+* Change language
+*/
+function change_language(lang_iso)
+{
+	$("input[name*='change_lang']",'#register').val(lang_iso)
+	$('#register').submit();
+}
 
 	
 !function ($) {

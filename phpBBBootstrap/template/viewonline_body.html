@@ -46,7 +46,7 @@
 		<tbody>
 			<!-- BEGIN user_row -->
 				<tr>
-					<td>{user_row.USERNAME_FULL}<!-- IF user_row.USER_IP --> <span style="margin-left: 30px;">{L_IP}: <a href="{user_row.U_USER_IP}">{user_row.USER_IP}</a> &#187; <a href="{user_row.U_WHOIS}" onclick="popup(this.href, 750, 500); return false;">{L_WHOIS}</a></span><!-- ENDIF -->
+					<td>{user_row.USERNAME_FULL}<!-- IF user_row.USER_IP -->&nbsp;&raquo; <span>{L_IP}&nbsp;: <a href="{user_row.U_USER_IP}">{user_row.USER_IP}</a> &raquo; <a href="{user_row.U_WHOIS}" onclick="popup(this.href, 750, 500); return false;">{L_WHOIS}</a></span><!-- ENDIF -->
 						<!-- IF user_row.USER_BROWSER --><br />{user_row.USER_BROWSER}<!-- ENDIF --></td>
 					<td class="info"><a href="{user_row.U_FORUM_LOCATION}">{user_row.FORUM_LOCATION}</a></td>
 					<td class="active">{user_row.LASTUPDATE}</td>
