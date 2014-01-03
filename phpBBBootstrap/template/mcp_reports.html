@@ -1,5 +1,5 @@
 <!-- INCLUDE mcp_header.html -->
-<form id="mcp" method="post" action="{S_MCP_ACTION}" class="form-inline">
+<form id="mcp" method="post" action="{S_MCP_ACTION}" class="form-horizontal">
 
 <div class="panel panel-default">
 	<div class="panel-heading">
@@ -42,12 +42,7 @@
 			</div>
 			<p>{L_EXPLAIN}</p>
 			<!-- IF .postrow -->
-				<fieldset class="form-inline text-center">
-					<label>{L_DISPLAY_POSTS}: {S_SELECT_SORT_DAYS}</label>
-					<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label><label>{S_SELECT_SORT_DIR}</label>
-					<!-- IF TOPIC_ID --><label><input type="checkbox" class="checkbox" name="t" value="{TOPIC_ID}" checked="checked" />&nbsp; <strong>{L_ONLY_TOPIC}</strong></label><!-- ENDIF -->
-					<input type="submit" name="sort" value="{L_GO}" class="btn btn-default" />
-				</fieldset>
+				<!-- INCLUDE sort.html -->
 			<!-- ENDIF -->
 		<!-- ENDIF -->
 	</div>

@@ -107,7 +107,7 @@ button.btn-second{
 	border-right-style:none;
 }
 /* en français deuxième signifie la présence d'un troisième */
-.input-group-btn-deuxieme a.btn,.input-group-btn-deuxieme button.btn{
+.input-group-btn-deuxieme a.btn,.input-group-btn-deuxieme button.btn,.input-group-btn-deuxieme input[type="submit"].btn{
 	border-radius: 0;
 }
 table tr td.text-middle{

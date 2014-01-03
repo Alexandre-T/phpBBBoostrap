@@ -1,6 +1,7 @@
 
-<!-- IF TOTAL_TOPICS or TOTAL_POSTS or TOTAL_ATTACHMENTS or TOTAL_USERS or SEARCH_MATCHES or TOTAL_MESSAGES --> 
+<!-- IF TOTAL or TOTAL_TOPICS or TOTAL_POSTS or TOTAL_ATTACHMENTS or TOTAL_USERS or SEARCH_MATCHES or TOTAL_MESSAGES --> 
 <div class="btn-group {$ALTITUDE}">
+	<!-- IF TOTAL --><span class="btn btn-default btn-xs disabled">{TOTAL}</span><!-- ENDIF -->
 	<!-- IF TOTAL_ATTACHMENTS --><span class="btn btn-default btn-xs disabled">{TOTAL_ATTACHMENTS} {L_TITLE}</span><!-- ENDIF -->
 	<!-- IF TOTAL_TOPICS --><span class="btn btn-default btn-xs disabled">{TOTAL_TOPICS}</span><!-- ENDIF -->
 	<!-- IF TOTAL_POSTS --><span class="btn btn-default disabled btn-xs">{TOTAL_POSTS}</span><!-- ENDIF -->

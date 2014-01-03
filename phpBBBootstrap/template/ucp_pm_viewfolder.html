@@ -62,31 +62,7 @@
 	<!-- ENDIF -->
 
 	<!-- IF FOLDER_CUR_MESSAGES neq 0 -->
-	<!-- <div class="form-horizontal">
-		<div class="row">
-			<div class="col-xs-6">
-				<div class="input-group">
-					<div class="input-group-addon">{L_DISPLAY}</div>
-					{S_SELECT_SORT_DAYS}
-				</div>
-			</div>
-			<div class="col-xs-6">
-				<div class="input-group">
-					<div class="input-group-addon">{L_SORT_BY}</div>
-					{S_SELECT_SORT_KEY}
-					{S_SELECT_SORT_DIR}
-					<div class="input-group-btn">
-						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="button_sort_sd">{L_GO} <span class="caret"></span></button>
-						<ul class="dropdown-menu">
-							<li><a href="#" onclick="if (sort_asc_sd()) $('#viewfolder').submit();" id="sort_asc_sd"><i class="icon-sort-amount-asc"></i> Croissant</a></li>
-							<li><a href="#" onclick="if (sort_desc_sd()) $('#viewfolder').submit();" id="sort_desc_sd"><i class="icon-sort-amount-desc"></i> Décroissant</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-	</div> -->
+
 	<!-- INCLUDE sort.html -->
 	<input type="hidden" name="cur_folder_id" value="{CUR_FOLDER_ID}" />
 

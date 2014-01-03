@@ -20,35 +20,13 @@
 	</div>
 	<div class="panel-body">
 		<!-- IF .postrow -->
-			<div class="btn-group pull-right">
-				<!-- IF TOTAL --><span class="btn btn-default btn-xs disabled">{TOTAL}</span><!-- ENDIF -->
-				<!-- IF PAGE_NUMBER -->
-					<!-- IF PAGINATION -->
-						<a href="#" onclick="jumpto('{A_BASE_URL}','{PER_PAGE}'); return false;" title="{L_JUMP_TO_PAGE}" class="btn btn-default btn-xs">{PAGE_NUMBER}</a>
-						{PAGINATION}
-					<!-- ELSE -->
-						<span class="btn btn-default btn-xs disabled">{PAGE_NUMBER}</span>
-					<!-- ENDIF -->
-				<!-- ENDIF -->
+			<div class="pull-right">
+				<!-- INCLUDE pagination.html -->
 			</div>
 		<!-- ENDIF -->
 		<p class="content">{L_EXPLAIN}</p>
-		<!-- IF TOPIC_ID -->
-		<fieldset class="form-inline text-center">
-			<label class="control-label">{L_DISPLAY_POSTS} : {S_SELECT_SORT_DAYS}</label>
-			<label class="control-label">{L_SORT_BY} : {S_SELECT_SORT_KEY}</label>
-			<label class="control-label">{S_SELECT_SORT_DIR}</label>
-			<input type="submit" name="sort" value="{L_GO}" class="btn btn-default" />
-			<label for="t" class="checkbox-inline"><input type="checkbox" name="t" value="{TOPIC_ID}" checked="checked" />&nbsp;<i class="icon-filter"></i>&nbsp;{L_ONLY_TOPIC}</label>
-			
-		</fieldset>
-		<!-- ELSE -->
-		<fieldset class="form-inline text-center">
-			<label>{L_DISPLAY_TOPICS}: {S_SELECT_SORT_DAYS}</label>
-			<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
-			<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn-default btn" /></label>
-		</fieldset>
-		<!-- ENDIF -->
+		<!-- DEFINE $DISPLAY_TEXT = '{L_DISPLAY_TOPICS}' -->
+		<!-- INCLUDE sort.html -->
 		<!-- IF ! .postrow -->
 		<div class="alert alert-success alert-block">
 			<strong><!-- IF S_TOPICS -->{L_NO_TOPICS_QUEUE}<!-- ELSE -->{L_UNAPPROVED_POSTS_ZERO_TOTAL}<!-- ENDIF --></strong>

@@ -141,7 +141,9 @@ function change_language(lang_iso)
     $('#count_select').val($('#count_select_cache').val());
     $('#button_sd').html($('#sd_cache option:selected').html() + ' ' + $('#button_sd').html());
     $('#button_sort').html($( '[selected="selected"]','#sd' ).html());
-    $('#sd').val($('#sd_cache').val());
+    if ($('#sd_cache').val()){
+    	$('#sd').val($('#sd_cache').val());
+    }
     //Paramètre pour les tris
     $('select#st').addClass('form-control ');
     $('select#sk').addClass('form-control ');

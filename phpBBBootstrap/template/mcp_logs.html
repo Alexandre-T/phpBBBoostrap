@@ -1,5 +1,5 @@
 <!-- INCLUDE mcp_header.html -->
-<form method="post" class="form-inline" id="mcp" action="{U_POST_ACTION}">
+<form method="post" class="form-horizontal" id="mcp" action="{U_POST_ACTION}">
 
 	<div class="panel panel-default">
 		<div class="panel-heading">
@@ -21,25 +21,16 @@
 		<div class="panel-body">
 			<!-- IF ! S_LOGS -->
 				<div class="alert alert-info">{L_NO_ENTRIES}</div>
-			<!-- ELSE -->
-			<fieldset class="form-inline text-center">
-				<div class="form-group">
-					<label>{L_DISPLAY_POSTS}: {S_SELECT_SORT_DAYS}</label>
-					<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
-					<label>{S_SELECT_SORT_DIR}</label>
-					<input type="submit" name="sort" value="{L_GO}" class="btn btn-default" />
-				</div>
-			</fieldset>
-	
+			<!-- ENDIF -->
+			<!-- INCLUDE sort.html -->
 			<hr />
-	
+
 			<div class="btn-group pull-right">
 				<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="btn btn-default btn-xs" title="{L_PREVIOUS}"><i class="icon-double-angle-left"></i></a><!-- ENDIF -->
 				<!-- IF TOTAL --><span class="btn btn-default btn-xs disabled">{TOTAL}</span><!-- ENDIF -->
 				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --><a href="#" class="btn btn-default btn-xs" onclick="jumpto('{A_BASE_URL}','{PER_PAGE}'); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>{PAGINATION}<!-- ELSE --><span class="btn btn-default btn-xs">{PAGE_NUMBER}</span><!-- ENDIF --><!-- ENDIF -->		
 				<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="btn btn-default btn-xs" title="{L_NEXT}"><i class="icon-double-angle-right"></i></a><!-- ENDIF -->
 			</div>
-			<!-- ENDIF -->
 		</div>
 		<!-- IF S_LOGS -->
 			<table id="mcp" class="table table-striped table-bordered table-hover">
