@@ -7,26 +7,33 @@
 		<div class="form-group">
 			<div class="col-sm-6">
 				<div class="input-group">
-					<div class="input-group-addon">{$DISPLAY_TEXT}</div>
-					{S_SELECT_SORT_DAYS}
-				</div>
-			</div>
-			<div class="col-sm-6">
-				<div class="input-group">
-					<div class="input-group-addon">{L_SORT_BY}</div>
+					<span class="input-group-addon"><i class="icon-sort"></i> {L_SORT_BY}</span>
 					{S_SELECT_SORT_KEY}
-					{S_SELECT_SORT_DIR}
+					{S_SELECT_SORT_DIR}					
+					<div class="input-group-btn input-group-btn-deuxieme">
+						<button type="submit" class="btn btn-default" id="button_sort">{L_GO}</button>
+					</div>
 					<div class="input-group-btn">
-						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" id="button_sort_sd">{L_GO} <span class="caret"></span></button>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+	   						<span class="caret"></span>
+	   						<span class="sr-only">Toggle Dropdown</span>
+						</button>
 						<ul class="dropdown-menu">
-							<li><a href="#" onclick="if (sort_asc_sd()) $('#viewfolder').submit();" id="sort_asc_sd"><i class="icon-sort-amount-asc"></i> Croissant</a></li>
-							<li><a href="#" onclick="if (sort_desc_sd()) $('#viewfolder').submit();" id="sort_desc_sd"><i class="icon-sort-amount-desc"></i> Décroissant</a></li>
+							<li><a href="#" onclick="return message_asc_sd()" id="message_asc_sd">{L_ASCENDING} <i class="icon-sort-amount-asc"></i></a></li>
+							<li><a href="#" onclick="return message_desc_sd()" id="message_desc_sd">{L_DESCENDING} <i class="icon-sort-amount-desc"></i></a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
+			<div class="col-sm-6">
+				<div class="input-group">
+					<div class="input-group-addon">{$DISPLAY_TEXT}</div>
+					{S_SELECT_SORT_DAYS}
+					<div class="input-group-btn">
+						<input class="btn btn-default" type="submit" value="{L_GO}" />
+					</div>
+				</div>
+			</div>
 		</div>
-		
 	</div>
 <!-- ENDIF -->
-	

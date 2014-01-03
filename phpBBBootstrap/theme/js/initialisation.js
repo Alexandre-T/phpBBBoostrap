@@ -83,6 +83,17 @@ function sort_desc_sd(){
 	$('#button_sort_sd').html( $('#sort_desc_sd').html() + ' <span class="caret"></span>');
 	return true;
 }
+function message_asc_sd(){
+	$('#sd').val('a');
+	$('#button_sort').html( $('#message_asc_sd').html());
+	return false;
+}
+function message_desc_sd(){
+	$('#sd').val('d');
+	$('#button_sort').html( $('#message_desc_sd').html());
+	return false;
+}
+
 /**
 * Change language
 */
@@ -121,7 +132,7 @@ function change_language(lang_iso)
     //$('.tooltip-link').tooltip()
     //$('.popover-test').popover()
     
-    //Pramétrage pour la recherche de membres
+    //Paramétrage pour la recherche de membres
     $('#button_active_select').html($('#active_select_cache option:selected').html() + ' ' + $('#button_active_select').html());
     $('#active_select').val($('#active_select_cache').val());
     $('#button_joined_select').html($('#joined_select_cache option:selected').html() + ' ' + $('#button_joined_select').html());
@@ -129,6 +140,7 @@ function change_language(lang_iso)
     $('#button_count_select').html($('#count_select_cache option:selected').html() + ' ' + $('#button_count_select').html());
     $('#count_select').val($('#count_select_cache').val());
     $('#button_sd').html($('#sd_cache option:selected').html() + ' ' + $('#button_sd').html());
+    $('#button_sort').html($( '[selected="selected"]','#sd' ).html());
     $('#sd').val($('#sd_cache').val());
     //Paramètre pour les tris
     $('select#st').addClass('form-control ');
