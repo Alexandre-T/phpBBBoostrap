@@ -192,6 +192,9 @@ span.forum-topic-button{
 	margin-left:10px;
 	margin-right:10px;
 }
+img.forum-img-select{
+	cursor: pointer;
+}
 
 /* Responsive
 -------------------------------------------------- */

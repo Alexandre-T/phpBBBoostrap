@@ -170,8 +170,8 @@
 			<!-- IF S_EDIT -->
 				<div class="col-xs-12">
 					{S_HIDDEN_FIELDS}
-					<div class="btn-group pull-right">
-					<!-- IF S_DISPLAY_GALLERY --><input type="submit" name="display_gallery" value="{L_DISPLAY_GALLERY}" class="btn btn-primary" /><!-- ENDIF -->
+					<!-- IF S_DISPLAY_GALLERY --><input type="submit" name="display_gallery" value="{L_DISPLAY_GALLERY}" class="btn btn-default" /><!-- ENDIF -->
+					<div class="btn-group">
 					<!-- IF S_IN_AVATAR_GALLERY --><input type="submit" name="cancel" value="{L_CANCEL}" class="btn btn-default" /><!-- ELSE -->
 					<input type="reset" value="{L_RESET}" name="reset" class="btn btn-default" /><!-- ENDIF -->
 					<input type="submit" name="update" value="{L_SUBMIT}" class="btn btn-primary" />
@@ -237,10 +237,8 @@
 		</fieldset>
 	</div>
 	<div class="panel-footer">		
-		<fieldset class="text-right">
-			<input class="btn btn-primary" type="submit" name="addusers" value="{L_SUBMIT}" />
-			{S_FORM_TOKEN}
-		</fieldset>
+		<input class="btn btn-primary" type="submit" name="addusers" value="{L_SUBMIT}" />
+		{S_FORM_TOKEN}
 	</div>
 </div>
 <!-- ELSE -->

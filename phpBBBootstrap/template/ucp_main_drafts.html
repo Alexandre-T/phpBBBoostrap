@@ -67,16 +67,12 @@
 <!-- ENDIF -->
 <!-- IF S_EDIT_DRAFT -->
 	<div class="panel-footer">
-		<div class="row">
-			<div class="col-sm-10 col-sm-offset-2">
-				<div class="btn-group">
-					<a href="{S_UCP_ACTION}" class="btn btn-default"><i class="icon-reply"></i> {L_BACK_TO_DRAFTS}</a>
-					<button type="reset" value="{L_RESET}" name="reset" class="btn btn-default" ><i class="icon-refresh"></i> {L_RESET}</button>
-					<button type="submit" name="submit" value="{L_SAVE}" class="btn btn-primary"><i class="icon-save"></i> {L_SAVE}</button>
-				</div>
-				{S_FORM_TOKEN}
-			</div>
+		<a href="{S_UCP_ACTION}" class="btn btn-default"><i class="icon-reply"></i> {L_BACK_TO_DRAFTS}</a>
+		<div class="btn-group">
+			<button type="reset" value="{L_RESET}" name="reset" class="btn btn-default" ><i class="icon-refresh"></i> {L_RESET}</button>
+			<button type="submit" name="submit" value="{L_SAVE}" class="btn btn-primary"><i class="icon-save"></i> {L_SAVE}</button>
 		</div>
+		{S_FORM_TOKEN}
 	</div>
 
 <!-- ENDIF -->

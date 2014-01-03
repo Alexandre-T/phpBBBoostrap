@@ -74,8 +74,9 @@
 	<!-- ENDIF -->
 	<!-- IF S_IN_AVATAR_GALLERY -->
 	</fieldset>
-	<fieldset>
+	<fieldset class="form-horizontal">
 	<legend><i class="icon-picture"></i> {L_AVATAR_GALLERY}</legend>
+	
 	<div class="form-group">
 		<label class="control-label col-sm-4" for="category">{L_AVATAR_CATEGORY}</label>
 		<div class="col-sm-8">
@@ -87,14 +88,24 @@
 			</div>
 		</div>
 	</div>
-
+	
 	<div id="gallery">
 	<!-- BEGIN avatar_row --><!-- BEGIN avatar_column -->
 		<div class="form-group">
 			<div class="col-sm-offset-4 col-sm-8">
-				<label class="radio-inline" for="av-{avatar_row.S_ROW_COUNT}-{avatar_row.avatar_column.S_ROW_COUNT}"><img src="{avatar_row.avatar_column.AVATAR_IMAGE}" alt="" class="img-rounded img-responsive"/>
-					<input type="radio" name="avatar_select" id="av-{avatar_row.S_ROW_COUNT}-{avatar_row.avatar_column.S_ROW_COUNT}" value="{avatar_row.avatar_column.AVATAR_FILE}" />
-				</label>
+				<div class="thumbnail text-center">
+					<label for="av-{avatar_row.S_ROW_COUNT}-{avatar_row.avatar_column.S_ROW_COUNT}">
+						<img src="{avatar_row.avatar_column.AVATAR_IMAGE}" title="{L_SELECT}" class="img-rounded img-responsive forum-img-select"/>
+					</label>
+					<div class="caption text-center">
+						<div class="checkbox">
+							<label>
+								<input type="radio" name="avatar_select" id="av-{avatar_row.S_ROW_COUNT}-{avatar_row.avatar_column.S_ROW_COUNT}" value="{avatar_row.avatar_column.AVATAR_FILE}" />
+								{L_SELECT}
+							</label>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	<!-- END avatar_column --><!-- END avatar_row -->
