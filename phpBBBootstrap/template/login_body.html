@@ -18,8 +18,8 @@
 					</div>
 					<!-- ENDIF -->
 					<div class="form-group">
-			   			<label class="col-lg-4 control-label" for="{USERNAME_CREDENTIAL}">{L_USERNAME}&nbsp;</label>
-			   			<div class="col-lg-8">
+			   			<label class="col-lg-3 control-label" for="{USERNAME_CREDENTIAL}">{L_USERNAME}&nbsp;</label>
+			   			<div class="col-lg-9">
 			   				<div class="input-group">
 			 						<span class="input-group-addon"><i class="icon-user"></i></span>
 			 						<input class="form-control" type="text" tabindex="1" name="{USERNAME_CREDENTIAL}" id="{USERNAME_CREDENTIAL}" size="25" value="{USERNAME}" />
@@ -27,8 +27,8 @@
 			   			</div>
 			 			</div>
 					<div class="form-group">
-			   			<label class="col-lg-4 control-label" for="{PASSWORD_CREDENTIAL}">{L_PASSWORD}&nbsp;</label>
-			   			<div class="col-lg-8">
+			   			<label class="col-lg-3 control-label" for="{PASSWORD_CREDENTIAL}">{L_PASSWORD}&nbsp;</label>
+			   			<div class="col-lg-9">
 			   				<div class="input-group">
 			   					<span class="input-group-addon"><i class="icon-key"></i></span>
 			     					<input class="form-control" type="password" tabindex="2" id="{PASSWORD_CREDENTIAL}" name="{PASSWORD_CREDENTIAL}" size="25" /></dd>
@@ -37,11 +37,13 @@
 			 		</div>
 					<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
 						<!-- DEFINE $CAPTCHA_TAB_INDEX = 3 -->
+						<!-- DEFINE $CAPTCHA_COL_LABEL = 'col-lg-3' -->
+						<!-- DEFINE $CAPTCHA_COL_INPUT = 'col-lg-9' -->
 						<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
 					<!-- ENDIF -->
 						<!-- IF S_DISPLAY_FULL_LOGIN and (U_SEND_PASSWORD or U_RESEND_ACTIVATION) -->
 							<div class="form-group">
-								<div class="col-lg-offset-4 col-lg-8">
+								<div class="col-lg-offset-3 col-lg-9">
 									<p class="form-control-static">
 										<!-- IF U_SEND_PASSWORD --><a href="{U_SEND_PASSWORD}">{L_FORGOT_PASS}</a><!-- ENDIF -->
 										<!-- IF U_SEND_PASSWORD and U_RESEND_ACTIVATION -->
@@ -55,7 +57,7 @@
 					<!-- IF S_DISPLAY_FULL_LOGIN -->
 					<!-- IF S_AUTOLOGIN_ENABLED -->
 					<div class="form-group">
-						<div class="col-lg-offset-4 col-lg-8">
+						<div class="col-lg-offset-3 col-lg-9">
 							<label for="autologin" class="checkbox">
 								<input type="checkbox" name="autologin" id="autologin" tabindex="4" /> 
 								{L_LOG_ME_IN}
@@ -64,7 +66,7 @@
 					</div>
 					<!-- ENDIF -->
 					<div class="form-group">
-						<div class="col-lg-offset-4 col-lg-8">
+						<div class="col-lg-offset-3 col-lg-9">
 							<label for="viewonline" class="checkbox">
 								<input type="checkbox" name="viewonline" id="viewonline" tabindex="5" /> 
 								{L_HIDE_ME}
