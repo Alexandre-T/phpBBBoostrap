@@ -1,16 +1,4 @@
 <!-- INCLUDE overall_header.html -->
-
-<script>
-	/**
-	* Change language
-	*/
-	function change_language(lang_iso)
-	{
-		document.forms['register'].change_lang.value = lang_iso;
-		document.forms['register'].submit.click();
-	}
-</script>
-
 <form method="post" action="{S_UCP_ACTION}" id="register" class="form-horizontal">
 <div class="panel panel-default">
 	<div class="panel-heading"><h3 class="panel-title">{SITENAME} - {L_REGISTRATION}</h3></div>
@@ -76,7 +64,7 @@
 			<div class="col-sm-8">			
 				<div class="input-group">
 					<span class="input-group-addon"><i class="icon-flag"></i></span>
-					<select tabindex="6" name="lang" id="lang" class="form-control" onchange="change_language(this.value); return false;" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select>
+					<select tabindex="6" name="lang" id="lang" class="form-control" onchange="update_language(this.value); return false;" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select>
 				</div>
 			</div>
 		</div>

@@ -99,12 +99,14 @@ function message_desc_sd(){
 */
 function change_language(lang_iso)
 {
-	alert('go');
 	$("input[name='change_lang']",'#register').val(lang_iso);
 	$('#register').submit();
-	alert('end');
 }
-
+function update_language(lang_iso)
+{
+	document.forms['register'].change_lang.value = lang_iso;
+	document.forms['register'].submit.click();
+}
 	
 !function ($) {
   $(function(){
@@ -125,12 +127,9 @@ function change_language(lang_iso)
     $('a','.pagination-line').addClass('btn btn-default btn-xs');
     $('span.page-dots','.pagination-line').addClass('btn btn-default btn-xs disabled');
     $('strong','.pagination-line').addClass('btn btn-default btn-xs disabled');
-    //$('strong','.btn').removeClass('btn btn-xs disabled');
     $('span.page-sep','.pagination-line').remove();
     $('img','.forum-avatar-cadre').addClass('img-thumbnail img-responsive');
     $('img','.avatar').addClass('img-thumbnail img-responsive');
-    //$('.tooltip-link').tooltip()
-    //$('.popover-test').popover()
     
     //Paramétrage pour la recherche de membres
     $('#button_active_select').html($('#active_select_cache option:selected').html() + ' ' + $('#button_active_select').html());
