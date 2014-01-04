@@ -17,9 +17,13 @@
 
 <!-- BEGIN bool -->
 <!-- IF bool.FIELD_LENGTH eq 1 -->
-	<!-- BEGIN options --><label for="{bool.FIELD_IDENT}_{bool.options.OPTION_ID}" class="radio-inline"><input type="radio" class="form-control radio" name="{bool.FIELD_IDENT}" id="{bool.FIELD_IDENT}_{bool.options.OPTION_ID}" value="{bool.options.OPTION_ID}"{bool.options.CHECKED} /> {bool.options.VALUE}</label> <!-- END options -->
+	<!-- BEGIN options --><label class="radio-inline"><input type="radio" name="{bool.FIELD_IDENT}" id="{bool.FIELD_IDENT}_{bool.options.OPTION_ID}" value="{bool.options.OPTION_ID}" {bool.options.CHECKED} /> {bool.options.VALUE}</label><!-- END options -->
 <!-- ELSE -->
-	<input class="form-control" type="checkbox" class="radio" name="{bool.FIELD_IDENT}" id="{bool.FIELD_IDENT}"<!-- IF bool.FIELD_VALUE --> checked="checked"<!-- ENDIF --> />
+<div class="checkbox">
+	<label>
+		<input type="checkbox" name="{bool.FIELD_IDENT}" id="{bool.FIELD_IDENT}"<!-- IF bool.FIELD_VALUE --> checked="checked"<!-- ENDIF --> /> 
+	</label>
+</div>
 <!-- ENDIF -->
 <!-- END bool -->
 
