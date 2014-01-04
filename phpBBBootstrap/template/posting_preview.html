@@ -1,4 +1,4 @@
-<div class="panel firsttopic lasttopic bg3" id="preview">
+<div id="preview" class="form-horizontal">
 	<!-- IF S_HAS_POLL_OPTIONS -->
 		<h3>{L_PREVIEW} : {POLL_QUESTION}</h3>
 		<div class="alert alert-info text-center alert-dismissable">
@@ -7,7 +7,7 @@
 		</div>
 		<fieldset class="polls">
 		<!-- BEGIN poll_option -->
-		<div class="row">
+		<div class="form-group">
 			<div class="col-xs-offset-1 col-xs-2 text-right">
 				<p class="form-control-static">{L_NO_VOTES}</p>
 			</div>
@@ -22,14 +22,17 @@
 				</div>				
 			</div>
 			<div class="col-xs-4">
-				<label class="<!-- IF S_IS_MULTI_CHOICE -->checkbox<!-- ELSE -->radio<!-- ENDIF -->">
-				{poll_option.POLL_OPTION_CAPTION}						
- 					<!-- IF S_IS_MULTI_CHOICE -->  						
-					<input type="checkbox" name="vote_id[]" id="vote_{poll_option.POLL_OPTION_ID}" value="{poll_option.POLL_OPTION_ID}" />
-				<!-- ELSE -->
-					<input type="radio" name="vote_id[]" id="vote_{poll_option.POLL_OPTION_ID}" value="{poll_option.POLL_OPTION_ID}" />
-				<!-- ENDIF -->
-				</label>
+				<div class="<!-- IF S_IS_MULTI_CHOICE -->checkbox<!-- ELSE -->radio<!-- ENDIF -->">
+					<label>
+						<!-- IF S_IS_MULTI_CHOICE -->  						
+							<input type="checkbox" name="vote_id[]" id="vote_{poll_option.POLL_OPTION_ID}" value="{poll_option.POLL_OPTION_ID}" />
+						<!-- ELSE -->
+							<input type="radio" name="vote_id[]" id="vote_{poll_option.POLL_OPTION_ID}" value="{poll_option.POLL_OPTION_ID}" />
+						<!-- ENDIF -->
+						&nbsp;
+						{poll_option.POLL_OPTION_CAPTION}						
+ 					</label>
+				</div>
 			</div>
 		</div>
 		<!-- END poll_option -->

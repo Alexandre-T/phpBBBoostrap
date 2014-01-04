@@ -32,9 +32,13 @@
 			<div class="form-group">
 				<textarea name="warning" id="warning" class="form-control" cols="40" rows="3">{L_WARNING_POST_DEFAULT}</textarea>
 				<span class="help-block">{L_ADD_WARNING_EXPLAIN}</span>
-			</div>
+			</div>			
 			<!-- IF S_CAN_NOTIFY -->
-				<label class="checkbox" for="notify_user"><input type="checkbox" name="notify_user" checked="checked" /> {L_NOTIFY_USER_WARN}</label>
+			<div class="form-group">
+				<div class="checkbox">
+					<label><input type="checkbox" name="notify_user" checked="checked" /> {L_NOTIFY_USER_WARN}</label>
+				</div>
+			</div>
 			<!-- ENDIF -->
 		</fieldset>
 	</div>

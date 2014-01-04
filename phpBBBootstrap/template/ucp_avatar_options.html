@@ -8,7 +8,9 @@
 		<label class="control-label col-sm-4">{L_CURRENT_IMAGE}</label>
 		<div class="col-sm-8">
 			<!-- IF AVATAR -->{AVATAR}<!-- ELSE --><img src="{T_THEME_PATH}/images/no_avatar.gif" alt="" /><!-- ENDIF -->
-			<label class="checkbox" for="delete"><input type="checkbox" name="delete" id="delete" /> <i class="icon-trash"></i> {L_DELETE_AVATAR}</label>
+			<div class="checkbox">
+				<label><input type="checkbox" name="delete" id="delete" /><i class="icon-trash"></i> {L_DELETE_AVATAR}</label>
+			</div>
 			<span class="help-block text-info">{L_AVATAR_EXPLAIN}</span>
 		</div>
 	</div>

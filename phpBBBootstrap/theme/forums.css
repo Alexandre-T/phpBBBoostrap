@@ -169,6 +169,9 @@ fieldset.forum-smallbande{
 fieldset.forum-bande{
 	width:50%;
 }
+h2.forum-legend,h3.forum-legend,h4.forum-legend,h5.forum-legend,h6.forum-legend{
+	border-bottom : thin #eee solid;
+}
 hr.forum-small-divider{
 	margin-top:2px;
 	margin-bottom:2px;

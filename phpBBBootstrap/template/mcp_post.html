@@ -197,45 +197,55 @@
 		<!-- IF not S_MCP_QUEUE -->
 		
 			<!-- IF S_SHOW_USER_NOTES -->
-				<div class="panel panel-default" id="usernotes">
 		
 					<form method="post" id="mcp_notes" action="{U_POST_ACTION}">
 		
 					<!-- IF S_USER_NOTES -->
+					<div class="panel panel-default" id="usernotes">
 						<div class="panel-heading"><h3 class="panel-title">{L_FEEDBACK}</h3></div>
 						<div class="panel-body">
 							<!-- BEGIN usernotes -->
-								<strong>{L_REPORTED_BY}: {usernotes.REPORT_BY} &laquo; {usernotes.REPORT_AT}</strong>
-								<!-- IF S_CLEAR_ALLOWED --><div class="right-box"><input type="checkbox" name="marknote[]" value="{usernotes.ID}" /></div><!-- ENDIF -->
-								<div class="postbody">{usernotes.ACTION}</div>
-			
+								<blockquote>
+								<!-- IF S_CLEAR_ALLOWED -->
+									<span class="checkbox pull-right">										
+										<label><input type="checkbox" name="marknote[]" value="{usernotes.ID}" />{L_DELETE}</label>
+									</span>
+								<!-- ENDIF -->
+								{usernotes.ACTION}
+								<small>{L_REPORTED_BY}: {usernotes.REPORT_BY} &laquo; {usernotes.REPORT_AT}</small>								
+								</blockquote>
+								<!-- IF not usernotes.S_LAST_ROW -->
 								<hr/>
+								<!-- ENDIF -->
 							<!-- END usernotes -->
-			
+						
 							<!-- IF S_CLEAR_ALLOWED -->
+							</div>
+							<div class="panel-footer">
 								<fieldset class="btn-group">
-									<input class="btn btn-warning" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />
-									<input class="btn btn-info" type="submit" name="action[del_marked]" value="{L_DELETE_MARKED}" />
+									<input class="btn btn-default" type="submit" name="action[del_all]" value="{L_DELETE_ALL}" />
+									<input class="btn btn-default" type="submit" name="action[del_marked]" value="{L_DELETE_MARKED}" />
 								</fieldset>
 							<!-- ENDIF -->
 						</div>
+					</div>
 					<!-- ENDIF -->
-		
-					<h4>{L_ADD_FEEDBACK}</h4>
-					<p>{L_ADD_FEEDBACK_EXPLAIN}</p>
-		
-					<fieldset>
-						<textarea name="usernote" rows="4" cols="76" class="form-control"></textarea>
-					</fieldset>
-		
-					<fieldset class="btn-group">
-						<input class="btn btn-primary" type="submit" name="action[add_feedback]" value="{L_SUBMIT}" />
-						<input class="btn btn-default" type="reset" value="{L_RESET}" />
-					</fieldset>
-					{S_FORM_TOKEN}
-					</form>
-		
-				</div>
+					<div class="panel panel-default" id="usernotes">
+						<div class="panel-heading"><h3 class="panel-title">{L_ADD_FEEDBACK}</h3></div>
+						<div class="panel-body"><p>{L_ADD_FEEDBACK_EXPLAIN}</p>
+						<fieldset>
+							<textarea name="usernote" rows="4" cols="76" class="form-control"></textarea>
+						</fieldset>
+						</div>
+						<div class="panel-footer">
+								{S_FORM_TOKEN}
+							<fieldset class="btn-group">
+								<input class="btn btn-default" type="reset" value="{L_RESET}" />
+								<input class="btn btn-primary" type="submit" name="action[add_feedback]" value="{L_SUBMIT}" />
+							</fieldset>
+						</div>
+					</div>
+				</form>
 			<!-- ENDIF -->
 		
 			<!-- IF S_SHOW_REPORTS -->

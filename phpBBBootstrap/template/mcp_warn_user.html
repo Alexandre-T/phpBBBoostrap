@@ -19,11 +19,16 @@
 			<div class="col-md-8 corps">
 				<h4 class="fieldset">{L_ADD_WARNING}</h4>
 				<p>{L_ADD_WARNING_EXPLAIN}</p>
-		
 				<fieldset>
-					<textarea class="form-control" name="warning" id="warning" cols="40" rows="3"></textarea>
+					<div class="form-group">
+						<textarea class="form-control" name="warning" id="warning" cols="40" rows="3"></textarea>
+					</div>
 					<!-- IF S_CAN_NOTIFY -->
-						<label class="checkbox" for="notify_user"><input type="checkbox" name="notify_user" checked="checked" /> {L_NOTIFY_USER_WARN}</label>
+					<div class="form-group">
+						<div class="checkbox">
+							<label><input type="checkbox" name="notify_user" checked="checked" /> {L_NOTIFY_USER_WARN}</label>
+						</div>
+					</div>
 					<!-- ENDIF -->
 				</fieldset>
 			</div>

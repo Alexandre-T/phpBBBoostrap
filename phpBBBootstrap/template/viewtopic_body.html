@@ -42,48 +42,56 @@
 	<!-- IF S_CAN_VOTE -->
 	<form method="post" action="{S_POLL_ACTION}" class="form-horizontal">
 	<!-- ENDIF -->
-		<div>
-			<fieldset>
-			<legend><strong>{L_POLL} :</strong> {POLL_QUESTION}</legend>
+		<div class="form-horizontal forum-top-buffer">
+			<!-- IF S_CAN_VOTE -->	
+				<fieldset class="form-horizontal">
+				<legend>{POLL_QUESTION}</legend>
+			<!-- ELSE -->
+				<h3 class="forum-legend">{POLL_QUESTION}</h3>
+			<!-- ENDIF -->
+			<!-- IF S_CAN_VOTE or L_POLL_LENGTH -->
 			<div class="alert alert-info text-center alert-dismissable">
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 				<p>{L_POLL_LENGTH}<!-- IF S_CAN_VOTE and L_POLL_LENGTH --><br /><!-- ENDIF --><!-- IF S_CAN_VOTE -->{L_MAX_VOTES}<!-- ENDIF --></p>
 			</div>
+			<!-- ENDIF -->
 			
 			<!-- BEGIN poll_option -->
-			<div class="row">
+			<div class="form-group">
 				<!-- IF S_DISPLAY_RESULTS -->
 				<div class="col-sm-offset-2 col-sm-2 text-right">
-					<!-- IF poll_option.POLL_OPTION_RESULT == 0 -->{L_NO_VOTES}<!-- ELSE -->{poll_option.POLL_OPTION_PERCENT}<!-- ENDIF -->
+					<p class="form-control-static"><!-- IF poll_option.POLL_OPTION_RESULT == 0 -->{L_NO_VOTES}<!-- ELSE -->{poll_option.POLL_OPTION_PERCENT}<!-- ENDIF --></p>
 				</div>
 				<!-- ENDIF -->
 				<div class="col-sm-1 <!-- IF not S_DISPLAY_RESULTS -->col-sm-offset-3<!-- ENDIF --> hidden-xs">
+					<p class="form-control-static">
 					<!-- IF poll_option.POLL_OPTION_VOTED -->
 					<span class="btn btn-xs btn-success disabled" title="Votre vote"><i class="icon-ok-sign"></i></span>
 					<!-- ELSE -->
 					<span class="btn btn-xs btn-default disabled" title="Vous n'avez pas voté pour"><i class="icon-remove-sign"></i></span>
 					<!-- ENDIF -->
+					</p>
 				</div>
-				<div class="col-sm-3 text-left  hidden-xs">
-					<div class="progress">
+				<div class="col-sm-3 text-left hidden-xs">
+					<div class="progress forum_progress">
   						<div class="progress-bar" style="width: {poll_option.POLL_OPTION_PCT}%;"></div>
 					</div>				
 				</div>
 				<div class="col-sm-4">
 					<!-- IF S_CAN_VOTE -->
-					<label class="<!-- IF S_IS_MULTI_CHOICE -->checkbox<!-- ELSE -->radio<!-- ENDIF -->">
-					<!-- ENDIF -->
-					{poll_option.POLL_OPTION_CAPTION}
-					<!-- IF S_CAN_VOTE -->
+					<div class="<!-- IF S_IS_MULTI_CHOICE -->checkbox<!-- ELSE -->radio<!-- ENDIF -->">
+						<label>
 						<!-- IF poll_option.POLL_OPTION_VOTED --><!-- DEFINE $CHECKED = 'checked="checked"' --><!-- ELSE --><!-- DEFINE $CHECKED = '' --><!-- ENDIF -->
 	  					<!-- IF S_IS_MULTI_CHOICE -->  						
 							<input type="checkbox" name="vote_id[]" id="vote_{poll_option.POLL_OPTION_ID}" value="{poll_option.POLL_OPTION_ID}" {$CHECKED}/>
 						<!-- ELSE -->
 							<input type="radio" name="vote_id[]" id="vote_{poll_option.POLL_OPTION_ID}" value="{poll_option.POLL_OPTION_ID}" {$CHECKED} />
 						<!-- ENDIF -->
-	  				<!-- ENDIF -->
-					<!-- IF S_CAN_VOTE -->
-					</label>
+						{poll_option.POLL_OPTION_CAPTION}
+						</label>
+					</div>
+					<!-- ELSE -->
+					<p class="form-control-static">{poll_option.POLL_OPTION_CAPTION}</p>
 					<!-- ENDIF -->
 				</div>
 				<hr class="visible-xs"/>

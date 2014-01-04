@@ -103,7 +103,9 @@
 	<!-- IF S_DELETE_ALLOWED -->
 	<div class="form-group">
 		<div class="col-sm-offset-2 col-sm-10">
-			<label class="checkbox" for="delete"><input type="checkbox" name="delete" id="delete" /> {L_DELETE_POST}</label>
+			<div class="checkbox">
+				<label><input type="checkbox" name="delete" id="delete" /> {L_DELETE_POST}</label>
+			</div>
 			<span class="help-block">{L_DELETE_POST_WARN}</span>
 		</div>
 	</div>
@@ -209,7 +211,7 @@
 			<!-- IF S_SHOW_ATTACH_BOX --><li><a href="#attach" data-toggle="tab">{L_ADD_ATTACHMENT}</a></li><!-- ENDIF -->
 			<!-- IF S_SHOW_POLL_BOX or S_POLL_DELETE --><li><a href="#poll" data-toggle="tab">{L_ADD_POLL}</a><!-- ENDIF -->
 		</ul>
-		<div id="myTabContent" class="tab-content">
+		<div id="myTabContent" class="tab-content forum-top-buffer">
 			<div class="tab-pane fade in active" id="options">
 				<fieldset>
 					<!-- IF S_BBCODE_ALLOWED or S_SMILIES_ALLOWED or S_LINKS_ALLOWED or S_SIG_ALLOWED or S_NOTIFY_ALLOWED or S_LOCK_TOPIC_ALLOWED or S_LOCK_POST_ALLOWED -->
@@ -217,25 +219,39 @@
 						<label class="control-label col-sm-2">{L_OPTIONS}</label>
 						<div class="col-sm-10">
 							<!-- IF S_BBCODE_ALLOWED -->
-								<label class="checkbox" for="disable_bbcode"><input type="checkbox" name="disable_bbcode" id="disable_bbcode"{S_BBCODE_CHECKED} /> {L_DISABLE_BBCODE}</label>
+								<div class="checkbox">
+									<label><input type="checkbox" name="disable_bbcode" id="disable_bbcode"{S_BBCODE_CHECKED} /> {L_DISABLE_BBCODE}</label>
+								</div>
 							<!-- ENDIF -->
 							<!-- IF S_SMILIES_ALLOWED -->
-								<label class="checkbox" for="disable_smilies"><input type="checkbox" name="disable_smilies" id="disable_smilies"{S_SMILIES_CHECKED} /> {L_DISABLE_SMILIES}</label>
+								<div class="checkbox">
+									<label><input type="checkbox" name="disable_smilies" id="disable_smilies"{S_SMILIES_CHECKED} /> {L_DISABLE_SMILIES}</label>
+								</div>
 							<!-- ENDIF -->
 							<!-- IF S_LINKS_ALLOWED -->
-								<label class="checkbox" for="disable_magic_url"><input type="checkbox" name="disable_magic_url" id="disable_magic_url"{S_MAGIC_URL_CHECKED} /> {L_DISABLE_MAGIC_URL}</label>
+								<div class="checkbox">
+									<label><input type="checkbox" name="disable_magic_url" id="disable_magic_url"{S_MAGIC_URL_CHECKED} /> {L_DISABLE_MAGIC_URL}</label>
+								</div>
 							<!-- ENDIF -->
 							<!-- IF S_SIG_ALLOWED -->
-								<label class="checkbox" for="attach_sig"><input type="checkbox" name="attach_sig" id="attach_sig"{S_SIGNATURE_CHECKED} /> {L_ATTACH_SIG}</label>
+								<div class="checkbox">
+									<label><input type="checkbox" name="attach_sig" id="attach_sig"{S_SIGNATURE_CHECKED} /> {L_ATTACH_SIG}</label>
+								</div>
 							<!-- ENDIF -->
 							<!-- IF S_NOTIFY_ALLOWED -->
-								<label class="checkbox" for="notify"><input type="checkbox" name="notify" id="notify"{S_NOTIFY_CHECKED} /> {L_NOTIFY_REPLY}</label>
+								<div class="checkbox">
+									<label><input type="checkbox" name="notify" id="notify"{S_NOTIFY_CHECKED} /> {L_NOTIFY_REPLY}</label>
+								</div>
 							<!-- ENDIF -->
 							<!-- IF S_LOCK_TOPIC_ALLOWED -->
-								<label class="checkbox" for="lock_topic"><input type="checkbox" name="lock_topic" id="lock_topic"{S_LOCK_TOPIC_CHECKED} /> {L_LOCK_TOPIC}</label>
+								<div class="checkbox">
+									<label><input type="checkbox" name="lock_topic" id="lock_topic"{S_LOCK_TOPIC_CHECKED} /> {L_LOCK_TOPIC}</label>
+								</div>
 							<!-- ENDIF -->
 							<!-- IF S_LOCK_POST_ALLOWED -->
-								<label class="checkbox" for="lock_post"><input type="checkbox" name="lock_post" id="lock_post"{S_LOCK_POST_CHECKED} /> {L_LOCK_POST} [{L_LOCK_POST_EXPLAIN}]</label>
+								<div class="checkbox">
+									<label><input type="checkbox" name="lock_post" id="lock_post"{S_LOCK_POST_CHECKED} /> {L_LOCK_POST} [{L_LOCK_POST_EXPLAIN}]</label>
+								</div>
 							<!-- ENDIF -->
 						</div>
 					</div>

@@ -33,17 +33,19 @@
 				</div>
 			</div>
 		<!-- ENDIF -->
-		<!-- IF 1 or S_NOTIFY_POSTER -->
+		<!-- IF S_NOTIFY_POSTER -->
 			<div class="form-group">
 				<div class="<!-- IF S_APPROVE -->col-xs-12<!-- ELSE -->col-sm-offset-4 col-sm-8<!-- ENDIF -->">
-					<label for="notify_poster" class="checkbox-inline">
-						<input type="checkbox" name="notify_poster" checked="checked"/> 
-						<!-- IF S_APPROVE -->
-							{L_NOTIFY_POSTER_APPROVAL}
-						<!-- ELSE -->
-							{L_NOTIFY_POSTER_DISAPPROVAL}
-						<!-- ENDIF -->
-					</label>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" name="notify_poster" checked="checked"/> 
+							<!-- IF S_APPROVE -->
+								{L_NOTIFY_POSTER_APPROVAL}
+							<!-- ELSE -->
+								{L_NOTIFY_POSTER_DISAPPROVAL}
+							<!-- ENDIF -->
+						</label>
+					</div>
 				</div>
 			</div>
 		<!-- ENDIF -->
