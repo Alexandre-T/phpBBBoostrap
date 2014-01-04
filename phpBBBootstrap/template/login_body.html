@@ -12,8 +12,8 @@
 				<div class="panel-heading"><h2 class="panel-title"><!-- IF LOGIN_EXPLAIN -->{LOGIN_EXPLAIN}<!-- ELSE -->{L_LOGIN}<!-- ENDIF --></h2></div>
 				<div class="panel-body">
 					<!-- IF LOGIN_ERROR -->			
-					<div class="alert alert-danger">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<div class="alert alert-danger alert-dismissable">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 						{LOGIN_ERROR}
 					</div>
 					<!-- ENDIF -->

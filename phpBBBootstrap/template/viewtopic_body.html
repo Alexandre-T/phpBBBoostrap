@@ -1,9 +1,9 @@
 <!-- INCLUDE overall_header.html -->
 	<div class="row">
-		<div class="col-sm-9">
+		<div class="col-sm-8">
 			<h2><a href="{U_VIEW_TOPIC}">{TOPIC_TITLE}</a></h2>
 		</div>
-		<div class="col-sm-3 text-right intoh2">
+		<div class="col-sm-4 text-right forum-top-buffer">
 			<!-- IF S_DISPLAY_SEARCHBOX -->
 			<form method="get" class="form-horizontal" id="topic-search" action="{S_SEARCHBOX_ACTION}">
 				{S_SEARCH_LOCAL_HIDDEN_FIELDS}				
@@ -19,14 +19,14 @@
 	</div>
 	
 	<!-- IF FORUM_DESC -->
-	<div class="alert alert-info alert-block">
-		<button type="button" class="close" data-dismiss="alert">&times;</button>
+	<div class="alert alert-info alert-dismissable">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 		{FORUM_DESC}
 	</div><!-- ENDIF -->
 	
 <!-- IF S_FORUM_RULES -->
-	<div class="alert alert-success">
-		<button type="button" class="close" data-dismiss="alert">&times;</button>
+	<div class="alert alert-success alert-dismissable">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 		<!-- IF U_FORUM_RULES -->
 			<a href="{U_FORUM_RULES}">{L_FORUM_RULES}</a>
 		<!-- ELSE -->
@@ -45,8 +45,8 @@
 		<div>
 			<fieldset>
 			<legend><strong>{L_POLL} :</strong> {POLL_QUESTION}</legend>
-			<div class="alert alert-info text-center">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<div class="alert alert-info text-center alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 				<p>{L_POLL_LENGTH}<!-- IF S_CAN_VOTE and L_POLL_LENGTH --><br /><!-- ENDIF --><!-- IF S_CAN_VOTE -->{L_MAX_VOTES}<!-- ENDIF --></p>
 			</div>
 			
@@ -210,10 +210,10 @@
 				<!-- ENDIF -->
 				<h4 class="forum-topic-subject" ><!-- IF postrow.POST_ICON_IMG --><img src="{T_ICONS_PATH}{postrow.POST_ICON_IMG}" width="{postrow.POST_ICON_IMG_WIDTH}" height="{postrow.POST_ICON_IMG_HEIGHT}" alt="Icone" /> <!-- ENDIF --><a class="bleu" href="{U_VIEW_TOPIC}#p{postrow.POST_ID}">{postrow.POST_SUBJECT}</a></h4>
 				<p class="forum-author"><small>{L_POST_BY_AUTHOR} <strong>{postrow.POST_AUTHOR_FULL}</strong> {L_POSTED_ON_DATE} {postrow.POST_DATE}</small></p>
-				<hr class="small"/>
+				<hr class="forum-small-divider"/>
 				<!-- IF postrow.S_POST_UNAPPROVED or postrow.S_POST_REPORTED -->
-				<div class="alert alert-warning">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<div class="alert alert-warning alert-dismissable">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					<!-- IF postrow.S_POST_UNAPPROVED --><i class="icon-legal"></i> <a href="{postrow.U_MCP_APPROVE}"><strong>{L_POST_UNAPPROVED}</strong></a><!-- ENDIF -->
 					<!-- IF postrow.S_POST_UNAPPROVED and postrow.S_POST_REPORTED --><br /><!-- ENDIF -->
 					<!-- IF postrow.S_POST_REPORTED --><i class="icon-share-alt"></i>  <a href="{postrow.U_MCP_REPORT}"><strong>{L_POST_REPORTED}</strong></a><!-- ENDIF -->
@@ -223,7 +223,7 @@
 				<div class="forum-content text-justify">{postrow.MESSAGE}</div>
 				
 				<!-- IF postrow.S_HAS_ATTACHMENTS -->
-				<hr class="small"/>
+				<hr class="forum-small-divider"/>
 				<div>
 				<dl class="attachbox">
 					<dt>{L_ATTACHMENTS}</dt>
@@ -234,26 +234,26 @@
 				</div>
 				<!-- ENDIF -->
 				<!-- IF postrow.S_DISPLAY_NOTICE -->
-				<div class="alert clearfix" >
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<div class="alert alert-info clearfix alert-dismissable" >
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					{L_DOWNLOAD_NOTICE}
 				</div>
 				<!-- ENDIF -->
 				<!-- IF postrow.EDITED_MESSAGE or postrow.EDIT_REASON -->
-				<div class="alert alert-info clearfix">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<div class="alert alert-info clearfix alert-dismissable">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					{postrow.EDITED_MESSAGE}
 					<!-- IF postrow.EDIT_REASON --><br /><strong>{L_REASON}:</strong> <em>{postrow.EDIT_REASON}</em><!-- ENDIF -->
 				</div>
 				<!-- ENDIF -->
 				<!-- IF postrow.BUMPED_MESSAGE -->
-				<div class="alert alert-info clearfix">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<div class="alert alert-info clearfix alert-dismissable">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					{postrow.BUMPED_MESSAGE}
 				</div>
 				<!-- ENDIF -->
 				<!-- IF postrow.SIGNATURE -->
-				<hr class="small"/>
+				<hr class="forum-small-divider"/>
 				<div id="sig{postrow.POST_ID}" class="forum-signature">
 				<div class="btn-group pull-right">
 					<a href="#top" class="btn btn-default btn-xs tooltip-link" title="{L_BACK_TO_TOP}"><i class="icon-double-angle-up"></i> </a>
@@ -280,8 +280,7 @@
 <!-- ENDIF -->
 
 <!-- INCLUDE topic_actions.html -->
-<br/>
-<div class="row">
+<div class="row forum-top-buffer">
 	<!-- IF S_TOPIC_MOD -->
 	<div class="col-sm-6">
 		<form method="post" action="{S_MOD_ACTION}">

@@ -117,7 +117,7 @@
 				</tbody>
 			</table>
 			<!-- ELSE -->
-				<p class="alert alert-block">{L_NO_SEARCH_RESULTS}</p>
+				<p class="alert">{L_NO_SEARCH_RESULTS}</p>
 			<!-- ENDIF -->
 		
 		<!-- ELSE -->
@@ -130,7 +130,7 @@
 					<h4><a href="{searchresults.U_VIEW_POST}">{searchresults.POST_SUBJECT}</a></h4>
 					<blockquote class="text-justify">
 						{searchresults.MESSAGE}
-						<a href="{searchresults.U_VIEW_POST}" class="btn btn-default btn-xs tooltip-link intoh2 pull-right" title="{L_JUMP_TO_POST}"><i class="icon-eye-open"></i> {L_JUMP_TO_POST}</a>
+						<a href="{searchresults.U_VIEW_POST}" class="btn btn-default btn-xs tooltip-link forum-top-buffer pull-right" title="{L_JUMP_TO_POST}"><i class="icon-eye-open"></i> {L_JUMP_TO_POST}</a>
 						<small class="visible-xs">{L_POST_BY_AUTHOR} <strong>{searchresults.POST_AUTHOR_FULL}</strong> &raquo; {searchresults.POST_DATE}</small>
 					</blockquote>
 				</div>
@@ -159,7 +159,7 @@
 			<!-- ENDIF -->
 		
 			<!-- BEGINELSE -->
-				<p class="alert alert-block">{L_NO_SEARCH_RESULTS}</p>
+				<p class="alert">{L_NO_SEARCH_RESULTS}</p>
 			<!-- END searchresults -->
 		<!-- ENDIF -->
 		
@@ -195,7 +195,7 @@
 </div>
 
 <div class="row">
-	<div class="text-right col-sm-offset-4 col-sm-8 col-md-offset-6 col-md-6"><!-- INCLUDE jumpbox.html --></div>
+	<div class="col-md-offset-7 col-sm-offset-5 col-xs-offset-4"><!-- INCLUDE jumpbox.html --></div>
 </div>
 <!-- INCLUDE jumppage.html -->
 <!-- INCLUDE overall_footer.html -->

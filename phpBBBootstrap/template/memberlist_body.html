@@ -48,13 +48,12 @@
 	<!-- ENDIF -->
 	
 	<!-- IF S_LEADERS_SET or not S_SHOW_GROUP or not .memberrow -->
-	<br/>	
-	<table class="table table-bordered table-hover table-striped" id="memberlist">
+	<table class="table table-bordered table-hover table-striped forum-top-buffer" id="memberlist">
 		<thead>
 		<tr>
 			<th class="rank"><span class="rank-img"><a href="{U_SORT_RANK}">{L_RANK}</a></span></th>
 			<th class="name"><a href="{U_SORT_USERNAME}"><!-- IF S_SHOW_GROUP and .memberrow -->{L_GROUP_LEADER}<!-- ELSE -->{L_USERNAME}<!-- ENDIF --></a></th>
-			<th class="posts"><a href="{U_SORT_POSTS}#memberlist">{L_POSTS}</a></th>
+			<th class="forum-posts"><a href="{U_SORT_POSTS}#memberlist">{L_POSTS}</a></th>
 			<th class="joined"><a href="{U_SORT_JOINED}#memberlist">{L_JOINED}</a></th>
 			<!-- IF U_SORT_ACTIVE --><th class="mactive"><a href="{U_SORT_ACTIVE}#memberlist">{L_LAST_ACTIVE}</a></th><!-- ENDIF -->
 		</tr>
@@ -81,12 +80,12 @@
 	<!-- IF not S_LEADERS_SET -->
 			<th class="rank"><span class="rank-img"><a href="{U_SORT_RANK}">{L_RANK}</a></span></th>
 			<th class="name"><a href="{U_SORT_USERNAME}"><!-- IF S_SHOW_GROUP -->{L_GROUP_MEMBERS}<!-- ELSE -->{L_USERNAME}<!-- ENDIF --></a></th>
-			<th class="posts"><a href="{U_SORT_POSTS}#memberlist">{L_POSTS}</a></th>
+			<th class="forum-posts"><a href="{U_SORT_POSTS}#memberlist">{L_POSTS}</a></th>
 			<th class="joined"><a href="{U_SORT_JOINED}#memberlist">{L_JOINED}</a></th>
 			<!-- IF U_SORT_ACTIVE --><th class="mactive"><a href="{U_SORT_ACTIVE}#memberlist">{L_LAST_ACTIVE}</a></th><!-- ENDIF -->
 	<!-- ELSEIF S_SHOW_GROUP -->
 		<th class="name">{L_GROUP_MEMBERS}</th>
-		<th class="posts">&nbsp;</th>
+		<th class="forum-posts">&nbsp;</th>
 		<th class="info">&nbsp;</th>
 		<th class="joined">&nbsp;</th>
 		<!-- IF U_SORT_ACTIVE --><th class="mactive">&nbsp;</th><!-- ENDIF -->
@@ -130,7 +129,7 @@
 <!-- ENDIF -->
 
 <!-- IF S_IN_SEARCH_POPUP and not S_SEARCH_USER -->
-<fieldset class="display-options">
+<fieldset>
 	<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
 	<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
 	<label for="sk">{L_SELECT_SORT_METHOD}: <select name="sk" id="sk">{S_MODE_SELECT}</select></label> 

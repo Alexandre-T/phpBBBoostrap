@@ -4,7 +4,7 @@
 		<div class="col-sm-7">
 			<h2><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a></h2>
 		</div>
-		<div class="col-sm-5 text-bottom text-right intoh2 hidden-xs">
+		<div class="col-sm-5 text-bottom text-right forum-top-buffer hidden-xs">
 			<!-- IF S_DISPLAY_SEARCHBOX -->
 				<form action="{S_SEARCHBOX_ACTION}" method="get" id="forum-search" >
 					<fieldset>
@@ -21,14 +21,14 @@
 		</div>
 	</div>
 	<!-- IF FORUM_DESC -->
-		<div class=" alert-info alert alert-block">
-			<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<div class="alert alert-info alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 			<p>{FORUM_DESC}</p>
 		</div>
 	<!-- ENDIF -->	
 	<!-- IF S_FORUM_RULES and ! U_FORUM_RULES -->
-		<div class="alert alert-success">
-			<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<div class="alert alert-success alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 			<p>
 				<strong><i class="icon-cogs"></i> {L_FORUM_RULES}</strong>
 				<br />
@@ -193,10 +193,10 @@
 		<!-- ENDIF -->
 	<!-- BEGINELSE -->
 	   <!-- IF S_IS_POSTABLE -->
-	   <br/>
-	   <div class="alert alert-info alert-block">
+	   <tr><td>
+	   <div class="alert alert-info forum-top-buffer">
 	      <i class="icon-exclamation-sign"></i> {L_NO_TOPICS}
-	   </div>
+	   </div></td></tr>
 	   <!-- ENDIF -->
 	<!-- END topicrow -->
 		</tbody>
@@ -217,7 +217,7 @@
 			   <p>{LOGGED_IN_USER_LIST}</p>
 			<!-- ENDIF -->
 		</div>
-		<div class="col-sm-5 text-right intoh2">
+		<div class="col-sm-5 text-right forum-top-buffer">
 			<!-- INCLUDE jumpbox.html -->			
 		</div>
 	</div>

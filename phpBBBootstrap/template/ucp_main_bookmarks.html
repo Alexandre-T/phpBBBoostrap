@@ -2,13 +2,13 @@
 
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
 <div class="panel panel-default">
-	<div class="panel-heading"><h2 class="panel-title">{L_TITLE}</h2></div>
+	<div class="panel-heading"><h3 class="panel-title">{L_TITLE}</h3></div>
 	<div class="panel-body">
 		<p class="text-justify">{L_BOOKMARKS_EXPLAIN}</p>	
 		<!-- IF S_NO_DISPLAY_BOOKMARKS -->
-		<div class="alert alert-warning alert-block">{L_BOOKMARKS_DISABLED}</div>
+		<div class="alert alert-warning">{L_BOOKMARKS_DISABLED}</div>
 		<!-- ELSEIF ! .topicrow -->
-			<div class="alert alert-info alert-block">{L_NO_BOOKMARKS}</div>
+			<div class="alert alert-info">{L_NO_BOOKMARKS}</div>
 		<!-- ENDIF -->
 	</div>
 	<!-- IF ! S_NO_DISPLAY_BOOKMARKS and .topicrow -->

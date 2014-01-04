@@ -7,7 +7,7 @@
 <!-- IF PROMPT -->
 <form id="viewfolder" method="post" action="{S_PM_ACTION}" class="form-horizontal">			
 	<div class="panel panel-default">
-		<div class="panel-heading"><h2 class="panel-title"><i class="icon-list-alt"></i> {L_EXPORT_AS_CSV}</h2></div>
+		<div class="panel-heading"><h3 class="panel-title"><i class="icon-list-alt"></i> {L_EXPORT_AS_CSV}</h3></div>
 		<div class="panel-body">
 		
 			<fieldset>
@@ -42,12 +42,12 @@
 <!-- ELSE -->
 
 	<!-- IF NUM_REMOVED -->
-		<p class="alert alert-success alert-block">{RULE_REMOVED_MESSAGES}</p>
+		<p class="alert alert-success">{RULE_REMOVED_MESSAGES}</p>
 	<!-- ENDIF -->
 
 	<!-- IF NUM_NOT_MOVED -->
-		<div class="alert alert-warning">
-			<a class="close" data-dismiss="alert" href="#" aria-hidden="true">&times;</a>
+		<div class="alert alert-warning alert-dismissable">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 			<h4>{NOT_MOVED_MESSAGES}</h4>
 			<p>{RELEASE_MESSAGE_INFO}</p>
 		</div>
@@ -55,9 +55,9 @@
 
 	<!-- IF ! .messagerow -->
 		<!-- IF S_COMPOSE_PM_VIEW and S_NO_AUTH_SEND_MESSAGE -->
-			<p class="alert alert-block"><!-- IF S_USER_NEW -->{L_USER_NEW_PERMISSION_DISALLOWED}<!-- ELSE -->{L_NO_AUTH_SEND_MESSAGE}<!-- ENDIF --></p>
+			<p class="alert"><!-- IF S_USER_NEW -->{L_USER_NEW_PERMISSION_DISALLOWED}<!-- ELSE -->{L_NO_AUTH_SEND_MESSAGE}<!-- ENDIF --></p>
 		<!-- ELSE -->
-			<p class="alert alert-block alert-info">{L_NO_MESSAGES}</p>
+			<p class="alert alert-info">{L_NO_MESSAGES}</p>
 		<!-- ENDIF -->
 	<!-- ENDIF -->
 

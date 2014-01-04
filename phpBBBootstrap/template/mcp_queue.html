@@ -3,7 +3,7 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<!-- IF ! TOPIC_ID -->
-		<fieldset class="pull-right smallbande hidden-xs hidden-sm">
+		<fieldset class="pull-right forum-smallbande hidden-xs hidden-sm">
 			{S_FORM_TOKEN}
 			<div class="form-group">
 				<div class="input-group input-group-sm">
@@ -28,7 +28,7 @@
 		<!-- DEFINE $DISPLAY_TEXT = '{L_DISPLAY_TOPICS}' -->
 		<!-- INCLUDE sort.html -->
 		<!-- IF ! .postrow -->
-		<div class="alert alert-success alert-block">
+		<div class="alert alert-success">
 			<strong><!-- IF S_TOPICS -->{L_NO_TOPICS_QUEUE}<!-- ELSE -->{L_UNAPPROVED_POSTS_ZERO_TOTAL}<!-- ENDIF --></strong>
 		</div>
 		<!-- ENDIF -->

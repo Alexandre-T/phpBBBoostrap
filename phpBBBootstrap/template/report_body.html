@@ -8,8 +8,8 @@
 			<p class="text-justify"><!-- IF S_REPORT_POST -->{L_REPORT_POST_EXPLAIN}<!-- ELSE -->{L_REPORT_MESSAGE_EXPLAIN}<!-- ENDIF --></p>
 			<fieldset>
 				<!-- IF ERROR -->
-					<div class="alert alert-danger">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<div class="alert alert-danger alert-dismissable">
+						<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 						{ERROR}
 					</div>
 				<!-- ENDIF -->

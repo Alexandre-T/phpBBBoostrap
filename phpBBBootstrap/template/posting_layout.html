@@ -6,8 +6,8 @@
 <!-- ENDIF -->
 
 <!-- IF S_FORUM_RULES -->
-<div class="alert alert-success">
-	<button type="button" class="close" data-dismiss="alert">&times;</button>
+<div class="alert alert-success alert-dismissable">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 	<p><!-- IF U_FORUM_RULES -->
 		<a href="{U_FORUM_RULES}">{L_FORUM_RULES}</a>
 	<!-- ELSE -->
@@ -20,8 +20,8 @@
 <form id="postform" class="form-horizontal" method="post" action="{S_POST_ACTION}"{S_FORM_ENCTYPE}>
 
 <!-- IF S_DRAFT_LOADED -->
-	<div class="alert">
-		<button type="button" class="close" data-dismiss="alert">&times;</button>
+	<div class="alert alert-success alert-dismissable">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 		<h4><i class="icon-exclamation-sign"></i> {L_INFORMATION}</h4>
 		<p>{L_DRAFT_LOADED}</p>
 	</div>

@@ -30,20 +30,13 @@ nav.footer{
 	padding-top:20px;
 }
 
-td.topics,td.posts,th.topics,th.posts{
+td.forum-topics,td.forum-posts,th.forum-topics,th.forum-posts{
 	text-align:center;
 }
-td.lastpost,th.lastpost{
+td.forum-lastpost,th.forum-lastpost{
 }
 div.hr,h1.hr,h2.hr,h3.hr{
 	border-bottom:thin solid #e5e5e5;
-}
-.intoh2{
-	margin-top:15px;
-}
-
-.forum-topic-icon{
-	margin-left:12px;margin-top:6px;margin-right:15px;
 }
 
 ul.dropdown-menu li span{
@@ -74,10 +67,6 @@ table td.text-center{
 }
 div.forum-content{
 	/* min-height:280px; */
-}
-hr.small{
-	margin-top:2px;
-	margin-bottom:2px;
 }
 .forum-topic-subject{
 	margin-bottom:0;
@@ -114,16 +103,6 @@ table tr td.text-middle{
 	vertical-align: middle;
 }
 
-form.bande.smallbande, fieldset.smallbande{
-	margin-right:20px;
-	margin-top:-5px;
-	width:30%;
-}
-form.bande, fieldset.bande{
-	margin-right:20px;
-	margin-top:-5px;
-	width:50%;
-}
 .nowrap{
   white-space:nowrap;
  }
@@ -180,9 +159,26 @@ dl.forum_rank{
 div.forum_progress{
 	margin-top:8px;
 }
+fieldset.forum-smallbande, fieldset.forum-bande{
+	margin-right:20px;
+	margin-top:-5px;
+}
+fieldset.forum-smallbande{
+	width:30%;
+}
+fieldset.forum-bande{
+	width:50%;
+}
+hr.forum-small-divider{
+	margin-top:2px;
+	margin-bottom:2px;
+}
 h2.forum-title-form{
 	font-size: x-large;
 	padding-top:2px;
+}
+img.forum-img-select{
+	cursor: pointer;
 }
 span.forum-button{
 	margin-left:15px;
@@ -192,8 +188,11 @@ span.forum-topic-button{
 	margin-left:10px;
 	margin-right:10px;
 }
-img.forum-img-select{
-	cursor: pointer;
+.forum-top-buffer{
+	margin-top: 20px;
+}
+.forum-topic-icon{
+	margin-left:12px;margin-top:6px;margin-right:15px;
 }
 
 /* Responsive
@@ -203,9 +202,6 @@ img.forum-img-select{
 	 Au dessus de 1200
 ------------------------- */
 @media (min-width: 1200px) {
-	fieldset.smallbande{
-		width:30%;
-	}
 }
 
 /* Desktop entre 980 et 1200

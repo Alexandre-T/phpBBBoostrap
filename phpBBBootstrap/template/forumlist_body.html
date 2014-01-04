@@ -9,9 +9,9 @@
 			<thead>
 				<tr>
 					<th class=""><!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF --></th>
-					<th class="col-sm-1 hidden-xs topics">{L_TOPICS}</th>
-					<th class="col-sm-1 hidden-xs posts">{L_POSTS}</th>
-					<th class="col-sm-3 hidden-xs lastpost">{L_LAST_POST}</th>
+					<th class="col-sm-1 hidden-xs forum-topics">{L_TOPICS}</th>
+					<th class="col-sm-1 hidden-xs forum-posts">{L_POSTS}</th>
+					<th class="col-sm-3 hidden-xs forum-lastpost">{L_LAST_POST}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -57,9 +57,9 @@
 						<td colspan="3" class="hidden-xs">
 					<!-- ENDIF -->
 				<!-- ELSE -->
-					<td class="hidden-xs topics"><span class="badge">{forumrow.TOPICS}</span> <dfn class="sr-only">{L_TOPICS}</dfn></td>
-					<td class="hidden-xs posts"><span class="badge">{forumrow.POSTS}</span> <dfn class="sr-only">{L_POSTS}</dfn></td>
-					<td class="hidden-xs lastpost">
+					<td class="hidden-xs forum-topics"><span class="badge">{forumrow.TOPICS}</span> <dfn class="sr-only">{L_TOPICS}</dfn></td>
+					<td class="hidden-xs forum-posts"><span class="badge">{forumrow.POSTS}</span> <dfn class="sr-only">{L_POSTS}</dfn></td>
+					<td class="hidden-xs forum-lastpost">
 						<!-- IF forumrow.LAST_POST_TIME and not S_IS_BOT -->
 							<a class="tooltip-link" href="{forumrow.U_LAST_POST}" title="{L_LAST_POST}"><i class="icon-mail-forward"></i><dfn class="sr-only">{L_LAST_POST}</dfn></a>
 						<!-- ENDIF -->
