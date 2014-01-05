@@ -3,7 +3,7 @@
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE} >
 
 <div class="panel panel-default">
-	<div class="panel-heading"><h3 class="panel-title"><i class="icon-paper-clip"></i> {L_TITLE}</h3></div>
+	<div class="panel-heading"><h3 class="panel-title"><i class="fa fa-paperclip"></i> {L_TITLE}</h3></div>
 	<div class="panel-body">
 		<!-- IF .attachrow -->
 		<div class="pull-right">
@@ -16,11 +16,31 @@
 		<!-- ELSE -->
 		<hr />
 		<div class="text-center">
-			<fieldset class="form-inline">
-				<label for="sk">{L_SORT_BY}: <select name="sk" id="sk">{S_SORT_OPTIONS}</select></label> 
-				<label><select name="sd" id="sd">{S_ORDER_SELECT}</select></label>
-				<button class="btn btn-default" type="submit" name="sort" value="{L_SORT}"><i class="icon-sort-by-attributes"></i></button>
-				{S_FORM_TOKEN}
+			<fieldset class="form-horizontal">
+			
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-8">
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-sort"></i> {L_SORT_BY}</span>
+						<select name="sk" id="sk">{S_SORT_OPTIONS}</select>
+						<select name="sd" id="sd">{S_ORDER_SELECT}</select>
+						<div class="input-group-btn input-group-btn-deuxieme">
+							<button class="btn btn-default" type="submit" name="sort" id="button_sort" value="{L_SORT}"><i class="fa fa-sort-amount-asc"></i></button>
+						</div>
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		   						<span class="caret"></span>
+		   						<span class="sr-only">Toggle Dropdown</span>
+							</button>
+							<ul class="dropdown-menu text-left">
+								<li><a href="#" onclick="return message_asc_sd()" id="message_asc_sd"><i class="fa fa-sort-amount-asc"></i> {L_ASCENDING}</a></li>
+								<li><a href="#" onclick="return message_desc_sd()" id="message_desc_sd"><i class="fa fa-sort-amount-desc"></i> {L_DESCENDING} </a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			{S_FORM_TOKEN}
 			</fieldset>
 		</div>
 		<!-- ENDIF -->		
@@ -59,14 +79,14 @@
 	<div class="panel-footer">
 		<div class="pull-right">
 			<div class="btn-group">
-				<a class="btn btn-xs btn-default visible-md visible-lg" href="#" onclick="return marklist('ucp','attachment',true);"><i class="icon-check"></i> {L_MARK_ALL}</a>
-				<a class="btn btn-xs btn-default visible-md visible-lg" href="#" onclick="return marklist('ucp','attachment',false);"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+				<a class="btn btn-xs btn-default visible-md visible-lg" href="#" onclick="return marklist('ucp','attachment',true);"><i class="fa fa-check-square-o"></i> {L_MARK_ALL}</a>
+				<a class="btn btn-xs btn-default visible-md visible-lg" href="#" onclick="return marklist('ucp','attachment',false);"><i class="fa fa-square-o"></i> {L_UNMARK_ALL}</a>
 			</div>
 			<!-- INCLUDE pagination.html -->
 		</div>
 		<!-- IF S_ATTACHMENT_ROWS -->
 		<fieldset>
-			<button class="btn btn-primary" type="submit" name="delete" value="{L_DELETE_MARKED}"><i class="icon-trash"></i> {L_DELETE_MARKED}</button>
+			<button class="btn btn-primary" type="submit" name="delete" value="{L_DELETE_MARKED}"><i class="fa fa-trash-o"></i> {L_DELETE_MARKED}</button>
 			{S_FORM_TOKEN}
 		</fieldset>
 		<!-- ENDIF -->

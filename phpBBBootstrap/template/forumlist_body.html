@@ -22,20 +22,20 @@
 				<td class="col-md-8">
 					<!-- Boutons de droite -->
 					<span class="btn-group pull-right">
-						<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a class="btn btn-xs btn-warning" href="{forumrow.U_UNAPPROVED_TOPICS}"><i class="icon-bell"></i></a><!-- ENDIF -->
-						<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED --><a class="btn btn-default btn-xs pull-right tooltip-link" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}"><i class="icon-rss"></i> <span class="sr-only">{L_FEED} - {forumrow.FORUM_NAME}</span></a><!-- ENDIF -->
+						<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a class="btn btn-xs btn-warning" href="{forumrow.U_UNAPPROVED_TOPICS}"><i class="fa fa-bell"></i></a><!-- ENDIF -->
+						<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED --><a class="btn btn-default btn-xs pull-right tooltip-link" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}"><i class="fa fa-rss"></i> <span class="sr-only">{L_FEED} - {forumrow.FORUM_NAME}</span></a><!-- ENDIF -->
 					</span>					
 					
 					<span class="pull-left forum-button">
 						<a href="{forumrow.U_VIEWFORUM}" class="btn btn-lg <!-- IF forumrow.S_UNREAD_FORUM -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> tooltip-link" title="{forumrow.FORUM_FOLDER_IMG_ALT}">
 							<!-- IF forumrow.S_IS_LINK -->
-								<i class="icon-globe icon-large"></i>
+								<i class="fa fa-globe fa-lg"></i>
 							<!-- ELSEIF forumrow.S_LOCKED_FORUM -->
-								<i class="icon-lock icon-large"></i>
+								<i class="fa fa-lock fa-lg"></i>
 							<!-- ELSEIF forumrow.FORUM_ICON -->
-								<i class="{forumrow.FORUM_ICON} icon-large"></i>
+								<i class="{forumrow.FORUM_ICON} fa-lg"></i>
 							<!-- ELSE -->
-								<i class="icon-file-alt icon-large"></i>
+								<i class="fa fa-file-text-o fa-lg"></i>
 							<!-- ENDIF -->
 						</a>
 					</span>
@@ -61,7 +61,7 @@
 					<td class="hidden-xs forum-posts"><span class="badge">{forumrow.POSTS}</span> <dfn class="sr-only">{L_POSTS}</dfn></td>
 					<td class="hidden-xs forum-lastpost">
 						<!-- IF forumrow.LAST_POST_TIME and not S_IS_BOT -->
-							<a class="tooltip-link" href="{forumrow.U_LAST_POST}" title="{L_LAST_POST}"><i class="icon-mail-forward"></i><dfn class="sr-only">{L_LAST_POST}</dfn></a>
+							<a class="tooltip-link" href="{forumrow.U_LAST_POST}" title="{L_LAST_POST}"><i class="fa fa-mail-forward"></i><dfn class="sr-only">{L_LAST_POST}</dfn></a>
 						<!-- ENDIF -->
 						<!-- IF forumrow.LAST_POST_TIME -->
 							{L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}
@@ -83,7 +83,7 @@
 	<div class="alert alert-info">
 		<div class=" row">
 		<div class="col-md-1">
-			<i class="icon-exclamation-sign icon-3x"></i> 
+			<i class="fa fa-exclamation-circle fa-4x"></i> 
 		</div>
 			<div class="col-md-11">
 				<a class="close" data-dismiss="alert" href="#">&times;</a>

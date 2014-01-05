@@ -1,6 +1,6 @@
 <!-- INCLUDE overall_header.html -->
 
-<h2><i class="icon-wrench"></i> {L_UCP}</h2>
+<h2><i class="fa fa-wrench"></i> {L_UCP}</h2>
 
 <ul class="nav nav-tabs">
 	<!-- BEGIN t_block1 -->
@@ -45,12 +45,12 @@
 							<ul class="list-group">
 							<!-- IF .friends_online -->
 								<!-- BEGIN friends_online -->
-									<li class="list-group-item"><i class="icon-user text-success"></i> <strong>{friends_online.USERNAME_FULL}</strong> <!-- IF S_SHOW_PM_BOX --><input type="submit" name="add_to[{friends_online.USER_ID}]" value="{L_ADD}" class="btn btn-success btn-xs pull-right" /><!-- ELSE --><span class="label label-success pull-right">{L_ONLINE}</span><!-- ENDIF --></li>
+									<li class="list-group-item"><i class="fa fa-user text-success"></i> <strong>{friends_online.USERNAME_FULL}</strong> <!-- IF S_SHOW_PM_BOX --><input type="submit" name="add_to[{friends_online.USER_ID}]" value="{L_ADD}" class="btn btn-success btn-xs pull-right" /><!-- ELSE --><span class="label label-success pull-right">{L_ONLINE}</span><!-- ENDIF --></li>
 								<!-- END friends_online -->
 							<!-- ENDIF -->
 							<!-- IF .friends_offline -->
 								<!-- BEGIN friends_offline -->
-									<li class="list-group-item"><i class="icon-user"></i> <strong>{friends_offline.USERNAME_FULL}</strong> <!-- IF S_SHOW_PM_BOX --><input type="submit" name="add_to[{friends_offline.USER_ID}]" value="{L_ADD}" class="btn btn-default btn-xs pull-right" /><!-- ELSE --><span class="label label-default pull-right">{L_OFFLINE}</span><!-- ENDIF --></li>
+									<li class="list-group-item"><i class="fa fa-user"></i> <strong>{friends_offline.USERNAME_FULL}</strong> <!-- IF S_SHOW_PM_BOX --><input type="submit" name="add_to[{friends_offline.USER_ID}]" value="{L_ADD}" class="btn btn-default btn-xs pull-right" /><!-- ELSE --><span class="label label-default pull-right">{L_OFFLINE}</span><!-- ENDIF --></li>
 								<!-- END friends_offline -->
 							<!-- ENDIF -->
 							</ul>

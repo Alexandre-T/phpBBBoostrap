@@ -2,7 +2,7 @@
 
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE} class="form-horizontal">
 <div class="panel panel-default">
-	<div class="panel-heading"><h3 class="panel-title"><i class="icon-user"></i> {L_TITLE}</h3></div>
+	<div class="panel-heading"><h3 class="panel-title"><i class="fa fa-user"></i> {L_TITLE}</h3></div>
 	<div class="panel-body">
 		<p class="text-justify">{L_PROFILE_INFO_NOTICE}</p>
 	
@@ -30,7 +30,7 @@
 				<label class="control-label col-sm-4" for="msn">{L_UCP_MSNM}</label>
 				<div class="col-sm-8">
 					<div class="input-group">
-		  				<div class="input-group-addon"><i class="icon-skype"></i></div>
+		  				<div class="input-group-addon"><i class="fa fa-skype"></i></div>
 			  			<input type="text" name="msn" id="msn" maxlength="255" value="{MSN}" class="form-control" />
 			  		</div>
 				</div>
@@ -39,7 +39,7 @@
 				<label class="control-label col-sm-4" for="yim">{L_UCP_YIM}</label>
 				<div class="col-sm-8">
 					<div class="input-group">
-		  				<div class="input-group-addon"><i class="icon-google-plus-square"></i></div>
+		  				<div class="input-group-addon"><i class="fa fa-google-plus-square"></i></div>
 				  		<input type="text" name="yim" id="yim" maxlength="255" value="{YIM}" class="form-control" />
 				  	</div>
 				</div>
@@ -57,7 +57,7 @@
 				<label class="control-label col-sm-4" for="website">{L_WEBSITE}</label>
 				<div class="col-sm-8">
 					<div class="input-group">
-		  				<div class="input-group-addon"><i class="icon-link"></i></div>
+		  				<div class="input-group-addon"><i class="fa fa-link"></i></div>
 						<input type="text" name="website" id="website" maxlength="255" value="{WEBSITE}" class="form-control" />
 					</div>
 				</div>
@@ -66,7 +66,7 @@
 				<label class="control-label col-sm-4" for="location">{L_LOCATION}</label>
 				<div class="col-sm-8">
 					<div class="input-group">
-		  				<div class="input-group-addon"><i class="icon-globe"></i></div>
+		  				<div class="input-group-addon"><i class="fa fa-globe"></i></div>
 				  		<input type="text" name="location" id="location" maxlength="255" value="{LOCATION}" class="form-control" />
 				  	</div>
 				</div>
@@ -111,8 +111,8 @@
 	<div class="panel-footer">
 		{S_HIDDEN_FIELDS}
 		<fieldset class="btn-group">
-			<button type="reset" value="{L_RESET}" name="reset" class="btn btn-default"><i class="icon-repeat"></i> {L_RESET}</button>
-			<button type="submit" name="submit" value="{L_SAVE}" class="btn btn-primary"><i class="icon-save"></i> {L_SAVE}</button>
+			<button type="reset" value="{L_RESET}" name="reset" class="btn btn-default"><i class="fa fa-repeat"></i> {L_RESET}</button>
+			<button type="submit" name="submit" value="{L_SAVE}" class="btn btn-primary"><i class="fa fa-save"></i> {L_SAVE}</button>
 		</fieldset>
 		{S_FORM_TOKEN}
 	</div>

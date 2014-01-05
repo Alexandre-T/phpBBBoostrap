@@ -45,7 +45,7 @@
 		
 			<div class="btn-group pull-right">
 				<!-- IF U_EDIT -->
-					<a href="{U_EDIT}" class="btn btn-default btn-xs" title="{L_EDIT_POST}"><i class="icon-pencil"></i> <span>{L_EDIT_POST}</span></a>
+					<a href="{U_EDIT}" class="btn btn-default btn-xs" title="{L_EDIT_POST}"><i class="fa fa-pencil"></i> <span>{L_EDIT_POST}</span></a>
 				<!-- ENDIF -->
 				<a class="btn btn-default btn-xs" href="#post_details" onclick="viewableArea(getElementById('post_details'), true); if (this.innerHTML == '{LA_EXPAND_VIEW}'){this.innerHTML = '{LA_COLLAPSE_VIEW}'; } else if (this.innerHTML == '{LA_COLLAPSE_VIEW}'){this.innerHTML = '{LA_EXPAND_VIEW}'}; return false;">{L_EXPAND_VIEW}</a>
 			</div>
@@ -55,7 +55,7 @@
 		
 			<!-- IF S_MESSAGE_REPORTED -->
 				<div class="btn-group">
-					<a class="btn btn-warning" href="{U_MCP_REPORT}"><i class="icon-warning-sign"></i> {L_MESSAGE_REPORTED}</a>
+					<a class="btn btn-warning" href="{U_MCP_REPORT}"><i class="fa fa-exclamation-triangle"></i> {L_MESSAGE_REPORTED}</a>
 				</div>
 			<!-- ENDIF -->
 		
@@ -93,7 +93,7 @@
 					<!-- IF U_WHOIS -->
 						<a class="btn btn-default btn-xs" href="{U_WHOIS}"><!-- IF POST_IPADDR -->{POST_IPADDR}<!-- ELSE -->{POST_IP}<!-- ENDIF --></a> (<!-- IF POST_IPADDR -->{POST_IP}<!-- ELSE --><a class="btn btn-default btn-xs" href="{U_LOOKUP_IP}">{L_LOOKUP_IP}</a><!-- ENDIF -->)
 					<!-- ELSE -->
-						<!-- IF POST_IPADDR -->{POST_IPADDR} ({POST_IP})<!-- ELSE -->{POST_IP}<!-- IF U_LOOKUP_IP --> <a class="btn btn-default btn-xs" href="{U_LOOKUP_IP}" title="{L_LOOKUP_IP}"><i class="icon-search"></i></a><!-- ENDIF --><!-- ENDIF -->
+						<!-- IF POST_IPADDR -->{POST_IPADDR} ({POST_IP})<!-- ELSE -->{POST_IP}<!-- IF U_LOOKUP_IP --> <a class="btn btn-default btn-xs" href="{U_LOOKUP_IP}" title="{L_LOOKUP_IP}"><i class="fa fa-search"></i></a><!-- ENDIF --><!-- ENDIF -->
 					<!-- ENDIF -->
 				</div>
 			<!-- ENDIF -->
@@ -140,7 +140,7 @@
 						<span class="input-group input-group-sm">
 							<input class="form-control" type="text" name="username" />
 							<span class="input-group-btn">								
-								<a class="btn btn-default" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;" title="{L_FIND_USERNAME}"><i class="icon-search"></i></a>
+								<a class="btn btn-default" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;" title="{L_FIND_USERNAME}"><i class="fa fa-search"></i></a>
 								<input type="submit" class="btn btn-primary" name="action[chgposter]" value="{L_CONFIRM}" />
 							</span>
 						</span>
@@ -174,16 +174,16 @@
 			<div class="panel-footer">
 				<div class="btn-group">
 					<!-- IF S_MCP_QUEUE -->
-						<span class="btn btn-default"><i class="icon-reply"></i>&nbsp;{RETURN_QUEUE}{RETURN_TOPIC_SIMPLE}{RETURN_POST}</span>
+						<span class="btn btn-default"><i class="fa fa-reply"></i>&nbsp;{RETURN_QUEUE}{RETURN_TOPIC_SIMPLE}{RETURN_POST}</span>
 					<!-- ELSEIF S_MCP_REPORT -->
-						<span class="btn btn-default"><i class="icon-reply"></i>&nbsp;{RETURN_REPORTS}</span>
+						<span class="btn btn-default"><i class="fa fa-reply"></i>&nbsp;{RETURN_REPORTS}</span>
 						<!-- IF not S_PM -->
 							<a class="btn btn-default" href="{U_VIEW_POST}">{L_VIEW_POST}</a>
 							<a class="btn btn-default" href="{U_VIEW_TOPIC}">{L_VIEW_TOPIC}</a>
 							<a class="btn btn-default" href="{U_VIEW_FORUM}">{L_VIEW_FORUM}</a>
 						<!-- ENDIF -->
 					<!-- ELSE -->
-						<span class="btn btn-default"><i class="icon-reply"></i>&nbsp;{RETURN_TOPIC}</span>
+						<span class="btn btn-default"><i class="fa fa-reply"></i>&nbsp;{RETURN_TOPIC}</span>
 					<!-- ENDIF -->
 				</div>
 			</div>
@@ -312,7 +312,7 @@
 						</tbody>
 					</table>
 					<div class="panel-footer">
-						<a class="btn btn-default" href="{U_LOOKUP_ALL}#ip"><i class="icon-search"></i> {L_LOOKUP_ALL}</a>
+						<a class="btn btn-default" href="{U_LOOKUP_ALL}#ip"><i class="fa fa-search"></i> {L_LOOKUP_ALL}</a>
 					</div>
 				</div>
 			<!-- ENDIF -->

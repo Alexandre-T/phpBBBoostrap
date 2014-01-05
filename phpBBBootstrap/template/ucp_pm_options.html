@@ -1,18 +1,18 @@
 <!-- INCLUDE ucp_header.html -->
 <form id="ucp" method="post" action="{S_UCP_ACTION}" class="form-horizontal">
 <div class="panel panel-default">
-	<div class="panel-heading"><h3 class="panel-title"><i class="icon-cogs"></i> {L_TITLE}</h3></div>
+	<div class="panel-heading"><h3 class="panel-title"><i class="fa fa-cogs"></i> {L_TITLE}</h3></div>
 	<div class="panel-body">
 		<!-- IF ERROR_MESSAGE --><p class="alert alert-danger">{ERROR_MESSAGE}</p><!-- ENDIF -->
 		<!-- IF NOTIFICATION_MESSAGE --><p class="alert alert-warning">{NOTIFICATION_MESSAGE}</p><!-- ENDIF -->
 		<fieldset>
-			<legend><i class="icon-filter"></i> {L_DEFINED_RULES}</legend>
+			<legend><i class="fa fa-filter"></i> {L_DEFINED_RULES}</legend>
 			<!-- IF .rule -->
 			<ol>
 				<!-- BEGIN rule -->
 				<li>
 					<strong>{L_IF}</strong> {rule.CHECK} <em>{rule.RULE}</em> <!-- IF rule.STRING --><strong>{rule.STRING}</strong> | <!-- ENDIF -->{rule.ACTION}<!-- IF rule.FOLDER -->: {rule.FOLDER}<!-- ENDIF -->
-					<button type="submit" name="delete_rule[{rule.RULE_ID}]" title="{L_DELETE_RULE}" value="{L_DELETE_RULE}" class="btn btn-default tooltip-link"><i class="icon-trash"></i></button>
+					<button type="submit" name="delete_rule[{rule.RULE_ID}]" title="{L_DELETE_RULE}" value="{L_DELETE_RULE}" class="btn btn-default tooltip-link"><i class="fa fa-trash-o"></i></button>
 				</li>
 				<!-- END rule -->
 			</ol>
@@ -22,7 +22,7 @@
 		</fieldset>
 
 		<fieldset >
-			<legend><i class="icon-plus-sign"></i> {L_ADD_NEW_RULE}</legend>
+			<legend><i class="fa fa-plus-circle"></i> {L_ADD_NEW_RULE}</legend>
 			<div class="form-group">
 				<div class="col-xs-12">
 					<div class="input-group">
@@ -74,7 +74,7 @@
 									<!-- IF S_USER_CONDITION -->
 									<input type="text" name="rule_string" value="{CURRENT_STRING}" class="form-control" />
 									<div class="input-group-btn-deuxieme input-group-btn">
-										<a class="btn btn-default" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;"><i class="icon-search"></i>&nbsp;{L_FIND_USERNAME}</a>
+										<a class="btn btn-default" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;"><i class="fa fa-search"></i>&nbsp;{L_FIND_USERNAME}</a>
 									</div>
 									<!-- ELSEIF S_TEXT_CONDITION -->
 									<input type="text" name="rule_string" value="{CURRENT_STRING}" class="form-control" maxlength="250"/>
@@ -118,7 +118,7 @@
 
 
 	<fieldset>
-		<legend><i class="icon-plus-sign"></i> {L_FOLDER_OPTIONS}</legend>
+		<legend><i class="fa fa-folder-open-o"></i> {L_FOLDER_OPTIONS}</legend>
 
 		<!-- IF not S_MAX_FOLDER_ZERO and S_MAX_FOLDER_REACHED -->
 			<p class="alert alert-warning">{L_MAX_FOLDER_REACHED}</p>

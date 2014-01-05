@@ -11,7 +11,7 @@
 						<div class="input-group">
 							<input class="form-control" type="text" name="keywords" id="search_keywords" size="20" placeholder="{L_SEARCH_FORUM}" />
 							<div class="input-group-btn">
-								<button type="submit" class="btn btn-default"><i class="icon-search"></i> {L_SEARCH}</button>
+								<button type="submit" class="btn btn-default"><i class="fa fa-search"></i> {L_SEARCH}</button>
 							</div>
 						</div>					
 						{S_SEARCH_LOCAL_HIDDEN_FIELDS}
@@ -30,7 +30,7 @@
 		<div class="alert alert-success alert-dismissable">
 			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 			<p>
-				<strong><i class="icon-cogs"></i> {L_FORUM_RULES}</strong>
+				<strong><i class="fa fa-cogs"></i> {L_FORUM_RULES}</strong>
 				<br />
 				{FORUM_RULES}
 			</p>
@@ -39,7 +39,7 @@
 
 	<!-- IF MODERATORS and S_FORUM_RULES and U_FORUM_RULES -->
 		<p class="text-right">
-			<a href="{U_FORUM_RULES}"><i class="icon-cogs"></i> {L_FORUM_RULES}</a>
+			<a href="{U_FORUM_RULES}"><i class="fa fa-cogs"></i> {L_FORUM_RULES}</a>
 			&bull;
 			<strong><!-- IF S_SINGLE_MODERATOR -->{L_MODERATOR}<!-- ELSE -->{L_MODERATORS}<!-- ENDIF --> :</strong> {MODERATORS}
 		</p>
@@ -73,7 +73,7 @@
 						<label class="control-label col-sm-4" for="username">{L_USERNAME} </label>
 						<div class="col-sm-8">
 							<div class="input-group">
-								<span class="input-group-addon"><i class="icon-user"></i></span>
+								<span class="input-group-addon"><i class="fa fa-user"></i></span>
 								<input type="text" tabindex="1" name="username" id="username" size="25" value="{USERNAME}" class="form-control"/>	
 							</div>
 						</div>
@@ -82,7 +82,7 @@
 						<label class="control-label col-sm-4" for="password">{L_PASSWORD} </label>
 						<div class="col-sm-8">
 							<div class="input-group">
-								<span class="input-group-addon"><i class="icon-key"></i></span>
+								<span class="input-group-addon"><i class="fa fa-key"></i></span>
 								<input type="password" tabindex="2" id="password" name="password" size="25" class="form-control" />	
 							</div>
 						</div>
@@ -106,8 +106,8 @@
 				</div>
 				<div class="panel-footer">
 					<fieldset class="btn-group">
-						<!-- IF S_REGISTER_ENABLED --><a class="btn btn-success" href="{U_REGISTER}"><i class="icon-pencil"></i>&nbsp;{L_REGISTER}</a><!-- ENDIF -->
-						<button type="submit" name="login" tabindex="5" class="btn btn-primary"><i class="icon-signin"></i>&nbsp;{L_LOGIN}</button>
+						<!-- IF S_REGISTER_ENABLED --><a class="btn btn-success" href="{U_REGISTER}"><i class="fa fa-sign-in fa-rotate-270"></i>&nbsp;{L_REGISTER}</a><!-- ENDIF -->
+						<button type="submit" name="login" tabindex="5" class="btn btn-primary"><i class="fa fa-sign-in"></i>&nbsp;{L_LOGIN}</button>
 					</fieldset>
 					{S_LOGIN_REDIRECT}
 				</div>
@@ -142,42 +142,42 @@
 						<span><a href="{topicrow.U_VIEW_TOPIC}" class="btn <!-- IF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL --> btn-lg <!-- ENDIF --> tooltip-link" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
 							<!-- IF topicrow.S_TOPIC_LOCKED -->
 								<!-- IF topicrow.S_POST_GLOBAL or topicrow.S_POST_ANNOUNCE -->
-									<i class="icon-lock icon-large"></i>
+									<i class="fa fa-lock fa-lg"></i>
 								<!-- ELSE -->
-									<i class="icon-lock"></i>
+									<i class="fa fa-lock"></i>
 								<!-- ENDIF -->
 							<!-- ELSEIF topicrow.S_POST_GLOBAL -->
-								<i class="icon-info-sign icon-large"></i>
+								<i class="fa fa-info-circle fa-lg"></i>
 							<!-- ELSEIF topicrow.S_POST_ANNOUNCE -->
-								<i class="icon-info-sign icon-large"></i>
+								<i class="fa fa-info-circle fa-lg"></i>
 							<!-- ELSEIF topicrow.S_POST_STICKY -->
-								<i class="icon-pushpin"></i>
+								<i class="fa fa-thumb-tack"></i>
 							<!-- ELSEIF topicrow.S_TOPIC_MOVED -->
-								<i class="icon-share"></i>
+								<i class="fa fa-share"></i>
 							<!-- ELSEIF topicrow.S_HAS_POLL -->
-								<i class="icon-comment-alt"></i>
+								<i class="fa fa-comment-o"></i>
 							<!-- ELSE -->
-								<i class="icon-file-alt"></i>
+								<i class="fa fa-file-text-o"></i>
 							<!-- ENDIF --> 
 						</a></span>
 					</div>
 					<div class="pull-right">
 						<div class="btn-group pagination-line">
 							<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
-							<a href="{topicrow.U_MCP_QUEUE}" class="btn btn-warning btn-xs"><i class="icon-warning-sign"></i></a>
+							<a href="{topicrow.U_MCP_QUEUE}" class="btn btn-warning btn-xs"><i class="fa fa-exclamation-triangle"></i></a>
 							<!-- ENDIF -->
 							<!-- IF topicrow.S_TOPIC_REPORTED -->
-							<a href="{topicrow.U_MCP_REPORT}" class="btn btn-warning btn-xs"><i class="icon-warning-sign"></i></a>
+							<a href="{topicrow.U_MCP_REPORT}" class="btn btn-warning btn-xs"><i class="fa fa-exclamation-triangle"></i></a>
 							<!-- ENDIF -->
 							<!-- IF topicrow.ATTACH_ICON_IMG -->
-							<a href="#" class="btn btn-default btn-xs disabled"><i class="icon-paper-clip"></i></a>
+							<a href="#" class="btn btn-default btn-xs disabled"><i class="fa fa-paperclip"></i></a>
 							<!-- ENDIF -->
 							<!-- IF topicrow.PAGINATION -->{topicrow.PAGINATION}<!-- ENDIF -->
 							<!-- IF topicrow.S_UNREAD_TOPIC -->
-								<a class="btn btn-xs btn-info" href="{topicrow.U_NEWEST_POST}"><i class="icon-angle-right"></i></a>
+								<a class="btn btn-xs btn-info" href="{topicrow.U_NEWEST_POST}"><i class="fa fa-angle-right"></i></a>
 							<!-- ENDIF -->
 							<!-- IF not S_IS_BOT -->
-								<a class="btn btn-default btn-xs tooltip-link" href="{topicrow.U_LAST_POST}"  title="{L_LAST_POST}"><i class="icon-double-angle-right"></i></a>
+								<a class="btn btn-default btn-xs tooltip-link" href="{topicrow.U_LAST_POST}"  title="{L_LAST_POST}"><i class="fa fa-angle-double-right"></i></a>
 							<!-- ENDIF -->						
 						</div>
 					</div>
@@ -201,7 +201,7 @@
 	   <!-- IF S_IS_POSTABLE -->
 	   <tr><td>
 	   <div class="alert alert-info forum-top-buffer">
-	      <i class="icon-exclamation-sign"></i> {L_NO_TOPICS}
+	      <i class="fa fa-exclamation-circle"></i> {L_NO_TOPICS}
 	   </div></td></tr>
 	   <!-- ENDIF -->
 	<!-- END topicrow -->
@@ -219,7 +219,7 @@
 	<div class="row hidden-xs">
 		<div class="col-sm-7">
 			<!-- IF S_DISPLAY_ONLINE_LIST -->
-			   <h3><!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}"><i class="icon-map-marker"></i> {L_WHO_IS_ONLINE}</a><!-- ELSE -->{L_WHO_IS_ONLINE}<!-- ENDIF --></h3>
+			   <h3><!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}"><i class="fa fa-map-marker"></i> {L_WHO_IS_ONLINE}</a><!-- ELSE -->{L_WHO_IS_ONLINE}<!-- ENDIF --></h3>
 			   <p>{LOGGED_IN_USER_LIST}</p>
 			<!-- ENDIF -->
 		</div>

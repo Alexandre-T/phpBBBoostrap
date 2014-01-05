@@ -1,11 +1,11 @@
 <!-- INCLUDE overall_header.html -->
 <section>
-<h2><i class="icon-info-sign"></i> {PAGE_TITLE}</h2>
+<h2><i class="fa fa-info-circle"></i> {PAGE_TITLE}</h2>
 
 <form method="post" action="{S_PROFILE_ACTION}" id="viewprofile" class="form-horizontal">
 	<div class="row">
 		<div class="col-sm-8">
-			<h3><i class="icon-user"></i> Profil</h3>
+			<h3><i class="fa fa-user"></i> Profil</h3>
 			
 			<dl class="dl-horizontal">
 				<dt>{L_USERNAME}</dt>
@@ -69,7 +69,7 @@
 <div class="row">
 	<div class="col-md-6">
 
-		<h3><i class="icon-envelope-alt"></i> {L_CONTACT_USER} {USERNAME}</h3>
+		<h3><i class="fa fa-envelope-o"></i> {L_CONTACT_USER} {USERNAME}</h3>
 
 		<dl class="dl-horizontal">
 		<!-- IF U_EMAIL --><dt>{L_EMAIL_ADDRESS}</dt> <dd><a href="{U_EMAIL}">{L_SEND_EMAIL_USER} {USERNAME}</a></dd><!-- ENDIF -->
@@ -88,7 +88,7 @@
 	</div>
 
 	<div class="col-md-6">
-		<h3><i class="icon-cogs"></i> {L_USER_FORUM}</h3>
+		<h3><i class="fa fa-cogs"></i> {L_USER_FORUM}</h3>
 		<dl class="dl-horizontal">
 			<dt>{L_JOINED}</dt> <dd>{JOINED}</dd>
 			<dt>{L_VISITED}</dt> <dd>{VISITED}</dd>
@@ -112,7 +112,7 @@
 <!-- IF SIGNATURE -->
 <hr class="forum-small-divider"/>
 <div>
-		<h3><i class="icon-pencil"></i> {L_SIGNATURE}</h3>
+		<h3><i class="fa fa-pencil"></i> {L_SIGNATURE}</h3>
 		<div class="">{SIGNATURE}</div>
 </div>
 <!-- ENDIF -->

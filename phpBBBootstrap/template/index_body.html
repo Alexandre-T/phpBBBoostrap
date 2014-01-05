@@ -2,7 +2,7 @@
 <!-- INCLUDE forumlist_body.html -->
 <!-- IF ! S_USER_LOGGED_IN and not S_IS_BOT -->
 	<hr/>
-	<h4><a href="{U_LOGIN_LOGOUT}"><i class="icon-signin"></i> {L_LOGIN_LOGOUT}</a><!-- IF S_REGISTER_ENABLED -->&nbsp; &bull; &nbsp;<a href="{U_REGISTER}"><i class="icon-pencil"></i> {L_REGISTER}</a><!-- ENDIF --></h4>
+	<h4><a href="{U_LOGIN_LOGOUT}"><i class="fa fa-sign-in"></i> {L_LOGIN_LOGOUT}</a><!-- IF S_REGISTER_ENABLED -->&nbsp; &bull; &nbsp;<a href="{U_REGISTER}"><i class="fa fa-sign-in fa-rotate-270"></i> {L_REGISTER}</a><!-- ENDIF --></h4>
 	<form method="post" action="{S_LOGIN_ACTION}" class="form-inline">
 	<div class="form-group">
 		<label class="sr-only" for="username">{L_USERNAME}</label>
@@ -15,7 +15,7 @@
 	<div class="form-group">
 		<!-- IF S_AUTOLOGIN_ENABLED -->		
 		<!-- ENDIF -->
-		<button type="submit" name="login" value="{L_LOGIN}" class="btn btn-primary"><i class="icon-signin"></i>&nbsp;{L_LOGIN}</button>
+		<button type="submit" name="login" value="{L_LOGIN}" class="btn btn-primary"><i class="fa fa-sign-in"></i>&nbsp;{L_LOGIN}</button>
 	</div>
 	<div class="checkbox">
 		<label for="autologin"><input type="checkbox" name="autologin" id="autologin" />&nbsp;<small>{L_LOG_ME_IN}</small></label>
@@ -34,7 +34,7 @@
 	<!-- ENDIF -->	
 	<!-- IF S_DISPLAY_ONLINE_LIST -->
 		<div class="{$SPAN}">
-			<h4><!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}"><i class="icon-map-marker"></i> {L_WHO_IS_ONLINE}</a><!-- ELSE --><i class="icon-map-marker"></i> {L_WHO_IS_ONLINE}<!-- ENDIF --></h4>
+			<h4><!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}"><i class="fa fa-map-marker"></i> {L_WHO_IS_ONLINE}</a><!-- ELSE --><i class="fa fa-map-marker"></i> {L_WHO_IS_ONLINE}<!-- ENDIF --></h4>
 			<p>{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br />{RECORD_USERS}<br /> <br />{LOGGED_IN_USER_LIST}
 			<!-- IF LEGEND --><br /><em>{L_LEGEND}: {LEGEND}</em><!-- ENDIF --></p>
 		</div>
@@ -42,14 +42,14 @@
 	
 	<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->
 		<div class="{$SPAN}">
-			<h4><i class="icon-bell"></i> {L_BIRTHDAYS}</h4>
+			<h4><i class="fa fa-bell"></i> {L_BIRTHDAYS}</h4>
 			<p><!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <strong>{BIRTHDAY_LIST}</strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF --></p>
 		</div>
 	<!-- ENDIF -->
 	
 	<!-- IF NEWEST_USER -->
 		<div class="{$SPAN}">
-			<h4><i class="icon-cogs"></i> {L_STATISTICS}</h4>
+			<h4><i class="fa fa-cogs"></i> {L_STATISTICS}</h4>
 			<p>{TOTAL_POSTS} &bull; {TOTAL_TOPICS} &bull; {TOTAL_USERS} <br/><em>{NEWEST_USER}</em></p>
 		</div>
 	<!-- ENDIF -->

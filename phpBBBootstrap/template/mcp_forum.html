@@ -39,22 +39,22 @@
 						<a href="{topicrow.U_VIEW_TOPIC}" class="btn <!-- IF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL --> btn-lg <!-- ENDIF -->" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
 							<!-- IF topicrow.S_TOPIC_LOCKED -->
 								<!-- IF topicrow.S_POST_GLOBAL or topicrow.S_POST_ANNOUNCE -->
-									<i class="icon-lock icon-large"></i>
+									<i class="fa fa-lock fa-lg"></i>
 								<!-- ELSE -->
-									<i class="icon-lock"></i>
+									<i class="fa fa-lock"></i>
 								<!-- ENDIF -->
 							<!-- ELSEIF topicrow.S_POST_GLOBAL -->
-								<i class="icon-info-sign icon-large"></i>
+								<i class="fa fa-info-circle fa-lg"></i>
 							<!-- ELSEIF topicrow.S_POST_ANNOUNCE -->
-								<i class="icon-info-sign"></i>
+								<i class="fa fa-info-circle"></i>
 							<!-- ELSEIF topicrow.S_POST_STICKY -->
-								<i class="icon-pushpin"></i>
+								<i class="fa fa-thumb-tack"></i>
 							<!-- ELSEIF topicrow.S_TOPIC_MOVED -->
-								<i class="icon-share"></i>
+								<i class="fa fa-share"></i>
 							<!-- ELSEIF topicrow.S_HAS_POLL -->
-								<i class="icon-comment-alt"></i>
+								<i class="fa fa-comment-o"></i>
 							<!-- ELSE -->
-								<i class="icon-file-alt"></i>
+								<i class="fa fa-file-text-o"></i>
 							<!-- ENDIF --> 
 						</a>
 					</td>
@@ -62,11 +62,11 @@
 						<!-- IF topicrow.S_SELECT_TOPIC --><a href="{topicrow.U_SELECT_TOPIC}" class="topictitle">[ {L_SELECT_MERGE} ]</a>&nbsp;&nbsp; <!-- ENDIF -->
 						<a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a>
 						<div class="btn-group pull-right">
-							<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a class="btn btn-warning btn-xs" href="{topicrow.U_MCP_QUEUE}" title="{L_MCP_QUEUE}"><i class="icon-question-sign"></i></a> <!-- ENDIF -->
-							<!-- IF topicrow.S_TOPIC_REPORTED --><a class="btn btn-warning btn-xs" href="{topicrow.U_MCP_REPORT}" title="{L_MCP_REPORT}"><i class="icon-warning-sign"></i></a><!-- ENDIF -->
+							<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a class="btn btn-warning btn-xs" href="{topicrow.U_MCP_QUEUE}" title="{L_MCP_QUEUE}"><i class="fa fa-question-circle"></i></a> <!-- ENDIF -->
+							<!-- IF topicrow.S_TOPIC_REPORTED --><a class="btn btn-warning btn-xs" href="{topicrow.U_MCP_REPORT}" title="{L_MCP_REPORT}"><i class="fa fa-exclamation-triangle"></i></a><!-- ENDIF -->
 							<!-- IF topicrow.S_MOVED_TOPIC and S_CAN_DELETE -->&nbsp;<a href="{topicrow.U_DELETE_TOPIC}" class="topictitle">[ {L_DELETE_SHADOW_TOPIC} ]</a><!-- ENDIF -->
 							<!-- IF topicrow.PAGINATION -->{topicrow.PAGINATION}<!-- ENDIF -->							
-							<!-- IF topicrow.ATTACH_ICON_IMG --><a href="#" class="btn btn-default btn-xs"><i class="icon-paper-clip"></i></a><!-- ENDIF -->
+							<!-- IF topicrow.ATTACH_ICON_IMG --><a href="#" class="btn btn-default btn-xs"><i class="fa fa-paperclip"></i></a><!-- ENDIF -->
 						</div>
 						<br />
 						{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}

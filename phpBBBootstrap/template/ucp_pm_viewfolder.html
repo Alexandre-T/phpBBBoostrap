@@ -7,11 +7,11 @@
 <!-- IF PROMPT -->
 <form id="viewfolder" method="post" action="{S_PM_ACTION}" class="form-horizontal">			
 	<div class="panel panel-default">
-		<div class="panel-heading"><h3 class="panel-title"><i class="icon-list-alt"></i> {L_EXPORT_AS_CSV}</h3></div>
+		<div class="panel-heading"><h3 class="panel-title"><i class="fa fa-list-alt"></i> {L_EXPORT_AS_CSV}</h3></div>
 		<div class="panel-body">
 		
 			<fieldset>
-				<legend><i class="icon-cogs"></i> {L_OPTIONS}</legend>
+				<legend><i class="fa fa-cogs"></i> {L_OPTIONS}</legend>
 				<div class="form-group">
 					<label class="control-label col-sm-4" for="delimiter">{L_DELIMITER}</label>
 					<div class="col-sm-8">
@@ -87,15 +87,15 @@
 						<span class="pull-left forum-topic-icon">
 							<span><a href="<!-- IF messagerow.S_PM_DELETED -->{messagerow.U_REMOVE_PM}<!-- ELSE -->{messagerow.U_VIEW_PM}<!-- ENDIF -->" class="btn <!-- IF messagerow.S_PM_DELETED --> btn-danger <!-- ELSEIF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL --> btn-lg <!-- ENDIF --> tooltip-link" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
 								<!-- IF messagerow.S_PM_DELETED -->
-									<i class="icon-trash"></i>
+									<i class="fa fa-trash-o"></i>
 								<!-- ELSEIF topicrow.S_POST_STICKY -->
-									<i class="icon-pushpin"></i>
+									<i class="fa fa-thumb-tack"></i>
 								<!-- ELSEIF topicrow.S_TOPIC_MOVED -->
-									<i class="icon-share"></i>
+									<i class="fa fa-share"></i>
 								<!-- ELSEIF topicrow.S_HAS_POLL -->
-									<i class="icon-comment-alt"></i>
+									<i class="fa fa-comment-o"></i>
 								<!-- ELSE -->
-									<i class="icon-file-alt"></i>
+									<i class="fa fa-file-text-o"></i>
 								<!-- ENDIF --> 
 							</a></span>
 						</span>
@@ -109,8 +109,8 @@
 							
 							<!-- IF messagerow.S_PM_REPORTED or messagerow.ATTACH_ICON_IMG -->
 								<span class="pull-right btn-group">
-								<!-- IF messagerow.S_PM_REPORTED --><a class="btn btn-default" href="{messagerow.U_MCP_REPORT}"><i class="icon-warning-sign"></i></a><!-- ENDIF --> 
-								<!-- IF messagerow.ATTACH_ICON_IMG --><span class="btn btn-default disabled"><i class="icon-paperclip"></i></span><!-- ENDIF -->
+								<!-- IF messagerow.S_PM_REPORTED --><a class="btn btn-default" href="{messagerow.U_MCP_REPORT}"><i class="fa fa-exclamation-triangle"></i></a><!-- ENDIF --> 
+								<!-- IF messagerow.ATTACH_ICON_IMG --><span class="btn btn-default disabled"><i class="fa fa-paperclip"></i></span><!-- ENDIF -->
 								</span>
 							<!-- ENDIF -->
 							<!-- IF S_SHOW_RECIPIENTS -->
@@ -144,8 +144,8 @@
 		<div class="form-group">
 			<div class="col-md-12">
 				<div class="btn-group visible-md visible-lg pull-right">
-					<a class="btn btn-xs btn-default visible-md visible-lg" href="#" onclick="return marklist('viewfolder','marked_msg_id',true);"><i class="icon-check"></i> {L_MARK_ALL}</a>
-					<a class="btn btn-xs btn-default visible-md visible-lg" href="#" onclick="return marklist('viewfolder','marked_msg_id',false);"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+					<a class="btn btn-xs btn-default visible-md visible-lg" href="#" onclick="return marklist('viewfolder','marked_msg_id',true);"><i class="fa fa-check-square-o"></i> {L_MARK_ALL}</a>
+					<a class="btn btn-xs btn-default visible-md visible-lg" href="#" onclick="return marklist('viewfolder','marked_msg_id',false);"><i class="fa fa-square-o"></i> {L_UNMARK_ALL}</a>
 				</div>
 			</div>
 		</div>

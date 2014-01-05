@@ -1,7 +1,7 @@
 <!-- INCLUDE simple_header.html -->
 
 <!-- MSNM info from http://www.cdolive.net/ - doesn't seem to work with MSN Messenger -->
-<h2 class="solo"><i class="icon-skype"></i> {L_SEND_IM}</h2>
+<h2 class="solo"><i class="fa fa-skype"></i> {L_SEND_IM}</h2>
 
 <form method="post" action="{S_IM_ACTION}" class="form-horizontal">
 
@@ -37,10 +37,10 @@
 
 	<!-- IF S_SEND_AIM -->
 		<div class="btn-group">
-			<a class="btn btn-default" href="{U_AIM_CONTACT}"><i class="icon-plus"></i> {L_IM_ADD_CONTACT}</a>
-			<a class="btn btn-default" href="{U_AIM_MESSAGE}"><i class="icon-reply"></i> {L_IM_SEND_MESSAGE}</a>
-			<a class="btn btn-default" href="http://www.aim.com"><i class="icon-download"></i> {L_IM_DOWNLOAD_APP}</a>
-			<a class="btn btn-default" href="http://www.aim.com/products/express"><i class="icon-link"></i> {L_IM_AIM_EXPRESS}</a>
+			<a class="btn btn-default" href="{U_AIM_CONTACT}"><i class="fa fa-plus"></i> {L_IM_ADD_CONTACT}</a>
+			<a class="btn btn-default" href="{U_AIM_MESSAGE}"><i class="fa fa-reply"></i> {L_IM_SEND_MESSAGE}</a>
+			<a class="btn btn-default" href="http://www.aim.com"><i class="fa fa-download"></i> {L_IM_DOWNLOAD_APP}</a>
+			<a class="btn btn-default" href="http://www.aim.com/products/express"><i class="fa fa-link"></i> {L_IM_AIM_EXPRESS}</a>
 		</div>
 	<!-- ENDIF -->
 
@@ -49,8 +49,8 @@
 			<div class="col-sm-offset-3 col-sm-9">
 				<object classid="clsid:B69003B3-C55E-4B48-836C-BC5946FC3B28" codetype="application/x-oleobject" id="objMessengerApp" width="0" height="0"></object>
 				<div class="btn-group text-center">
-					<a href="#" class="btn btn-default" onclick="add_contact('{A_IM_CONTACT}'); return false;"><i class="icon-plus"></i> {L_IM_ADD_CONTACT}</a>
-					<a href="#" class="btn btn-default" onclick="im_contact('{A_IM_CONTACT}'); return false;"><i class="icon-envelope"></i> {L_IM_SEND_MESSAGE}</a>
+					<a href="#" class="btn btn-default" onclick="add_contact('{A_IM_CONTACT}'); return false;"><i class="fa fa-plus"></i> {L_IM_ADD_CONTACT}</a>
+					<a href="#" class="btn btn-default" onclick="im_contact('{A_IM_CONTACT}'); return false;"><i class="fa fa-envelope"></i> {L_IM_SEND_MESSAGE}</a>
 				</div>
 			</div>
 		</div>
@@ -76,7 +76,7 @@
 	{S_FORM_TOKEN}
 	</fieldset>
 	<div class="form-group">
-		<p class="text-center"><a class="btn btn-danger" href="#" onclick="window.close(); return false;"><i class="icon-remove"></i> {L_CLOSE_WINDOW}</a>
+		<p class="text-center"><a class="btn btn-danger" href="#" onclick="window.close(); return false;"><i class="fa fa-times"></i> {L_CLOSE_WINDOW}</a>
 	</div>
 </form>
 

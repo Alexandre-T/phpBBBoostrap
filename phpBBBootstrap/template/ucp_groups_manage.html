@@ -1,7 +1,7 @@
 <!-- INCLUDE ucp_header.html -->
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE} class="form-horizontal">
 <div class="panel panel-default">
-	<div class="panel-heading"><h3 class="panel-title"><i class="icon-group"></i> {L_USERGROUPS}<!-- IF GROUP_NAME --> : <span style="<!-- IF GROUP_COLOUR -->color:#{GROUP_COLOUR};<!-- ENDIF -->">{GROUP_NAME}</span><!-- ENDIF --></h3></div>
+	<div class="panel-heading"><h3 class="panel-title"><i class="fa fa-group"></i> {L_USERGROUPS}<!-- IF GROUP_NAME --> : <span style="<!-- IF GROUP_COLOUR -->color:#{GROUP_COLOUR};<!-- ENDIF -->">{GROUP_NAME}</span><!-- ENDIF --></h3></div>
 	<div class="panel-body">
 		<p class="text-justify">{L_GROUPS_EXPLAIN}</p>
 		<!-- IF S_ERROR -->
@@ -12,7 +12,7 @@
 		<!-- ENDIF -->
 		<!-- IF S_EDIT -->
 			<fieldset>
-			<legend><i class="icon-info"></i> {L_GROUP_DETAILS}</legend>
+			<legend><i class="fa fa-info"></i> {L_GROUP_DETAILS}</legend>
 			
 			<div class="form-group">
 				<label class="control-label col-sm-4" for="group_name">{L_GROUP_NAME}</label>
@@ -51,7 +51,7 @@
 			</fieldset>
 	
 			<fieldset>
-			<legend><i class="icon-cogs"></i> {L_GROUP_SETTINGS_SAVE}</legend>
+			<legend><i class="fa fa-cogs"></i> {L_GROUP_SETTINGS_SAVE}</legend>
 		
 			<div class="form-groups">
 				<label class="control-label col-sm-4" for="group_colour">{L_GROUP_COLOR}</label>
@@ -60,7 +60,7 @@
 						<span class="input-group-addon" style="background-color: #{GROUP_COLOUR};" id="example">&nbsp;&nbsp;&nbsp;</span>
 						<input name="group_colour" class="form-control" type="text" id="group_colour" value="{GROUP_COLOUR}" size="6" maxlength="6"/>
 						<span class="input-group-btn">
-							<a class="btn btn-default tooltip-link " href="{U_SWATCH}" onclick="popup(this.href, 636, 150, '_swatch'); return false;" title="{L_COLOUR_SWATCH}"><i class="icon-beaker"></i></a>
+							<a class="btn btn-default tooltip-link " href="{U_SWATCH}" onclick="popup(this.href, 636, 150, '_swatch'); return false;" title="{L_COLOUR_SWATCH}"><i class="fa fa-flask"></i></a>
 						</span>
 					</div>
 					<span class="help-block">{L_GROUP_COLOR_EXPLAIN}</span>
@@ -156,8 +156,8 @@
 					<!-- IF leader.GROUP_DESC --><br />{leader.GROUP_DESC}<!-- ENDIF -->
 					</td>
 					<td>
-						<a class="btn btn-default tooltip-link"  href="{leader.U_EDIT}" title="{L_EDIT}"><i class="icon-pencil"></i></a>
-						<a class="btn btn-default tooltip-link" href="{leader.U_LIST}" title="{L_GROUP_LIST}"><i class="icon-group"></i></a>
+						<a class="btn btn-default tooltip-link"  href="{leader.U_EDIT}" title="{L_EDIT}"><i class="fa fa-pencil"></i></a>
+						<a class="btn btn-default tooltip-link" href="{leader.U_LIST}" title="{L_GROUP_LIST}"><i class="fa fa-group"></i></a>
 					</td>
 				</tr>
 				<!-- END leader -->
@@ -190,13 +190,13 @@
 				<div class="col-sm-6 hidden-xs">
 					<div class="pull-right">
 						<div class="btn-group">
-							<a class="btn btn-xs btn-default visible-md visible-lg" href="#" onclick="return marklist('ucp','mark',true);"><i class="icon-check"></i> {L_MARK_ALL}</a>
-							<a class="btn btn-xs btn-default visible-md visible-lg" href="#" onclick="return marklist('ucp','mark',false);"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+							<a class="btn btn-xs btn-default visible-md visible-lg" href="#" onclick="return marklist('ucp','mark',true);"><i class="fa fa-check-square-o"></i> {L_MARK_ALL}</a>
+							<a class="btn btn-xs btn-default visible-md visible-lg" href="#" onclick="return marklist('ucp','mark',false);"><i class="fa fa-square-o"></i> {L_UNMARK_ALL}</a>
 						</div>
 						<!-- IF S_ON_PAGE -->
 							<!-- IF PAGINATION -->
 							<a class="btn btn-default btn-xs tooltip-link" href="#jumpPage" data-toggle="modal" title="{L_JUMP_TO_PAGE}">
-								<i class="icon-screenshot"></i> <span class="visible-md visible-lg">{S_ON_PAGE}</span>
+								<i class="fa fa-crosshairs"></i> <span class="visible-md visible-lg">{S_ON_PAGE}</span>
 							</a>				
 							<!-- ELSE -->
 							<span class="btn btn-default btn-xs disabled">{S_ON_PAGE}</span>
@@ -213,7 +213,7 @@
 <!-- IF S_EDIT -->
 <!-- ELSEIF S_LIST -->
 <div class="panel panel-default">
-	<div class="panel-heading"><h3 class="panel-title"><i class="icon-user"></i> {L_ADD_USERS}</h3></div>
+	<div class="panel-heading"><h3 class="panel-title"><i class="fa fa-user"></i> {L_ADD_USERS}</h3></div>
 	<div class="panel-body">
 		<p class="text-justify">{L_ADD_USERS_UCP_EXPLAIN}</p>
 		<fieldset>
@@ -230,7 +230,7 @@
 				<label class="control-label col-sm-4" for="usernames">{L_USERNAME}</label>
 				<div class="col-sm-8">
 					<textarea name="usernames" id="usernames" rows="3" cols="30" class="form-control"></textarea>
-					<span class="pull-right"><a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;"><i class="icon-search"></i> {L_FIND_USERNAME}&hellip;</a></span>	
+					<span class="pull-right"><a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;"><i class="fa fa-search"></i> {L_FIND_USERNAME}&hellip;</a></span>	
 					<span class="help-block">{L_USERNAMES_EXPLAIN}</span>
 				</div>
 			</div>

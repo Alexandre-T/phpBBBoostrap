@@ -20,7 +20,7 @@
 					<!-- ENDIF -->
 					<!-- IF history_row.U_QUOTE or history_row.MESSAGE_AUTHOR_QUOTE -->
 					<div class="btn-group pull-right">
-						<a class="btn btn-default btn-xs" <!-- IF history_row.U_QUOTE -->href="{history_row.U_QUOTE}"<!-- ELSE -->href="#postingbox" onclick="addquote({history_row.MSG_ID}, '{history_row.MESSAGE_AUTHOR_QUOTE}', '{LA_WROTE}');"<!-- ENDIF --> title="{L_QUOTE} {history_row.MESSAGE_AUTHOR}"><i class="icon-quote"></i> {L_QUOTE} {history_row.MESSAGE_AUTHOR}</a>
+						<a class="btn btn-default btn-xs" <!-- IF history_row.U_QUOTE -->href="{history_row.U_QUOTE}"<!-- ELSE -->href="#postingbox" onclick="addquote({history_row.MSG_ID}, '{history_row.MESSAGE_AUTHOR_QUOTE}', '{LA_WROTE}');"<!-- ENDIF --> title="{L_QUOTE} {history_row.MESSAGE_AUTHOR}"><i class="fa fa-quote"></i> {L_QUOTE} {history_row.MESSAGE_AUTHOR}</a>
 					</div>
 					<!-- ENDIF -->
 		
@@ -42,4 +42,4 @@
 
 
 <hr />
-<p class="text-right"><a href="#top" class="btn btn-default btn-xs tooltip-link" title="{L_BACK_TO_TOP}"><i class="icon-double-angle-up"></i> </a></p>
+<p class="text-right"><a href="#top" class="btn btn-default btn-xs tooltip-link" title="{L_BACK_TO_TOP}"><i class="fa fa-angle-double-up"></i> </a></p>

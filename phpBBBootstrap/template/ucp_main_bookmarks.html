@@ -37,42 +37,42 @@
 						<span><a href="{topicrow.U_VIEW_TOPIC}" class="btn <!-- IF topicrow.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> <!-- IF topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL --> btn-lg <!-- ENDIF --> tooltip-link" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
 							<!-- IF topicrow.S_TOPIC_LOCKED -->
 								<!-- IF topicrow.S_POST_GLOBAL or topicrow.S_POST_ANNOUNCE -->
-									<i class="icon-lock icon-large"></i>
+									<i class="fa fa-lock fa-lg"></i>
 								<!-- ELSE -->
-									<i class="icon-lock"></i>
+									<i class="fa fa-lock"></i>
 								<!-- ENDIF -->
 							<!-- ELSEIF topicrow.S_POST_GLOBAL -->
-								<i class="icon-info-sign icon-large"></i>
+								<i class="fa fa-info-circle fa-lg"></i>
 							<!-- ELSEIF topicrow.S_POST_ANNOUNCE -->
-								<i class="icon-info-sign icon-large"></i>
+								<i class="fa fa-info-circle fa-lg"></i>
 							<!-- ELSEIF topicrow.S_POST_STICKY -->
-								<i class="icon-pushpin"></i>
+								<i class="fa fa-thumb-tack"></i>
 							<!-- ELSEIF topicrow.S_TOPIC_MOVED -->
-								<i class="icon-share"></i>
+								<i class="fa fa-share"></i>
 							<!-- ELSEIF topicrow.S_HAS_POLL -->
-								<i class="icon-comment-alt"></i>
+								<i class="fa fa-comment-o"></i>
 							<!-- ELSE -->
-								<i class="icon-file-alt"></i>
+								<i class="fa fa-file-text-o"></i>
 							<!-- ENDIF --> 
 						</a></span>
 					</div>
 					<div class="pull-right">
 						<div class="btn-group">
 							<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
-							<a href="{topicrow.U_MCP_QUEUE}" class="btn btn-warning btn-xs"><i class="icon-warning-sign"></i></a>
+							<a href="{topicrow.U_MCP_QUEUE}" class="btn btn-warning btn-xs"><i class="fa fa-exclamation-triangle"></i></a>
 							<!-- ENDIF -->
 							<!-- IF topicrow.S_TOPIC_REPORTED -->
-							<a href="{topicrow.U_MCP_REPORT}" class="btn btn-warning btn-xs"><i class="icon-warning-sign"></i></a>
+							<a href="{topicrow.U_MCP_REPORT}" class="btn btn-warning btn-xs"><i class="fa fa-exclamation-triangle"></i></a>
 							<!-- ENDIF -->
 							<!-- IF topicrow.ATTACH_ICON_IMG -->
-							<a href="#" class="btn btn-default btn-xs disabled"><i class="icon-paper-clip"></i></a>
+							<a href="#" class="btn btn-default btn-xs disabled"><i class="fa fa-paperclip"></i></a>
 							<!-- ENDIF -->
 							<!-- IF topicrow.PAGINATION -->{topicrow.PAGINATION}<!-- ENDIF -->
 							<!-- IF topicrow.S_UNREAD_TOPIC -->
-								<a class="btn btn-xs btn-info" href="{topicrow.U_NEWEST_POST}"><i class="icon-angle-right"></i></a>
+								<a class="btn btn-xs btn-info" href="{topicrow.U_NEWEST_POST}"><i class="fa fa-angle-right"></i></a>
 							<!-- ENDIF -->
 							<!-- IF not S_IS_BOT -->
-								<a class="btn btn-xs btn-info tooltip-link" href="{topicrow.U_LAST_POST}"  title="{L_LAST_POST}"><i class="icon-double-angle-right"></i></a>
+								<a class="btn btn-xs btn-info tooltip-link" href="{topicrow.U_LAST_POST}"  title="{L_LAST_POST}"><i class="fa fa-angle-double-right"></i></a>
 							<!-- ENDIF -->						
 						</div>
 					</div>
@@ -96,8 +96,8 @@
 			<input type="submit" name="unbookmark" value="{L_REMOVE_BOOKMARK_MARKED}" class="btn btn-primary" />
 			<div class="pull-right">
 				<div class="btn-group">
-					<a class="btn btn-default btn-xs visible-md  visible-lg" href="#" onclick="return marklist('ucp','t',true);"><i class="icon-check"></i> {L_MARK_ALL}</a>
-					<a class="btn btn-default btn-xs visible-md  visible-lg" href="#" onclick="return marklist('ucp','t',false);"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+					<a class="btn btn-default btn-xs visible-md  visible-lg" href="#" onclick="return marklist('ucp','t',true);"><i class="fa fa-check-square-o"></i> {L_MARK_ALL}</a>
+					<a class="btn btn-default btn-xs visible-md  visible-lg" href="#" onclick="return marklist('ucp','t',false);"><i class="fa fa-square-o"></i> {L_UNMARK_ALL}</a>
 				</div>
 				<!-- INCLUDE pagination.html -->
 			</div>

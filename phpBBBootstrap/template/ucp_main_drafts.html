@@ -2,7 +2,7 @@
 
 <form id="postform" method="post" action="{S_UCP_ACTION}" {S_FORM_ENCTYPE} class="form-horizontal">
 <div class="panel panel-default">
-	<div class="panel-heading"><h3 class="panel-title"><i class="icon-file-alt"></i> {L_TITLE}</h3></div>
+	<div class="panel-heading"><h3 class="panel-title"><i class="fa fa-file-text-o"></i> {L_TITLE}</h3></div>
 	<div class="panel-body">
 		<p class="text-justify">{L_DRAFTS_EXPLAIN}</p>
 
@@ -57,8 +57,8 @@
 	<div class="panel-footer">
 		<input class="btn btn-primary" type="submit" name="delete" value="{L_DELETE_MARKED}" />
 		<div class="btn-group pull-right">
-			<a class="btn btn-default btn-xs visible-md visible-lg" href="#" onclick="return marklist('ucp','d',true);"><i class="icon-check"></i> {L_MARK_ALL}</a>
-			<a class="btn btn-default btn-xs visible-md visible-lg" href="#" onclick="return marklist('ucp','d',false);"><i class="icon-check-empty"></i> {L_UNMARK_ALL}</a>
+			<a class="btn btn-default btn-xs visible-md visible-lg" href="#" onclick="return marklist('ucp','d',true);"><i class="fa fa-check-square-o"></i> {L_MARK_ALL}</a>
+			<a class="btn btn-default btn-xs visible-md visible-lg" href="#" onclick="return marklist('ucp','d',false);"><i class="fa fa-square-o"></i> {L_UNMARK_ALL}</a>
 		</div>
 		{S_FORM_TOKEN}
 	</div>
@@ -67,10 +67,10 @@
 <!-- ENDIF -->
 <!-- IF S_EDIT_DRAFT -->
 	<div class="panel-footer">
-		<a href="{S_UCP_ACTION}" class="btn btn-default"><i class="icon-reply"></i> {L_BACK_TO_DRAFTS}</a>
+		<a href="{S_UCP_ACTION}" class="btn btn-default"><i class="fa fa-reply"></i> {L_BACK_TO_DRAFTS}</a>
 		<div class="btn-group">
-			<button type="reset" value="{L_RESET}" name="reset" class="btn btn-default" ><i class="icon-refresh"></i> {L_RESET}</button>
-			<button type="submit" name="submit" value="{L_SAVE}" class="btn btn-primary"><i class="icon-save"></i> {L_SAVE}</button>
+			<button type="reset" value="{L_RESET}" name="reset" class="btn btn-default" ><i class="fa fa-refresh"></i> {L_RESET}</button>
+			<button type="submit" name="submit" value="{L_SAVE}" class="btn btn-primary"><i class="fa fa-save"></i> {L_SAVE}</button>
 		</div>
 		{S_FORM_TOKEN}
 	</div>

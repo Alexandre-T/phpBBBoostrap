@@ -1,7 +1,7 @@
 <!-- INCLUDE overall_header.html -->
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<h2 class="panel-title"><i class="icon-search"></i> <!-- IF SEARCH_TITLE -->{SEARCH_TITLE}<!-- ELSE -->{SEARCH_MATCHES}<!-- ENDIF --><!-- IF SEARCH_WORDS -->: <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>		
+		<h2 class="panel-title"><i class="fa fa-search"></i> <!-- IF SEARCH_TITLE -->{SEARCH_TITLE}<!-- ELSE -->{SEARCH_MATCHES}<!-- ENDIF --><!-- IF SEARCH_WORDS -->: <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>		
 	</div>
 	<div class="panel-body">
 		<!-- IF SEARCHED_QUERY || IGNORED_WORDS -->
@@ -64,42 +64,42 @@
 								<span><a href="{searchresults.U_VIEW_TOPIC}" class="btn <!-- IF searchresults.S_UNREAD_TOPIC -->btn-info<!-- ELSE -->btn-default<!-- ENDIF --> <!-- IF searchresults.S_POST_ANNOUNCE or searchresults.S_POST_GLOBAL --> btn-lg <!-- ENDIF --> tooltip-link " title="{searchresults.TOPIC_FOLDER_IMG_ALT}">
 									<!-- IF searchresults.S_TOPIC_LOCKED -->
 										<!-- IF searchresults.S_POST_GLOBAL or searchresults.S_POST_ANNOUNCE -->
-											<i class="icon-lock icon-large"></i>
+											<i class="fa fa-lock fa-lg"></i>
 										<!-- ELSE -->
-											<i class="icon-lock"></i>
+											<i class="fa fa-lock"></i>
 										<!-- ENDIF -->
 									<!-- ELSEIF searchresults.S_POST_GLOBAL -->
-										<i class="icon-info-sign icon-large"></i>
+										<i class="fa fa-info-circle fa-lg"></i>
 									<!-- ELSEIF searchresults.S_POST_ANNOUNCE -->
-										<i class="icon-info-sign icon-large"></i>
+										<i class="fa fa-info-circle fa-lg"></i>
 									<!-- ELSEIF searchresults.S_POST_STICKY -->
-										<i class="icon-pushpin"></i>
+										<i class="fa fa-thumb-tack"></i>
 									<!-- ELSEIF searchresults.S_TOPIC_MOVED -->
-										<i class="icon-share"></i>
+										<i class="fa fa-share"></i>
 									<!-- ELSEIF searchresults.S_HAS_POLL -->
-										<i class="icon-comment-alt"></i>
+										<i class="fa fa-comment-o"></i>
 									<!-- ELSE -->
-										<i class="icon-file-alt"></i>
+										<i class="fa fa-file-text-o"></i>
 									<!-- ENDIF --> 
 								</a></span>
 							</div>
 							<div class="pull-right">
 								<div class="btn-group pagination-line">
 									<!-- IF searchresults.S_TOPIC_UNAPPROVED or searchresults.S_POSTS_UNAPPROVED -->
-									<a href="{searchresults.U_MCP_QUEUE}" class="btn btn-warning btn-xs"><i class="icon-warning-sign"></i></a>
+									<a href="{searchresults.U_MCP_QUEUE}" class="btn btn-warning btn-xs"><i class="fa fa-exclamation-triangle"></i></a>
 									<!-- ENDIF -->
 									<!-- IF searchresults.S_TOPIC_REPORTED -->
-									<a href="{searchresults.U_MCP_REPORT}" class="btn btn-warning btn-xs"><i class="icon-warning-sign"></i></a>
+									<a href="{searchresults.U_MCP_REPORT}" class="btn btn-warning btn-xs"><i class="fa fa-exclamation-triangle"></i></a>
 									<!-- ENDIF -->
 									<!-- IF searchresults.ATTACH_ICON_IMG -->
-									<a href="#" class="btn btn-default btn-xs disabled"><i class="icon-paper-clip"></i></a>
+									<a href="#" class="btn btn-default btn-xs disabled"><i class="fa fa-paperclip"></i></a>
 									<!-- ENDIF -->
 									<!-- IF searchresults.PAGINATION -->{searchresults.PAGINATION}<!-- ENDIF -->
 									<!-- IF searchresults.S_UNREAD_TOPIC -->
-										<a class="btn btn-xs btn-info" href="{searchresults.U_NEWEST_POST}"><i class="icon-angle-right"></i></a>
+										<a class="btn btn-xs btn-info" href="{searchresults.U_NEWEST_POST}"><i class="fa fa-angle-right"></i></a>
 									<!-- ENDIF -->
 									<!-- IF not S_IS_BOT -->
-										<a class="btn btn-default btn-xs tooltip-link" href="{searchresults.U_LAST_POST}"  title="{L_LAST_POST}"><i class="icon-double-angle-right"></i></a>
+										<a class="btn btn-default btn-xs tooltip-link" href="{searchresults.U_LAST_POST}"  title="{L_LAST_POST}"><i class="fa fa-angle-double-right"></i></a>
 									<!-- ENDIF -->						
 								</div>
 							</div>
@@ -130,7 +130,7 @@
 					<h4><a href="{searchresults.U_VIEW_POST}">{searchresults.POST_SUBJECT}</a></h4>
 					<blockquote class="text-justify">
 						{searchresults.MESSAGE}
-						<a href="{searchresults.U_VIEW_POST}" class="btn btn-default btn-xs tooltip-link forum-top-buffer pull-right" title="{L_JUMP_TO_POST}"><i class="icon-eye-open"></i> {L_JUMP_TO_POST}</a>
+						<a href="{searchresults.U_VIEW_POST}" class="btn btn-default btn-xs tooltip-link forum-top-buffer pull-right" title="{L_JUMP_TO_POST}"><i class="fa fa-eye"></i> {L_JUMP_TO_POST}</a>
 						<small class="visible-xs">{L_POST_BY_AUTHOR} <strong>{searchresults.POST_AUTHOR_FULL}</strong> &raquo; {searchresults.POST_DATE}</small>
 					</blockquote>
 				</div>
@@ -187,9 +187,9 @@
 	</div>
 	<div class="panel-footer">
 		<!-- IF SEARCH_TOPIC -->
-			<p><a class="btn btn-default" href="{U_SEARCH_TOPIC}"><i class="icon-mail-reply"></i> {L_RETURN_TO}: {SEARCH_TOPIC}</a></p>
+			<p><a class="btn btn-default" href="{U_SEARCH_TOPIC}"><i class="fa fa-mail-reply"></i> {L_RETURN_TO}: {SEARCH_TOPIC}</a></p>
 		<!-- ELSE -->
-			<p><a class="btn btn-default" href="{U_SEARCH}" title="{L_SEARCH_ADV}"><i class="icon-mail-reply"></i>  {L_RETURN_TO_SEARCH_ADV}</a></p>
+			<p><a class="btn btn-default" href="{U_SEARCH}" title="{L_SEARCH_ADV}"><i class="fa fa-mail-reply"></i>  {L_RETURN_TO_SEARCH_ADV}</a></p>
 		<!-- ENDIF -->
 	</div>
 </div>

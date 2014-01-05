@@ -4,8 +4,8 @@
 
 	<div id="post-{MESSAGE_ID}">
 	
-		<h4 class="first"><i class="icon-envelope-alt"></i> {SUBJECT} 
-		<br/><small>{L_SENT_AT} <i class="icon-calendar"></i> {SENT_DATE} 
+		<h4 class="first"><i class="fa fa-envelope-o"></i> {SUBJECT} 
+		<br/><small>{L_SENT_AT} <i class="fa fa-calendar"></i> {SENT_DATE} 
 			&nbsp;&bull;&nbsp;	{L_PM_FROM} : {MESSAGE_AUTHOR_FULL}
 			<!-- IF S_TO_RECIPIENT --> &nbsp;&bull;&nbsp; {L_TO} : <!-- BEGIN to_recipient --><!-- IF to_recipient.NAME_FULL -->{to_recipient.NAME_FULL}<!-- ELSE --><a href="{to_recipient.U_VIEW}" style="color:<!-- IF to_recipient.COLOUR -->{to_recipient.COLOUR}<!-- ELSEIF to_recipient.IS_GROUP -->#0000FF<!-- ENDIF -->;">{to_recipient.NAME}</a><!-- ENDIF -->&nbsp;<!-- END to_recipient --><!-- ENDIF -->
 			<!-- IF S_BCC_RECIPIENT --> &nbsp;&bull;&nbsp; {L_BCC} : <!-- BEGIN bcc_recipient --><!-- IF bcc_recipient.NAME_FULL -->{bcc_recipient.NAME_FULL}<!-- ELSE --><a href="{bcc_recipient.U_VIEW}" style="color:<!-- IF bcc_recipient.COLOUR -->{bcc_recipient.COLOUR}<!-- ELSEIF bcc_recipient.IS_GROUP -->#0000FF<!-- ENDIF -->;">{bcc_recipient.NAME}</a><!-- ENDIF -->&nbsp;<!-- END bcc_recipient --><!-- ENDIF --></small>
@@ -42,7 +42,7 @@
 					<!-- ENDIF -->
 					</div>
 					<div class="col-xs-1">
-						<div class="pull-right"><a class="btn btn-default btn-xs tooltip-link" href="#top" title="{L_BACK_TO_TOP}"><i class="icon-double-angle-up"></i></a></div>
+						<div class="pull-right"><a class="btn btn-default btn-xs tooltip-link" href="#top" title="{L_BACK_TO_TOP}"><i class="fa fa-angle-double-up"></i></a></div>
 					</div>
 				</div>
 				
@@ -59,30 +59,30 @@
 						 
 						<a class="btn <!-- IF S_ONLINE and not S_IGNORE_POST -->btn-success<!-- ELSE -->btn-default<!-- ENDIF -->" data-toggle="dropdown" href="#">
 							<!-- IF S_ONLINE and not S_IGNORE_POST -->
-								<i class="icon-signin"></i> {L_ONLINE}
+								<i class="fa fa-sign-in"></i> {L_ONLINE}
 							<!-- ELSE -->
-								<i class="icon-signout"></i> {L_OFFLINE}
+								<i class="fa fa-sign-out"></i> {L_OFFLINE}
 							<!-- ENDIF -->
 						</a>
-						<a class="btn <!-- IF S_ONLINE and not S_IGNORE_POST -->btn-success<!-- ELSE -->btn-default<!-- ENDIF --> dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-caret-down"></span></a>
+						<a class="btn <!-- IF S_ONLINE and not S_IGNORE_POST -->btn-success<!-- ELSE -->btn-default<!-- ENDIF --> dropdown-toggle" data-toggle="dropdown" href="#"><span class="fa fa-caret-down"></span></a>
 						<ul class="dropdown-menu text-left">
-							<!-- IF AUTHOR_POSTS != '' --><li><span><strong><i class="icon-comments-alt"></i> {L_POSTS} :</strong> {AUTHOR_POSTS}</span></li><!-- ENDIF -->
-							<!-- IF AUTHOR_JOINED --><li><span><strong><i class="icon-calendar"></i> {L_JOINED} :</strong> {AUTHOR_JOINED}</span></li><!-- ENDIF -->
-							<!-- IF AUTHOR_FROM --><li><span><strong><i class="icon-map-marker"></i> {L_LOCATION} :</strong> {AUTHOR_FROM}</span></li><!-- ENDIF -->
-							<!-- IF POSTER_AGE --><li><span><strong><i class="icon-calendar"></i> Âge du joueur : {POSTER_AGE}</strong></span><!-- ENDIF -->
-							<!-- IF S_USERID_BANNED --><li><span><strong><i class="icon-warning-sign"></i> {L_CURRENTLY_BANNED}</strong></span></li>
-							<!-- ELSEIF POSTER_WARNINGS --><li><span><strong><i class="icon-warning-sign"></i> {L_WARNINGS}:</strong> {POSTER_WARNINGS}</span></li><!-- ENDIF -->	
+							<!-- IF AUTHOR_POSTS != '' --><li><span><strong><i class="fa fa-comments-o"></i> {L_POSTS} :</strong> {AUTHOR_POSTS}</span></li><!-- ENDIF -->
+							<!-- IF AUTHOR_JOINED --><li><span><strong><i class="fa fa-calendar"></i> {L_JOINED} :</strong> {AUTHOR_JOINED}</span></li><!-- ENDIF -->
+							<!-- IF AUTHOR_FROM --><li><span><strong><i class="fa fa-map-marker"></i> {L_LOCATION} :</strong> {AUTHOR_FROM}</span></li><!-- ENDIF -->
+							<!-- IF POSTER_AGE --><li><span><strong><i class="fa fa-calendar"></i> Âge du joueur : {POSTER_AGE}</strong></span><!-- ENDIF -->
+							<!-- IF S_USERID_BANNED --><li><span><strong><i class="fa fa-exclamation-triangle"></i> {L_CURRENTLY_BANNED}</strong></span></li>
+							<!-- ELSEIF POSTER_WARNINGS --><li><span><strong><i class="fa fa-exclamation-triangle"></i> {L_WARNINGS}:</strong> {POSTER_WARNINGS}</span></li><!-- ENDIF -->	
 							<!-- IF not S_IS_BOT -->
 							<!-- IF U_PM or U_EMAIL or U_WWW or U_MSN or U_ICQ or U_YIM or U_AIM or U_JABBER -->
 							<li class="divider"></li>
-							<!-- IF U_PM --><li><a href="{U_PM}" title="{L_PRIVATE_MESSAGE}"><i class="icon-envelope-alt"></i> {L_PRIVATE_MESSAGE}</a></li><!-- ENDIF -->
-							<!-- IF U_EMAIL --><li><a href="{U_EMAIL}" title="{L_SEND_EMAIL_USER} {MESSAGE_AUTHOR}"><i class="icon-envelope"></i> {L_SEND_EMAIL_USER} {MESSAGE_AUTHOR}</a></li><!-- ENDIF -->
-							<!-- IF U_WWW --><li><a href="{U_WWW}" title="{L_VISIT_WEBSITE}: {U_WWW}"><i class="icon-globe"></i> {L_WEBSITE}</a></li><!-- ENDIF -->
-							<!-- IF U_MSN --><li><a href="{U_MSN}" onclick="popup(this.href, 550, 320); return false;" title="{L_MSNM}"><i class="icon-group"></i> {L_MSNM}</a></li><!-- ENDIF -->
-							<!-- IF U_ICQ --><li><a href="{U_ICQ}" onclick="popup(this.href, 550, 320); return false;" title="{L_ICQ}"><i class="icon-group"></i> {L_ICQ}</a></li><!-- ENDIF -->
-							<!-- IF U_YIM --><li><a href="{U_YIM}" onclick="popup(this.href, 780, 550); return false;" title="{L_YIM}"><i class="icon-group"></i> {L_YIM}</a></li><!-- ENDIF -->
-							<!-- IF U_AIM --><li><a href="{U_AIM}" onclick="popup(this.href, 550, 320); return false;" title="{L_AIM}"><i class="icon-group"></i> {L_AIM}</a></li><!-- ENDIF -->
-							<!-- IF U_JABBER --><li><a href="{U_JABBER}" onclick="popup(this.href, 550, 320); return false;" title="{L_JABBER}"><i class="icon-group"></i> {L_JABBER}</a></li><!-- ENDIF -->							
+							<!-- IF U_PM --><li><a href="{U_PM}" title="{L_PRIVATE_MESSAGE}"><i class="fa fa-envelope-o"></i> {L_PRIVATE_MESSAGE}</a></li><!-- ENDIF -->
+							<!-- IF U_EMAIL --><li><a href="{U_EMAIL}" title="{L_SEND_EMAIL_USER} {MESSAGE_AUTHOR}"><i class="fa fa-envelope"></i> {L_SEND_EMAIL_USER} {MESSAGE_AUTHOR}</a></li><!-- ENDIF -->
+							<!-- IF U_WWW --><li><a href="{U_WWW}" title="{L_VISIT_WEBSITE}: {U_WWW}"><i class="fa fa-globe"></i> {L_WEBSITE}</a></li><!-- ENDIF -->
+							<!-- IF U_MSN --><li><a href="{U_MSN}" onclick="popup(this.href, 550, 320); return false;" title="{L_MSNM}"><i class="fa fa-group"></i> {L_MSNM}</a></li><!-- ENDIF -->
+							<!-- IF U_ICQ --><li><a href="{U_ICQ}" onclick="popup(this.href, 550, 320); return false;" title="{L_ICQ}"><i class="fa fa-group"></i> {L_ICQ}</a></li><!-- ENDIF -->
+							<!-- IF U_YIM --><li><a href="{U_YIM}" onclick="popup(this.href, 780, 550); return false;" title="{L_YIM}"><i class="fa fa-group"></i> {L_YIM}</a></li><!-- ENDIF -->
+							<!-- IF U_AIM --><li><a href="{U_AIM}" onclick="popup(this.href, 550, 320); return false;" title="{L_AIM}"><i class="fa fa-group"></i> {L_AIM}</a></li><!-- ENDIF -->
+							<!-- IF U_JABBER --><li><a href="{U_JABBER}" onclick="popup(this.href, 550, 320); return false;" title="{L_JABBER}"><i class="fa fa-group"></i> {L_JABBER}</a></li><!-- ENDIF -->							
 							<!-- ENDIF -->
 							<!-- ENDIF -->
 						</ul>

@@ -52,31 +52,31 @@
 		<div class="row">
 			<div class="col-md-9">
 				<div class="btn-group">
-					<button class="btn btn-default tooltip-link" accesskey="b" name="addbbcode0" value="B" onclick="bbstyle(0); return false;" title="{L_BBCODE_B_HELP}"><i class="icon-bold"></i></button>
-					<button class="btn btn-default tooltip-link" accesskey="i" name="addbbcode2" value="i" onclick="bbstyle(2); return false;" title="{L_BBCODE_I_HELP}"><i class="icon-italic"></i></button>
-					<button class="btn btn-default tooltip-link" accesskey="u" name="addbbcode4" value="u" onclick="bbstyle(4); return false;" title="{L_BBCODE_U_HELP}"><i class="icon-underline"></i></button>
+					<button class="btn btn-default tooltip-link" accesskey="b" name="addbbcode0" value="B" onclick="bbstyle(0); return false;" title="{L_BBCODE_B_HELP}"><i class="fa fa-bold"></i></button>
+					<button class="btn btn-default tooltip-link" accesskey="i" name="addbbcode2" value="i" onclick="bbstyle(2); return false;" title="{L_BBCODE_I_HELP}"><i class="fa fa-italic"></i></button>
+					<button class="btn btn-default tooltip-link" accesskey="u" name="addbbcode4" value="u" onclick="bbstyle(4); return false;" title="{L_BBCODE_U_HELP}"><i class="fa fa-underline"></i></button>
 					<!-- IF S_BBCODE_QUOTE -->
-						<button class="btn btn-default tooltip-link" accesskey="q" name="addbbcode6" value="Quote" onclick="bbstyle(6); return false;" title="{L_BBCODE_Q_HELP}"><i class="icon-quote-right"></i></button>
+						<button class="btn btn-default tooltip-link" accesskey="q" name="addbbcode6" value="Quote" onclick="bbstyle(6); return false;" title="{L_BBCODE_Q_HELP}"><i class="fa fa-quote-right"></i></button>
 					<!-- ENDIF -->
-					<button class="btn btn-default tooltip-link" accesskey="c" name="addbbcode8" value="Code" onclick="bbstyle(8);return false;" title="{L_BBCODE_C_HELP}"><i class="icon-code"></i></button>
-					<button class="btn btn-default tooltip-link" accesskey="l" name="addbbcode10" value="List" onclick=" bbstyle(10);return false;" title="{L_BBCODE_L_HELP}"><i class="icon-list"></i></button>
-					<button class="btn btn-default tooltip-link" accesskey="o" name="addbbcode12" value="List=" onclick=" bbstyle(12); return false;" title="{L_BBCODE_O_HELP}"><i class="icon-list-ol"></i></button>
-					<button class="btn btn-default tooltip-link" accesskey="y" name="addlistitem" value="[*]" onclick=" bbstyle(-1); return false;" title="{L_BBCODE_LISTITEM_HELP}"><i class="icon-plus-sign"></i></button>
+					<button class="btn btn-default tooltip-link" accesskey="c" name="addbbcode8" value="Code" onclick="bbstyle(8);return false;" title="{L_BBCODE_C_HELP}"><i class="fa fa-code"></i></button>
+					<button class="btn btn-default tooltip-link" accesskey="l" name="addbbcode10" value="List" onclick=" bbstyle(10);return false;" title="{L_BBCODE_L_HELP}"><i class="fa fa-list"></i></button>
+					<button class="btn btn-default tooltip-link" accesskey="o" name="addbbcode12" value="List=" onclick=" bbstyle(12); return false;" title="{L_BBCODE_O_HELP}"><i class="fa fa-list-ol"></i></button>
+					<button class="btn btn-default tooltip-link" accesskey="y" name="addlistitem" value="[*]" onclick=" bbstyle(-1); return false;" title="{L_BBCODE_LISTITEM_HELP}"><i class="fa fa-plus-circle"></i></button>
 					<!-- IF S_BBCODE_IMG -->
-						<button class="btn btn-default tooltip-link" accesskey="p" name="addbbcode14" value="Img" onclick=" bbstyle(14); return false;" title="{L_BBCODE_P_HELP}"><i class="icon-picture"></i></button>
+						<button class="btn btn-default tooltip-link" accesskey="p" name="addbbcode14" value="Img" onclick=" bbstyle(14); return false;" title="{L_BBCODE_P_HELP}"><i class="fa fa-picture-o"></i></button>
 					<!-- ENDIF -->
 					<!-- IF S_LINKS_ALLOWED -->
-						<button class="btn btn-default tooltip-link" accesskey="w" name="addbbcode16" value="URL" onclick=" bbstyle(16); return false;" title="{L_BBCODE_W_HELP}"><i class="icon-link"></i></button>
+						<button class="btn btn-default tooltip-link" accesskey="w" name="addbbcode16" value="URL" onclick=" bbstyle(16); return false;" title="{L_BBCODE_W_HELP}"><i class="fa fa-link"></i></button>
 					<!-- ENDIF -->
 					<!-- IF S_BBCODE_FLASH -->
 						<button class="btn btn-default tooltip-link" accesskey="d" name="addbbcode18" value="Flash" onclick=" bbstyle(18); return false;" title="{L_BBCODE_D_HELP}">F</button>
 					<!-- ENDIF -->
-					<button class="btn btn-default tooltip-link" name="bbpalette" value="{L_FONT_COLOR}" onclick="$('#colour_palette').toggle(); return false;" title="{L_BBCODE_S_HELP}"><i class="icon-beaker"></i></button>
+					<button class="btn btn-default tooltip-link" name="bbpalette" value="{L_FONT_COLOR}" onclick="$('#colour_palette').toggle(); return false;" title="{L_BBCODE_S_HELP}"><i class="fa fa-flask"></i></button>
 				</div>
 			</div>
 			<div class="col-md-3">
 				<div class="input-group">
-			  		<span class="input-group-addon"><i class="icon-text-height"></i></span>
+			  		<span class="input-group-addon"><i class="fa fa-text-height"></i></span>
 					<select class="form-control" name="addbbcode20" onchange="bbfontstyle('[size=' + this.form.addbbcode20.options[this.form.addbbcode20.selectedIndex].value + ']', '[/size]');this.form.addbbcode20.selectedIndex = 2;" title="{L_BBCODE_F_HELP}">
 						<option value="50">{L_FONT_TINY}</option>
 						<option value="85">{L_FONT_SMALL}</option>
